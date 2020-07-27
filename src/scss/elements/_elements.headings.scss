@@ -28,32 +28,3 @@ h1 {
     @include font-size(73px, $important: true);
   }
 }
-
-h2 {
-  @include font-size(30px, $important: true);
-  line-height: 1.2;
-  margin-top: 2.5em;
-  font-weight: 600;
-}
-
-h3 {
-  font-style: italic;
-  color: var(--color-wine);
-  margin-top: 1.5em;
-  margin-bottom: 0.25em;
-  @include font-size(26px, $important: true);
-
-  .u-dark & {
-    color: inherit;
-  }
-
-  @include mq($from: tablet) {
-    @include font-size(30px, $important: true);
-    margin-top: 2em;
-    margin-bottom: 0.5em;
-  }
-
-  @include mq($from: desktop) {
-    @include font-size(38px, $important: true);
-  }
-}

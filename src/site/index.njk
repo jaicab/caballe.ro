@@ -12,7 +12,9 @@ tagline: Personal y de parejas
   {%- for report in collections.report -%}
     <li>
       <a class="o-tile" href="{{ report.url | url }}" style="--color-tile: {{ report.data.themeColor }}">
-        <h2 class="u-h1">{{ report.data.title }}</h2>
+        <div class="c-tagline">{{ report.data.tagline }}</div>
+        <h2 class="u-thick">{{ report.data.title }}</h2>
+        <img src="{{ '/images/tiles/'+report.data.short+'.png' | url }}"/>
       </a>
     </li>
   {%- endfor -%}

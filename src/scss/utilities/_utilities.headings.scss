@@ -1,16 +1,14 @@
-.u-h1,
-.u-h2,
-.u-h3,
-.u-h4,
-.u-h5,
-.u-h6 {
-  // font-family: $font-family-heading;
+.u-thick {
+  font-weight: 700;
+
+  @include mq($from: tablet) {
+    font-weight: 900;
+  }
 }
 
-.u-h1 {
-  @include font-size(24px, $important: true);
-}
-
-.u-h3 {
-  @extend h3;
+.u-h4 {
+  font-family: $font-family-heading;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
 }

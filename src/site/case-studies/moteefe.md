@@ -2,12 +2,13 @@
 themeColor: "#E9E1FF"
 layout: report
 tags: report
+short: moteefe
 tagline: Research, Branding, UX/UI, Storybook
 title: Leading the redesign of a garment creation tool
 description: A dynamic e-commerce platform for merchandise creators and influencer brands
 timeframe: Nov 2016 - Nov 2017
-type: Freelance contract
-location: London, Remote
+contract: Freelance contract
+location: London / Remote
 date: 2018-05-01
 responsibilities:
   - User interviews

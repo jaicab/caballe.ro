@@ -1,21 +1,8 @@
 .c-tagline {
   display: block;
   text-transform: uppercase;
-  letter-spacing: 0.12em;
-  color: var(--color-wine);
-  margin: 1em 0 2em;
+  font-family: $font-family-heading;
+  letter-spacing: 0.1em;
   opacity: 0.8;
-
-  .u-dark & {
-    color: inherit;
-  }
-
-  @include mq($from: tablet) {
-    margin-top: 1.2em;
-    margin-bottom: 1em;
-  }
-
-  @include mq($from: desktop) {
-    font-size: 1.2em;
-  }
+  font-size: 0.9em;
 }

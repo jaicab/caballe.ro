@@ -2,7 +2,48 @@
 layout: layouts/base.njk
 templateClass: tmpl-report
 ---
+
+<div class="c-tagline">{{ contract }}, {{ location }}</div>
+<div class="c-tagline">{{ timeframe }}</div>
 <h1>{{ title }}</h1>
+
+<div class="c-tagline">Read time: 10 min</div>
+
+<h3 class="u-h4">Responsibilities</h3>
+<div class="u-text">
+  <ul>
+    {%- for item in responsibilities -%}
+      <li>{{item}}</li>
+    {%- endfor -%}
+  </ul>
+</div>
+
+<h3 class="u-h4">Tools</h3>
+<div class="u-text">
+  <ul>
+    {%- for item in tools -%}
+      <li>{{item}}</li>
+    {%- endfor -%}
+  </ul>
+</div>
+
+<h3 class="u-h4">Credits</h3>
+<div class="u-text">
+  <ul>
+    {%- for item in credits -%}
+      <li>{{item}}</li>
+    {%- endfor -%}
+  </ul>
+</div>
+
+<h3 class="u-h4">Tech</h3>
+<div class="u-text">
+  <ul>
+    {%- for item in tech -%}
+      <li>{{item}}</li>
+    {%- endfor -%}
+  </ul>
+</div>
 
 {{ content | safe }}
 

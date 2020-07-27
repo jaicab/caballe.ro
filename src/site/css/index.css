@@ -440,37 +440,6 @@ h1 {
       font-size: 4.05556rem !important;
       line-height: 1.15068 !important; } }
 
-h2 {
-  font-size: 30px !important;
-  font-size: 1.66667rem !important;
-  line-height: 1.2 !important;
-  line-height: 1.2;
-  margin-top: 2.5em;
-  font-weight: 600; }
-
-h3, .u-h3 {
-  font-style: italic;
-  color: var(--color-wine);
-  margin-top: 1.5em;
-  margin-bottom: 0.25em;
-  font-size: 26px !important;
-  font-size: 1.44444rem !important;
-  line-height: 1.38462 !important; }
-  .u-dark h3, .u-dark .u-h3 {
-    color: inherit; }
-  @media (min-width: 46.25em) {
-    h3, .u-h3 {
-      font-size: 30px !important;
-      font-size: 1.66667rem !important;
-      line-height: 1.2 !important;
-      margin-top: 2em;
-      margin-bottom: 0.5em; } }
-  @media (min-width: 61.25em) {
-    h3, .u-h3 {
-      font-size: 38px !important;
-      font-size: 2.11111rem !important;
-      line-height: 1.26316 !important; } }
-
 a {
   text-decoration: none;
   color: inherit; }
@@ -479,6 +448,15 @@ img {
   display: inline-block;
   max-width: 100%;
   height: auto; }
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0; }
+
+li {
+  margin: 0;
+  padding: 0; }
 
 input,
 button {
@@ -529,19 +507,10 @@ button {
 .c-tagline {
   display: block;
   text-transform: uppercase;
-  letter-spacing: 0.12em;
-  color: var(--color-wine);
-  margin: 1em 0 2em;
-  opacity: 0.8; }
-  .u-dark .c-tagline {
-    color: inherit; }
-  @media (min-width: 46.25em) {
-    .c-tagline {
-      margin-top: 1.2em;
-      margin-bottom: 1em; } }
-  @media (min-width: 61.25em) {
-    .c-tagline {
-      font-size: 1.2em; } }
+  font-family: "Space Mono", "Lucida Console", Monaco, monospace, monospace;
+  letter-spacing: 0.1em;
+  opacity: 0.8;
+  font-size: 0.9em; }
 
 /* ==========================================================================
    #BUTTONS
@@ -636,15 +605,17 @@ button {
       margin-right: 30px; } }
 
 .o-tile {
-  width: 300px;
-  height: 300px;
+  width: 500px;
   display: block;
   background: var(--color-tile, #fff);
   padding: 30px;
+  padding-bottom: 0;
   color: var(--color-black);
   transition: 300ms all;
   box-shadow: 0 0 0 0 var(--color-tile);
   transform: scale(1); }
+  .o-tile img {
+    display: block; }
   .o-tile:hover {
     box-shadow: 10px 10px 0 0 rgba(0, 0, 0, 0.2), 10px 10px 0 0 var(--color-tile);
     transform: translate3d(-5px, -5px, 0); }
@@ -697,7 +668,7 @@ button {
     padding: 30px;
     max-width: 20em;
     margin: 0 auto; }
-  .o-intro h3, .o-intro .u-h3 {
+  .o-intro h3 {
     margin-top: 0; }
   @media (min-width: 46.25em) {
     .o-intro .u-wrapper {
@@ -735,10 +706,17 @@ button {
   background: var(--color-navy);
   border-top: 15px solid var(--color-wine); }
 
-.u-h1 {
-  font-size: 24px !important;
-  font-size: 1.33333rem !important;
-  line-height: 1.25 !important; }
+.u-thick {
+  font-weight: 700; }
+  @media (min-width: 46.25em) {
+    .u-thick {
+      font-weight: 900; } }
+
+.u-h4 {
+  font-family: "Space Mono", "Lucida Console", Monaco, monospace, monospace;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.12em; }
 
 .u-dark {
   color: var(--color-cream); }
@@ -837,6 +815,7 @@ button {
   line-height: 1.44;
   letter-spacing: -0.05em; }
   .u-text ul {
+    list-style: square;
     margin: 15px 0;
     padding: 0;
     padding-left: 15px; }
