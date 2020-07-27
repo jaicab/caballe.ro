@@ -35,8 +35,6 @@
   &__icon {
     margin-left: -$global-spacing-unit/2;
     margin-right: $global-spacing-unit/2;
-    margin-top: $global-spacing-unit/10;
-    transform: scale(0.9);
     color: var(--color-bg);
   }
 
@@ -60,11 +58,12 @@
   transition: 300ms all;
   box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.2);
   transition: $global-transition;
+  font-family: $font-family-heading;
 
   .c-btn__text {
     transition: $global-transition;
-    font-weight: 400;
-    font-variation-settings: "wght" 600;
+    font-weight: 600;
+    text-transform: uppercase;
   }
 
   &,
@@ -77,15 +76,15 @@
   &:hover {
     box-shadow: 10px 10px 0 0 rgba(0, 0, 0, 0.2);
     transform: translate3d(-5px, -5px, 0);
+    font-weight: 600;
 
     .c-btn__text {
-      font-variation-settings: "wght" 700;
     }
   }
 
   &:active {
     transition: 200ms all;
-    transform: translate3d(2.5px, 2.5px, 0);
+    transform: translate3d(0, 0, 0);
     box-shadow: 5px 5px 0 0 rgba(0, 0, 0, 0.2);
   }
 }

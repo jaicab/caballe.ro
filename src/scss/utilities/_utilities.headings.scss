@@ -9,7 +9,7 @@
 .u-h2 {
   @include font-size(33px, $important: true);
   font-weight: 700;
-  margin: $global-spacing-unit * 2 0 $global-spacing-unit/2;
+  margin: $global-spacing-unit * 4 0 $global-spacing-unit/2;
 
   @include mq($from: mobile) {
     // @include font-size(46px, $important: true);

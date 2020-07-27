@@ -467,9 +467,27 @@ button {
   font: inherit; }
 
 blockquote {
-  font-size: 1.3em;
+  font-size: 2em;
   font-style: italic;
-  margin-left: 0; }
+  margin-left: 0;
+  margin-bottom: 0; }
+
+pre {
+  font-family: "Space Mono", "Lucida Console", Monaco, monospace, monospace;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  tab-size: 2;
+  margin: 1.2em -1rem;
+  background: var(--color-white); }
+  pre code {
+    font-size: 0.9em;
+    line-height: 1; }
+  @media (min-width: 61.25em) {
+    pre {
+      border-radius: 5px;
+      margin-left: -2em;
+      margin-right: -2em;
+      padding: 2em; } }
 
 .c-logo {
   display: inline-block;
@@ -561,8 +579,6 @@ blockquote {
   .c-btn__icon {
     margin-left: -15px;
     margin-right: 15px;
-    margin-top: 3px;
-    transform: scale(0.9);
     color: var(--color-bg); }
   .c-btn__icon path {
     fill: var(--color-bg); }
@@ -578,22 +594,22 @@ blockquote {
   background-color: currentColor;
   transition: 300ms all;
   box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.2);
-  transition: all 300ms ease-in-out; }
+  transition: all 300ms ease-in-out;
+  font-family: "Space Mono", "Lucida Console", Monaco, monospace, monospace; }
   .c-btn--primary .c-btn__text {
     transition: all 300ms ease-in-out;
-    font-weight: 400;
-    font-variation-settings: "wght" 600; }
+    font-weight: 600;
+    text-transform: uppercase; }
   .c-btn--primary, .c-btn--primary:hover, .c-btn--primary:focus, .c-btn--primary:active {
     text-decoration: none;
     /* [4] */ }
   .c-btn--primary:hover {
     box-shadow: 10px 10px 0 0 rgba(0, 0, 0, 0.2);
-    transform: translate3d(-5px, -5px, 0); }
-    .c-btn--primary:hover .c-btn__text {
-      font-variation-settings: "wght" 700; }
+    transform: translate3d(-5px, -5px, 0);
+    font-weight: 600; }
   .c-btn--primary:active {
     transition: 200ms all;
-    transform: translate3d(2.5px, 2.5px, 0);
+    transform: translate3d(0, 0, 0);
     box-shadow: 5px 5px 0 0 rgba(0, 0, 0, 0.2); }
 
 /* Ghost buttons
@@ -658,7 +674,7 @@ blockquote {
     transform: translate3d(-5px, -5px, 0); }
   .o-tile:active {
     transition: 200ms all;
-    transform: translate3d(2.5px, 2.5px, 0);
+    transform: translate3d(0, 0, 0);
     box-shadow: 5px 5px 0 0 rgba(0, 0, 0, 0.2), 5px 5px 0 0 var(--color-tile); }
   @media (min-width: 46.25em) {
     .o-tile {
@@ -747,13 +763,13 @@ blockquote {
   .o-article__readtime {
     border: 0.25em dotted currentColor;
     padding: 1em 1.5em;
-    margin: 60px 0; } }
+    margin: 60px 0 0; } }
 
 @media (min-width: 61.25em) {
   .o-article__title {
-    max-width: 75%; }
+    max-width: 66%; }
   .o-article__content {
-    max-width: 60%; }
+    max-width: 65%; }
   .o-article__properties {
     width: 30%;
     padding-bottom: 120px;
@@ -803,7 +819,7 @@ blockquote {
   font-size: 1.83333rem !important;
   line-height: 1.21212 !important;
   font-weight: 700;
-  margin: 60px 0 15px; }
+  margin: 120px 0 15px; }
 
 .u-h4 {
   font-size: 1em;
@@ -924,6 +940,10 @@ blockquote {
     margin: 7.5px; }
   .u-text p {
     margin: 18px 0; }
+    .u-text p code {
+      font-family: "Space Mono", "Lucida Console", Monaco, monospace, monospace;
+      font-weight: 500;
+      opacity: 0.9; }
   .u-text a {
     text-decoration: underline;
     font-weight: 600; }
@@ -937,10 +957,11 @@ blockquote {
       font-size: 1em;
       line-height: 1.55;
       letter-spacing: -0.025em; }
-      .u-text ul {
+      .u-text ul,
+      .u-text ol {
         padding-left: 30px; }
       .u-text li {
-        margin: 15px 0; } }
+        margin: 10px 0; } }
   @media (min-width: 61.25em) {
     .u-text {
       line-height: 1.69;

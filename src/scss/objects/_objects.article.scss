@@ -52,17 +52,17 @@
     &__readtime {
       border: 0.25em dotted currentColor;
       padding: 1em 1.5em;
-      margin: $global-spacing-unit * 2 0;
+      margin: $global-spacing-unit * 2 0 0;
     }
   }
 
   @include mq($from: desktop) {
     &__title {
-      max-width: 75%;
+      max-width: 66%;
     }
 
     &__content {
-      max-width: 60%;
+      max-width: 65%;
     }
 
     &__properties {
