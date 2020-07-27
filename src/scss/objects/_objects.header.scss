@@ -1,8 +1,9 @@
 .o-header {
-  padding: 2em 0;
-  margin-bottom: 3em;
+  padding: $global-spacing-unit 0;
+  margin-bottom: $global-spacing-unit;
 
   @include mq($from: tablet) {
-    text-align: center;
+    padding: $global-spacing-unit * 2 0;
+    margin-bottom: $global-spacing-unit * 3;
   }
 }

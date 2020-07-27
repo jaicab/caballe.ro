@@ -7,17 +7,9 @@
     margin: 0.5em 0 !important;
   }
 
-  // 2 columns in tablet
-  @include mq($from: tablet, $until: desktop) {
-    display: inline-block;
-    width: 45%;
-    margin-right: 4%;
-    vertical-align: top;
-  }
-
   // Top border
   @include mq($from: tablet) {
-    margin-bottom: $global-spacing-unit * 2;
+    margin-top: $global-spacing-unit;
 
     &:before {
       content: "";
@@ -25,14 +17,19 @@
       width: 100%;
       display: block;
       background: currentColor;
-      margin-bottom: $global-spacing-unit * 2.5;
-
-      transform: translateX(4em);
+      margin-bottom: $global-spacing-unit * 2;
+      box-shadow: 100px 0 0 0 currentColor;
     }
   }
 
   // Move lists to left
   @include mq($from: wide) {
+    margin-bottom: $global-spacing-unit * 2;
+
+    &:before {
+      margin-bottom: $global-spacing-unit * 2.5;
+    }
+
     ul {
       padding-left: 0 !important;
       margin-left: 15px !important;

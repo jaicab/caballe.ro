@@ -19,11 +19,16 @@
 
   a {
     text-decoration: underline;
+    font-weight: 600;
 
     &:hover,
     &:focus {
       text-decoration: none;
     }
+  }
+
+  h2 {
+    @extend .u-h2;
   }
 
   strong,

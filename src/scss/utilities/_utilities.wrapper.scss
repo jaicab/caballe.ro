@@ -7,3 +7,8 @@
     padding: 0 $global-spacing-unit * 2;
   }
 }
+
+.u-wrapper--nopadding {
+  padding-left: 0;
+  padding-right: 0;
+}

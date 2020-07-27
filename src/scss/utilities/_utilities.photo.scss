@@ -11,4 +11,13 @@
     border-radius: $global-radius;
     max-height: 66vh;
   }
+
+  @include mq($until: tablet) {
+    padding: 0;
+
+    .u-wrapper {
+      max-width: none;
+      padding: 0;
+    }
+  }
 }

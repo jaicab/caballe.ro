@@ -1,23 +1,66 @@
 .o-article {
+  &__header {
+    .c-tagline {
+      font-size: 1.2em;
+    }
+  }
+
   &__title {
     margin-top: $global-spacing-unit;
   }
 
   &__readtime {
     display: inline-block;
-    border: 0.25em dotted currentColor;
-    padding: 1em 1.5em;
-    margin: $global-spacing-unit * 2 0;
+    border-bottom: 0.25em dotted currentColor;
+    padding: 0.5em 0;
+    margin: $global-spacing-unit 0 $global-spacing-unit * 1.5;
     opacity: 1;
   }
 
+  &__properties {
+    // 2 columns in tablet
+    @include mq($from: tablet, $until: desktop) {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      margin-bottom: $global-spacing-unit;
+
+      .o-properties {
+        margin-right: 2em;
+      }
+    }
+  }
+
+  // Put properties after intro on mobile
+  @include mq($until: desktop) {
+    &__intro {
+      display: flex;
+      flex-direction: column-reverse;
+    }
+  }
+
+  @include mq($from: tablet) {
+    &__readtime {
+      border: 0.25em dotted currentColor;
+      padding: 1em 1.5em;
+      margin: $global-spacing-unit * 2 0;
+    }
+  }
+
   @include mq($from: desktop) {
+    &__title {
+      max-width: 75%;
+    }
+
     &__content {
-      width: 50%;
+      max-width: 60%;
     }
 
     &__properties {
-      min-width: 33%;
+      width: 30%;
+      padding-bottom: $global-spacing-unit * 4;
+      float: right;
+      margin-left: $global-spacing-unit * 5;
     }
   }
 }

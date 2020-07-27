@@ -1,17 +1,26 @@
 .o-tile {
-  width: 500px;
   display: block;
   background: var(--color-tile, #fff);
-  padding: $global-spacing-unit;
-  padding-bottom: 0;
+  padding: $global-spacing-unit / 3 * 2;
+  margin: $global-spacing-unit 0;
+  padding-bottom: 0 !important;
   color: var(--color-black);
 
   transition: 300ms all;
   box-shadow: 0 0 0 0 var(--color-tile);
-  transform: scale(1);
 
   img {
     display: block;
+  }
+
+  .c-tagline {
+    font-size: 0.6em;
+  }
+
+  &__title {
+    @include font-size(23px, $important: true);
+    line-height: 1.1 !important;
+    margin: $global-spacing-unit/2 0;
   }
 
   &:hover {
@@ -29,7 +38,27 @@
 
     // transform: scale(1);
 
-    transform: translate3d(-2.5px, -2.5px, 0);
+    transform: translate3d(2.5px, 2.5px, 0);
     box-shadow: 5px 5px 0 0 rgba(0, 0, 0, 0.2), 5px 5px 0 0 var(--color-tile);
+  }
+
+  @include mq($from: tablet) {
+    padding: $global-spacing-unit;
+    margin: $global-spacing-unit 0;
+
+    &__title {
+      @include font-size(38px, $important: true);
+      margin: $global-spacing-unit 0;
+      font-size: 2.5em;
+    }
+
+    .c-tagline {
+      margin-top: 0.5em;
+      font-size: inherit;
+    }
+  }
+
+  @include mq($from: desktop) {
+    margin-right: $global-spacing-unit;
   }
 }

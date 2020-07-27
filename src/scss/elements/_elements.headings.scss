@@ -8,14 +8,14 @@ h6 {
 }
 
 h1 {
-  @include font-size(40px, $important: true);
+  @include font-size(28px, $important: true);
   margin: 0 0 0.25em;
   letter-spacing: 0;
   font-weight: 800;
-  line-height: 1;
+  line-height: 1 !important;
 
   @include mq($from: mobile) {
-    @include font-size(46px, $important: true);
+    @include font-size(38px, $important: true);
   }
 
   @include mq($from: tablet) {
@@ -23,10 +23,6 @@ h1 {
   }
 
   @include mq($from: desktop) {
-    @include font-size(60px, $important: true);
-  }
-
-  @include mq($from: wide) {
-    @include font-size(73px, $important: true);
+    @include font-size(58px, $important: true);
   }
 }

@@ -8,21 +8,14 @@ templateClass: tmpl-report
     <header class="o-article__header">
       <div class="u-grid-from--tablet">
         <div class="c-tagline">{{ [contract, location].join(', ') }}</div>
+        <div class="is-hidden--until-desktop">
+          <br/></div>
         <div class="c-tagline">{{ timeframe }}</div>
       </div>
       <h1 class="o-article__title u-thick">{{ title }}</h1>
     </header>
 
-    <div class="u-grid-from--desktop u-grid--top">
-      <div class="o-article__content">
-        <div class="o-article__readtime c-tagline">Read time: {{ readtime }} min</div>
-        <div class="u-text u-text--intro">
-          <p>
-            {{ intro }}
-          </p>
-        </div>
-      </div>
-
+    <div class="o-article__intro">
       <div class="o-article__properties is-hidden-until--tablet">
         {%- for key, list in properties -%}
           <div class="o-properties">
@@ -37,16 +30,34 @@ templateClass: tmpl-report
           </div>
         {%- endfor -%}
       </div>
+
+      <div class="o-article__content">
+        <div class="o-article__readtime c-tagline">Read time: {{ readtime }} min</div>
+        <div class="u-text u-text--intro">
+          <p>
+            {{ intro }}
+          </p>
+        </div>
+      </div>
+
     </div>
   </div>
 
   <main class="u-text">
     <div class="u-wrapper">
-      {{ content | safe }}
+      <div class="o-article__content">
+        {{ content | safe }}
+      </div>
     </div>
   </main>
 
-  <p>
-    <a href="{{ '/' | url }}">← Home</a>
-  </p>
+  <br/>
+  <br/>
+  <br/>
+  <div class="u-wrapper u-center">
+    <a class="c-btn c-btn--primary" href="{{ '/' | url }}">
+      <span class="c-btn__icon">←</span>
+      <span class="c-btn__text">Back to black</span>
+    </a>
+  </div>
 </article>

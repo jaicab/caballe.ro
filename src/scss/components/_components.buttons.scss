@@ -25,11 +25,10 @@
   text-align: center; /* [4] */
   margin: 0; /* [4] */
   cursor: pointer; /* [5] */
-  padding: $global-spacing-unit/2 $global-spacing-unit * 1.5;
-  border-radius: 100px;
+  padding: $global-spacing-unit $global-spacing-unit * 3;
 
   &__text {
-    color: var(--color-cream);
+    color: var(--color-bg);
     letter-spacing: 0.01em;
   }
 
@@ -38,10 +37,11 @@
     margin-right: $global-spacing-unit/2;
     margin-top: $global-spacing-unit/10;
     transform: scale(0.9);
+    color: var(--color-bg);
   }
 
   &__icon path {
-    fill: var(--color-cream);
+    fill: var(--color-bg);
   }
 
   &__text + &__icon {
@@ -54,22 +54,39 @@
    ========================================================================== */
 
 .c-btn--primary {
-  color: var(--color-orange);
+  color: var(--color-text);
   border: 1px solid currentColor;
   background-color: currentColor;
-  box-shadow: 6px 8px 15px 0 hsla(12, 91%, 62%, 0.3);
+  transition: 300ms all;
+  box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.2);
   transition: $global-transition;
+
+  .c-btn__text {
+    transition: $global-transition;
+    font-weight: 400;
+    font-variation-settings: "wght" 600;
+  }
 
   &,
   &:hover,
-  &:active,
-  &:focus {
+  &:focus,
+  &:active {
     text-decoration: none; /* [4] */
   }
 
-  &:hover,
-  &:focus {
-    color: var(--color-orange-dark);
+  &:hover {
+    box-shadow: 10px 10px 0 0 rgba(0, 0, 0, 0.2);
+    transform: translate3d(-5px, -5px, 0);
+
+    .c-btn__text {
+      font-variation-settings: "wght" 700;
+    }
+  }
+
+  &:active {
+    transition: 200ms all;
+    transform: translate3d(2.5px, 2.5px, 0);
+    box-shadow: 5px 5px 0 0 rgba(0, 0, 0, 0.2);
   }
 }
 
