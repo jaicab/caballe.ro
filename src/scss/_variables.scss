@@ -1,0 +1,11 @@
+// Color variables
+
+$black: hsla(0, 0%, 13.3%, 1);
+$white: hsla(0, 0%, 98%, 1);
+
+:root {
+  --color-black: #{$black};
+  --color-white: #{$white};
+  --color-bg: #{$black};
+  --color-text: #{$white};
+}

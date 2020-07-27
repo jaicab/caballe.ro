@@ -1,0 +1,101 @@
+/* ==========================================================================
+   #BUTTONS
+   ========================================================================== */
+
+/**
+ * This is an example component. Extend inuitcss by building your own components
+ * that make up your UI. Component classes are prefixed with a `c-`.
+ */
+
+/**
+ * 1. Allow us to style box model properties.
+ * 2. Line different sized buttons up a little nicer.
+ * 3. Make buttons inherit font styles (often necessary when styling `input`s as
+ *    buttons).
+ * 4. Reset/normalize some styles.
+ * 5. Force all button-styled elements to appear clickable.
+ */
+
+.c-btn {
+  display: inline-block; /* [1] */
+  display: inline-flex;
+  align-items: center;
+  vertical-align: middle; /* [2] */
+  font: inherit; /* [3] */
+  text-align: center; /* [4] */
+  margin: 0; /* [4] */
+  cursor: pointer; /* [5] */
+  padding: $global-spacing-unit/2 $global-spacing-unit * 1.5;
+  border-radius: 100px;
+
+  &__text {
+    color: var(--color-cream);
+    letter-spacing: 0.01em;
+  }
+
+  &__icon {
+    margin-left: -$global-spacing-unit/2;
+    margin-right: $global-spacing-unit/2;
+    margin-top: $global-spacing-unit/10;
+    transform: scale(0.9);
+  }
+
+  &__icon path {
+    fill: var(--color-cream);
+  }
+
+  &__text + &__icon {
+    margin-left: $global-spacing-unit;
+    margin-right: -$global-spacing-unit/2;
+  }
+}
+
+/* Style variants
+   ========================================================================== */
+
+.c-btn--primary {
+  color: var(--color-orange);
+  border: 1px solid currentColor;
+  background-color: currentColor;
+  box-shadow: 6px 8px 15px 0 hsla(12, 91%, 62%, 0.3);
+  transition: $global-transition;
+
+  &,
+  &:hover,
+  &:active,
+  &:focus {
+    text-decoration: none; /* [4] */
+  }
+
+  &:hover,
+  &:focus {
+    color: var(--color-orange-dark);
+  }
+}
+
+/* Ghost buttons
+   ========================================================================== */
+
+/**
+ * Ghost buttons have see-through backgrounds and are bordered.
+ */
+
+.c-btn--ghost {
+  background: transparent;
+  border: 1px solid currentColor;
+
+  .c-btn__text {
+    color: currentColor;
+  }
+
+  .c-btn__icon path {
+    fill: currentColor;
+  }
+
+  &,
+  &:hover,
+  &:active,
+  &:focus {
+    background: none;
+  }
+}

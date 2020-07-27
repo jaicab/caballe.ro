@@ -1,0 +1,20 @@
+
+.is-hidden-until {
+  @each $breakpoint, $_width in $mq-breakpoints {
+    &--#{$breakpoint} {
+      @include mq($until: $breakpoint) {
+        display: none !important;
+      }
+    }
+  }
+}
+
+.is-hidden-from {
+  @each $breakpoint, $_width in $mq-breakpoints {
+    &--#{$breakpoint} {
+      @include mq($from: $breakpoint) {
+        display: none !important;
+      }
+    }
+  }
+}

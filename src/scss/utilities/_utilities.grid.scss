@@ -1,0 +1,15 @@
+.u-grid-from {
+  @each $breakpoint, $_width in $mq-breakpoints {
+    &--#{$breakpoint} {
+      @include mq($from: $breakpoint) {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+    }
+  }
+}
+
+.u-grid__full {
+  flex: 1;
+}

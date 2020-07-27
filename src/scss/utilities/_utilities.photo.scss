@@ -1,0 +1,12 @@
+.u-photo {
+  margin: 0 (-$global-spacing-unit);
+  width: 100vw;
+  max-width: none;
+
+  @include mq($from: tablet) {
+    float: right;
+    max-width: 50%;
+    border-radius: $global-radius;
+    margin: 0 0 $global-spacing-unit/2 $global-spacing-unit;
+  }
+}

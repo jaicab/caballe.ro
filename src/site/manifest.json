@@ -1,0 +1,9 @@
+{
+  "name": "Caballero Product Designer",
+  "short_name": "Caballero",
+  "theme_color": "#fafafa",
+  "background_color": "#222222",
+  "display": "browser",
+  "scope": "/",
+  "start_url": "/"
+}

@@ -1,0 +1,52 @@
+.u-text {
+  line-height: 1.44;
+  letter-spacing: -0.05em;
+
+  ul {
+    margin: $global-spacing-unit / 2 0;
+    padding: 0;
+    padding-left: $global-spacing-unit / 2;
+  }
+
+  li {
+    margin: $global-spacing-unit / 4;
+  }
+
+  p {
+    margin: $global-font-size 0;
+  }
+
+  a {
+    text-decoration: underline;
+
+    &:hover,
+    &:focus {
+      text-decoration: none;
+    }
+  }
+
+  strong,
+  b {
+    font-weight: 600;
+  }
+
+  @include mq($from: tablet) {
+    font-size: 20px / $global-font-size * 1em;
+    line-height: 1.55;
+    letter-spacing: -0.025em;
+
+    ul {
+      padding-left: $global-spacing-unit;
+    }
+
+    li {
+      margin: $global-spacing-unit/2 0;
+    }
+  }
+
+  @include mq($from: desktop) {
+    font-size: 24px / $global-font-size * 1em;
+    line-height: 1.55;
+    letter-spacing: -0.025em;
+  }
+}

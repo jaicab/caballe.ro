@@ -1,0 +1,44 @@
+.c-nav-item {
+  a {
+    display: block;
+    padding: $global-spacing-unit/2 0;
+  }
+
+  // Underline
+  a::after {
+    content: "";
+    display: block;
+    width: 2em;
+    height: 0.25em;
+    transform: rotate(-2deg) scaleX(0);
+    background: currentColor;
+    opacity: 0.4;
+    transform-origin: left center;
+    margin-top: 0.15em;
+
+    transition: all 200ms ease-out;
+  }
+
+  a:hover::after,
+  a:focus::after {
+    transform: rotate(-2deg) scaleX(1);
+  }
+
+  // Active is orange
+  &.is-active {
+    font-weight: 700;
+
+    a::after {
+      background: var(--color-orange);
+      transform: rotate(-2deg) scaleX(1) !important;
+      transition: none;
+      opacity: 1;
+    }
+  }
+
+  @include mq($from: tablet) {
+    a {
+      padding: $global-spacing-unit;
+    }
+  }
+}

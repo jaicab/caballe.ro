@@ -1,0 +1,19 @@
+---
+layout: layouts/base.njk
+eleventyNavigation:
+  key: Inicio
+  order: 1
+
+h1: Terapia especializada en Ponferrada
+tagline: Personal y de parejas
+---
+
+<ul>
+  {%- for report in collections.report -%}
+    <li>
+      <a class="o-tile" href="{{ report.url | url }}" style="--color-tile: {{ report.data.themeColor }}">
+        <h2 class="u-h1">{{ report.data.title }}</h2>
+      </a>
+    </li>
+  {%- endfor -%}
+</ul>

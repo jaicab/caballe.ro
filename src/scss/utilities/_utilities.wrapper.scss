@@ -1,0 +1,9 @@
+.u-wrapper {
+  max-width: 1220px / $global-font-size * 1em;
+  margin: 0 auto;
+  padding: 0 $global-spacing-unit;
+
+  @include mq($from: tablet) {
+    padding: 0 $global-spacing-unit * 2;
+  }
+}

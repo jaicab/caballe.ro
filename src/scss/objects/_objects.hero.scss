@@ -1,0 +1,44 @@
+.o-hero {
+  .o-hero__photo {
+    display: block;
+    margin: 0 auto;
+
+    img {
+      max-width: 100%;
+    }
+  }
+
+  @include mq($from: tablet) {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    margin-top: 0;
+
+    .o-hero__photo {
+      flex: 1;
+      width: 50%;
+      transform: translate(0, $global-spacing-unit);
+    }
+
+    .o-hero__content {
+      flex: 1;
+      padding-right: $global-spacing-unit * 2;
+    }
+  }
+
+  @include mq($from: desktop) {
+    .o-hero__photo {
+      transform: translate(0, 20px);
+    }
+
+    .o-hero__content {
+      padding-top: $global-spacing-unit;
+      padding-right: $global-spacing-unit * 3;
+    }
+  }
+
+  @include mq($from: wide) {
+    padding-top: $global-spacing-unit/2;
+    padding-bottom: $global-spacing-unit/2;
+  }
+}
