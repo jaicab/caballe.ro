@@ -1,5 +1,4 @@
 .u-photo {
-  background: var(--color-white);
   padding: $global-spacing-unit 0;
   margin: $global-spacing-unit 0;
   padding: 5vh 0;
@@ -9,7 +8,7 @@
     display: inline-block;
     vertical-align: top;
     border-radius: $global-radius;
-    max-height: 66vh;
+    max-height: 75vh;
   }
 
   @include mq($until: tablet) {

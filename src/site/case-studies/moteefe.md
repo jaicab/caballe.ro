@@ -83,7 +83,7 @@ Thankfully BEAR had already done the work on the company values:
 
 At a brainstorming session with the founders, this seemed to be the crazy user flow:
 
-{% photo 'https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F73b66e00-74e9-4443-89ed-940475815aab%2FUntitled.png?table=block&id=613386f1-ffef-4168-b6bd-467f8da74faf&width=3360&cache=v2' %}
+{% photo 'https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F73b66e00-74e9-4443-89ed-940475815aab%2FUntitled.png?table=block&id=613386f1-ffef-4168-b6bd-467f8da74faf&width=3360&cache=v2', 'It was the first time they had looked at the user flow!' %}
 
 During these initial discussions, it was decided we will rebuild the app from scratch, in stages and in React.
 
@@ -100,6 +100,8 @@ Solutions:
   - Checkout: Including upsell, CR analysis, etc.
   - Stores: Campaigns may group into branded marketplaces that we called stores.
 
+{% whitebreak %}
+
 ## Implementing SCRUM
 
 ![Moteefe%20f96b8bbbc5a84b4293b97076657adabd/Untitled%202.png](Moteefe%20f96b8bbbc5a84b4293b97076657adabd/Untitled%202.png)
@@ -111,6 +113,7 @@ Some of the team members had worked with agile methodology before, but the found
 - Tasks would be owned by anyone, usually assigned to one single individual and reviewed daily (if in progress) or weekly (if in icebox).
 
 We tried many tools like Asana and Jira, but finally decided on [Zube](https://zube.io/) for its integration with GitHub Issues, which was powerful for us given the distributed teams across London, Lisbon and Moscow, plus remote workers like myself.
+{% endwhitebreak %}
 
 ## Redesigning the campaign builder
 

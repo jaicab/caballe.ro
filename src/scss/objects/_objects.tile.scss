@@ -4,7 +4,7 @@
   padding: $global-spacing-unit / 3 * 2;
   margin: $global-spacing-unit 0;
   padding-bottom: 0 !important;
-  color: var(--color-black);
+  color: #222;
 
   transition: 300ms all;
   box-shadow: 0 0 0 0 var(--color-tile);
@@ -48,7 +48,7 @@
 
     &__title {
       @include font-size(38px, $important: true);
-      margin: $global-spacing-unit 0;
+      margin: $global-spacing-unit/3 * 2 0 $global-spacing-unit;
       font-size: 2.5em;
     }
 

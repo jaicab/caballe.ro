@@ -5,6 +5,10 @@
     }
   }
 
+  img {
+    max-width: 90%;
+  }
+
   &__title {
     margin-top: $global-spacing-unit;
   }
@@ -15,6 +19,11 @@
     padding: 0.5em 0;
     margin: $global-spacing-unit 0 $global-spacing-unit * 1.5;
     opacity: 1;
+  }
+
+  .u-whitebreak {
+    padding: $global-spacing-unit 0;
+    margin: $global-spacing-unit 0;
   }
 
   &__properties {

@@ -5,14 +5,37 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.addLayoutAlias("report", "layouts/report.njk");
 
-  eleventyConfig.addShortcode("photo", function (src) {
+  eleventyConfig.addShortcode("photo", function (
+    src,
+    color = false,
+    caption = ""
+  ) {
     return `</div></div>
-      <div class="u-photo">
-        <div class="u-wrapper">
-          <img src="${src}"/>
-        </div>
-      </div>
-      <div class="u-wrapper"><div class="o-article__content">
+<div class="u-photo u-whitebreak" ${
+      color ? "style='background:" + color + "'" : ""
+    }>
+<div class="u-wrapper">
+<img src="${src}"/>
+${caption ? "<p>" + caption + "</p>" : ""}
+</div>
+</div>
+<div class="u-wrapper"><div class="o-article__content">
+    `;
+  });
+
+  eleventyConfig.addPairedShortcode("whitebreak", function (content) {
+    return `
+</div>
+</div>
+<div class="u-whitebreak">
+<div class="u-wrapper">
+<div class="o-article__content">
+${content}
+</div>
+</div>
+</div>
+<div class="u-wrapper">
+<div class="o-article__content">
     `;
   });
 

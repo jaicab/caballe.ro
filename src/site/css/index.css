@@ -411,7 +411,14 @@ html {
 
 body {
   background: var(--color-bg);
-  color: var(--color-text); }
+  color: var(--color-text);
+  /*&.tmpl-report {
+    background-image: radial-gradient(
+      circle,
+      #fff 0,
+      #fff 100%)
+    );
+  }*/ }
 
 h1 {
   font-size: 28px !important;
@@ -458,6 +465,11 @@ li {
 input,
 button {
   font: inherit; }
+
+blockquote {
+  font-size: 1.3em;
+  font-style: italic;
+  margin-left: 0; }
 
 .c-logo {
   display: inline-block;
@@ -628,7 +640,7 @@ button {
   padding: 20px;
   margin: 30px 0;
   padding-bottom: 0 !important;
-  color: var(--color-black);
+  color: #222;
   transition: 300ms all;
   box-shadow: 0 0 0 0 var(--color-tile); }
   .o-tile img {
@@ -656,7 +668,7 @@ button {
         font-size: 38px !important;
         font-size: 2.11111rem !important;
         line-height: 1.18421 !important;
-        margin: 30px 0;
+        margin: 20px 0 30px;
         font-size: 2.5em; }
       .o-tile .c-tagline {
         margin-top: 0.5em;
@@ -700,6 +712,9 @@ button {
 .o-article__header .c-tagline {
   font-size: 1.2em; }
 
+.o-article img {
+  max-width: 90%; }
+
 .o-article__title {
   margin-top: 30px; }
 
@@ -709,6 +724,10 @@ button {
   padding: 0.5em 0;
   margin: 30px 0 45px;
   opacity: 1; }
+
+.o-article .u-whitebreak {
+  padding: 30px 0;
+  margin: 30px 0; }
 
 @media (min-width: 46.25em) and (max-width: 61.24em) {
   .o-article__properties {
@@ -795,6 +814,9 @@ button {
 
 .u-dark {
   color: var(--color-cream); }
+
+.u-whitebreak {
+  background: var(--color-white); }
 
 .u-wrapper {
   max-width: 91.11111em;
@@ -922,13 +944,12 @@ button {
   @media (min-width: 61.25em) {
     .u-text {
       line-height: 1.69;
-      letter-spacing: -0.025em; } }
+      letter-spacing: -0.01em; } }
 
 .u-text--intro {
   font-size: 1.5em; }
 
 .u-photo {
-  background: var(--color-white);
   padding: 30px 0;
   margin: 30px 0;
   padding: 5vh 0; }
@@ -936,7 +957,7 @@ button {
     display: inline-block;
     vertical-align: top;
     border-radius: 5px;
-    max-height: 66vh; }
+    max-height: 75vh; }
   @media (max-width: 46.24em) {
     .u-photo {
       padding: 0; }
