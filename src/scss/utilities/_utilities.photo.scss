@@ -1,12 +1,14 @@
 .u-photo {
-  margin: 0 (-$global-spacing-unit);
-  width: 100vw;
-  max-width: none;
+  background: var(--color-white);
+  padding: $global-spacing-unit 0;
+  margin: $global-spacing-unit 0;
+  padding: 5vh 0;
+  // text-align: center;
 
-  @include mq($from: tablet) {
-    float: right;
-    max-width: 50%;
+  img {
+    display: inline-block;
+    vertical-align: top;
     border-radius: $global-radius;
-    margin: 0 0 $global-spacing-unit/2 $global-spacing-unit;
+    max-height: 66vh;
   }
 }

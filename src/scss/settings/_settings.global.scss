@@ -2,8 +2,8 @@
 //   #GLOBAL
 //   ======================================================================== */
 
-$global-baseline: 6px !default;
-$global-spacing-unit-factor: 5 !default; // 30px grid
+$global-baseline: 5px !default;
+$global-spacing-unit-factor: 6 !default; // 30px grid
 $global-spacing-unit: $global-baseline * $global-spacing-unit-factor !default;
 
 $global-font-size: 18px !default;
@@ -22,4 +22,5 @@ $mq-breakpoints: (
 
 $font-family-body: "Epilogue", -apple-system, BlinkMacSystemFont, "Segoe UI",
   Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-$font-family-heading: "Space Mono", "Lucida Console", Monaco, monospace, monospace;
+$font-family-heading: "Space Mono", "Lucida Console", Monaco, monospace,
+  monospace;

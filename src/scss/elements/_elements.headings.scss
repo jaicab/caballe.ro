@@ -10,7 +10,9 @@ h6 {
 h1 {
   @include font-size(40px, $important: true);
   margin: 0 0 0.25em;
+  letter-spacing: 0;
   font-weight: 800;
+  line-height: 1;
 
   @include mq($from: mobile) {
     @include font-size(46px, $important: true);

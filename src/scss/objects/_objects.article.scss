@@ -1,0 +1,23 @@
+.o-article {
+  &__title {
+    margin-top: $global-spacing-unit;
+  }
+
+  &__readtime {
+    display: inline-block;
+    border: 0.25em dotted currentColor;
+    padding: 1em 1.5em;
+    margin: $global-spacing-unit * 2 0;
+    opacity: 1;
+  }
+
+  @include mq($from: desktop) {
+    &__content {
+      width: 50%;
+    }
+
+    &__properties {
+      min-width: 33%;
+    }
+  }
+}

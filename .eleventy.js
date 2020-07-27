@@ -5,6 +5,16 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.addLayoutAlias("report", "layouts/report.njk");
 
+  eleventyConfig.addShortcode("photo", function (src) {
+    return `</div>
+      <div class="u-photo">
+        <div class="u-wrapper">
+          <img src="${src}"/>
+        </div>
+      </div>
+      <div class="u-wrapper">
+    `;
+  });
 
   eleventyConfig.addPassthroughCopy("src/site/css");
   eleventyConfig.addPassthroughCopy("src/site/js");

@@ -32,7 +32,7 @@
   }
 
   @include mq($from: tablet) {
-    font-size: 20px / $global-font-size * 1em;
+    font-size: 18px / $global-font-size * 1em;
     line-height: 1.55;
     letter-spacing: -0.025em;
 
@@ -46,8 +46,12 @@
   }
 
   @include mq($from: desktop) {
-    font-size: 24px / $global-font-size * 1em;
-    line-height: 1.55;
+    // font-size: 24px / $global-font-size * 1em;
+    line-height: 1.69;
     letter-spacing: -0.025em;
   }
+}
+
+.u-text--intro {
+  font-size: 1.5em;
 }

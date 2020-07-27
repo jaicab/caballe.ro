@@ -3,50 +3,50 @@ layout: layouts/base.njk
 templateClass: tmpl-report
 ---
 
-<div class="c-tagline">{{ contract }}, {{ location }}</div>
-<div class="c-tagline">{{ timeframe }}</div>
-<h1>{{ title }}</h1>
+<article class="o-article">
+  <div class="u-wrapper">
+    <header class="o-article__header">
+      <div class="u-grid-from--tablet">
+        <div class="c-tagline">{{ [contract, location].join(', ') }}</div>
+        <div class="c-tagline">{{ timeframe }}</div>
+      </div>
+      <h1 class="o-article__title u-thick">{{ title }}</h1>
+    </header>
 
-<div class="c-tagline">Read time: 10 min</div>
+    <div class="u-grid-from--desktop u-grid--top">
+      <div class="o-article__content">
+        <div class="o-article__readtime c-tagline">Read time: {{ readtime }} min</div>
+        <div class="u-text u-text--intro">
+          <p>
+            {{ intro }}
+          </p>
+        </div>
+      </div>
 
-<h3 class="u-h4">Responsibilities</h3>
-<div class="u-text">
-  <ul>
-    {%- for item in responsibilities -%}
-      <li>{{item}}</li>
-    {%- endfor -%}
-  </ul>
-</div>
+      <div class="o-article__properties is-hidden-until--tablet">
+        {%- for key, list in properties -%}
+          <div class="o-properties">
+            <h3 class="o-properties__title u-h4">{{ key | capitalize }}</h3>
+            <div class="u-text">
+              <ul>
+                {%- for item in list -%}
+                  <li>{{item}}</li>
+                {%- endfor -%}
+              </ul>
+            </div>
+          </div>
+        {%- endfor -%}
+      </div>
+    </div>
+  </div>
 
-<h3 class="u-h4">Tools</h3>
-<div class="u-text">
-  <ul>
-    {%- for item in tools -%}
-      <li>{{item}}</li>
-    {%- endfor -%}
-  </ul>
-</div>
+  <main class="u-text">
+    <div class="u-wrapper">
+      {{ content | safe }}
+    </div>
+  </main>
 
-<h3 class="u-h4">Credits</h3>
-<div class="u-text">
-  <ul>
-    {%- for item in credits -%}
-      <li>{{item}}</li>
-    {%- endfor -%}
-  </ul>
-</div>
-
-<h3 class="u-h4">Tech</h3>
-<div class="u-text">
-  <ul>
-    {%- for item in tech -%}
-      <li>{{item}}</li>
-    {%- endfor -%}
-  </ul>
-</div>
-
-{{ content | safe }}
-
-<p>
-  <a href="{{ '/' | url }}">← Home</a>
-</p>
+  <p>
+    <a href="{{ '/' | url }}">← Home</a>
+  </p>
+</article>

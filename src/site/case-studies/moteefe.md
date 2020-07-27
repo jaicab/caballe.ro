@@ -7,39 +7,39 @@ tagline: Research, Branding, UX/UI, Storybook
 title: Leading the redesign of a garment creation tool
 description: A dynamic e-commerce platform for merchandise creators and influencer brands
 timeframe: Nov 2016 - Nov 2017
+readtime: 8
+intro: "Moteefe began a redesign of its B2B app with the vision of becoming the most striking in the industry, alongside Teespring or Bonfire.
+While I actually led the entire move to the new brand, on this case study we will mainly focus on the campaign builder."
 contract: Freelance contract
 location: London / Remote
 date: 2018-05-01
-responsibilities:
-  - User interviews
-  - UX/UI design
-  - Redesign planning
-  - Product management
-  - Component breakdown
-  - Frontend build
-tools:
-  - Sketch
-  - Asana / Zube / Jira
-  - Zeplin
-  - VSCode
-tech:
-  - React
-  - Storybook
-  - AWS + CI
-  - Ruby on Rails
-credits:
-  - Jason Cianfrone for UI design
-  - Lev Kundin for technical leadership
-  - Mathijs Eefting for product and business direction
-  - Maria Ladusane for product management
-  - Henrique Alves for React development
-  - Wagner Santos for React development
-  - BEAR agency for brand design and discovery
+properties:
+  responsibilities:
+    - User interviews
+    - UX/UI design
+    - Redesign planning
+    - Product management
+    - Component breakdown
+    - Frontend build
+  tools:
+    - Sketch
+    - Asana / Zube / Jira
+    - Zeplin
+    - VSCode
+  tech:
+    - React
+    - Storybook
+    - AWS + CI
+    - Ruby on Rails
+  credits:
+    - Jason Cianfrone for UI design
+    - Lev Kundin for technical leadership
+    - Mathijs Eefting for product and business direction
+    - Maria Ladusane for product management
+    - Henrique Alves for React development
+    - Wagner Santos for React development
+    - BEAR agency for brand design and discovery
 ---
-
-Moteefe began a redesign of its B2B app with the vision of becoming the most striking in the industry, alongside Teespring or Bonfire.
-
-While I actually led the entire move to the new brand, on this case study we will mainly focus on the campaign builder.
 
 ## Background
 
@@ -83,7 +83,7 @@ Thankfully BEAR had already done the work on the company values:
 
 At a brainstorming session with the founders, this seemed to be the crazy user flow:
 
-![Moteefe%20f96b8bbbc5a84b4293b97076657adabd/Untitled%201.png](Moteefe%20f96b8bbbc5a84b4293b97076657adabd/Untitled%201.png)
+{% photo 'https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F73b66e00-74e9-4443-89ed-940475815aab%2FUntitled.png?table=block&id=613386f1-ffef-4168-b6bd-467f8da74faf&width=3360&cache=v2' %}
 
 During these initial discussions, it was decided we will rebuild the app from scratch, in stages and in React.
 

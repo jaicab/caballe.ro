@@ -1,21 +1,25 @@
 ---
 layout: layouts/base.njk
 eleventyNavigation:
-  key: Inicio
+  key: Home
   order: 1
-
-h1: Terapia especializada en Ponferrada
-tagline: Personal y de parejas
 ---
 
-<ul>
-  {%- for report in collections.report -%}
-    <li>
-      <a class="o-tile" href="{{ report.url | url }}" style="--color-tile: {{ report.data.themeColor }}">
-        <div class="c-tagline">{{ report.data.tagline }}</div>
-        <h2 class="u-thick">{{ report.data.title }}</h2>
-        <img src="{{ '/images/tiles/'+report.data.short+'.png' | url }}"/>
-      </a>
-    </li>
-  {%- endfor -%}
-</ul>
+<div class="u-wrapper">
+  <div class="u-text">
+    <h1>Hi, I'm Jaime Caballero</h1>
+    <p>I’m a Product Designer with a technical background, a digital nomad and a spaniard based in London</p>
+  </div>
+  <br/>
+  <ul>
+    {%- for report in collections.report -%}
+      <li>
+        <a class="o-tile" href="{{ report.url | url }}" style="--color-tile: {{ report.data.themeColor }}">
+          <div class="c-tagline">{{ report.data.tagline }}</div>
+          <h2 class="u-thick">{{ report.data.title }}</h2>
+          <img src="{{ '/images/case-studies/'+report.data.short+'/tile.png' | url }}"/>
+        </a>
+      </li>
+    {%- endfor -%}
+  </ul>
+</div>

@@ -1,0 +1,41 @@
+.o-properties {
+  &__title {
+    margin: $global-spacing-unit 0;
+  }
+
+  li {
+    margin: 0.5em 0 !important;
+  }
+
+  // 2 columns in tablet
+  @include mq($from: tablet, $until: desktop) {
+    display: inline-block;
+    width: 45%;
+    margin-right: 4%;
+    vertical-align: top;
+  }
+
+  // Top border
+  @include mq($from: tablet) {
+    margin-bottom: $global-spacing-unit * 2;
+
+    &:before {
+      content: "";
+      height: 1px;
+      width: 100%;
+      display: block;
+      background: currentColor;
+      margin-bottom: $global-spacing-unit * 2.5;
+
+      transform: translateX(4em);
+    }
+  }
+
+  // Move lists to left
+  @include mq($from: wide) {
+    ul {
+      padding-left: 0 !important;
+      margin-left: 15px !important;
+    }
+  }
+}
