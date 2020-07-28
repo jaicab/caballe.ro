@@ -3,8 +3,8 @@ themeColor: "#E9E1FF"
 layout: report
 tags: report
 short: moteefe
-tagline: Research, Branding, UX/UI, Storybook
-title: Leading the redesign of a garment creation tool
+tagline: Management, Research, UX, Storybook
+title: Redesigning a garment builder experience
 description: A dynamic e-commerce platform for merchandise creators and influencer brands
 timeframe: Nov 2016 - Nov 2017
 readtime: 8
@@ -63,9 +63,7 @@ After a few brainstorming sessions with the London and Lisbon offices, I quickly
 
 Thankfully BEAR had already done the work on the company values:
 
-{% fullscreen %}
 ![UX](/images/case-studies/moteefe/bear.png)
-{% endfullscreen %}
 
 At a brainstorming session with the founders, this seemed to be the crazy user flow:
 

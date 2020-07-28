@@ -41,6 +41,10 @@
     @extend .u-h2;
   }
 
+  h3 {
+    @extend .u-h3;
+  }
+
   strong,
   b {
     font-weight: 600;

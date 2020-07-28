@@ -4,7 +4,7 @@ layout: report
 tags: report
 short: dotdot
 tagline: Research, Branding, UX/UI, Storybook
-title: Breaking the paradigms of online chat for fun
+title: Breaking paradigms of online chatting
 description: A place where you can talk to people. Built as a side project during quarantine
 intro: Remember being quarantined and missing talking to random people? This was our attempt to solve that, while getting entertained in the meantime.
 timeframe: March 2020 - April 2020

@@ -49,6 +49,16 @@
   }
 }
 
+.u-h3 {
+  @include font-size(20px, $important: true);
+  font-weight: 600;
+  margin: $global-spacing-unit * 2 0 $global-spacing-unit/2;
+
+  @include mq($from: tablet) {
+    @include font-size(22px, $important: true);
+  }
+}
+
 .u-h4 {
   font-size: 1em;
   font-family: $font-family-heading;
