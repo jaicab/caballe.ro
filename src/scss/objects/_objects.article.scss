@@ -24,6 +24,14 @@
     }
   }
 
+  @include mq($until: desktop) {
+    &__header .c-tagline {
+      & + .c-tagline {
+        margin-top: 0.5em;
+      }
+    }
+  }
+
   &__readtime {
     display: inline-block;
     border-bottom: 0.25em dotted currentColor;

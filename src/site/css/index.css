@@ -759,6 +759,10 @@ pre {
       line-height: 1.12069 !important;
       line-height: 1.1 !important; } }
 
+@media (max-width: 61.24em) {
+  .o-article__header .c-tagline + .c-tagline {
+    margin-top: 0.5em; } }
+
 .o-article__readtime {
   display: inline-block;
   border-bottom: 0.25em dotted currentColor;
