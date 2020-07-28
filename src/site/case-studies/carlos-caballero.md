@@ -47,7 +47,7 @@ Based on a business discovery interview and remote polling, I found a few intere
 - People who have not gone to therapy or know someone close that has done so, have a cliché understanding of it that have mainly taken from TV or movies, which commonly presents it as this cold, clinical experience and a waste of money.
 - Without ever talking to a therapist, it is very easy to incorrectly diagnose oneself. The emotional or mental issues described online can be easily attributed just by questioning each symptom.
 
-## Mission and solution
+## Mission and solutions
 
 Based on the client requirements and user feedback, I was set on the product mission:
 
@@ -219,7 +219,7 @@ As a static site, I built this using [11ty](https://www.11ty.dev/) (Eleventy) wi
 
 Illustrations are served as SVG for pixel-perfect rendering. The rest of the imagery is hosted and optimised through [Cloudinary](http://cloudinary.com/), and the site is served via GitHub Pages through [Cloudflare](https://www.cloudflare.com/) for caching and faster delivery.
 
-## Takeaways and improvements
+## Results and improvements
 
 During the build of this project, I realised I could optimise a few things:
 

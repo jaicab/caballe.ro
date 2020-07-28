@@ -55,7 +55,7 @@ The company was born in 2014 and had been building upon their original branding 
 - With years of UX debt and no head of design in charge, Moteefe's platform was in need of a massive UX redesign, not just a brand refresh.
 - As a small startup quickly grown into a massive company, there was a massive lack of processes in place.
 
-## Mission and solution
+## Mission and solutions
 
 After a few brainstorming sessions with the London and Lisbon offices, I quickly identified Moteefe's mission:
 
