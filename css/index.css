@@ -764,15 +764,21 @@ pre {
   .o-article__header .c-tagline + .c-tagline {
     margin-top: 0.5em; } }
 
+.o-article__actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 15px 0 30px; }
+
 .o-article__readtime {
   display: inline-block;
   border-bottom: 0.25em dotted currentColor;
   padding: 0.5em 0;
-  margin: 15px 0 30px;
   opacity: 1; }
 
 .o-article__skip {
-  margin-left: 60px; }
+  display: block;
+  margin-left: 30px; }
 
 .o-article .u-whitebreak {
   padding: 1px 0 30px;
@@ -795,10 +801,11 @@ pre {
 @media (min-width: 46.25em) {
   .o-article__header .c-tagline {
     font-size: 1.2em; }
+  .o-article__actions {
+    margin: 60px 0; }
   .o-article__readtime {
     border: 0.25em dotted currentColor;
-    padding: 1em 1.5em;
-    margin: 60px 0; } }
+    padding: 1em 1.5em; } }
 
 @media (min-width: 61.25em) {
   @keyframes compensateAnimation {
