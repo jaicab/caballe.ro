@@ -10,7 +10,7 @@ timeframe: Nov 2016 - Nov 2017
 readtime: 8
 intro: "Moteefe began a redesign of its B2B app with the vision of becoming the most striking in the industry, alongside Teespring or Bonfire.
 While I actually led the entire move to the new brand, on this case study we will mainly focus on the campaign builder."
-contract: Freelance contract
+contract: Freelance gig
 location: London / Remote
 date: 2018-05-01
 properties:

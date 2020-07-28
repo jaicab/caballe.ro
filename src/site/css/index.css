@@ -468,22 +468,25 @@ button {
 
 blockquote {
   font-size: 1.2em;
-  font-style: italic; }
+  font-style: italic;
+  margin-left: 0;
+  margin-right: 0; }
   @media (min-width: 46.25em) {
     blockquote {
       font-size: 1.5em;
-      margin-left: 30px; } }
+      margin-left: 30px;
+      margin-right: 30px; } }
 
 pre {
   font-family: "Space Mono", "Lucida Console", Monaco, monospace, monospace;
   white-space: pre-wrap;
   word-wrap: break-word;
   tab-size: 2;
-  margin: 1.2em -1rem;
-  background: var(--color-white); }
+  padding: 30px;
+  background: var(--color-white);
+  line-height: 1; }
   pre code {
-    font-size: 0.9em;
-    line-height: 1; }
+    font-size: 0.8em; }
   @media (min-width: 61.25em) {
     pre {
       border-radius: 5px;
@@ -728,7 +731,8 @@ pre {
     padding-bottom: 15px; } }
 
 .o-article__title {
-  margin-top: 30px; }
+  margin-top: 30px;
+  line-height: 1.1 !important; }
 
 .o-article__readtime {
   display: inline-block;
@@ -746,7 +750,7 @@ pre {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    margin-bottom: 30px; }
+    margin-bottom: -60px; }
     .o-article__properties .o-properties {
       margin-right: 2em; } }
 
@@ -817,7 +821,7 @@ pre {
   line-height: 1.25 !important;
   font-weight: 700;
   margin: 60px 0 15px; }
-  .u-wrapper .u-h2, .u-wrapper .u-text h2, .u-text .u-wrapper h2 {
+  .u-wrapper > .u-h2, .u-text .u-wrapper > h2 {
     margin-top: 30px; }
   @media (min-width: 46.25em) {
     .u-h2, .u-text h2 {
@@ -825,7 +829,7 @@ pre {
       font-size: 1.83333rem !important;
       line-height: 1.21212 !important;
       margin: 120px 0 15px; }
-      .u-wrapper .u-h2, .u-wrapper .u-text h2, .u-text .u-wrapper h2 {
+      .u-wrapper > .u-h2, .u-text .u-wrapper > h2 {
         margin-top: 90px; } }
 
 .u-h4 {
@@ -939,7 +943,9 @@ pre {
   line-height: 1.44;
   letter-spacing: -0.01em; }
   .u-text ul {
-    list-style: square;
+    list-style: square; }
+  .u-text ul,
+  .u-text ol {
     margin: 15px 0;
     padding: 0;
     padding-left: 7.5px; }
@@ -993,7 +999,8 @@ pre {
     .u-photo--full img {
       max-height: none;
       max-width: none;
-      width: 100%; }
+      width: 100%;
+      margin-top: 0; }
   .u-photo--screens {
     padding: 30px 60px !important; }
     .u-photo--screens img {
@@ -1067,7 +1074,7 @@ pre {
   flex: 1; }
 
 :root {
-  --color-black: #343434;
+  --color-black: #1f1f1f;
   --color-white: #fafafa;
-  --color-bg: #343434;
+  --color-bg: #1f1f1f;
   --color-text: #fafafa; }

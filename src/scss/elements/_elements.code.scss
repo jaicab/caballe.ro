@@ -4,12 +4,13 @@ pre {
   word-wrap: break-word;
   tab-size: 2;
 
-  margin: 1.2em -1rem;
+  padding: $global-spacing-unit;
   background: var(--color-white);
 
+  line-height: 1;
+
   code {
-    font-size: 0.9em;
-    line-height: 1;
+    font-size: 0.8em;
   }
 
   @include mq($from: desktop) {

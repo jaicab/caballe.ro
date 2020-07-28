@@ -1,9 +1,12 @@
 blockquote {
   font-size: 1.2em;
   font-style: italic;
+  margin-left: 0;
+  margin-right: 0;
 
   @include mq($from: tablet) {
     font-size: 1.5em;
     margin-left: $global-spacing-unit;
+    margin-right: $global-spacing-unit;
   }
 }

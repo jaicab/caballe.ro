@@ -1,6 +1,7 @@
 .o-article {
   &__title {
     margin-top: $global-spacing-unit;
+    line-height: 1.1 !important;
   }
 
   &__readtime {
@@ -22,7 +23,7 @@
       display: flex;
       justify-content: space-between;
       flex-wrap: wrap;
-      margin-bottom: $global-spacing-unit;
+      margin-bottom: -$global-spacing-unit * 2;
 
       .o-properties {
         margin-right: 2em;

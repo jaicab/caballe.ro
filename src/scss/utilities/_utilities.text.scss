@@ -4,6 +4,10 @@
 
   ul {
     list-style: square;
+  }
+
+  ul,
+  ol {
     margin: $global-spacing-unit / 2 0;
     padding: 0;
     padding-left: $global-spacing-unit / 4;
