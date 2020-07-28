@@ -32,16 +32,23 @@
     }
   }
 
+  &__actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: $global-spacing-unit/2 0 $global-spacing-unit;
+  }
+
   &__readtime {
     display: inline-block;
     border-bottom: 0.25em dotted currentColor;
     padding: 0.5em 0;
-    margin: $global-spacing-unit/2 0 $global-spacing-unit;
     opacity: 1;
   }
 
   &__skip {
-    margin-left: $global-spacing-unit * 2;
+    display: block;
+    margin-left: $global-spacing-unit;
   }
 
   .u-whitebreak {
@@ -78,10 +85,13 @@
       }
     }
 
+    &__actions {
+      margin: $global-spacing-unit * 2 0;
+    }
+
     &__readtime {
       border: 0.25em dotted currentColor;
       padding: 1em 1.5em;
-      margin: $global-spacing-unit * 2 0;
     }
   }
 
