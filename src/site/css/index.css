@@ -644,7 +644,11 @@ pre {
   @media (min-width: 46.25em) {
     .o-header {
       padding: 60px 0;
-      margin-bottom: 90px; } }
+      margin-bottom: 90px; }
+      .o-header .u-grid-from--mobile div {
+        flex: 1; }
+      .o-header .c-logo {
+        align-self: center; } }
 
 .o-nav {
   list-style: none;
@@ -932,6 +936,9 @@ pre {
     .u-wrapper {
       padding: 0 60px; } }
 
+.u-wrapper--text {
+  max-width: 45.55556em; }
+
 .u-wrapper--nopadding {
   padding-left: 0;
   padding-right: 0; }
@@ -1047,8 +1054,7 @@ pre {
   @media (min-width: 46.25em) {
     .u-text {
       font-size: 1em;
-      line-height: 1.55;
-      letter-spacing: -0.025em; }
+      line-height: 1.55; }
       .u-text ul,
       .u-text ol {
         padding-left: 30px; }
@@ -1057,7 +1063,7 @@ pre {
   @media (min-width: 61.25em) {
     .u-text {
       line-height: 1.69;
-      letter-spacing: -0.01em; } }
+      letter-spacing: 0.01em; } }
 
 .u-text--intro {
   font-size: 1.2em; }
