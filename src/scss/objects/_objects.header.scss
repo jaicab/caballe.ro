@@ -2,15 +2,18 @@
   padding: $global-spacing-unit 0;
   margin-bottom: $global-spacing-unit;
 
+  .u-grid-from--mobile {
+    display: flex;
+    justify-content: space-between;
+
+    div {
+      flex: 1;
+    }
+  }
+
   @include mq($from: tablet) {
     padding: $global-spacing-unit * 2 0;
     margin-bottom: $global-spacing-unit * 3;
-
-    .u-grid-from--mobile {
-      div {
-        flex: 1;
-      }
-    }
 
     .c-logo {
       align-self: center;
