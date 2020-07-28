@@ -27,8 +27,8 @@ properties:
     - AWS + CI
     - Github Pages
   credits:
-    - Phil Cummins for backend development and co-product direction
     - Alex Urbano for frontend, backend development and co-product direction
+    - Phil Cummins for backend development and co-product direction
 ---
 
 ## Background

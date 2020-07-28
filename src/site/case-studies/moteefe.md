@@ -104,8 +104,10 @@ The creators had a campaign builder tool at their disposal to create the garment
 
 The company's directions on how to inform things like VAT, product availability and cost weren't clear, so there were some heavy brainstorming sessions until late.
 
+{% fullscreen %}
 ![UX](/images/case-studies/moteefe/wb-campaign.png)
 ![UX](/images/case-studies/moteefe/wb-builder.png)
+{% endfullscreen %}
 
 ## Wireframing
 

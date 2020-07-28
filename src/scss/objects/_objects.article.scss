@@ -10,14 +10,17 @@
 
     @include mq($from: mobile) {
       @include font-size(38px, $important: true);
+      line-height: 1.1 !important;
     }
 
     @include mq($from: tablet) {
       @include font-size(42px, $important: true);
+      line-height: 1.1 !important;
     }
 
     @include mq($from: desktop) {
       @include font-size(58px, $important: true);
+      line-height: 1.1 !important;
     }
   }
 
