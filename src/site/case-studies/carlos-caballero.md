@@ -201,6 +201,8 @@ So I had to make each colour unique, even at the cost of being slightly off-bran
 ![carlos](/images/case-studies/carlos-caballero/blob-final.png)
 {% endfullscreen %}
 
+<div id="tldr"></div>
+
 ## Final design
 
 {% fullscreen %}

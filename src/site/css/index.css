@@ -771,6 +771,9 @@ pre {
   margin: 15px 0 30px;
   opacity: 1; }
 
+.o-article__skip {
+  margin-left: 60px; }
+
 .o-article .u-whitebreak {
   padding: 1px 0 30px;
   margin: 30px 0; }

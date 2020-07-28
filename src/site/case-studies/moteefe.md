@@ -127,6 +127,8 @@ The customer could upload different artworks and the editor had to handle them w
 ![Limits](/images/case-studies/moteefe/ux-limits.png)
 {% endfullscreen %}
 
+<div id="tldr"></div>
+
 ## Final design
 
 Together with Jason, we put together the final designs.

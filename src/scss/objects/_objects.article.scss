@@ -40,6 +40,10 @@
     opacity: 1;
   }
 
+  &__skip {
+    margin-left: $global-spacing-unit * 2;
+  }
+
   .u-whitebreak {
     padding: 1px 0 $global-spacing-unit;
     margin: $global-spacing-unit 0;

@@ -145,6 +145,8 @@ While the developers were working on the app, I explored concepts for branding. 
 
 As the developers were building the better prototype, we quickly realised web-chat apps (aka not native) were tremendously hard to make a nice experience on mobile, so while massively important to us, we shifted to being a desktop first web-app. This meant leaving bubbles behind and embracing left-alignment, and so the follow-up UI reflected this.
 
+<div id="tldr"></div>
+
 ## Final design
 
 For the type, I had originally gone with [Rubik](https://fonts.google.com/specimen/Rubik), a slightly quirky type, but ended up going with [Manrope](https://fonts.google.com/specimen/Manrope), a new variable font. It reads brilliantly at small sizes and makes for a super-fast load time.
