@@ -6,9 +6,9 @@ short: dotdot
 tagline: Research, Branding, UX/UI, Storybook
 title: Breaking the paradigms of online chat for fun
 description: A place where you can talk to people. Built as a side project during quarantine
+intro: Remember being quarantined and missing talking to random people? This was our attempt to solve that, while getting entertained in the meantime.
 timeframe: March 2020 - April 2020
 readtime: 9
-intro: ""
 contract: Passion project
 location: Remote
 properties:
@@ -37,11 +37,9 @@ Alex and I have been proudly working on many side projects over the years. The o
 
 ![Chevismo.com](/images/case-studies/dotdot/chevismo.png)
 
-This site was an online community where Alex built ideas he thought would be interesting to have online. When I met Alex in Uni, I started collaborating on many of these. But the homepage, besides being a bit of a sitemap to the rest of the site, was really just a dead simple chat.
+We left this project years ago, but it was an online community where Alex built ideas he thought would be interesting to have online. When I met Alex in Uni, I started collaborating on many of these. But the homepage, besides being a bit of a sitemap to the rest of the site, was really just a dead simple chat.
 
 Over time, this chat became more interesting than we expected. People kept coming back, so ways to give yourself a name and colour were added, and then this identity extended throughout the site. We started really getting to know some of the users that randomly appeared on the site and becoming regulars. We've even met some of these users in real life.
-
-But eventually, we left this project behind and it is now sadly discontinued.
 
 ## Understanding the problem
 
@@ -75,7 +73,9 @@ Since this project was heavily sided on backend, the developers started building
 
 Thanks to WebSockets technology, **you can stream what an user is typing**.
 
-{% photo '/images/case-studies/dotdot/chat.png', '#292B2D' %}
+{% fullscreen %}
+![is typing](/images/case-studies/dotdot/chat.png)
+{% endfullscreen %}
 
 While this may seem like a bit of an uncanny valley to you at the moment, it resembles another UX paradigm shift you might have come across before: the first Snapchat you received and... gone!
 
@@ -107,7 +107,9 @@ We separated these two into 2 screens:
 
 ## Interface exploration
 
-{% photo '/images/case-studies/dotdot/research.png', '#F3F3F3' %}
+{% fullscreen %}
+![competitor research](/images/case-studies/dotdot/research.png)
+{% endfullscreen %}
 
 I studied the UI elements and experience of the most well-known chat apps out there to make the experience relatable to users. It was interesting to see:
 
@@ -119,7 +121,9 @@ I studied the UI elements and experience of the most well-known chat apps out th
 
 Based on this and after a few brainstorming sessions with Alex and Phil, I came up with initial high-end wireframes for the web-app.
 
-{% photo '/images/case-studies/dotdot/wireframes.png', '#131415' %}
+{% fullscreen %}
+![wires](/images/case-studies/dotdot/wireframes.png)
+{% endfullscreen %}
 
 - Landing would focus on a personal approach for a login screen while briefly describing the app.
 - App would straight up put you in a room with at least 1 other user but no more than 9 others. The top navigation bar would show:
@@ -128,7 +132,9 @@ Based on this and after a few brainstorming sessions with Alex and Phil, I came 
 
 ## Branding exploration
 
-{% photo '/images/case-studies/dotdot/exploring-branding.png', '#131415' %}
+{% fullscreen %}
+![branding](/images/case-studies/dotdot/exploring-branding.png)
+{% endfullscreen %}
 
 While the developers were working on the app, I explored concepts for branding. The whole concept revolved around any 2 people interacting, so a core branding concept was representing each person with a dot. Besides that:
 
@@ -141,15 +147,23 @@ As the developers were building the better prototype, we quickly realised web-ch
 
 ## Final design
 
-For the type, I had originally gone with [Rubik](https://fonts.google.com/specimen/Rubik), a slightly quirky type, but ended up going with [Manrope](https://fonts.google.com/specimen/Manrope), a new dynamic font as it reduced the need for separate font files, making the experience feel much more performant and therefore immediate. Plus, it was much better at small sizes.
+For the type, I had originally gone with [Rubik](https://fonts.google.com/specimen/Rubik), a slightly quirky type, but ended up going with [Manrope](https://fonts.google.com/specimen/Manrope), a new variable font. It reads brilliantly at small sizes and makes for a super-fast load time.
 
-{% photo '/images/case-studies/dotdot/dotdot-branding.png', '#131415' %}
-{% photo '/images/case-studies/dotdot/ui-dark.png', '#131415' %}
-{% photo '/images/case-studies/dotdot/ui-light.png', '#131415' %}
+{% fullscreen %}
+![branding](/images/case-studies/dotdot/dotdot-branding.png)
+{% endfullscreen %}
+
+{% fullscreen %}
+![branding](/images/case-studies/dotdot/ui-dark.png)
+{% endfullscreen %}
+
+{% fullscreen %}
+![branding](/images/case-studies/dotdot/ui-light.png)
+{% endfullscreen %}
 
 ## The user-picked colour challenge
 
-So a user can be on the light or dark theme, depending on their device and the setting they're on. When they pick a colour, they won't take into consideration the contrast with the background, let alone the contrast with the theme they're not using.
+Users can be on the light or dark theme, depending on their device and the setting they're on. When they pick a colour, they won't take into consideration the contrast with the background, let alone the contrast with the theme they're not using.
 
 So I developed a `makeColorReadable` function! Powered by [pSBC](<https://github.com/PimpTrizkit/PJs/wiki/12.-Shade,-Blend-and-Convert-a-Web-Color-(pSBC.js)>).
 
@@ -172,7 +186,7 @@ export const makeColorReadable = (color: string) => {
 }
 ```
 
-![dotdot%207dc6a5544cf3435c8fd801b1ef1bb9e0/Untitled%208.png](dotdot%207dc6a5544cf3435c8fd801b1ef1bb9e0/Untitled%208.png)
+![branding](/images/case-studies/dotdot/make-color-readable.png)
 
 This function measures the luminance a colour has and, if it's further than 50% in range (to preserve the originally picked colour where possible), swaps the colour with the one adapted for the theme.
 

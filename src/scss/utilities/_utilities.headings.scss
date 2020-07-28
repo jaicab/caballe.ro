@@ -11,6 +11,10 @@
   font-weight: 700;
   margin: $global-spacing-unit * 4 0 $global-spacing-unit/2;
 
+  .u-wrapper & {
+    margin-top: $global-spacing-unit * 3;
+  }
+
   @include mq($from: mobile) {
     // @include font-size(46px, $important: true);
   }

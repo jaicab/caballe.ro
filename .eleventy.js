@@ -5,19 +5,55 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.addLayoutAlias("report", "layouts/report.njk");
 
-  eleventyConfig.addShortcode("photo", function (
-    src,
+  eleventyConfig.addPairedShortcode("photo", function (
+    content,
     color = false,
-    caption = ""
+    caption = "",
+    screens = null
   ) {
     return `</div></div>
 <div class="u-photo u-whitebreak" ${
       color ? "style='background:" + color + "'" : ""
     }>
 <div class="u-wrapper">
-<img src="${src}"/>
+${content}
 ${caption ? "<p>" + caption + "</p>" : ""}
 </div>
+</div>
+<div class="u-wrapper"><div class="o-article__content">
+    `;
+  });
+
+  eleventyConfig.addPairedShortcode("fullscreen", function (
+    content,
+    color = false,
+    caption = "",
+    screens = null
+  ) {
+    return `</div></div>
+<div class="u-photo u-photo--full" ${
+      color ? "style='background:" + color + "'" : ""
+    }>
+${content}
+${caption ? "<p>" + caption + "</p>" : ""}
+</div>
+<div class="u-wrapper"><div class="o-article__content">
+    `;
+  });
+
+
+  eleventyConfig.addPairedShortcode("screens", function (
+    content,
+    color = false,
+    caption = "",
+    screens = null
+  ) {
+    return `</div></div>
+<div class="u-photo u-photo--screens u-whitebreak" ${
+      color ? "style='background:" + color + "'" : ""
+    }>
+${content}
+${caption ? "<p>" + caption + "</p>" : ""}
 </div>
 <div class="u-wrapper"><div class="o-article__content">
     `;

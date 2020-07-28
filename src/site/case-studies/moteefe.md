@@ -45,22 +45,6 @@ properties:
 
 Moteefe allows creators to upload an artwork and start selling branded garments with no up-front cost and before the product even exists physically. It’s really 2 apps, on the one hand, it’s a b2b app where admins or creators could manage their products, handle payouts, etc and on the other, each product generates a b2c e-commerce experience
 
-## Background
-
-Moteefe allows creators to build e-commerce campaigns with no up-front cost. So on the one hand, Moteefe has the b2b app where admins or creators could manage their products, handle payouts, etc. On the other, each product generates a b2c e-commerce experience. The creator flow is a follows:
-
-1. You have design idea for a garment, e.g. a t-shirt for an event, then design it.
-2. Upload the original artwork to the site.
-3. Select the products you'd like this on, what colors and materials you want to be available.
-4. Set the retail price. Moteefe will take a cut off each sale.
-5. Set the campaign duration. Orders will be printed and shipped at the end. The more in each given period, the lower Moteefe's cut will be. Volume discount!
-6. Customise your campaign experience to stand out.
-7. Market your campaign link through socials or advertising.
-
-Now, when a customer finds a campaign, the experience would be similar to any online retail shop. Other than the delivery dates being extended by the duration, there is no actual difference. The benefit here is that no upfront investment is required whatsoever and shipping, inventory and payment processing is all handled by Moteefe.
-
-The creator can then cash out all of her joined campaign revenue. Creators could be IMs (internet marketers) which made most of the creator base, or SMIs (social media influencers). Moteefe wanted to bet on the SMIs to increase their presence there.
-
 ## Understanding the problem
 
 The company was born in 2014 and had been building upon their original branding and UI ever since. In 2016, they decided it was time for a rebrand and cleanup. They had hired BEAR for the rebrand, and I was hired as the frontend architect to lead and execute this new branding into their current UI. Shortly after joining, I discovered:
@@ -79,11 +63,13 @@ After a few brainstorming sessions with the London and Lisbon offices, I quickly
 
 Thankfully BEAR had already done the work on the company values:
 
-![Moteefe%20f96b8bbbc5a84b4293b97076657adabd/Untitled.png](Moteefe%20f96b8bbbc5a84b4293b97076657adabd/Untitled.png)
+{% fullscreen %}
+![UX](/images/case-studies/moteefe/bear.png)
+{% endfullscreen %}
 
 At a brainstorming session with the founders, this seemed to be the crazy user flow:
 
-{% photo 'https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F73b66e00-74e9-4443-89ed-940475815aab%2FUntitled.png?table=block&id=613386f1-ffef-4168-b6bd-467f8da74faf&width=3360&cache=v2', 'It was the first time they had looked at the user flow!' %}
+![UX](/images/case-studies/moteefe/user-flow.png)
 
 During these initial discussions, it was decided we will rebuild the app from scratch, in stages and in React.
 
@@ -100,11 +86,9 @@ Solutions:
   - Checkout: Including upsell, CR analysis, etc.
   - Stores: Campaigns may group into branded marketplaces that we called stores.
 
-{% whitebreak %}
-
 ## Implementing SCRUM
 
-![Moteefe%20f96b8bbbc5a84b4293b97076657adabd/Untitled%202.png](Moteefe%20f96b8bbbc5a84b4293b97076657adabd/Untitled%202.png)
+![SCRUM planning meeting](/images/case-studies/moteefe/agile.png)
 
 Some of the team members had worked with agile methodology before, but the founders had been working on different ways as the company grew and hadn't considered ownership as part of project planning. Epics was a completely new concept for them. So I sat down with them and after a few sessions, we had set a few guidelines:
 
@@ -113,59 +97,54 @@ Some of the team members had worked with agile methodology before, but the found
 - Tasks would be owned by anyone, usually assigned to one single individual and reviewed daily (if in progress) or weekly (if in icebox).
 
 We tried many tools like Asana and Jira, but finally decided on [Zube](https://zube.io/) for its integration with GitHub Issues, which was powerful for us given the distributed teams across London, Lisbon and Moscow, plus remote workers like myself.
-{% endwhitebreak %}
 
 ## Redesigning the campaign builder
-
-Although this project lasted a year and covered Moteefe's entire site, we will focus on the campaign builder on this case study.
 
 The creators had a campaign builder tool at their disposal to create the garments and set up their campaigns. One of the biggest challenges of the experience was making it both easy to use and communicative of the marketing options available to creators.
 
 The company's directions on how to inform things like VAT, product availability and cost weren't clear, so there were some heavy brainstorming sessions until late.
 
-![Moteefe%20f96b8bbbc5a84b4293b97076657adabd/Untitled%203.png](Moteefe%20f96b8bbbc5a84b4293b97076657adabd/Untitled%203.png)
-
-![Moteefe%20f96b8bbbc5a84b4293b97076657adabd/Untitled%204.png](Moteefe%20f96b8bbbc5a84b4293b97076657adabd/Untitled%204.png)
+![UX](/images/case-studies/moteefe/wb-campaign.png)
+![UX](/images/case-studies/moteefe/wb-builder.png)
 
 ## Wireframing
 
 I worked on low-fi wireframes to have a discussion ground with sales and founders for business and customer feedback.
 
-![Moteefe%20f96b8bbbc5a84b4293b97076657adabd/Untitled%205.png](Moteefe%20f96b8bbbc5a84b4293b97076657adabd/Untitled%205.png)
+{% screens %}
+![UX](/images/case-studies/moteefe/ux-upload.png)
+![UX](/images/case-studies/moteefe/ux-select.png)
+![UX](/images/case-studies/moteefe/ux-edit.png)
+![UX](/images/case-studies/moteefe/ux-selected.png)
 
-![Moteefe%20f96b8bbbc5a84b4293b97076657adabd/Untitled%206.png](Moteefe%20f96b8bbbc5a84b4293b97076657adabd/Untitled%206.png)
+{% endscreens %}
 
-![Moteefe%20f96b8bbbc5a84b4293b97076657adabd/Untitled%207.png](Moteefe%20f96b8bbbc5a84b4293b97076657adabd/Untitled%207.png)
-
-![Moteefe%20f96b8bbbc5a84b4293b97076657adabd/Untitled%208.png](Moteefe%20f96b8bbbc5a84b4293b97076657adabd/Untitled%208.png)
-
-![Moteefe%20f96b8bbbc5a84b4293b97076657adabd/Untitled%209.png](Moteefe%20f96b8bbbc5a84b4293b97076657adabd/Untitled%209.png)
-
-### Artwork handling
+## Artwork handling
 
 The customer could upload different artworks and the editor had to handle them within different canvas. I put together guidelines to asses the frames and actionable elements of the design tool, and how they should react in different situations.
 
-![Moteefe%20f96b8bbbc5a84b4293b97076657adabd/Untitled%2010.png](Moteefe%20f96b8bbbc5a84b4293b97076657adabd/Untitled%2010.png)
+{% fullscreen %}
+![Limits](/images/case-studies/moteefe/ux-limits.png)
+{% endfullscreen %}
 
 ## Final design
 
 Together with Jason, we put together the final designs.
 
-![Moteefe%20f96b8bbbc5a84b4293b97076657adabd/Untitled%2011.png](Moteefe%20f96b8bbbc5a84b4293b97076657adabd/Untitled%2011.png)
-
-![Moteefe%20f96b8bbbc5a84b4293b97076657adabd/Untitled%2012.png](Moteefe%20f96b8bbbc5a84b4293b97076657adabd/Untitled%2012.png)
-
-![Moteefe%20f96b8bbbc5a84b4293b97076657adabd/Untitled%2013.png](Moteefe%20f96b8bbbc5a84b4293b97076657adabd/Untitled%2013.png)
-
-![Moteefe%20f96b8bbbc5a84b4293b97076657adabd/Untitled%2014.png](Moteefe%20f96b8bbbc5a84b4293b97076657adabd/Untitled%2014.png)
-
-![Moteefe%20f96b8bbbc5a84b4293b97076657adabd/Untitled%2015.png](Moteefe%20f96b8bbbc5a84b4293b97076657adabd/Untitled%2015.png)
+{% screens %}
+![UI](/images/case-studies/moteefe/ui-upload.png)
+![UI](/images/case-studies/moteefe/ui-select.png)
+![UI](/images/case-studies/moteefe/ui-edit.png)
+![UI](/images/case-studies/moteefe/ui-selected.png)
+{% endscreens %}
 
 ## Development
 
 Together with Henrique and Wagner, we built all these components into a separate repository and private npm package, with a Storybook library to preview, test and document all the reusable components.
 
-![Moteefe%20f96b8bbbc5a84b4293b97076657adabd/Untitled%2016.png](Moteefe%20f96b8bbbc5a84b4293b97076657adabd/Untitled%2016.png)
+{% fullscreen %}
+!['/images/case-studies/moteefe/storybook.png'](/images/case-studies/moteefe/storybook.png)
+{% endfullscreen %}
 
 ## Results and improvements
 

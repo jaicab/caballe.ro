@@ -7,8 +7,28 @@
   img {
     display: inline-block;
     vertical-align: top;
-    border-radius: $global-radius;
     max-height: 75vh;
+    margin-top: $global-spacing-unit;
+  }
+
+  &--full {
+    padding: 0 !important;
+
+    img {
+      max-height: none;
+      max-width: none;
+      width: 100%;
+    }
+  }
+
+  &--screens {
+    padding: $global-spacing-unit $global-spacing-unit * 2 !important;
+
+    img {
+      max-height: none;
+      max-width: 100%;
+      width: auto;
+    }
   }
 
   @include mq($until: tablet) {
@@ -17,6 +37,39 @@
     .u-wrapper {
       max-width: none;
       padding: 0;
+    }
+
+    &--screens {
+      padding: 0 !important;
+      margin: 0 !important;
+
+      img {
+        margin-top: 0;
+        border-top: 5px solid var(--color-bg);
+      }
+    }
+  }
+
+  @include mq($from: desktop) {
+    img {
+      border-radius: $global-radius;
+    }
+
+    &--screens {
+      p {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        align-items: flex-start;
+
+        img {
+          height: auto;
+          max-height: none;
+          max-width: 47%;
+          box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2);
+          margin: $global-spacing-unit $global-spacing-unit/2 !important;
+        }
+      }
     }
   }
 }
