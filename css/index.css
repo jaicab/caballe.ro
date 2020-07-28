@@ -743,17 +743,20 @@ pre {
     .o-article__title {
       font-size: 38px !important;
       font-size: 2.11111rem !important;
-      line-height: 1.18421 !important; } }
+      line-height: 1.18421 !important;
+      line-height: 1.1 !important; } }
   @media (min-width: 46.25em) {
     .o-article__title {
       font-size: 42px !important;
       font-size: 2.33333rem !important;
-      line-height: 1.19048 !important; } }
+      line-height: 1.19048 !important;
+      line-height: 1.1 !important; } }
   @media (min-width: 61.25em) {
     .o-article__title {
       font-size: 58px !important;
       font-size: 3.22222rem !important;
-      line-height: 1.12069 !important; } }
+      line-height: 1.12069 !important;
+      line-height: 1.1 !important; } }
 
 .o-article__readtime {
   display: inline-block;
