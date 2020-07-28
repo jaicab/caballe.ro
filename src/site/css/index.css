@@ -426,7 +426,7 @@ h1 {
   line-height: 1.36364 !important;
   margin: 0 0 0.25em;
   letter-spacing: 0;
-  font-weight: 700;
+  font-weight: 600;
   line-height: 1 !important; }
   @media (min-width: 23.4375em) {
     h1 {
@@ -440,9 +440,9 @@ h1 {
       line-height: 1.19048 !important; } }
   @media (min-width: 61.25em) {
     h1 {
-      font-size: 46px !important;
-      font-size: 2.55556rem !important;
-      line-height: 1.19565 !important; } }
+      font-size: 52px !important;
+      font-size: 2.88889rem !important;
+      line-height: 1.15385 !important; } }
 
 a {
   text-decoration: none;
@@ -667,7 +667,8 @@ pre {
   .o-tile img {
     display: block; }
   .o-tile .c-tagline {
-    font-size: 0.6em; }
+    font-size: 0.7em;
+    margin-top: 0.25em; }
   .o-tile__title {
     font-size: 23px !important;
     font-size: 1.27778rem !important;
@@ -882,7 +883,7 @@ pre {
   0% {
     font-variation-settings: "wght" 100; }
   100% {
-    font-variation-settings: "wght" 700; } }
+    font-variation-settings: "wght" 600; } }
 
 @keyframes textwidthThick {
   0% {
