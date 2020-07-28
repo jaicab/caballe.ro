@@ -1,9 +1,0 @@
-.o-header {
-  padding: $global-spacing-unit 0;
-  margin-bottom: $global-spacing-unit;
-
-  @include mq($from: tablet) {
-    padding: $global-spacing-unit * 2 0;
-    margin-bottom: $global-spacing-unit * 3;
-  }
-}

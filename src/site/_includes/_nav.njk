@@ -1,7 +1,0 @@
-<ul class="o-nav">
-  {%- for entry in collections.all | eleventyNavigation %}
-    <li class="c-nav-item{% if entry.url == page.url %} is-active{% endif %}">
-      <a href="{{ entry.url | url }}">{{ entry.title }}</a>
-    </li>
-  {%- endfor %}
-</ul>
