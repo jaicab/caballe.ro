@@ -1,7 +1,7 @@
 .u-wrapper {
   max-width: 1640px / $global-font-size * 1em;
   margin: 0 auto;
-  padding: 0 $global-spacing-unit;
+  padding: 0 $global-spacing-unit / 3 * 2;
 
   @include mq($from: tablet) {
     padding: 0 $global-spacing-unit * 2;

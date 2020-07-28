@@ -7,12 +7,12 @@
 }
 
 .u-h2 {
-  @include font-size(33px, $important: true);
+  @include font-size(24px, $important: true);
   font-weight: 700;
-  margin: $global-spacing-unit * 4 0 $global-spacing-unit/2;
+  margin: $global-spacing-unit * 2 0 $global-spacing-unit/2;
 
   .u-wrapper & {
-    margin-top: $global-spacing-unit * 3;
+    margin-top: $global-spacing-unit;
   }
 
   @include mq($from: mobile) {
@@ -20,6 +20,12 @@
   }
 
   @include mq($from: tablet) {
+    @include font-size(33px, $important: true);
+    margin: $global-spacing-unit * 4 0 $global-spacing-unit/2;
+
+    .u-wrapper & {
+      margin-top: $global-spacing-unit * 3;
+    }
     // @include font-size(42px, $important: true);
   }
 

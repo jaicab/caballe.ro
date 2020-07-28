@@ -1,14 +1,4 @@
 .o-article {
-  &__header {
-    .c-tagline {
-      font-size: 1.2em;
-    }
-  }
-
-  img {
-    max-width: 80%;
-  }
-
   &__title {
     margin-top: $global-spacing-unit;
   }
@@ -17,7 +7,7 @@
     display: inline-block;
     border-bottom: 0.25em dotted currentColor;
     padding: 0.5em 0;
-    margin: $global-spacing-unit 0 $global-spacing-unit * 1.5;
+    margin: $global-spacing-unit/2 0 $global-spacing-unit;
     opacity: 1;
   }
 
@@ -49,6 +39,12 @@
   }
 
   @include mq($from: tablet) {
+    &__header {
+      .c-tagline {
+        font-size: 1.2em;
+      }
+    }
+
     &__readtime {
       border: 0.25em dotted currentColor;
       padding: 1em 1.5em;
@@ -69,7 +65,6 @@
       width: 30%;
       padding-bottom: $global-spacing-unit * 4;
       float: right;
-      margin-left: $global-spacing-unit * 5;
     }
   }
 }
