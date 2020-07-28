@@ -23,25 +23,6 @@
     margin: $global-spacing-unit/2 0;
   }
 
-  &:hover {
-    // box-shadow: 0 0 0 15px var(--color-tile);
-    // transform: scale(1.02);
-
-    box-shadow: 10px 10px 0 0 rgba(0, 0, 0, 0.2),
-      10px 10px 0 0 var(--color-tile);
-    transform: translate3d(-5px, -5px, 0);
-  }
-
-  &:active {
-    transition: 200ms all;
-    // box-shadow: 0 0 0 5px var(--color-tile);
-
-    // transform: scale(1);
-
-    transform: translate3d(0, 0, 0);
-    box-shadow: 5px 5px 0 0 rgba(0, 0, 0, 0.2), 5px 5px 0 0 var(--color-tile);
-  }
-
   @include mq($from: tablet) {
     padding: $global-spacing-unit;
     margin: $global-spacing-unit 0;
@@ -60,5 +41,24 @@
 
   @include mq($from: desktop) {
     margin-right: $global-spacing-unit;
+
+    &:hover {
+      // box-shadow: 0 0 0 15px var(--color-tile);
+      // transform: scale(1.02);
+
+      box-shadow: 10px 10px 0 0 rgba(0, 0, 0, 0.2),
+        10px 10px 0 0 var(--color-tile);
+      transform: translate3d(-5px, -5px, 0);
+    }
+
+    &:active {
+      transition: 200ms all;
+      // box-shadow: 0 0 0 5px var(--color-tile);
+
+      // transform: scale(1);
+
+      transform: translate3d(0, 0, 0);
+      box-shadow: 5px 5px 0 0 rgba(0, 0, 0, 0.2), 5px 5px 0 0 var(--color-tile);
+    }
   }
 }

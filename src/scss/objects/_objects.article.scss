@@ -2,6 +2,23 @@
   &__title {
     margin-top: $global-spacing-unit;
     line-height: 1.1 !important;
+
+    @include font-size(28px, $important: true);
+    letter-spacing: 0;
+    font-weight: 800;
+    line-height: 1 !important;
+
+    @include mq($from: mobile) {
+      @include font-size(38px, $important: true);
+    }
+
+    @include mq($from: tablet) {
+      @include font-size(42px, $important: true);
+    }
+
+    @include mq($from: desktop) {
+      @include font-size(58px, $important: true);
+    }
   }
 
   &__readtime {
@@ -54,8 +71,19 @@
   }
 
   @include mq($from: desktop) {
+    @keyframes compensateAnimation {
+      0% {
+        max-width: 55%;
+      }
+
+      100% {
+        max-width: 66%;
+      }
+    }
     &__title {
       max-width: 66%;
+      animation: compensateAnimation 1s ease-in forwards,
+        textwidthThick 1s ease-in forwards !important;
     }
 
     &__content {
