@@ -5,6 +5,7 @@
   margin: $global-spacing-unit / 3 * 2 0;
   padding-bottom: 0 !important;
   color: #222;
+  border: 1px solid var(--color-text);
 
   transition: 300ms all;
   box-shadow: 0 0 0 0 var(--color-tile);
@@ -44,6 +45,11 @@
     position: relative;
     margin: $global-spacing-unit * 1.5 0;
 
+    box-shadow: 0 0 0 0 transparent, 0 0 0 0 var(--color-tile),
+      0 0 0 0 var(--color-text);
+
+    will-change: box-shadow;
+
     &__header {
       position: absolute;
       top: $global-spacing-unit;
@@ -62,15 +68,16 @@
     }
 
     &:hover {
-      box-shadow: 10px 10px 0 0 rgba(0, 0, 0, 0.4),
-        10px 10px 0 0 var(--color-tile);
+      box-shadow: 10px 10px 0 0 transparent, 10px 10px 0 0 var(--color-bg),
+        10px 10px 0 1px var(--color-text);
       transform: translate3d(-5px, -5px, 0);
     }
 
     &:active {
       transition: 200ms all;
       transform: translate3d(0, 0, 0);
-      box-shadow: 5px 5px 0 0 rgba(0, 0, 0, 0.4), 5px 5px 0 0 var(--color-tile);
+      box-shadow: 5px 5px 0 0 rgba(0, 0, 0, 0.4), 5px 5px 0 0 var(--color-tile),
+        5px 5px 0 1px var(--color-text);
     }
 
     @include mq($from: wide) {

@@ -57,9 +57,6 @@
   @include mq($from: desktop) {
     transition: 0.2s all;
 
-    .c-logo {
-    }
-
     &__logo {
       padding-right: $global-spacing-unit * 2 !important;
     }
