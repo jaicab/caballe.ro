@@ -968,10 +968,9 @@ pre {
 
 .u-h4 {
   font-size: 1em;
-  font-family: "Space Mono", "Lucida Console", Monaco, monospace, monospace;
-  font-weight: bold;
+  font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.12em; }
+  letter-spacing: 0.1em; }
 
 @keyframes textwidthThin {
   0% {
