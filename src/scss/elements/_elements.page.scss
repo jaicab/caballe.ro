@@ -18,4 +18,17 @@ body {
       #fff 100%)
     );
   }*/
+
+  @include mq($from: desktop) {
+    padding-top: $global-spacing-unit * 6;
+
+    .o-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background: var(--color-bg);
+      z-index: 100;
+    }
+  }
 }
