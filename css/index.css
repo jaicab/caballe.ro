@@ -512,12 +512,13 @@ pre {
   display: inline-block;
   height: 1em; }
   .c-logo svg {
-    max-height: 99%;
+    height: 100%;
+    height: 99%;
     width: auto;
     fill: currentColor !important; }
   @media (min-width: 46.25em) {
     .c-logo {
-      height: 1.2em; } }
+      height: 1.3em; } }
 
 .c-nav-item a {
   display: block;
