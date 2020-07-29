@@ -695,7 +695,7 @@ pre {
   display: block;
   background: var(--color-tile, #fff);
   padding: 20px;
-  margin: 30px 0;
+  margin: 20px 0;
   padding-bottom: 0 !important;
   color: #222;
   transition: 300ms all;
@@ -727,7 +727,7 @@ pre {
   @media (min-width: 61.25em) {
     .o-tile {
       position: relative;
-      margin-right: 30px; }
+      margin: 45px 0; }
       .o-tile__header {
         position: absolute;
         top: 30px;
@@ -740,12 +740,12 @@ pre {
         width: 70%;
         padding-top: 30px; }
       .o-tile:hover {
-        box-shadow: 10px 10px 0 0 rgba(0, 0, 0, 0.2), 10px 10px 0 0 var(--color-tile);
+        box-shadow: 10px 10px 0 0 rgba(0, 0, 0, 0.4), 10px 10px 0 0 var(--color-tile);
         transform: translate3d(-5px, -5px, 0); }
       .o-tile:active {
         transition: 200ms all;
         transform: translate3d(0, 0, 0);
-        box-shadow: 5px 5px 0 0 rgba(0, 0, 0, 0.2), 5px 5px 0 0 var(--color-tile); } }
+        box-shadow: 5px 5px 0 0 rgba(0, 0, 0, 0.4), 5px 5px 0 0 var(--color-tile); } }
   @media (min-width: 61.25em) and (min-width: 81.25em) {
     .o-tile__title {
       font-size: 56px !important;

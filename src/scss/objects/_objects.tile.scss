@@ -2,7 +2,7 @@
   display: block;
   background: var(--color-tile, #fff);
   padding: $global-spacing-unit / 3 * 2;
-  margin: $global-spacing-unit 0;
+  margin: $global-spacing-unit / 3 * 2 0;
   padding-bottom: 0 !important;
   color: #222;
 
@@ -42,7 +42,7 @@
 
   @include mq($from: desktop) {
     position: relative;
-    margin-right: $global-spacing-unit;
+    margin: $global-spacing-unit * 1.5 0;
 
     &__header {
       position: absolute;
@@ -62,7 +62,7 @@
     }
 
     &:hover {
-      box-shadow: 10px 10px 0 0 rgba(0, 0, 0, 0.2),
+      box-shadow: 10px 10px 0 0 rgba(0, 0, 0, 0.4),
         10px 10px 0 0 var(--color-tile);
       transform: translate3d(-5px, -5px, 0);
     }
@@ -70,7 +70,7 @@
     &:active {
       transition: 200ms all;
       transform: translate3d(0, 0, 0);
-      box-shadow: 5px 5px 0 0 rgba(0, 0, 0, 0.2), 5px 5px 0 0 var(--color-tile);
+      box-shadow: 5px 5px 0 0 rgba(0, 0, 0, 0.4), 5px 5px 0 0 var(--color-tile);
     }
 
     @include mq($from: wide) {
