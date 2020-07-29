@@ -608,7 +608,6 @@ pre {
 /* Style variants
    ========================================================================== */
 .c-btn--primary {
-  color: var(--color-text);
   border: 1px solid currentColor;
   background-color: currentColor;
   transition: 300ms all;
@@ -921,9 +920,9 @@ pre {
       margin-left: 15px !important; } }
 
 .o-footer {
-  padding: 60px 0 90px;
-  background: var(--color-navy);
-  border-top: 15px solid var(--color-wine); }
+  margin-top: 90px;
+  padding: 60px 0;
+  border-top: 1px solid currentColor; }
 
 .u-thick {
   font-weight: 700; }

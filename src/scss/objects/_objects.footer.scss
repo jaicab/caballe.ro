@@ -1,6 +1,6 @@
 .o-footer {
-  padding: $global-spacing-unit * 2 0 $global-spacing-unit * 3;
-  background: var(--color-navy);
+  margin-top: $global-spacing-unit * 3;
+  padding: $global-spacing-unit * 2 0;
 
-  border-top: $global-spacing-unit/2 solid var(--color-wine);
+  border-top: 1px solid currentColor;
 }
