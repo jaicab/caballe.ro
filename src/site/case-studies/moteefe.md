@@ -1,5 +1,6 @@
 ---
-themeColor: "#E9E1FF"
+themeColor: "#D4C7FF"
+tileColor: "#BDA9FF"
 layout: report
 tags: report
 short: moteefe

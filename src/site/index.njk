@@ -10,13 +10,15 @@ eleventyNavigation:
     <h1 class="u-grow--thin">Hi, I'm Jaime Caballero</h1>
     <p>I’m a Product Designer with a technical background, a digital nomad and a spaniard based in London</p>
   </div>
-  <ul class="u-grid-from--wide">
+  <ul class="u-grid-from--wide u-grid--wrap">
     {%- for report in collections.report -%}
       <li>
-        <a class="o-tile" href="{{ report.url | url }}" style="--color-tile: {{ report.data.themeColor }}">
-          <div class="c-tagline">{{ report.data.tagline }}</div>
-          <h2 class="o-tile__title u-thick">{{ report.data.title }}</h2>
-          <img src="{{ '/images/case-studies/'+report.data.short+'/tile.png' | url }}"/>
+        <a class="o-tile" href="{{ report.url | url }}" style="--color-tile: {{ report.data.tileColor }}">
+          <div class="o-tile__header">
+            <div class="c-tagline">{{ report.data.tagline }}</div>
+            <h2 class="o-tile__title u-thick">{{ report.data.title }}</h2>
+          </div>
+          <img class="o-tile__img" src="{{ '/images/case-studies/'+report.data.short+'/tile.png' | url }}"/>
         </a>
       </li>
     {%- endfor -%}
@@ -29,7 +31,7 @@ eleventyNavigation:
   <br/>
 
   <div class="u-text">
-    <h1>Let the people speak</h1>
+    <h1>Let the people talk</h1>
 
     <br/>
     <p>

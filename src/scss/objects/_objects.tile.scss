@@ -9,7 +9,7 @@
   transition: 300ms all;
   box-shadow: 0 0 0 0 var(--color-tile);
 
-  img {
+  &__img {
     display: block;
   }
 
@@ -41,12 +41,27 @@
   }
 
   @include mq($from: desktop) {
+    position: relative;
     margin-right: $global-spacing-unit;
 
-    &:hover {
-      // box-shadow: 0 0 0 15px var(--color-tile);
-      // transform: scale(1.02);
+    &__header {
+      position: absolute;
+      top: $global-spacing-unit;
+      left: $global-spacing-unit;
+    }
 
+    &__title {
+      width: 40%;
+    }
+
+    &__img {
+      padding: $global-spacing-unit 5% 0 15%;
+      margin-left: 30%;
+      width: 70%;
+      padding-top: $global-spacing-unit;
+    }
+
+    &:hover {
       box-shadow: 10px 10px 0 0 rgba(0, 0, 0, 0.2),
         10px 10px 0 0 var(--color-tile);
       transform: translate3d(-5px, -5px, 0);
@@ -54,12 +69,20 @@
 
     &:active {
       transition: 200ms all;
-      // box-shadow: 0 0 0 5px var(--color-tile);
-
-      // transform: scale(1);
-
       transform: translate3d(0, 0, 0);
       box-shadow: 5px 5px 0 0 rgba(0, 0, 0, 0.2), 5px 5px 0 0 var(--color-tile);
+    }
+
+    @include mq($from: wide) {
+      &__title {
+        @include font-size(56px, $important: true);
+        line-height: 1.1 !important;
+      }
+
+      .c-tagline {
+        font-size: 1.2em;
+        margin-bottom: $global-spacing-unit * 1.5;
+      }
     }
   }
 }

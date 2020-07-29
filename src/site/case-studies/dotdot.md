@@ -1,5 +1,6 @@
 ---
-themeColor: "#FFE6E5"
+themeColor: "#FECFC6"
+tileColor: "#FEAA99"
 layout: report
 tags: report
 short: dotdot

@@ -1,5 +1,6 @@
 ---
-themeColor: "#DAE8FF"
+themeColor: "#BFD7FF"
+tileColor: "#9ABFFF"
 layout: report
 tags: report
 short: carlos-caballero
