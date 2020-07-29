@@ -44,11 +44,13 @@ properties:
 
 ## Background
 
-Moteefe allows creators to upload an artwork and start selling branded garments with no up-front cost and before the product even exists physically. It’s really 2 apps, on the one hand, it’s a b2b app where admins or creators could manage their products, handle payouts, etc and on the other, each product generates a b2c e-commerce experience
+Moteefe allows creators to upload an artwork and start selling branded garments with no up-front cost and before the product even exists physically. That means it's a double product, a a B2B app for admins or creators to manage their products, handle payouts, etc and a B2C when these products are presented to customers.
+
+The company was born in 2014 and had been building upon their original branding and UI ever since. In 2016, they decided it was time for a rebrand and cleanup.
 
 ## Understanding the problem
 
-The company was born in 2014 and had been building upon their original branding and UI ever since. In 2016, they decided it was time for a rebrand and cleanup. They had hired BEAR for the rebrand, and I was hired as the frontend architect to lead and execute this new branding into their current UI. Shortly after joining, I discovered:
+BEAR agency was commissioned with the rebrand, and I was taken in as the frontend architect to lead and execute this new branding into their current UI. Shortly after joining, I discovered:
 
 - BEAR was commissioned with discovery and branding, but not UI design
 - BEAR's efforts for branding were great for marketing purposes, but didn't do enough for product design
@@ -70,7 +72,7 @@ At a brainstorming session with the founders, this seemed to be the crazy user f
 
 ![UX](/images/case-studies/moteefe/user-flow.png)
 
-During these initial discussions, it was decided we will rebuild the app from scratch, in stages and in React.
+After a few days of strategic discussions and product research, it was decided we should rebuild the app from scratch, in stages and in React.
 
 Solutions:
 
