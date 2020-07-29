@@ -156,7 +156,6 @@ For the type, I had originally gone with [Rubik](https://fonts.google.com/specim
 ![branding](/images/case-studies/dotdot/dotdot-branding.png)
 {% endfullscreen %}
 
-{% fullscreen %}
 ![branding](/images/case-studies/dotdot/ui-dark.png)
 {% endfullscreen %}
 
