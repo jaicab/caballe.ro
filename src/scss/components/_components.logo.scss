@@ -3,12 +3,13 @@
   height: 1em;
 
   svg {
-    max-height: 99%;
+    height: 100%;
+    height: 99%;
     width: auto;
     fill: currentColor !important;
   }
 
   @include mq($from: tablet) {
-    height: 1.2em;
+    height: 1.3em;
   }
 }
