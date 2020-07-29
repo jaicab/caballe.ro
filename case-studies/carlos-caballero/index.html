@@ -27,11 +27,11 @@
     <link href="//fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,400;0,600;0,700;0,900;1,420&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 
   </head>
-  <body class="tmpl-report"  style="--color-bg: #DAE8FF; --color-text: #000;">
+  <body class="tmpl-report"  style="--color-bg: #BFD7FF; --color-text: #000;">
     <header class="o-header  u-dark">
   <div class="u-wrapper">
-    <div class="u-grid-from--mobile">
-      <div>
+    <div class="o-header__content">
+      <div class="o-header__logo">
         <a class="c-logo" href="/">
           <svg width="229" height="31" viewBox="0 0 229 31" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
             <path d="M26.1271 19.0121C26.1271 20.3368 25.8716 21.6746 25.3604 23.0255C24.8624 24.3633 24.0957 25.5961 23.0603 26.7241C22.038 27.852 20.7339 28.7635 19.1481 29.4587C17.5754 30.1407 15.7077 30.4817 13.5452 30.4817C10.7012 30.4817 8.26343 29.8456 6.23198 28.5734C4.21363 27.288 2.6671 25.5174 1.5924 23.2615C0.5308 21.0057 0 18.4022 0 15.4512C0 12.5002 0.5308 9.90331 1.5924 7.66054C2.6671 5.40466 4.21363 3.64061 6.23198 2.3684C8.26343 1.09619 10.7012 0.460083 13.5452 0.460083C15.9043 0.460083 17.9161 0.860108 19.5806 1.66016C21.2582 2.46021 22.6016 3.50946 23.6107 4.8079C24.633 6.10635 25.3408 7.4966 25.7339 8.97866C25.9961 9.98856 26.1271 10.9657 26.1271 11.91H18.1651C18.1651 11.4903 18.1389 11.1231 18.0865 10.8083C17.9685 9.95577 17.713 9.21474 17.3198 8.58519C16.9266 7.95564 16.4089 7.47037 15.7667 7.12936C15.1376 6.77524 14.3971 6.59818 13.5452 6.59818C12.5229 6.59818 11.599 6.89984 10.7733 7.50316C9.94758 8.10647 9.28572 9.05735 8.78768 10.3558C8.30275 11.6542 8.06029 13.3527 8.06029 15.4512C8.06029 17.5366 8.30275 19.2351 8.78768 20.5466C9.28572 21.8582 9.94758 22.8222 10.7733 23.4386C11.599 24.055 12.5229 24.3633 13.5452 24.3633C14.2792 24.3633 14.9279 24.2321 15.4915 23.9698C16.0682 23.6944 16.5531 23.314 16.9463 22.8287C17.3395 22.3435 17.6409 21.7795 17.8506 21.1368C18.0603 20.481 18.1651 19.7728 18.1651 19.0121H26.1271Z"/>
@@ -47,16 +47,14 @@
           </svg>
         </a>
       </div>
-      <div class="is-hidden-from--tablet u-right">
-        <a class="c-link" href="/about/">About</a>
-      </div>
+      <div class="o-header__nav">
+        <div>
+          <a class="c-link o-header__nav__link" href="/about/">About</a>
+        </div>
 
-      <div class="is-hidden-until--tablet u-center">
-        <a class="c-link" href="/about/">About</a>
-      </div>
-
-      <div class="u-right is-hidden-until--tablet ">
-        <a class="c-link" href="mailto:hello@caballe.ro">Say hello@caballe.ro</a>
+        <div class="u-right is-hidden-until--tablet ">
+          <a class="c-link o-header__nav__email" href="mailto:hello@caballe.ro">Say hello@caballe.ro</a>
+        </div>
       </div>
     </div>
   </div>
