@@ -30,5 +30,10 @@ body {
       background: var(--color-bg);
       z-index: 100;
     }
+
+    &.tmpl-report .o-header:hover {
+      background: var(--color-text);
+      color: var(--color-bg);
+    }
   }
 }

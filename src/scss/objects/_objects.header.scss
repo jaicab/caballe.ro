@@ -27,12 +27,12 @@
   }
 
   @include mq($from: tablet) {
-    border-bottom: 1px solid var(--color-text);
+    border-bottom: 1px solid currentColor;
     margin-bottom: $global-spacing-unit * 3;
 
     &__logo {
       padding-right: $global-spacing-unit * 2 !important;
-      border-right: 1px solid var(--color-text);
+      border-right: 1px solid currentColor;
     }
 
     &__content {
@@ -57,9 +57,10 @@
     }
   }
   @include mq($from: desktop) {
+    transition: 0.2s all;
+
     &__logo {
       padding-right: $global-spacing-unit * 2 !important;
-      border-right: 1px solid var(--color-text);
     }
 
     &__nav {
