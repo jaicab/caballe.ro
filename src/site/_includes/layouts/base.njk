@@ -8,6 +8,7 @@
     <meta name="description" content="{{ renderData.description or description or metadata.description }}">
     <meta name="theme-color" content="#222222">
     <link rel="stylesheet" href="{{ '/css/index.css' | url }}">
+    <link rel="stylesheet" href="{{ '/css/index.css' | url }}">
     <link rel="icon" href="/images/favicon.png"/>
     <link rel="apple-touch-icon-precomposed" href="/images/apple-touch-icon-precomposed.png">
 
@@ -27,7 +28,7 @@
     <link href="//fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,400;0,600;0,700;0,900;1,420&family=Space+Mono:wght@400&display=swap" rel="stylesheet">
 
   </head>
-  <body{% if templateClass %} class="{{ templateClass }}"{% endif %} {% if themeColor %} style="--color-bg: {{ themeColor }}; --color-text: #000;"{% endif %}>
+  <body{% if templateClass %} class="{{ templateClass }}"{% endif %} {% if themeColor %} style="--color-bg: {{ themeColor }};"{% endif %}>
     {% include "_header.njk" %}
 
     <main>

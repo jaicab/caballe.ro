@@ -11,13 +11,22 @@ body {
   background: var(--color-bg);
   color: var(--color-text);
 
-  /*&.tmpl-report {
-    background-image: radial-gradient(
-      circle,
-      #fff 0,
-      #fff 100%)
-    );
-  }*/
+  @media (prefers-color-scheme: dark) {
+    color: var(--color-bg);
+    background: var(--color-text);
+  }
+
+  &.tmpl-report {
+    .o-header:hover {
+      background: var(--color-text);
+      color: var(--color-bg);
+
+      @media (prefers-color-scheme: dark) {
+        background: var(--color-bg);
+        color: var(--color-text);
+      }
+    }
+  }
 
   @include mq($from: desktop) {
     padding-top: $global-spacing-unit * 6;
@@ -29,11 +38,10 @@ body {
       right: 0;
       background: var(--color-bg);
       z-index: 100;
-    }
 
-    &.tmpl-report .o-header:hover {
-      background: var(--color-text);
-      color: var(--color-bg);
+      @media (prefers-color-scheme: dark) {
+        background: var(--color-text);
+      }
     }
   }
 }

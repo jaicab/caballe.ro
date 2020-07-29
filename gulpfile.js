@@ -1,13 +1,12 @@
-import * as gulp from "gulp";
-import * as ts from "gulp-typescript";
-import * as sass from "gulp-sass";
+var gulp = require("gulp");
+var sass = require("gulp-sass");
+var ts = require("gulp-typescript");
 
 gulp.task("js", function () {
   return gulp
     .src("src/**/*.ts")
     .pipe(
       ts({
-        esModuleInterop: true,
         noImplicitAny: true,
         outFile: "app.js",
       })
@@ -24,7 +23,7 @@ gulp.task("sass", function () {
 
 gulp.task("watch", function () {
   gulp.watch("src/scss/**/*.scss", gulp.series("sass"));
-  gulp.watch("src/js/**/*.js", gulp.series("js"));
+  // gulp.watch("src/js/**/*.js", gulp.series("js"));
 });
 
-gulp.task("default", gulp.series("js", "sass"));
+gulp.task("default", gulp.series("sass"));

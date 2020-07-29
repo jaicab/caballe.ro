@@ -30,16 +30,28 @@
   &__text {
     color: var(--color-bg);
     letter-spacing: 0.01em;
+
+    @media (prefers-color-scheme: dark) {
+      color: var(--color-text);
+    }
   }
 
   &__icon {
     margin-left: -$global-spacing-unit/2;
     margin-right: $global-spacing-unit/2;
     color: var(--color-bg);
+
+    @media (prefers-color-scheme: dark) {
+      color: var(--color-text);
+    }
   }
 
   &__icon path {
     fill: var(--color-bg);
+
+    @media (prefers-color-scheme: dark) {
+      fill: var(--color-text);
+    }
   }
 
   &__text + &__icon {
