@@ -1,6 +1,5 @@
 .o-header {
   margin-bottom: $global-spacing-unit;
-  border-bottom: 1px solid var(--color-text);
 
   &__content {
     display: flex;
@@ -24,12 +23,17 @@
 
   &__logo {
     padding-right: $global-spacing-unit !important;
-    border-right: 1px solid var(--color-text);
     display: flex;
   }
 
   @include mq($from: tablet) {
+    border-bottom: 1px solid var(--color-text);
     margin-bottom: $global-spacing-unit * 3;
+
+    &__logo {
+      padding-right: $global-spacing-unit * 2 !important;
+      border-right: 1px solid var(--color-text);
+    }
 
     &__content {
       height: 90px / $global-font-size * 1em;
@@ -39,22 +43,27 @@
       }
     }
 
-    &__logo {
-      padding-right: $global-spacing-unit * 2 !important;
-    }
-
     &__nav {
       flex: 1;
       display: flex;
       justify-content: space-between;
       align-items: center;
 
-      font-size: 20px / $global-font-size * 1em;
       padding-left: $global-spacing-unit * 2 !important;
     }
 
     .c-logo {
       align-self: center;
+    }
+  }
+  @include mq($from: desktop) {
+    &__logo {
+      padding-right: $global-spacing-unit * 2 !important;
+      border-right: 1px solid var(--color-text);
+    }
+
+    &__nav {
+      font-size: 20px / $global-font-size * 1em;
     }
   }
 }
