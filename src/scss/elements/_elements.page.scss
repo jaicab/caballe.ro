@@ -10,21 +10,23 @@ html {
 body {
   background: var(--color-bg);
   color: var(--color-text);
-
+  /*
   @media (prefers-color-scheme: dark) {
     color: var(--color-bg);
     background: var(--color-text);
-  }
+  } */
 
   &.tmpl-report {
+    --color-text: var(--color-black);
+
     .o-header:hover {
       background: var(--color-text);
       color: var(--color-bg);
-
+      /*
       @media (prefers-color-scheme: dark) {
         background: var(--color-bg);
         color: var(--color-text);
-      }
+      } */
     }
   }
 
@@ -38,10 +40,10 @@ body {
       right: 0;
       background: var(--color-bg);
       z-index: 100;
-
+      /*
       @media (prefers-color-scheme: dark) {
         background: var(--color-text);
-      }
+      } */
     }
   }
 }

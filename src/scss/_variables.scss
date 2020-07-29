@@ -6,6 +6,6 @@ $white: hsla(0, 0%, 98%, 1);
 :root {
   --color-black: #{$black};
   --color-white: #{$white};
-  --color-bg: #{$white};
-  --color-text: #{$black};
+  --color-bg: #{$black};
+  --color-text: #{$white};
 }
