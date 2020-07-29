@@ -419,6 +419,16 @@ body {
       #fff 100%)
     );
   }*/ }
+  @media (min-width: 61.25em) {
+    body {
+      padding-top: 180px; }
+      body .o-header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        background: var(--color-bg);
+        z-index: 100; } }
 
 h1 {
   font-size: 22px !important;
