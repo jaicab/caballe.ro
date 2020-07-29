@@ -11,14 +11,6 @@
     }
   }
 
-  &__nav__link {
-    letter-spacing: 0.01em;
-    text-transform: uppercase;
-
-    position: relative;
-    top: 0.1em;
-  }
-
   &__logo {
     padding-right: $global-spacing-unit !important;
     display: flex;
@@ -48,6 +40,14 @@
       align-items: center;
 
       padding-left: $global-spacing-unit * 2 !important;
+    }
+
+    &__nav__link {
+      letter-spacing: 0.01em;
+      text-transform: uppercase;
+
+      position: relative;
+      top: 0.1em;
     }
 
     .c-logo {

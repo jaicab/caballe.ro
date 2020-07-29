@@ -659,11 +659,6 @@ pre {
     height: 77px; }
     .o-header__content > div {
       padding: 30px 0; }
-  .o-header__nav__link {
-    letter-spacing: 0.01em;
-    text-transform: uppercase;
-    position: relative;
-    top: 0.1em; }
   .o-header__logo {
     padding-right: 30px !important;
     display: flex; }
@@ -682,6 +677,11 @@ pre {
         justify-content: space-between;
         align-items: center;
         padding-left: 60px !important; }
+      .o-header__nav__link {
+        letter-spacing: 0.01em;
+        text-transform: uppercase;
+        position: relative;
+        top: 0.1em; }
       .o-header .c-logo {
         align-self: center; } }
   @media (min-width: 61.25em) {
