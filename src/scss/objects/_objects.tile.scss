@@ -45,8 +45,8 @@
     position: relative;
     margin: $global-spacing-unit * 1.5 0;
 
-    box-shadow: 0 0 0 0 transparent, 0 0 0 0 var(--color-tile),
-      0 0 0 0 var(--color-text);
+    box-shadow: 0 0 0 0 transparent, 0 0 0 0 var(--color-bg),
+      0 0 0 1px transparent;
 
     will-change: box-shadow;
 
