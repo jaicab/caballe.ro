@@ -513,7 +513,8 @@ pre {
   height: 1em; }
   .c-logo svg {
     max-height: 100%;
-    width: auto; }
+    width: auto;
+    fill: currentColor !important; }
   @media (min-width: 46.25em) {
     .c-logo {
       height: 1.2em; } }
@@ -661,9 +662,8 @@ pre {
   .o-header__nav__link {
     letter-spacing: 0.01em;
     text-transform: uppercase;
-    text-decoration: none; }
-    .o-header__nav__link:hover {
-      text-decoration: underline; }
+    position: relative;
+    top: 0.1em; }
   .o-header__logo {
     padding-right: 30px !important;
     display: flex; }
@@ -675,9 +675,7 @@ pre {
         padding-right: 60px !important;
         border-right: 1px solid currentColor; }
       .o-header__content {
-        height: 5em; }
-        .o-header__content > div {
-          padding: 36px 0; }
+        height: 4.72222em; }
       .o-header__nav {
         flex: 1;
         display: flex;

@@ -5,6 +5,7 @@
   svg {
     max-height: 100%;
     width: auto;
+    fill: currentColor !important;
   }
 
   @include mq($from: tablet) {

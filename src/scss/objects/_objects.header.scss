@@ -14,11 +14,9 @@
   &__nav__link {
     letter-spacing: 0.01em;
     text-transform: uppercase;
-    text-decoration: none;
 
-    &:hover {
-      text-decoration: underline;
-    }
+    position: relative;
+    top: 0.1em;
   }
 
   &__logo {
@@ -36,10 +34,10 @@
     }
 
     &__content {
-      height: 90px / $global-font-size * 1em;
+      height: 85px / $global-font-size * 1em;
 
       > div {
-        padding: $global-spacing-unit * 1.2 0;
+        //padding: $global-spacing-unit * 1.2 0;
       }
     }
 
@@ -58,6 +56,9 @@
   }
   @include mq($from: desktop) {
     transition: 0.2s all;
+
+    .c-logo {
+    }
 
     &__logo {
       padding-right: $global-spacing-unit * 2 !important;
