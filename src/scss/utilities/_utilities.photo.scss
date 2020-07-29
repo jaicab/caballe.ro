@@ -20,11 +20,13 @@
       max-width: none;
       width: 100%;
       margin-top: 0;
+      border-left: 0;
+      border-right: 0;
     }
   }
 
   &--screens {
-    padding: $global-spacing-unit $global-spacing-unit * 2 !important;
+    padding: $global-spacing-unit $global-spacing-unit !important;
 
     img {
       max-height: none;
@@ -53,11 +55,8 @@
   }
 
   @include mq($from: desktop) {
-    img {
-      border-radius: $global-radius;
-    }
-
     &--screens {
+      padding: 0 $global-spacing-unit * 1.5 !important;
       p {
         display: flex;
         justify-content: space-around;
@@ -68,7 +67,6 @@
           height: auto;
           max-height: none;
           max-width: 47%;
-          box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2);
           margin: $global-spacing-unit $global-spacing-unit/2 !important;
         }
       }

@@ -41,7 +41,6 @@ ${caption ? "<p>" + caption + "</p>" : ""}
     `;
   });
 
-
   eleventyConfig.addPairedShortcode("screens", function (
     content,
     color = false,
@@ -49,7 +48,7 @@ ${caption ? "<p>" + caption + "</p>" : ""}
     screens = null
   ) {
     return `</div></div>
-<div class="u-photo u-photo--screens u-whitebreak" ${
+<div class="u-photo u-photo--screens" ${
       color ? "style='background:" + color + "'" : ""
     }>
 ${content}

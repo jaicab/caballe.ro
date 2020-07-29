@@ -6,6 +6,10 @@
     list-style: square;
   }
 
+  img {
+    border: 1px solid currentColor;
+  }
+
   ul,
   ol {
     margin: $global-spacing-unit / 2 0;

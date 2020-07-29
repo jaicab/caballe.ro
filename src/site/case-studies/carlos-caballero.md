@@ -168,9 +168,9 @@ We were set on 5 types of therapy: personal, couples, child, teens and families.
 
 As I needed to come up with an inclusive way of representing all without locking them to an age, sex, gender, sexual orientation, race or background and although a bit cliché, a classic therapist exercise came to mind: [The Inkblot Test,](http://theinkblot.com/step_1.htm) made by Hermann Rorschach in 1921.
 
-{% screens %}
+{% photo %}
 ![carlos](/images/case-studies/carlos-caballero/inkblot.png)
-{% endscreens %}
+{% endphoto %}
 
 The whole argument here is, briefly explained is asking "what do you see here" and letting the customer dive into the crevices of the drawing while their mind drifts away, speaking more than they initially might have if asked directly about a topic.
 
