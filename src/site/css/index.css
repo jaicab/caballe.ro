@@ -1002,7 +1002,7 @@ pre {
       padding: 0 60px; } }
 
 .u-wrapper--text {
-  max-width: 45.55556em; }
+  max-width: 47.77778em; }
 
 .u-wrapper--nopadding {
   padding-left: 0;
@@ -1082,7 +1082,6 @@ pre {
     display: none !important; } }
 
 .u-content {
-  overflow: hidden;
   margin-top: 30px;
   margin-bottom: 90px; }
   @media (min-width: 46.25em) {
@@ -1091,7 +1090,7 @@ pre {
       margin-bottom: 150px; } }
 
 .u-text {
-  line-height: 1.44;
+  line-height: 1.46;
   letter-spacing: -0.01em; }
   .u-text ul {
     list-style: square; }
@@ -1129,7 +1128,7 @@ pre {
         margin: 10px 0; } }
   @media (min-width: 61.25em) {
     .u-text {
-      line-height: 1.69;
+      line-height: 1.7;
       letter-spacing: 0.01em; } }
 
 .u-text--intro {

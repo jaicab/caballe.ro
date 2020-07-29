@@ -1,5 +1,5 @@
 .u-text {
-  line-height: 1.44;
+  line-height: 1.46;
   letter-spacing: -0.01em;
 
   ul {
@@ -70,7 +70,7 @@
 
   @include mq($from: desktop) {
     // font-size: 24px / $global-font-size * 1em;
-    line-height: 1.69;
+    line-height: 1.7;
     letter-spacing: 0.01em;
   }
 }

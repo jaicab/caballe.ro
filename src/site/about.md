@@ -15,7 +15,7 @@ Maths on the other hand, always seemed easy to me. Optimizing a process, abstrac
 
 Discovering anyone can create a website with just a text editor was **mind-blowing**. My understanding of the web and what it meant changed instantly. I already thought it was an infinite window to information, but after this I saw it as this democratic tool to not just access, but provide information, as well as an enabler for the right person.
 
-> I now describe being able to create digital experiences nothing short of a super power. If you squint your eyes just right, you can spot a need, then build a tool and put it for everyone to use at nearly zero cost, all in record time.
+> I now consider being able to create digital experiences nothing short of a super power. If you squint your eyes just right, you can spot a need, build a tool and put it out at nearly zero cost, all in record time.
 
 ### Moving to London
 
