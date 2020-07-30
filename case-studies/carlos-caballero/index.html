@@ -52,14 +52,17 @@
             .body
             .classList
             .add('u-dark')
-        }
+
+        setTimeout(function () {
+          document
+            .body
+            .classList
+            .add('is-transitioning')
+        }, 500)
+      }
 
       function switchTheme(el) {
         sessionStorage.setItem('theme', el.checked)
-        document
-          .body
-          .classList
-          .add('is-active')
 
         if (el.checked) 
           document
