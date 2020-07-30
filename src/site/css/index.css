@@ -515,15 +515,16 @@ pre {
   word-wrap: break-word;
   tab-size: 2;
   padding: 30px;
-  background: var(--color-white);
+  color: var(--color-bg);
+  background: var(--color-text);
   line-height: 1; }
+  .u-dark pre {
+    color: var(--color-text);
+    background: var(--color-bg); }
   pre code {
     font-size: 0.8em; }
   @media (min-width: 61.25em) {
     pre {
-      border-radius: 5px;
-      margin-left: -2em;
-      margin-right: -2em;
       padding: 2em; } }
 
 .c-logo {
@@ -1186,6 +1187,36 @@ pre {
       max-height: none;
       max-width: 100%;
       width: auto; }
+  .u-photo--display {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 0;
+    margin: 0 10px; }
+    .u-photo--display div {
+      margin: 0 10px !important; }
+    .u-photo--display img {
+      height: auto;
+      max-height: none;
+      max-width: 100%;
+      margin: 0; }
+    .u-photo--display .ui-photo__mobile {
+      flex-basis: calc(375px * 1); }
+    .u-photo--display .ui-photo__desktop {
+      flex-basis: calc(1440px * 1); }
+    @media (min-width: 46.25em) {
+      .u-photo--display {
+        margin: 30px 45px; }
+        .u-photo--display div {
+          margin: 0 15px !important; } }
+    @media (min-width: 46.25em) {
+      .u-photo--display {
+        margin: 30px; }
+        .u-photo--display div {
+          margin: 30px !important; } }
+    @media (min-width: 81.25em) {
+      .u-photo--display {
+        margin: 60px; } }
   @media (max-width: 46.24em) {
     .u-photo {
       padding: 0; }
@@ -1200,17 +1231,16 @@ pre {
           border-top: 5px solid var(--color-bg); } }
   @media (min-width: 61.25em) {
     .u-photo--screens {
-      padding: 0 45px !important; }
-      .u-photo--screens p {
-        display: flex;
-        justify-content: space-around;
-        flex-wrap: wrap;
-        align-items: flex-start; }
-        .u-photo--screens p img {
-          height: auto;
-          max-height: none;
-          max-width: 47%;
-          margin: 30px 15px !important; } }
+      padding: 0 45px !important;
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      align-items: flex-start; }
+      .u-photo--screens img {
+        height: auto;
+        max-height: none;
+        max-width: 47%;
+        margin: 30px 15px !important; } }
 
 .u-translucent {
   opacity: 0.8; }

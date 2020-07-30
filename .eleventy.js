@@ -58,6 +58,23 @@ ${caption ? "<p>" + caption + "</p>" : ""}
     `;
   });
 
+  eleventyConfig.addPairedShortcode("display", function (
+    content,
+    color = false,
+    caption = "",
+    screens = null
+  ) {
+    return `</div></div>
+<div class="u-photo u-photo--display" ${
+      color ? "style='background:" + color + "'" : ""
+    }>
+${content}
+${caption ? "<p>" + caption + "</p>" : ""}
+</div>
+<div class="u-wrapper"><div class="o-article__content">
+    `;
+  });
+
   eleventyConfig.addPairedShortcode("whitebreak", function (content) {
     return `
 </div>

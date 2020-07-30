@@ -5,7 +5,13 @@ pre {
   tab-size: 2;
 
   padding: $global-spacing-unit;
-  background: var(--color-white);
+  color: var(--color-bg);
+  background: var(--color-text);
+
+  .u-dark & {
+    color: var(--color-text);
+    background: var(--color-bg);
+  }
 
   line-height: 1;
 
@@ -14,9 +20,7 @@ pre {
   }
 
   @include mq($from: desktop) {
-    border-radius: $global-radius;
-    margin-left: -2em;
-    margin-right: -2em;
+    
     padding: 2em;
   }
 }

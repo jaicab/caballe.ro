@@ -98,19 +98,19 @@ From the interview, I gathered relevant information for content creation and com
 
 ### Mobile focused experience
 
-![carlos](/images/case-studies/carlos-caballero/stats.png)
+<img class="lazyload" data-src="{{ '/images/case-studies/carlos-caballero/stats.png' | url }}" alt="Google Analytics stats"/>
 
 68% of traffic came from mobile, so mobile experience was crucial. The interview also revealed clients added the contact details to their phones instead of asking for a card, and an uprise in people contacting via WhatsApp as a first contact validated this rise in mobile engagement.
 
 ### Keyword research
 
 {% fullscreen %}
-![carlos](/images/case-studies/carlos-caballero/keyword-map.png)
+<img class="lazyload" data-src="{{ '/images/case-studies/carlos-caballero/keyword-map.png' | url }}" alt="Keyword map for therapy"/>
 {% endfullscreen %}
 
 {% screens %}
-![carlos](/images/case-studies/carlos-caballero/trends1.png)
-![carlos](/images/case-studies/carlos-caballero/trends2.png)
+<img class="lazyload" data-src="{{ '/images/case-studies/carlos-caballero/trends1.png' | url }}" alt="Google Trends for psychologist vs therapist"/>
+<img class="lazyload" data-src="{{ '/images/case-studies/carlos-caballero/trends2.png' | url }}" alt="Google Trends for psychology vs therapy"/>
 {% endscreens %}
 
 In terms if core keywords, I determined "therapy" was a much friendlier, sought after service than "psychology" or "psychologist". So it was determined that was gonna be a core brand directive.
@@ -137,16 +137,16 @@ I put this together as three screens:
 Given the target audience was mainly mobile, female and relatively young, I put together a moodboard accordingly. I took inspiration on mobile mindfulness, self-care apps and modern illustration, with organic shapes and tons of breathing space.
 
 {% screens %}
-![carlos](/images/case-studies/carlos-caballero/moodboard1.png)
-![carlos](/images/case-studies/carlos-caballero/moodboard2.png)
-![carlos](/images/case-studies/carlos-caballero/illustration1.png)
-![carlos](/images/case-studies/carlos-caballero/illustration2.jpeg)
+<img class="lazyload" data-src="{{ '/images/case-studies/carlos-caballero/moodboard1.png' | url }}" alt="Moodboard example 1"/>
+<img class="lazyload" data-src="{{ '/images/case-studies/carlos-caballero/moodboard2.png' | url }}" alt="Moodboard example 2"/>
+<img class="lazyload" data-src="{{ '/images/case-studies/carlos-caballero/illustration1.png' | url }}" alt="Two women with their foreheads put together"/>
+<img class="lazyload" data-src="{{ '/images/case-studies/carlos-caballero/illustration2.jpeg' | url }}" alt="Man and woman hugging"/>
 {% endscreens %}
 
 I was deeply inspired by [Taylor Roy's Attachment Styles](https://dribbble.com/shots/4538075-attachment-style-squiggles) collection. While bluntly simple, it felt really engaging, modern and organic. Very on-brand with what I was looking for.
 
 {% screens %}
-![carlos](/images/case-studies/carlos-caballero/lines.png)
+<img class="lazyload" data-src="{{ '/images/case-studies/carlos-caballero/lines.png' | url }}" alt="Attatchment Styles by Taylor Roy"/>
 {% endscreens %}
 
 ## Branding
@@ -155,9 +155,9 @@ Brand keywords: friendly, approachable, organic, professional, individual.
 I started from the old brand and played with the idea of a simple "thinking head" made of a watercolour drop, while the type had to be somewhat mature and professional, so I went with a serif font: [Playfair Display](https://fonts.google.com/specimen/Playfair+Display). For the content I went with [Work Sans](https://fonts.google.com/specimen/Work+Sans), a classic sans-serif type, helping with contrast and readability on mobile.
 
 {% fullscreen %}
-![carlos](/images/case-studies/carlos-caballero/exploring-branding.png)
-![carlos](/images/case-studies/carlos-caballero/branding.png)
-![carlos](/images/case-studies/carlos-caballero/header.png)
+<img class="lazyload" data-src="{{ '/images/case-studies/carlos-caballero/exploring-branding.png' | url }}" alt="Branding evolution"/>
+<img class="lazyload" data-src="{{ '/images/case-studies/carlos-caballero/branding.png' | url }}" alt="Final branding"/>
+<img class="lazyload" data-src="{{ '/images/case-studies/carlos-caballero/header.png' | url }}" alt="Header branded"/>
 {% endfullscreen %}
 
 Big props to [Kika Fuenzalida](https://kikafuenzalida.com/) for her [stunning illustrations](https://mixkit.co/@kikafuenzalida/).
@@ -169,7 +169,7 @@ We were set on 5 types of therapy: personal, couples, child, teens and families.
 As I needed to come up with an inclusive way of representing all without locking them to an age, sex, gender, sexual orientation, race or background and although a bit cliché, a classic therapist exercise came to mind: [The Inkblot Test,](http://theinkblot.com/step_1.htm) made by Hermann Rorschach in 1921.
 
 {% photo %}
-![carlos](/images/case-studies/carlos-caballero/inkblot.png)
+<img class="lazyload" data-src="{{ '/images/case-studies/carlos-caballero/inkblot.png' | url }}" alt="Inkblot test example"/>
 {% endphoto %}
 
 The whole argument here is, briefly explained is asking "what do you see here" and letting the customer dive into the crevices of the drawing while their mind drifts away, speaking more than they initially might have if asked directly about a topic.
@@ -179,19 +179,19 @@ The idea of letting the user see fill in most of the picture for themselves was 
 Initial sketch:
 
 {% screens %}
-![carlos](/images/case-studies/carlos-caballero/blobs-sketch.png)
+<img class="lazyload" data-src="{{ '/images/case-studies/carlos-caballero/blobs-sketch.png' | url }}" alt="Sketch of 4 types of therapy representations"/>
 {% endscreens %}
 
 First solid test.
 
 {% screens %}
-![carlos](/images/case-studies/carlos-caballero/blob1.png)
+<img class="lazyload" data-src="{{ '/images/case-studies/carlos-caballero/blob1.png' | url }}" alt="Colorful example of blobs representing therapy"/>
 {% endscreens %}
 
 I tried a few variations too! Do you see arms or mouths?
 
 {% screens %}
-![carlos](/images/case-studies/carlos-caballero/blob2.png)
+<img class="lazyload" data-src="{{ '/images/case-studies/carlos-caballero/blob2.png' | url }}" alt="Testing blobs with arms"/>
 {% endscreens %}
 
 As this was such an open topic, I tested these with everyone I knew. Interestingly, people seemed to connect them as the same if they were coloured the same colour for different situations. They tried to follow a story, like if it were a comic.
@@ -199,18 +199,42 @@ As this was such an open topic, I tested these with everyone I knew. Interesting
 So I had to make each colour unique, even at the cost of being slightly off-brand. Arms were a no-go too, as some people mistook them as other body parts or added expression. This was the end result:
 
 {% fullscreen %}
-![carlos](/images/case-studies/carlos-caballero/blob-final.png)
+<img class="lazyload" data-src="{{ '/images/case-studies/carlos-caballero/blob-final.png' | url }}" alt="Final examples of all 5 illustrations"/>
 {% endfullscreen %}
 
 <div id="tldr"></div>
 
 ## Final design
 
-{% fullscreen %}
-![carlos](/images/case-studies/carlos-caballero/ui-landing.png)
-![carlos](/images/case-studies/carlos-caballero/ui-about.png)
-![carlos](/images/case-studies/carlos-caballero/ui-contact.png)
-{% endfullscreen %}
+{% display %}
+
+<div class="ui-photo__mobile">
+  <img class="lazyload" data-src="{{ '/images/case-studies/carlos-caballero/landing-mobile.png' | url }}" alt="UI for landing page"/>
+</div>
+<div class="ui-photo__desktop">
+  <img class="lazyload ui-photo__desktop" data-src="{{ '/images/case-studies/carlos-caballero/landing-desktop.png' | url }}" alt="UI for landing page"/>
+</div>
+{% enddisplay %}
+
+{% display %}
+
+<div class="ui-photo__mobile">
+  <img class="lazyload" data-src="{{ '/images/case-studies/carlos-caballero/about-mobile.png' | url }}" alt="UI for landing page"/>
+</div>
+<div class="ui-photo__desktop">
+  <img class="lazyload ui-photo__desktop" data-src="{{ '/images/case-studies/carlos-caballero/about-desktop.png' | url }}" alt="UI for landing page"/>
+</div>
+{% enddisplay %}
+
+{% display %}
+
+<div class="ui-photo__mobile">
+  <img class="lazyload" data-src="{{ '/images/case-studies/carlos-caballero/contact-mobile.png' | url }}" alt="UI for landing page"/>
+</div>
+<div class="ui-photo__desktop">
+  <img class="lazyload ui-photo__desktop" data-src="{{ '/images/case-studies/carlos-caballero/contact-desktop.png' | url }}" alt="UI for landing page"/>
+</div>
+{% enddisplay %}
 
 On the contact page, users can WhatsApp directly through a CTA thanks to [WhatsApp Click To Chat links](https://faq.whatsapp.com/general/chats/how-to-use-click-to-chat), or add all the contact details directly to their device downloading the vCard.
 

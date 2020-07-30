@@ -66,11 +66,11 @@ After a few brainstorming sessions with the London and Lisbon offices, I quickly
 
 Thankfully BEAR had already done the work on the company values:
 
-![UX](/images/case-studies/moteefe/bear.png)
+<img class="lazyload" data-src="{{ '/images/case-studies/moteefe/bear.png' | url }}" alt="BEAR company values"/>
 
 At a brainstorming session with the founders, this seemed to be the crazy user flow:
 
-![UX](/images/case-studies/moteefe/user-flow.png)
+<img class="lazyload" data-src="{{ '/images/case-studies/moteefe/user-flow.png' | url }}" alt="Moteefe user flow"/>
 
 After a few days of strategic discussions and product research, it was decided we should rebuild the app from scratch, in stages and in React.
 
@@ -89,7 +89,7 @@ Solutions:
 
 ## Implementing SCRUM
 
-![SCRUM planning meeting](/images/case-studies/moteefe/agile.png)
+<img class="lazyload" data-src="{{ '/images/case-studies/moteefe/agile.png' | url }}" alt="Implementing agile"/>
 
 Some of the team members had worked with agile methodology before, but the founders had been working on different ways as the company grew and hadn't considered ownership as part of project planning. Epics was a completely new concept for them. So I sat down with them and after a few sessions, we had set a few guidelines:
 
@@ -106,8 +106,8 @@ The creators had a campaign builder tool at their disposal to create the garment
 The company's directions on how to inform things like VAT, product availability and cost weren't clear, so there were some heavy brainstorming sessions until late.
 
 {% fullscreen %}
-![UX](/images/case-studies/moteefe/wb-campaign.png)
-![UX](/images/case-studies/moteefe/wb-builder.png)
+<img class="lazyload" data-src="{{ '/images/case-studies/moteefe/wb-campaign.png' | url }}" alt="Brainstorming campaign builder"/>
+<img class="lazyload" data-src="{{ '/images/case-studies/moteefe/wb-builder.png' | url }}" alt="Brainstorming campaign editing"/>
 {% endfullscreen %}
 
 ## Wireframing
@@ -115,11 +115,10 @@ The company's directions on how to inform things like VAT, product availability 
 I worked on low-fi wireframes to have a discussion ground with sales and founders for business and customer feedback.
 
 {% screens %}
-![UX](/images/case-studies/moteefe/ux-upload.png)
-![UX](/images/case-studies/moteefe/ux-select.png)
-![UX](/images/case-studies/moteefe/ux-edit.png)
-![UX](/images/case-studies/moteefe/ux-selected.png)
-
+<img class="lazyload" data-src="{{ '/images/case-studies/moteefe/ux-upload.png' | url }}" alt="Upload your design wireframe"/>
+<img class="lazyload" data-src="{{ '/images/case-studies/moteefe/ux-select.png' | url }}" alt="Select your garments wireframe"/>
+<img class="lazyload" data-src="{{ '/images/case-studies/moteefe/ux-edit.png' | url }}" alt="Edit your artwork wireframe"/>
+<img class="lazyload" data-src="{{ '/images/case-studies/moteefe/ux-selected.png' | url }}" alt="Selected products wireframe"/>
 {% endscreens %}
 
 ## Artwork handling
@@ -127,7 +126,7 @@ I worked on low-fi wireframes to have a discussion ground with sales and founder
 The customer could upload different artworks and the editor had to handle them within different canvas. I put together guidelines to asses the frames and actionable elements of the design tool, and how they should react in different situations.
 
 {% fullscreen %}
-![Limits](/images/case-studies/moteefe/ux-limits.png)
+<img class="lazyload" data-src="{{ '/images/case-studies/moteefe/ux-limits.png' | url }}" alt="Artwork limits for builder"/>
 {% endfullscreen %}
 
 <div id="tldr"></div>
@@ -137,10 +136,10 @@ The customer could upload different artworks and the editor had to handle them w
 Together with Jason, we put together the final designs.
 
 {% screens %}
-![UI](/images/case-studies/moteefe/ui-upload.png)
-![UI](/images/case-studies/moteefe/ui-select.png)
-![UI](/images/case-studies/moteefe/ui-edit.png)
-![UI](/images/case-studies/moteefe/ui-selected.png)
+<img class="lazyload" data-src="{{ '/images/case-studies/moteefe/ui-upload.png' | url }}" alt="Upload your design screen"/>
+<img class="lazyload" data-src="{{ '/images/case-studies/moteefe/ui-select.png' | url }}" alt="Select a product screen"/>
+<img class="lazyload" data-src="{{ '/images/case-studies/moteefe/ui-edit.png' | url }}" alt="Edit your artwork screen"/>
+<img class="lazyload" data-src="{{ '/images/case-studies/moteefe/ui-selected.png' | url }}" alt="Selected products screen"/>
 {% endscreens %}
 
 ## Development
@@ -148,7 +147,7 @@ Together with Jason, we put together the final designs.
 Together with Henrique and Wagner, we built all these components into a separate repository and private npm package, with a Storybook library to preview, test and document all the reusable components.
 
 {% fullscreen %}
-!['/images/case-studies/moteefe/storybook.png'](/images/case-studies/moteefe/storybook.png)
+<img class="lazyload" data-src="{{ '/images/case-studies/moteefe/storybook.png' | url }}" alt="Moteefe Storybook"/>
 {% endfullscreen %}
 
 ## Results and improvements

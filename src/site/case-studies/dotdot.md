@@ -36,7 +36,7 @@ properties:
 
 Alex and I have been proudly working on many side projects over the years. The origin of this story starts no less than 10 years ago, when he built [Chevismo](https://chevismo.com/).
 
-![Chevismo.com](/images/case-studies/dotdot/chevismo.png)
+<img class="lazyload" data-src="{{ '/images/case-studies/dotdot/chevismo.png' | url }}" alt="Chevismo back in 2016"/>
 
 We left this project years ago, but it was an online community where Alex built ideas he thought would be interesting to have online. When I met Alex in Uni, I started collaborating on many of these. But the homepage, besides being a bit of a sitemap to the rest of the site, was really just a dead simple chat.
 
@@ -75,7 +75,7 @@ Since this project was heavily sided on backend, the developers started building
 Thanks to WebSockets technology, **you can stream what an user is typing**.
 
 {% fullscreen %}
-![is typing](/images/case-studies/dotdot/chat.png)
+<img class="lazyload" data-src="{{ '/images/case-studies/dotdot/chat.png' | url }}" alt="dotdot screenshot"/>
 {% endfullscreen %}
 
 While this may seem like a bit of an uncanny valley to you at the moment, it resembles another UX paradigm shift you might have come across before: the first Snapchat you received and... gone!
@@ -109,7 +109,7 @@ We separated these two into 2 screens:
 ## Interface exploration
 
 {% fullscreen %}
-![competitor research](/images/case-studies/dotdot/research.png)
+<img class="lazyload" data-src="{{ '/images/case-studies/dotdot/research.png' | url }}" alt="WhatsApp, Messenger, Instagram and Slack analysis"/>
 {% endfullscreen %}
 
 I studied the UI elements and experience of the most well-known chat apps out there to make the experience relatable to users. It was interesting to see:
@@ -123,7 +123,7 @@ I studied the UI elements and experience of the most well-known chat apps out th
 Based on this and after a few brainstorming sessions with Alex and Phil, I came up with initial high-end wireframes for the web-app.
 
 {% fullscreen %}
-![wires](/images/case-studies/dotdot/wireframes.png)
+<img class="lazyload" data-src="{{ '/images/case-studies/dotdot/wireframes.png' | url }}" alt="UX for dotdot"/>
 {% endfullscreen %}
 
 - Landing would focus on a personal approach for a login screen while briefly describing the app.
@@ -134,7 +134,7 @@ Based on this and after a few brainstorming sessions with Alex and Phil, I came 
 ## Branding exploration
 
 {% fullscreen %}
-![branding](/images/case-studies/dotdot/exploring-branding.png)
+<img class="lazyload" data-src="{{ '/images/case-studies/dotdot/exploring-branding.png' | url }}" alt="Branding options for dotdot"/>
 {% endfullscreen %}
 
 While the developers were working on the app, I explored concepts for branding. The whole concept revolved around any 2 people interacting, so a core branding concept was representing each person with a dot. Besides that:
@@ -152,17 +152,25 @@ As the developers were building the better prototype, we quickly realised web-ch
 
 For the type, I had originally gone with [Rubik](https://fonts.google.com/specimen/Rubik), a slightly quirky type, but ended up going with [Manrope](https://fonts.google.com/specimen/Manrope), a new variable font. It reads brilliantly at small sizes and makes for a super-fast load time.
 
-{% fullscreen %}
-![branding](/images/case-studies/dotdot/dotdot-branding.png)
-{% endfullscreen %}
+{% display %}
 
-{% fullscreen %}
-![branding](/images/case-studies/dotdot/ui-dark.png)
-{% endfullscreen %}
+<div class="ui-photo__mobile">
+  <img class="lazyload" data-src="{{ '/images/case-studies/dotdot/ui-dark-mobile.png' | url }}" alt="UI for landing page"/>
+</div>
+<div class="ui-photo__desktop">
+  <img class="lazyload ui-photo__desktop" data-src="{{ '/images/case-studies/dotdot/ui-dark-desktop.png' | url }}" alt="UI for landing page"/>
+</div>
+{% enddisplay %}
 
-{% fullscreen %}
-![branding](/images/case-studies/dotdot/ui-light.png)
-{% endfullscreen %}
+{% display %}
+
+<div class="ui-photo__mobile">
+  <img class="lazyload" data-src="{{ '/images/case-studies/dotdot/ui-light-mobile.png' | url }}" alt="UI for landing page"/>
+</div>
+<div class="ui-photo__desktop">
+  <img class="lazyload ui-photo__desktop" data-src="{{ '/images/case-studies/dotdot/ui-light-desktop.png' | url }}" alt="UI for landing page"/>
+</div>
+{% enddisplay %}
 
 ## The user-picked colour challenge
 
@@ -170,7 +178,7 @@ Users can be on the light or dark theme, depending on their device and the setti
 
 So I developed a `makeColorReadable` function! Powered by [pSBC](<https://github.com/PimpTrizkit/PJs/wiki/12.-Shade,-Blend-and-Convert-a-Web-Color-(pSBC.js)>).
 
-```jsx
+```js
 /**
  * Takes a HEX string (with or without pound) and returns a colour visible in the theme background
  */
@@ -189,7 +197,7 @@ export const makeColorReadable = (color: string) => {
 }
 ```
 
-![branding](/images/case-studies/dotdot/make-color-readable.png)
+<img class="lazyload" data-src="{{ '/images/case-studies/dotdot/make-color-readable.png' | url }}" alt="Showing different colors on the dark and light modes"/>
 
 This function measures the luminance a colour has and, if it's further than 50% in range (to preserve the originally picked colour where possible), swaps the colour with the one adapted for the theme.
 
