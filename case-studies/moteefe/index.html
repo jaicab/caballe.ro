@@ -25,6 +25,54 @@
     <link rel="preconnect" href="https://res.cloudinary.com">
     <link rel="dns-prefetch" href="https://res.cloudinary.com">
 
+    <script>
+      /* Dark mode JS */
+
+      function getTheme() {
+        if (!window.matchMedia) 
+          return true;
+        else 
+          return window
+            .matchMedia('(prefers-color-scheme: light)')
+            .matches
+        }
+
+      function loadTheme() {
+        var currentTheme = sessionStorage.getItem('theme');
+        console.log('test', typeof sessionStorage.getItem('theme'))
+        if (currentTheme === null) {
+          currentTheme = getTheme()
+          sessionStorage.setItem('theme', currentTheme)
+        }
+
+        console.log('initial', currentTheme)
+        var toggle = document.getElementById('lightSwitch');
+        toggle.checked = currentTheme == 'true';
+
+        console.log('before', toggle.checked)
+
+        switchTheme(toggle)
+      }
+
+      function switchTheme(el) {
+        sessionStorage.setItem('theme', el.checked)
+        console.log('after', el.checked)
+
+        if (el.checked) 
+          document
+            .body
+            .classList
+            .remove('u-dark')
+        else 
+          document
+            .body
+            .classList
+            .add('u-dark')
+        }
+
+      document.addEventListener("DOMContentLoaded", loadTheme);
+    </script>
+
     <link href="//fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,400;0,600;0,700;0,900;1,420&family=Space+Mono:wght@400&display=swap" rel="stylesheet">
 
   </head>
@@ -251,53 +299,5 @@
 </footer>
 
     <!-- Current page: /case-studies/moteefe/ -->
-
-    <script>
-      /* Dark mode JS */
-
-      function getTheme() {
-        if (!window.matchMedia) 
-          return true;
-        else 
-          return window
-            .matchMedia('(prefers-color-scheme: light)')
-            .matches
-        }
-
-      function loadTheme() {
-        var currentTheme = sessionStorage.getItem('theme');
-        console.log('test', typeof sessionStorage.getItem('theme'))
-        if (currentTheme === null) {
-          currentTheme = getTheme()
-          sessionStorage.setItem('theme', currentTheme)
-        }
-
-        console.log('initial', currentTheme)
-        var toggle = document.getElementById('lightSwitch');
-        toggle.checked = currentTheme == 'true';
-
-        console.log('before', toggle.checked)
-
-        switchTheme(toggle)
-      }
-
-      function switchTheme(el) {
-        sessionStorage.setItem('theme', el.checked)
-        console.log('after', el.checked)
-
-        if (el.checked) 
-          document
-            .body
-            .classList
-            .remove('u-dark')
-        else 
-          document
-            .body
-            .classList
-            .add('u-dark')
-        }
-
-      document.addEventListener("DOMContentLoaded", loadTheme);
-    </script>
   </body>
 </html>
