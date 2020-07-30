@@ -1,15 +1,14 @@
 .c-logo {
   display: inline-block;
-  height: 1em;
+  height: 1.2em;
 
   svg {
-    height: 100%;
-    height: 99%;
+    height: 92%;
     width: auto;
     fill: currentColor !important;
   }
 
   @include mq($from: tablet) {
-    height: 1.3em;
+    height: 1.5em;
   }
 }

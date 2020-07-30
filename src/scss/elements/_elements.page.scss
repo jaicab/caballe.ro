@@ -24,17 +24,6 @@ body {
       color: var(--color-bg);
       background: var(--color-text);
     }
-
-    .o-header:hover {
-      background: var(--color-text);
-      color: var(--color-bg);
-
-      /*
-      @media (prefers-color-scheme: dark) {
-        background: var(--color-bg);
-        color: var(--color-text);
-      } */
-    }
   }
 
   @include mq($from: desktop) {
@@ -56,6 +45,19 @@ body {
 
     &.u-dark .o-header {
       background: var(--color-text);
+    }
+
+    &.tmpl-report {
+      .o-header:hover {
+        background: var(--color-text);
+        color: var(--color-bg);
+
+        /*
+      @media (prefers-color-scheme: dark) {
+        background: var(--color-bg);
+        color: var(--color-text);
+      } */
+      }
     }
   }
 }

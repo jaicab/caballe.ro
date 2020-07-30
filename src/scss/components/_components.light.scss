@@ -8,8 +8,7 @@
 
   svg {
     fill: currentColor !important;
-    margin-top: 0.2em;
-    height: $global-spacing-unit;
+    height: $global-spacing-unit * 0.8;
     width: auto;
     transition: 300ms transform;
     transform: scale(1);
@@ -23,14 +22,22 @@
   label {
     cursor: pointer;
 
-    &:hover {
-      svg {
-        transform: scale(1.2);
-      }
-    }
+    @include mq($from: desktop) {
+      margin-top: 0.2em;
 
-    &:active {
-      cursor: grab;
+      svg {
+        height: $global-spacing-unit;
+      }
+
+      &:hover {
+        svg {
+          transform: scale(1.2);
+        }
+      }
+
+      &:active {
+        cursor: grab;
+      }
     }
   }
 
