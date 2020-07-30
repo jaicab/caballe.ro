@@ -212,7 +212,7 @@ So I had to make each colour unique, even at the cost of being slightly off-bran
   <img class="lazyload" data-src="{{ '/images/case-studies/carlos-caballero/landing-mobile.png' | url }}" alt="UI for landing page"/>
 </div>
 <div class="ui-photo__desktop">
-  <img class="lazyload ui-photo__desktop" data-src="{{ '/images/case-studies/carlos-caballero/landing-desktop.png' | url }}" alt="UI for landing page"/>
+  <img class="lazyload" data-src="{{ '/images/case-studies/carlos-caballero/landing-desktop.png' | url }}" alt="UI for landing page"/>
 </div>
 {% enddisplay %}
 
@@ -222,7 +222,7 @@ So I had to make each colour unique, even at the cost of being slightly off-bran
   <img class="lazyload" data-src="{{ '/images/case-studies/carlos-caballero/about-mobile.png' | url }}" alt="UI for landing page"/>
 </div>
 <div class="ui-photo__desktop">
-  <img class="lazyload ui-photo__desktop" data-src="{{ '/images/case-studies/carlos-caballero/about-desktop.png' | url }}" alt="UI for landing page"/>
+  <img class="lazyload" data-src="{{ '/images/case-studies/carlos-caballero/about-desktop.png' | url }}" alt="UI for landing page"/>
 </div>
 {% enddisplay %}
 
@@ -232,7 +232,7 @@ So I had to make each colour unique, even at the cost of being slightly off-bran
   <img class="lazyload" data-src="{{ '/images/case-studies/carlos-caballero/contact-mobile.png' | url }}" alt="UI for landing page"/>
 </div>
 <div class="ui-photo__desktop">
-  <img class="lazyload ui-photo__desktop" data-src="{{ '/images/case-studies/carlos-caballero/contact-desktop.png' | url }}" alt="UI for landing page"/>
+  <img class="lazyload" data-src="{{ '/images/case-studies/carlos-caballero/contact-desktop.png' | url }}" alt="UI for landing page"/>
 </div>
 {% enddisplay %}
 

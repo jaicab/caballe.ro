@@ -158,7 +158,7 @@ For the type, I had originally gone with [Rubik](https://fonts.google.com/specim
   <img class="lazyload" data-src="{{ '/images/case-studies/dotdot/ui-dark-mobile.png' | url }}" alt="UI for landing page"/>
 </div>
 <div class="ui-photo__desktop">
-  <img class="lazyload ui-photo__desktop" data-src="{{ '/images/case-studies/dotdot/ui-dark-desktop.png' | url }}" alt="UI for landing page"/>
+  <img class="lazyload" data-src="{{ '/images/case-studies/dotdot/ui-dark-desktop.png' | url }}" alt="UI for landing page"/>
 </div>
 {% enddisplay %}
 
@@ -168,7 +168,7 @@ For the type, I had originally gone with [Rubik](https://fonts.google.com/specim
   <img class="lazyload" data-src="{{ '/images/case-studies/dotdot/ui-light-mobile.png' | url }}" alt="UI for landing page"/>
 </div>
 <div class="ui-photo__desktop">
-  <img class="lazyload ui-photo__desktop" data-src="{{ '/images/case-studies/dotdot/ui-light-desktop.png' | url }}" alt="UI for landing page"/>
+  <img class="lazyload" data-src="{{ '/images/case-studies/dotdot/ui-light-desktop.png' | url }}" alt="UI for landing page"/>
 </div>
 {% enddisplay %}
 
