@@ -70,7 +70,6 @@
   box-shadow: 0 0 0 0 transparent, 0 0 0 0 var(--color-bg),
     0 0 0 0 var(--color-text);
   transition: $global-transition;
-  font-family: $font-family-heading;
 
   .c-btn__text {
     transition: $global-transition;

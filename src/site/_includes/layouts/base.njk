@@ -25,24 +25,6 @@
     <link rel="preconnect" href="https://res.cloudinary.com">
     <link rel="dns-prefetch" href="https://res.cloudinary.com">
 
-    <link href="//fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,400;0,600;0,700;0,900;1,420&family=Space+Mono:wght@400&display=swap" rel="stylesheet">
-
-  </head>
-  <body{% if templateClass %} class="{{ templateClass }}"{% endif %} {% if themeColor %} style="--color-bg: {{ themeColor }};"{% endif %}>
-    {% include "_header.njk" %}
-
-    <main>
-      {{ content | safe }}
-
-      {% if map %}
-        {% include "_map.njk" %}
-      {% endif %}
-    </main>
-
-    {% include "_footer.njk" %}
-
-    <!-- Current page: {{ page.url | url }} -->
-
     <script>
       /* Dark mode JS */
 
@@ -90,5 +72,23 @@
 
       document.addEventListener("DOMContentLoaded", loadTheme);
     </script>
+
+    <link href="//fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,400;0,600;0,700;0,900;1,420&family=Space+Mono:wght@400&display=swap" rel="stylesheet">
+
+  </head>
+  <body{% if templateClass %} class="{{ templateClass }}"{% endif %} {% if themeColor %} style="--color-bg: {{ themeColor }};"{% endif %}>
+    {% include "_header.njk" %}
+
+    <main>
+      {{ content | safe }}
+
+      {% if map %}
+        {% include "_map.njk" %}
+      {% endif %}
+    </main>
+
+    {% include "_footer.njk" %}
+
+    <!-- Current page: {{ page.url | url }} -->
   </body>
 </html>
