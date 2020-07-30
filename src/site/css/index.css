@@ -422,11 +422,13 @@ body {
     body.tmpl-report.u-dark {
       color: var(--color-bg);
       background: var(--color-text); }
-  body.is-active {
+  body.is-transitioning {
     transition: 500ms all; }
   @media (min-width: 61.25em) {
     body {
       padding-top: 180px; }
+      body.is-transitioning .o-header {
+        transition: 200ms all; }
       body .o-header {
         position: fixed;
         top: 0;
@@ -737,12 +739,10 @@ pre {
       .o-header .c-logo {
         align-self: center; } }
   @media (min-width: 61.25em) {
-    .o-header {
-      transition: 200ms all; }
-      .o-header__logo {
-        padding-right: 60px !important; }
-      .o-header__nav {
-        font-size: 1.11111em; } }
+    .o-header__logo {
+      padding-right: 60px !important; }
+    .o-header__nav {
+      font-size: 1.11111em; } }
 
 .o-nav {
   list-style: none;
