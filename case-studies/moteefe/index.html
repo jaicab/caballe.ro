@@ -39,24 +39,23 @@
 
       function loadTheme() {
         var currentTheme = sessionStorage.getItem('theme');
-        console.log('test', typeof sessionStorage.getItem('theme'))
         if (currentTheme === null) {
           currentTheme = getTheme()
           sessionStorage.setItem('theme', currentTheme)
         }
 
-        console.log('initial', currentTheme)
         var toggle = document.getElementById('lightSwitch');
         toggle.checked = currentTheme == 'true';
-
-        console.log('before', toggle.checked)
 
         switchTheme(toggle)
       }
 
       function switchTheme(el) {
         sessionStorage.setItem('theme', el.checked)
-        console.log('after', el.checked)
+        document
+          .body
+          .classList
+          .add('is-active')
 
         if (el.checked) 
           document

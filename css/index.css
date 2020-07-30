@@ -418,11 +418,12 @@ body {
     background: var(--color-text);
   } */ }
   body.tmpl-report {
-    --color-text: var(--color-black);
-    transition: 500ms all; }
+    --color-text: var(--color-black); }
     body.tmpl-report.u-dark {
       color: var(--color-bg);
       background: var(--color-text); }
+  body.is-active {
+    transition: 500ms all; }
   @media (min-width: 61.25em) {
     body {
       padding-top: 180px; }
