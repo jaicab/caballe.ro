@@ -47,8 +47,12 @@
         var toggle = document.getElementById('lightSwitch');
         toggle.checked = currentTheme == 'true';
 
-        switchTheme(toggle)
-      }
+        if (!toggle.checked) 
+          document
+            .body
+            .classList
+            .add('u-dark')
+        }
 
       function switchTheme(el) {
         sessionStorage.setItem('theme', el.checked)
