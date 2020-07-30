@@ -423,7 +423,7 @@ body {
       color: var(--color-bg);
       background: var(--color-text); }
   body.is-transitioning {
-    transition: 500ms all; }
+    transition: 500ms color, 500ms background-color; }
   @media (min-width: 61.25em) {
     body {
       padding-top: 180px; }
@@ -536,38 +536,6 @@ pre {
   @media (min-width: 46.25em) {
     .c-logo {
       height: 1.5em; } }
-
-.c-nav-item a {
-  display: block;
-  padding: 15px 0; }
-
-.c-nav-item a::after {
-  content: "";
-  display: block;
-  width: 2em;
-  height: 0.25em;
-  transform: rotate(-2deg) scaleX(0);
-  background: currentColor;
-  opacity: 0.4;
-  transform-origin: left center;
-  margin-top: 0.15em;
-  transition: all 200ms ease-out; }
-
-.c-nav-item a:hover::after,
-.c-nav-item a:focus::after {
-  transform: rotate(-2deg) scaleX(1); }
-
-.c-nav-item.is-active {
-  font-weight: 700; }
-  .c-nav-item.is-active a::after {
-    background: var(--color-orange);
-    transform: rotate(-2deg) scaleX(1) !important;
-    transition: none;
-    opacity: 1; }
-
-@media (min-width: 46.25em) {
-  .c-nav-item a {
-    padding: 30px; } }
 
 .c-tagline {
   display: block;
