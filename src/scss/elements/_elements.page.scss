@@ -18,10 +18,17 @@ body {
 
   &.tmpl-report {
     --color-text: var(--color-black);
+    transition: 500ms all;
+
+    &.u-dark {
+      color: var(--color-bg);
+      background: var(--color-text);
+    }
 
     .o-header:hover {
       background: var(--color-text);
       color: var(--color-bg);
+
       /*
       @media (prefers-color-scheme: dark) {
         background: var(--color-bg);
@@ -40,10 +47,15 @@ body {
       right: 0;
       background: var(--color-bg);
       z-index: 100;
+
       /*
       @media (prefers-color-scheme: dark) {
         background: var(--color-text);
       } */
+    }
+
+    &.u-dark .o-header {
+      background: var(--color-text);
     }
   }
 }

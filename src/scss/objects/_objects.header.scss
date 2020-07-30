@@ -4,10 +4,11 @@
   &__content {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     height: 77px;
 
     > div {
-      padding: $global-spacing-unit 0;
+      padding: $global-spacing-unit/2 0;
     }
   }
 
@@ -29,7 +30,7 @@
       height: 85px / $global-font-size * 1em;
 
       > div {
-        //padding: $global-spacing-unit * 1.2 0;
+        padding: $global-spacing-unit 0;
       }
     }
 
@@ -55,7 +56,7 @@
     }
   }
   @include mq($from: desktop) {
-    transition: 0.2s all;
+    transition: 200ms all;
 
     &__logo {
       padding-right: $global-spacing-unit * 2 !important;

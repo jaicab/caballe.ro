@@ -1,0 +1,42 @@
+.c-light {
+  display: flex;
+  justify-content: center;
+
+  input {
+    display: none;
+  }
+
+  svg {
+    fill: currentColor !important;
+    margin-top: 0.2em;
+    height: $global-spacing-unit;
+    width: auto;
+    transition: 300ms transform;
+    transform: scale(1);
+  }
+
+  #shine {
+    opacity: 0;
+    transition: 300ms opacity;
+  }
+
+  label {
+    cursor: pointer;
+
+    &:hover {
+      svg {
+        transform: scale(1.2);
+      }
+    }
+
+    &:active {
+      cursor: grab;
+    }
+  }
+
+  input:checked ~ label {
+    #shine {
+      opacity: 1;
+    }
+  }
+}
