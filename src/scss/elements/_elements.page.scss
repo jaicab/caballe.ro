@@ -26,7 +26,7 @@ body {
   }
 
   &.is-transitioning {
-    transition: 500ms all;
+    transition: 500ms color, 500ms background-color;
   }
 
   @include mq($from: desktop) {
