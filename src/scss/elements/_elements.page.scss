@@ -18,12 +18,15 @@ body {
 
   &.tmpl-report {
     --color-text: var(--color-black);
-    transition: 500ms all;
 
     &.u-dark {
       color: var(--color-bg);
       background: var(--color-text);
     }
+  }
+
+  &.is-active {
+    transition: 500ms all;
   }
 
   @include mq($from: desktop) {
