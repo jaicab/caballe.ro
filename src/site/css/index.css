@@ -528,15 +528,16 @@ pre {
       padding: 2em; } }
 
 .c-logo {
-  display: inline-block;
-  height: 1.2em; }
+  display: block;
+  height: 100%; }
   .c-logo svg {
-    height: 92%;
+    height: 20px;
+    display: block;
     width: auto;
     fill: currentColor !important; }
-  @media (min-width: 46.25em) {
-    .c-logo {
-      height: 1.5em; } }
+    @media (min-width: 46.25em) {
+      .c-logo svg {
+        height: 30px; } }
 
 .c-tagline {
   display: block;
@@ -887,7 +888,7 @@ pre {
     flex-wrap: wrap;
     margin-bottom: -60px; }
     .o-article__properties .o-properties {
-      margin-right: 2em; } }
+      margin-right: 1em; } }
 
 @media (max-width: 61.24em) {
   .o-article__intro {
@@ -1130,7 +1131,7 @@ pre {
   .u-text li {
     margin: 7.5px; }
   .u-text p {
-    margin: 18px 0; }
+    margin: 15px 0; }
     .u-text p code {
       font-family: "Space Mono", "Lucida Console", Monaco, monospace, monospace;
       font-weight: 500;
@@ -1145,20 +1146,27 @@ pre {
     font-weight: 600; }
   @media (min-width: 46.25em) {
     .u-text {
-      font-size: 1em;
+      font-size: 1.16667em;
       line-height: 1.55; }
       .u-text ul,
       .u-text ol {
-        padding-left: 30px; }
-      .u-text li {
-        margin: 10px 0; } }
+        padding-left: 30px; } }
   @media (min-width: 61.25em) {
     .u-text {
       line-height: 1.7;
       letter-spacing: 0.01em; } }
+  @media (min-width: 81.25em) {
+    .u-text {
+      font-size: 1em;
+      line-height: 1.77; }
+      .u-text li {
+        margin: 15px 0; } }
 
 .u-text--intro {
   font-size: 1.2em; }
+  @media (min-width: 46.25em) {
+    .u-text--intro {
+      font-size: 1.33333em; } }
   @media (min-width: 61.25em) {
     .u-text--intro {
       font-size: 1.5em; } }

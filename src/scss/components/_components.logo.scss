@@ -1,14 +1,15 @@
 .c-logo {
-  display: inline-block;
-  height: 1.2em;
+  display: block;
+  height: 100%;
 
   svg {
-    height: 92%;
+    height: 20px;
+    display: block;
     width: auto;
     fill: currentColor !important;
-  }
 
-  @include mq($from: tablet) {
-    height: 1.5em;
+    @include mq($from: tablet) {
+      height: $global-spacing-unit;
+    }
   }
 }
