@@ -150,6 +150,25 @@ Together with Henrique and Wagner, we built all these components into a separate
 <img class="lazyload" data-src="{{ '/images/case-studies/moteefe/storybook.png' | url }}" alt="Moteefe Storybook"/>
 {% endfullscreen %}
 
+{% screens %}
+<video autoplay loop muted playsiline>
+
+  <source src="{{ '/images/case-studies/moteefe/color-selector.mp4' | url }}" type="video/mp4"/>
+</video>
+<video autoplay loop muted playsiline>
+
+  <source src="{{ '/images/case-studies/moteefe/profit-calculator.mp4' | url }}" type="video/mp4"/>
+</video>
+<video autoplay loop muted playsiline>
+
+  <source src="{{ '/images/case-studies/moteefe/campaign-options.mp4' | url }}" type="video/mp4"/>
+</video>
+<video autoplay loop muted playsiline>
+
+  <source src="{{ '/images/case-studies/moteefe/duration-selector.mp4' | url }}" type="video/mp4"/>
+</video>
+{% endscreens %}
+
 ## Results and improvements
 
 Moteefe has now moved on from this heavy blue and red UI to a more minimalist design. They hired a great agency, but hadn't planned for UI design. It took some decent time since I joined to get into a position where we could be producing something valuable. We learned:
