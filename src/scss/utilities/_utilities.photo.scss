@@ -101,9 +101,11 @@
       padding: 0 !important;
       margin: 0 !important;
 
-      img {
+      img,
+      .c-video {
         margin-top: 0;
-        border-top: 5px solid var(--color-bg);
+        border-left: 0;
+        border-right: 0;
       }
     }
   }
@@ -117,11 +119,15 @@
       align-items: flex-start;
 
       img,
-      video {
+      .c-video {
         height: auto;
         max-height: none;
-        max-width: 47%;
+        width: 47%;
         margin: $global-spacing-unit $global-spacing-unit/2 !important;
+      }
+
+      .c-video {
+        padding-bottom: 25%;
       }
     }
   }

@@ -151,22 +151,24 @@ Together with Henrique and Wagner, we built all these components into a separate
 {% endfullscreen %}
 
 {% screens %}
-<video autoplay loop muted playsiline>
 
-  <source src="{{ '/images/case-studies/moteefe/color-selector.mp4' | url }}" type="video/mp4"/>
-</video>
-<video autoplay loop muted playsiline>
-
-  <source src="{{ '/images/case-studies/moteefe/profit-calculator.mp4' | url }}" type="video/mp4"/>
-</video>
-<video autoplay loop muted playsiline>
-
-  <source src="{{ '/images/case-studies/moteefe/campaign-options.mp4' | url }}" type="video/mp4"/>
-</video>
-<video autoplay loop muted playsiline>
-
-  <source src="{{ '/images/case-studies/moteefe/duration-selector.mp4' | url }}" type="video/mp4"/>
-</video>
+<div class="c-video">
+  <video autoplay loop muted playsiline>
+    <source src="{{ '/images/case-studies/moteefe/color-selector.mp4' | url }}" type="video/mp4"/>
+  </video>
+</div><div class="c-video">
+  <video autoplay loop muted playsiline>
+    <source src="{{ '/images/case-studies/moteefe/profit-calculator.mp4' | url }}" type="video/mp4"/>
+  </video>
+</div><div class="c-video">
+  <video autoplay loop muted playsiline>
+    <source src="{{ '/images/case-studies/moteefe/campaign-options.mp4' | url }}" type="video/mp4"/>
+  </video>
+</div><div class="c-video">
+  <video autoplay loop muted playsiline>
+    <source src="{{ '/images/case-studies/moteefe/duration-selector.mp4' | url }}" type="video/mp4"/>
+  </video>
+</div>
 {% endscreens %}
 
 ## Results and improvements
