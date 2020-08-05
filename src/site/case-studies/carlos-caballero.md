@@ -98,7 +98,11 @@ From the interview, I gathered relevant information for content creation and com
 
 ### Mobile focused experience
 
-<img class="lazyload" data-src="{{ '/images/case-studies/carlos-caballero/stats.png' | url }}" alt="Google Analytics stats"/>
+| Device category | Users   |
+| --------------- | ------- |
+| mobile          | 68,08 % |
+| desktop         | 9,59 %  |
+| tablet          | 2,33 %  |
 
 68% of traffic came from mobile, so mobile experience was crucial. The interview also revealed clients added the contact details to their phones instead of asking for a card, and an uprise in people contacting via WhatsApp as a first contact validated this rise in mobile engagement.
 

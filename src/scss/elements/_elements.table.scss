@@ -1,0 +1,26 @@
+table {
+  border-collapse: collapse;
+  margin: $global-spacing-unit 0;
+}
+
+tr {
+  border: 1px solid currentColor;
+  border-left: 0;
+  border-right: 0;
+}
+td,
+th {
+  padding: $global-spacing-unit/2 $global-spacing-unit/2 $global-spacing-unit/5 *
+    2;
+}
+
+th {
+  text-align: left;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+td {
+  font-family: $font-family-heading;
+  text-transform: uppercase;
+}

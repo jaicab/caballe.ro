@@ -11,6 +11,10 @@
     border: 1px solid currentColor;
   }
 
+  table {
+    width: 100%;
+  }
+
   ul,
   ol {
     margin: $global-spacing-unit / 2 0;
