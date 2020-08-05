@@ -479,14 +479,14 @@ a {
   text-decoration: none;
   color: inherit; }
 
-img {
-  display: inline-block;
+img,
+svg,
+video {
   max-width: 100%;
   height: auto; }
 
-svg {
-  max-width: 100%;
-  height: auto; }
+img {
+  display: inline-block; }
 
 ul {
   list-style: none;

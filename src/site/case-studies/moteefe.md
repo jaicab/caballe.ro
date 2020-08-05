@@ -147,7 +147,9 @@ Together with Jason, we put together the final designs.
 Together with Henrique and Wagner, we built all these components into a separate repository and private npm package, with a Storybook library to preview, test and document all the reusable components.
 
 {% fullscreen %}
-<img class="lazyload" data-src="{{ '/images/case-studies/moteefe/storybook.png' | url }}" alt="Moteefe Storybook"/>
+<video autoplay loop muted playsinline>
+<source src="{{ '/images/case-studies/moteefe/storybook.mp4' | url }}" type="video/mp4"/>
+</video>
 {% endfullscreen %}
 
 {% screens %}
