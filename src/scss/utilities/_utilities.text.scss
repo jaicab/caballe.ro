@@ -13,6 +13,7 @@
 
   table {
     width: 100%;
+    font-size: 0.9em;
   }
 
   ul,
@@ -72,6 +73,10 @@
   @include mq($from: desktop) {
     line-height: 1.7;
     letter-spacing: 0.01em;
+
+    table {
+      font-size: 1em;
+    }
   }
 
   @include mq($from: wide) {

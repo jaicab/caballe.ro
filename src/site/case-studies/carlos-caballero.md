@@ -50,7 +50,7 @@ Based on a business discovery interview and remote polling, I found a few intere
 
 ## Mission and solutions
 
-Based on the client requirements and user feedback, I was set on the product mission:
+Based on requirements and user feedback, I was set on the product mission:
 
 > Make attending therapy look friendly, human and inclusive.
 
@@ -71,14 +71,13 @@ I interviewed the therapist and gathered data from Google Analytics, Google Tren
 
 ### Business history insight
 
-The current clientele was formed by
+| Therapy type | % of total | Women / Men | Age groups    |
+| ------------ | ---------- | ----------- | ------------- |
+| Couples      | 60%        | 70 / 30     | 20-30 / 40-45 |
+| Teenagers    | 20%        | 50 / 50     | Up to 24      |
+| Others       | 20%        | 50 / 50     | Mixed         |
 
-- 60% couples therapy
-  - 65% start with woman alone
-  - 70% women / 30% men
-  - Groups: 20-30yo 75% (less sessions) / 40-45 yo 25% (more sessions)
-- 20% teenager and young adults (up to 24yo, dependants) for personal therapy, with a 50/50 split between men and women
-- 20% others: personal therapy, families and one-off mental illnesses.
+The main source of revenue is by far couples therapy, but there was a growing interest on proactive teenargers that reached out themselves. Teenagers historically came by recommendation of their parents, now they had the initiative and asked their parents for this service.
 
 Over the last year, the rising topics were:
 
@@ -86,13 +85,11 @@ Over the last year, the rising topics were:
 - Personal development
 - Assertiveness and communication
 
-A change in clientele: Teenagers historically came by recommendation of their parents, now they had the initiative and asked their parents for this service.
-
 ### Personal development history
 
 From the interview, I gathered relevant information for content creation and communicating experience.
 
-- Had been working for over 30 years and found special success in couples therapy
+- Had been working for over 30 years and found particular success in couples therapy
 - Giving talks for over 20 years over a variety of topics
 - Speaking on radio for over 23 years
 
