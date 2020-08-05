@@ -74,9 +74,10 @@ Since this project was heavily sided on backend, the developers started building
 
 Thanks to WebSockets technology, **you can stream what an user is typing**.
 
-{% fullscreen %}
-<img class="lazyload" data-src="{{ '/images/case-studies/dotdot/chat.png' | url }}" alt="dotdot screenshot"/>
-{% endfullscreen %}
+<video autoplay loop muted playsinline>
+
+<source src="{{ '/images/case-studies/dotdot/demo.mp4' | url }}" type="video/mp4"/>
+</video>
 
 While this may seem like a bit of an uncanny valley to you at the moment, it resembles another UX paradigm shift you might have come across before: the first Snapchat you received and... gone!
 
