@@ -641,6 +641,8 @@ pre {
   transition: 300ms all;
   box-shadow: 0 0 0 0 transparent, 0 0 0 0 var(--color-bg), 0 0 0 0 var(--color-text);
   transition: all 300ms ease-in-out; }
+  .u-dark .c-btn--primary {
+    box-shadow: 0 0 0 0 transparent, 0 0 0 0 var(--color-text), 0 0 0 0 var(--color-bg); }
   .c-btn--primary .c-btn__text {
     transition: all 300ms ease-in-out;
     font-weight: 600;
@@ -652,6 +654,8 @@ pre {
     box-shadow: 10px 10px 0 0 transparent, 10px 10px 0 0 var(--color-bg), 10px 10px 0 1px var(--color-text);
     transform: translate3d(-5px, -5px, 0);
     font-weight: 600; }
+    .u-dark .c-btn--primary:hover {
+      box-shadow: 10px 10px 0 0 transparent, 10px 10px 0 0 var(--color-text), 10px 10px 0 1px var(--color-bg); }
   .c-btn--primary:active {
     transition: 200ms all;
     transform: translate3d(0, 0, 0);
@@ -1156,6 +1160,15 @@ pre {
   .is-hidden-from--wide {
     display: none !important; } }
 
+.is-hidden--light {
+  display: none; }
+
+.u-dark .is-hidden--light {
+  display: inline-block; }
+
+.u-dark .is-hidden--dark {
+  display: none; }
+
 .u-content {
   margin-bottom: 90px; }
   @media (min-width: 46.25em) {
@@ -1360,6 +1373,6 @@ pre {
 
 :root {
   --color-black: #1a1a1a;
-  --color-white: #fafafa;
+  --color-white: #e6e6e6;
   --color-bg: #1a1a1a;
-  --color-text: #fafafa; }
+  --color-text: #e6e6e6; }

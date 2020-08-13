@@ -1,6 +1,6 @@
 ---
-themeColor: "#D4C7FF"
-tileColor: "#BDA9FF"
+themeColor: "D4C7FF"
+tileColor: "BDA9FF"
 layout: report
 tags: report
 short: moteefe
@@ -148,6 +148,7 @@ Together with Henrique and Wagner, we built all these components into a separate
 
 {% fullscreen %}
 <video autoplay loop muted playsinline>
+
 <source src="{{ '/images/case-studies/moteefe/storybook.mp4' | url }}" type="video/mp4"/>
 </video>
 {% endfullscreen %}

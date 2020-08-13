@@ -1,6 +1,6 @@
 ---
-themeColor: "#FECFC6"
-tileColor: "#FEAA99"
+themeColor: "FECFC6"
+tileColor: "FEAA99"
 layout: report
 tags: report
 short: dotdot

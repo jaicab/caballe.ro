@@ -1,4 +1,3 @@
-
 .is-hidden-until {
   @each $breakpoint, $_width in $mq-breakpoints {
     &--#{$breakpoint} {
@@ -16,5 +15,18 @@
         display: none !important;
       }
     }
+  }
+}
+
+.is-hidden--light {
+  display: none;
+}
+
+.u-dark {
+  .is-hidden--light {
+    display: inline-block;
+  }
+  .is-hidden--dark {
+    display: none;
   }
 }

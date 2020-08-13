@@ -12,7 +12,7 @@ templateClass: tmpl-home
     <p>I’m a Product Designer with a technical background, a Digital Nomad and a Spaniard based in London</p>
   </div>
   {%- for report in collections.report -%}
-    <a class="o-tile" href="{{ report.url | url }}" style="--color-tile: {{ report.data.tileColor }}">
+    <a class="o-tile" href="{{ report.url | url }}" style="--color-tile: #{{ report.data.tileColor }}">
       <div class="o-tile__header">
         <div class="c-tagline">{{ report.data.tagline }}</div>
         <h2 class="o-tile__title u-thick">{{ report.data.title }}</h2>
