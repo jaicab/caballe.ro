@@ -6,7 +6,7 @@
     <title>
       {% if renderData.title or title %}{{ renderData.title or title }} |  {% endif %}{{ metadata.title }} - {{ metadata.description }}</title>
     <meta name="description" content="{{ renderData.description or description or metadata.description }}">
-    <meta name="theme-color" content="#222222">
+    <meta name="theme-color" content="#1f1f1f">
     <link rel="stylesheet" href="{{ '/css/index.css' | url }}">
     <script src="{{ '/js/lazysizes.min.js' | url }}"></script>
     <link rel="icon" href="/images/favicon.png"/>
@@ -14,9 +14,11 @@
 
     <meta name="twitter:card" content="summary"/>
     <meta property="og:type" content="website"/>
-    <meta property="og:url" content="{{ metadata.url }}"/>
+    <meta property="og:url" content="{{ metadata.url }}{{ page.url }}">
+    <meta property="og:site_name" content="{{ metadata.title }}">
+
     <meta property="og:title" content="{% if renderData.title or title %}{{ renderData.title or title }} |  {% endif %}{{ metadata.title }}"/>
-    <meta property="og:description" content="{{ metadata.description }}"/>
+    <meta property="og:description" content="{{ renderData.description or description or metadata.description }}"/>
     {% if themeColor %}
       <meta property="og:image" content="https://res.cloudinary.com/jaicab/image/upload/f_auto,q_auto,b_rgb:{{ themeColor }}/v1597334258/caballero/caballero-opengraph.png"/>
     {% else %}
@@ -84,7 +86,6 @@
     </script>
 
     <link href="//fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,400;0,600;0,700;0,900;1,420&family=Space+Mono:wght@400&display=swap" rel="stylesheet">
-
   </head>
   <body{% if templateClass %} class="{{ templateClass }}"{% endif %} {% if themeColor %} style="--color-bg: #{{ themeColor }};"{% endif %}>
     {% include "_header.njk" %}
