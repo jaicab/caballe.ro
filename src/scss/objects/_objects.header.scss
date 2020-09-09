@@ -22,12 +22,12 @@
     margin-bottom: $global-spacing-unit * 3;
 
     &__logo {
-      padding-right: $global-spacing-unit * 2 !important;
+      padding-right: $global-spacing-unit !important;
       border-right: 1px solid currentColor;
     }
 
     &__content {
-      height: 88px / $global-font-size * 1em;
+      height: 84px / $global-font-size * 1em;
 
       > div {
         padding: $global-spacing-unit 0;
@@ -45,10 +45,13 @@
 
     &__nav__link {
       letter-spacing: 0.01em;
-      text-transform: uppercase;
 
       position: relative;
       top: 0.1em;
+
+      span& {
+        text-transform: uppercase;
+      }
     }
 
     .c-logo {
