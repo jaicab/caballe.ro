@@ -411,12 +411,7 @@ html {
 
 body {
   background: var(--color-bg);
-  color: var(--color-text);
-  /*
-  @media (prefers-color-scheme: dark) {
-    color: var(--color-bg);
-    background: var(--color-text);
-  } */ }
+  color: var(--color-text); }
   body.tmpl-report {
     --color-text: var(--color-black); }
     body.tmpl-report.u-dark {
@@ -425,31 +420,27 @@ body {
   body.is-transitioning {
     transition: 500ms color, 500ms background-color; }
   @media (min-width: 61.25em) {
-    body {
+    body.is-transitioning .o-header {
+      transition: 200ms all; }
+    body.tmpl-report {
       padding-top: 180px; }
-      body.is-transitioning .o-header {
-        transition: 200ms all; }
-      body .o-header {
+      body.tmpl-report .o-header {
         position: fixed;
         top: 0;
         left: 0;
         right: 0;
-        background: var(--color-bg);
         z-index: 100;
-        /*
-      @media (prefers-color-scheme: dark) {
-        background: var(--color-text);
-      } */ }
-      body.u-dark .o-header {
-        background: var(--color-text); }
-      body.tmpl-report .o-header:hover {
-        background: var(--color-text);
-        color: var(--color-bg);
-        /*
-      @media (prefers-color-scheme: dark) {
         background: var(--color-bg);
-        color: var(--color-text);
-      } */ } }
+        color: var(--color-text); }
+        body.tmpl-report .o-header:hover {
+          background: var(--color-text);
+          color: var(--color-bg); }
+      body.tmpl-report.u-dark .o-header {
+        background: var(--color-text);
+        color: var(--color-bg); }
+        body.tmpl-report.u-dark .o-header:hover {
+          background: var(--color-bg);
+          color: var(--color-text); } }
 
 h1 {
   font-size: 22px !important;
@@ -564,13 +555,13 @@ pre {
   display: block;
   height: 100%; }
   .c-logo svg {
-    height: 20px;
+    height: 22px;
     display: block;
     width: auto;
     fill: currentColor !important; }
     @media (min-width: 46.25em) {
       .c-logo svg {
-        height: 24px; } }
+        height: 30px; } }
 
 .c-tagline {
   display: block;
@@ -730,7 +721,7 @@ pre {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 77px; }
+    height: 100px; }
     .o-header__content > div {
       padding: 15px 0; }
   .o-header__logo {
@@ -738,13 +729,11 @@ pre {
     display: flex; }
   @media (min-width: 46.25em) {
     .o-header {
-      border-bottom: 1px solid currentColor;
       margin-bottom: 90px; }
       .o-header__logo {
-        padding-right: 30px !important;
-        border-right: 1px solid currentColor; }
+        padding-right: 30px !important; }
       .o-header__content {
-        height: 4.66667em; }
+        height: 6.66667em; }
         .o-header__content > div {
           padding: 30px 0; }
       .o-header__nav {
@@ -1063,7 +1052,7 @@ pre {
   0% {
     font-variation-settings: "wght" 100; }
   100% {
-    font-variation-settings: "wght" 900; } }
+    font-variation-settings: "wght" 800; } }
 
 .u-dark {
   color: var(--color-cream); }
