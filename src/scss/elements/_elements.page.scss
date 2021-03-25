@@ -10,11 +10,6 @@ html {
 body {
   background: var(--color-bg);
   color: var(--color-text);
-  /*
-  @media (prefers-color-scheme: dark) {
-    color: var(--color-bg);
-    background: var(--color-text);
-  } */
 
   &.tmpl-report {
     --color-text: var(--color-black);
@@ -30,40 +25,38 @@ body {
   }
 
   @include mq($from: desktop) {
-    padding-top: $global-spacing-unit * 6;
 
     &.is-transitioning .o-header {
       transition: 200ms all;
     }
 
-    .o-header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      background: var(--color-bg);
-      z-index: 100;
-
-      /*
-      @media (prefers-color-scheme: dark) {
-        background: var(--color-text);
-      } */
-    }
-
-    &.u-dark .o-header {
-      background: var(--color-text);
-    }
-
     &.tmpl-report {
-      .o-header:hover {
+      padding-top: $global-spacing-unit * 6;
+
+      .o-header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 100;
+
+        background: var(--color-bg);
+        color: var(--color-text);
+
+        &:hover {
+          background: var(--color-text);
+          color: var(--color-bg);
+        }
+      }
+
+      &.u-dark .o-header {
         background: var(--color-text);
         color: var(--color-bg);
 
-        /*
-      @media (prefers-color-scheme: dark) {
-        background: var(--color-bg);
-        color: var(--color-text);
-      } */
+        &:hover {
+          background: var(--color-bg);
+          color: var(--color-text);
+        }
       }
     }
   }

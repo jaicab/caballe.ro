@@ -5,7 +5,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 77px;
+    height: 100px;
 
     > div {
       padding: $global-spacing-unit/2 0;
@@ -17,17 +17,18 @@
     display: flex;
   }
 
+
   @include mq($from: tablet) {
-    border-bottom: 1px solid currentColor;
+    // border-bottom: 1px solid currentColor;
     margin-bottom: $global-spacing-unit * 3;
 
     &__logo {
       padding-right: $global-spacing-unit !important;
-      border-right: 1px solid currentColor;
+      // border-right: 1px solid currentColor;
     }
 
     &__content {
-      height: 84px / $global-font-size * 1em;
+      height: 120px / $global-font-size * 1em;
 
       > div {
         padding: $global-spacing-unit 0;
@@ -48,10 +49,6 @@
 
       position: relative;
       top: 0.1em;
-
-      span& {
-        text-transform: uppercase;
-      }
     }
 
     .c-logo {
