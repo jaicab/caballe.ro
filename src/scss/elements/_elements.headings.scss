@@ -5,18 +5,20 @@ h4,
 h5,
 h6 {
   font-family: $font-family-heading;
-  letter-spacing: -0.02em;
+  letter-spacing: 0;
 }
 
 h1 {
   @include font-size(22px, $important: true);
   margin: 0 0 0.25em;
-  letter-spacing: -0.02em;
   font-weight: 600;
   line-height: 1 !important;
 
   @include mq($from: mobile) {
-    @include font-size(28px, $important: true);
+    @include font-size(44px, $important: true);
+    font-family: $font-family-funky;
+    letter-spacing: 0.02em;
+    word-spacing: 0.25em;
   }
 
   @include mq($from: tablet) {
@@ -24,6 +26,6 @@ h1 {
   }
 
   @include mq($from: desktop) {
-    @include font-size(52px, $important: true);
+    @include font-size(72px, $important: true);
   }
 }
