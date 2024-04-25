@@ -25,13 +25,13 @@
     "@11ty/eleventy-navigation": "^0.1.5",
     "@babel/core": "^7.10.2",
     "@babel/preset-env": "^7.10.2",
-    "gulp-sass": "^4.1.0",
-    "node-sass": "^4.14.1",
+    "gulp-sass": "^5.1.0",
+    "sass": "^1.75.0",
     "ts-node": "^8.10.2"
   },
   "dependencies": {
     "gh-pages": "^3.0.0",
-    "gulp": "^4.0.2",
+    "gulp": "^5.0.0",
     "gulp-typescript": "^6.0.0-alpha.1",
     "lazysizes": "^5.2.2",
     "normalize-scss": "^7.0.1",

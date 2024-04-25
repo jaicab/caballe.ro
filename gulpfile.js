@@ -1,5 +1,5 @@
 var gulp = require("gulp");
-var sass = require("gulp-sass");
+var sass = require('gulp-sass')(require('sass'));
 var ts = require("gulp-typescript");
 
 gulp.task("js", function () {
