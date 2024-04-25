@@ -5,8 +5,8 @@ layout: report
 tags: report
 short: wise
 tagline: Research, UX / UI
-title: Decreasing contact rate on card transactions
-description: Reducing contact rate across all card transactions
+title: Reducing confusion on card refunds
+description: Removing confusion around card transactions
 timeframe: Jan 2021 - Apr 2022
 readtime: 8
 intro: "As part of the Spend Experience team, we looked at reducing costs across the entire transaction lifecycle. "

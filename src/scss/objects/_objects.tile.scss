@@ -5,7 +5,8 @@
   margin: $global-spacing-unit / 3 * 2 0;
   padding-bottom: 0 !important;
   color: #222;
-  border: 1px solid var(--color-text);
+  // border: 1px solid var(--color-text);
+  border-radius: 1em;
 
   transition: 300ms all;
   box-shadow: 0 0 0 0 var(--color-tile);
@@ -15,7 +16,6 @@
   }
 
   .c-tagline {
-    font-size: 0.7em;
     margin-top: 0.25em;
   }
 
@@ -30,14 +30,13 @@
     margin: $global-spacing-unit 0;
 
     &__title {
-      @include font-size(38px, $important: true);
+      @include font-size(36px, $important: true);
       margin: $global-spacing-unit/3 * 2 0 $global-spacing-unit;
       font-size: 2.5em;
     }
 
     .c-tagline {
       margin-top: 0.5em;
-      font-size: inherit;
     }
   }
 
@@ -57,7 +56,7 @@
     }
 
     &__title {
-      width: 40%;
+      width: 35%;
     }
 
     &__img {
@@ -87,12 +86,10 @@
 
     @include mq($from: wide) {
       &__title {
-        @include font-size(56px, $important: true);
-        line-height: 1.1 !important;
+        @include font-size(60px, $important: true);
       }
 
       .c-tagline {
-        font-size: 1.2em;
         margin-bottom: $global-spacing-unit * 1.5;
       }
     }

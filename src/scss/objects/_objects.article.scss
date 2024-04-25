@@ -79,11 +79,6 @@
   }
 
   @include mq($from: tablet) {
-    &__header {
-      .c-tagline {
-        font-size: 1.2em;
-      }
-    }
 
     &__actions {
       margin: $global-spacing-unit * 2 0;

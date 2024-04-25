@@ -2,11 +2,7 @@
   display: block;
   text-transform: uppercase;
   font-family: $font-family-heading;
-  letter-spacing: 0em;
+  letter-spacing: 0;
   opacity: 0.8;
-  font-size: 0.9em;
-
-  @include mq($from: tablet) {
-    letter-spacing: 0.1em;
-  }
+  font-size: 1em;
 }

@@ -1,0 +1,11 @@
+.o-quote {
+    // background: rgba(255,255,255, 0.2);
+    border: 1px solid white;
+    padding: 1em 2em;
+    border-radius: 1em;
+    display: block;
+    margin: 2em 0;
+
+    // background: linear-gradient(90deg, #000, #aaa);
+    backdrop-filter: saturate(180%) blur(10px);
+}
