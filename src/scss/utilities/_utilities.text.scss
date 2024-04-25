@@ -62,7 +62,7 @@
 
   @include mq($from: tablet) {
     font-size: 21px / $global-font-size * 1em;
-    line-height: 1.55;
+    line-height: 1.5;
 
     ul,
     ol {
@@ -71,7 +71,7 @@
   }
 
   @include mq($from: desktop) {
-    line-height: 1.7;
+    line-height: 1.55;
     letter-spacing: 0.01em;
 
     table {
@@ -81,7 +81,7 @@
 
   @include mq($from: wide) {
     font-size: 18px / $global-font-size * 1em;
-    line-height: 1.77;
+    line-height: 1.7;
     //font-size: 24px / $global-font-size * 1em;
 
     li {
