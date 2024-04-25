@@ -1,6 +1,6 @@
 ---
 themeColor: "aeec86"
-tileColor: "9fe870"
+tileColor: "aeec86"
 layout: report
 tags: report
 short: wise

@@ -6,12 +6,14 @@ h5,
 h6 {
   font-family: $font-family-heading;
   letter-spacing: 0;
+  letter-spacing: -0.02em;
 }
 
 h1 {
   @include font-size(22px, $important: true);
   margin: 0 0 0.25em;
   font-weight: 600;
+  letter-spacing: 0;
   line-height: 1 !important;
 
   @include mq($from: mobile) {
