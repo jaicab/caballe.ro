@@ -1150,13 +1150,16 @@ pre code {
   }
 }
 
-.u-grow--thin {
-  animation: textwidthThin 1s ease-in forwards;
-}
-.u-grow--thick {
-  animation: textwidthThick 1s ease-in forwards;
-}
+/*
+.u-grow {
+  &--thin {
+    animation: textwidthThin 1s ease-in forwards;
+  }
 
+  &--thick {
+    animation: textwidthThick 1s ease-in forwards;
+  }
+}*/
 .u-h2, .u-text h2 {
   font-size: 24px !important;
   font-size: 1.3333333333rem !important;

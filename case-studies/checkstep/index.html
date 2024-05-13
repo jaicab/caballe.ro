@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+      Solving admin hell in AI Trust &amp; Safety |  Jaime Caballero - Product Designer and Digital Nomad based in London</title>
+    <meta name="description" content="Solving admin hell in AI Trust &amp; Safety">
+    <meta name="theme-color" content="#1f1f1f">
+    <link rel="stylesheet" href="/css/index.css">
+    <script src="/js/lazysizes.min.js"></script>
+    <link rel="icon" href="/images/favicon.png"/>
+    <link rel="apple-touch-icon-precomposed" href="/images/apple-touch-icon-precomposed.png">
+
+    <meta name="twitter:card" content="summary"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:url" content="https://caballe.ro/case-studies/checkstep/">
+    <meta property="og:site_name" content="Jaime Caballero">
+
+    <meta property="og:title" content="Solving admin hell in AI Trust &amp; Safety |  Jaime Caballero"/>
+    <meta property="og:description" content="Solving admin hell in AI Trust &amp; Safety"/>
+    
+      <meta property="og:image" content="https://res.cloudinary.com/jaicab/image/upload/f_auto,q_auto,b_rgb:abadf8/v1597334258/caballero/caballero-opengraph.png"/>
+    
+    <meta property="og:image:type" content="image/png"/>
+    <meta property="og:image:width" content="1200"/>
+    <meta property="og:image:height" content="630"/>
+
+    <link rel="preconnect" href="https://res.cloudinary.com">
+    <link rel="dns-prefetch" href="https://res.cloudinary.com">
+
+    <script>
+      /* Dark mode JS */
+
+      function getTheme() {
+        if (!window.matchMedia) 
+          return true;
+        else 
+          return window
+            .matchMedia('(prefers-color-scheme: light)')
+            .matches
+        }
+
+      function loadTheme() {
+        var currentTheme = sessionStorage.getItem('theme');
+        if (currentTheme === null) {
+          currentTheme = getTheme()
+          sessionStorage.setItem('theme', currentTheme)
+        }
+
+        var toggle = document.getElementById('lightSwitch');
+        toggle.checked = currentTheme == 'true';
+
+        if (!toggle.checked) 
+          document
+            .body
+            .classList
+            .add('u-dark')
+
+        setTimeout(function () {
+          document
+            .body
+            .classList
+            .add('is-transitioning')
+        }, 500)
+      }
+
+      function switchTheme(el) {
+        sessionStorage.setItem('theme', el.checked)
+
+        if (el.checked) 
+          document
+            .body
+            .classList
+            .remove('u-dark')
+        else 
+          document
+            .body
+            .classList
+            .add('u-dark')
+        }
+
+      document.addEventListener("DOMContentLoaded", loadTheme);
+    </script>
+
+    <link href="//fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,400;0,600;0,700;0,900;1,420&family=Space+Mono:wght@400&display=swap" rel="stylesheet">
+  </head>
+  <body class="tmpl-report"  style="--color-bg: #abadf8;">
+    <header class="o-header  u-dark">
+  <div class="u-wrapper">
+    <div class="o-header__content">
+      <div class="o-header__logo">
+        <a class="c-logo" href="/">
+          <svg width="182" height="25" viewBox="0 0 182 25">
+            <path d="M11.45 1c1.803 0 3.356.308 4.655.928 1.295.619 2.343 1.436 3.138 2.45.787 1.004 1.336 2.083 1.643 3.239.17.65.268 1.285.296 1.904l.009.37v.5h-6.85v-.5c0-.282-.017-.524-.052-.74-.078-.557-.242-1.033-.492-1.432a2.534 2.534 0 0 0-.95-.9c-.389-.213-.853-.321-1.398-.321-.644 0-1.22.187-1.74.567-.521.38-.95.997-1.279 1.864-.336.888-.509 2.075-.509 3.557 0 1.472.173 2.66.51 3.558.33.877.76 1.505 1.282 1.894.52.387 1.093.578 1.736.578.468 0 .874-.083 1.223-.247.351-.166.645-.395.886-.692.25-.307.441-.668.577-1.086.11-.34.176-.705.198-1.097l.009-.299v-.5h6.849v.5c0 1.032-.197 2.07-.588 3.11a8.884 8.884 0 0 1-1.788 2.878c-.805.88-1.821 1.587-3.044 2.119-1.227.533-2.668.798-4.322.798-2.18 0-4.06-.493-5.631-1.483-1.569-.988-2.768-2.356-3.593-4.094C1.407 16.7 1 14.72 1 12.486c0-2.234.407-4.213 1.225-5.931C3.05 4.82 4.25 3.458 5.82 2.475 7.389 1.49 9.27 1 11.449 1zm158.769 0c1.455 0 2.833.244 4.132.731a9.894 9.894 0 0 1 3.458 2.193c1 .974 1.783 2.177 2.348 3.606.563 1.427.843 3.074.843 4.941 0 1.858-.285 3.506-.859 4.943-.574 1.438-1.365 2.65-2.375 3.633a10.043 10.043 0 0 1-3.463 2.214 11.383 11.383 0 0 1-4.084.739c-1.437 0-2.804-.246-4.099-.74a9.97 9.97 0 0 1-3.457-2.214c-1.004-.983-1.793-2.195-2.367-3.632-.573-1.437-.859-3.085-.859-4.943 0-1.867.283-3.515.852-4.942.569-1.429 1.354-2.632 2.354-3.605a9.909 9.909 0 0 1 3.45-2.193A11.606 11.606 0 0 1 170.219 1zm-142.455.36h10.051l5.155 22.265h-7.002l-.904-4.469h-4.57l-.913 4.47H22.58L27.764 1.36zm27.437 0c1.664 0 3.024.238 4.079.724 1.072.493 1.869 1.18 2.375 2.057.498.86.746 1.834.746 2.91 0 1.087-.216 2.04-.651 2.852-.43.802-.976 1.437-1.635 1.897l-.22.146-.077.045.087.034.278.122c.773.356 1.43.931 1.965 1.715.548.802.816 1.856.816 3.15 0 1.17-.237 2.254-.713 3.25-.49 1.028-1.316 1.85-2.461 2.46-1.06.566-2.463.862-4.21.9l-.38.003h-9.813V1.36H55.2zm14.545 0h10.05l5.156 22.265h-7.003l-.903-4.469h-4.57l-.913 4.47H64.56L69.746 1.36zm23.872 0l-.001 16.637h7.596v5.628h-14.43V1.36h6.835zm17.128 0v16.637h7.595v5.628h-14.43V1.36h6.835zm25.112 0v5.325h-7.957v3.109h6.355v5.325H127.9V18.3h7.957v5.325h-14.82V1.36h14.82zm-1.002 1H122.04v20.265h12.817V19.3h-7.955v-5.18l6.353-.001v-3.325H126.9V5.686l7.955-.001V2.36zm14.502-1c2.541 0 4.453.572 5.719 1.74 1.268 1.173 1.9 2.8 1.9 4.844 0 1.156-.225 2.156-.682 2.993-.45.827-1.02 1.475-1.705 1.935l-.114.074-.114.071-.091.052.17.076c.492.237.91.584 1.25 1.035l.141.2.132.212c.343.591.527 1.343.56 2.255l.006.31v3.517c0 .48.038.934.115 1.361.058.326.139.562.23.708l.047.066.669.816h-7.164l-.148-.23c-.194-.302-.332-.702-.424-1.203a8.051 8.051 0 0 1-.126-1.198l-.005-.32V17.82c0-.596-.108-1.062-.309-1.4l-.08-.12-.027-.036c-.202-.253-.576-.406-1.151-.434l-.2-.004h-8.543V1.36h9.944zM11.45 2c-1.998 0-3.694.442-5.098 1.322-1.405.881-2.477 2.099-3.221 3.662-.751 1.578-1.128 3.41-1.128 5.502 0 2.091.377 3.926 1.128 5.509.744 1.568 1.816 2.79 3.222 3.677C7.756 22.556 9.451 23 11.45 23c1.523 0 2.83-.24 3.922-.715 1.098-.478 1.997-1.103 2.704-1.876a7.885 7.885 0 0 0 1.59-2.556 8.2 8.2 0 0 0 .45-1.73l.042-.344.012-.184h-4.848l-.006.095a5.478 5.478 0 0 1-.085.568l-.064.274-.078.267a4.323 4.323 0 0 1-.752 1.408c-.336.414-.75.737-1.237.966-.488.23-1.04.343-1.65.343-.859 0-1.642-.26-2.335-.776-.69-.515-1.228-1.3-1.62-2.345-.385-1.024-.574-2.326-.574-3.91 0-1.593.189-2.895.574-3.91.393-1.037.932-1.813 1.624-2.318a3.874 3.874 0 0 1 2.331-.759c.707 0 1.335.147 1.88.443.542.296.983.714 1.317 1.248.281.449.476.961.585 1.526l.063.385.013.103.017.187h4.845l-.01-.156a7.997 7.997 0 0 0-.09-.674L20 8.217l-.083-.346c-.27-1.02-.757-1.978-1.462-2.877-.697-.889-1.622-1.61-2.782-2.164-1.155-.55-2.562-.83-4.224-.83zm158.77 0a10.59 10.59 0 0 0-3.772.667 8.907 8.907 0 0 0-3.105 1.974c-.897.872-1.604 1.956-2.123 3.257-.519 1.303-.78 2.827-.78 4.573 0 1.737.264 3.26.787 4.573.524 1.31 1.236 2.405 2.138 3.288a8.968 8.968 0 0 0 3.113 1.994c1.18.45 2.426.674 3.742.674 1.306 0 2.548-.225 3.727-.674a9.042 9.042 0 0 0 3.121-1.995c.906-.882 1.62-1.976 2.144-3.287.524-1.313.787-2.836.787-4.573 0-1.747-.259-3.271-.773-4.574-.514-1.3-1.219-2.385-2.115-3.256A8.893 8.893 0 0 0 174 2.667 10.663 10.663 0 0 0 170.22 2zm-133.2.36h-8.46l-4.72 20.265h4.924l.914-4.469h6.206l.903 4.469h4.924L37.018 2.36zm18.182 0h-8.813v20.265H55.2c1.772 0 3.145-.266 4.117-.784.963-.514 1.634-1.182 2.03-2.009.41-.86.615-1.797.615-2.82 0-1.108-.219-1.967-.642-2.587-.437-.639-.955-1.092-1.558-1.37-.54-.25-1.043-.396-1.506-.443l-.228-.016-.032-.997c.506-.05 1.02-.253 1.544-.619.525-.366.967-.88 1.326-1.55.354-.658.533-1.45.533-2.38 0-.904-.205-1.704-.612-2.41-.398-.689-1.036-1.238-1.927-1.648-.839-.386-1.943-.597-3.313-.628L55.2 2.36zM79 2.36h-8.46l-4.719 20.265h4.924l.914-4.469h6.207l.902 4.469h4.925L79 2.36zm13.615 0h-4.831v20.265h12.427v-3.628h-7.595V2.36zm17.129 0h-4.832v20.265h12.426v-3.628h-7.594V2.36zm39.614 0h-8.942v12.465h7.542c.892 0 1.578.223 2.031.7l.109.124.04.052c.356.487.547 1.11.581 1.863l.006.256v2.854c0 .48.039.926.115 1.337.023.128.05.244.08.35l.045.15.043.114h4.744l-.049-.193-.044-.22a8.42 8.42 0 0 1-.123-1.139l-.008-.399v-3.517c0-.89-.148-1.577-.43-2.063-.284-.488-.645-.833-1.091-1.048a4.082 4.082 0 0 0-1.284-.373l-.277-.025-.009-.998c.516-.04 1.046-.24 1.594-.608.547-.367 1.008-.892 1.385-1.583.371-.681.56-1.518.56-2.515 0-1.78-.528-3.138-1.58-4.11-.999-.922-2.553-1.42-4.678-1.47l-.36-.004zm20.86 3.138c.802 0 1.576.213 2.314.636.763.436 1.378 1.174 1.852 2.2.468 1.012.696 2.389.696 4.137 0 1.737-.225 3.116-.687 4.14-.468 1.041-1.083 1.793-1.85 2.24-.744.432-1.521.651-2.324.651-.794 0-1.566-.22-2.31-.652-.766-.446-1.383-1.194-1.857-2.228-.467-1.021-.695-2.403-.695-4.15 0-1.749.228-3.126.696-4.139.474-1.026 1.093-1.764 1.86-2.2.743-.422 1.514-.635 2.306-.635zM54.06 13.903c.493 0 .929.073 1.305.223.379.152.696.36.946.628.243.261.426.56.545.894.116.323.174.659.174 1.004a2.63 2.63 0 0 1-.72 1.847c-.455.49-1.132.743-2.007.781l-.243.006h-3.13l.581-1.001h2.549c.74 0 1.236-.164 1.518-.467.303-.325.45-.705.45-1.166 0-.231-.038-.453-.115-.668a1.567 1.567 0 0 0-.335-.548 1.59 1.59 0 0 0-.585-.381c-.2-.08-.438-.13-.717-.146l-.216-.006h-.582l.582-1zm116.159-7.405c-.614 0-1.215.166-1.81.504-.57.324-1.054.902-1.446 1.75-.399.862-.604 2.103-.604 3.72 0 1.615.205 2.862.604 3.734.393.86.879 1.447 1.45 1.78.595.346 1.194.516 1.806.516.621 0 1.226-.17 1.82-.516.57-.332 1.053-.921 1.441-1.784.395-.878.599-2.123.599-3.73 0-1.617-.206-2.858-.604-3.72-.393-.849-.875-1.427-1.44-1.75a3.607 3.607 0 0 0-1.816-.504zM30.045 14.355l.292-.988H33.7l-1.671-5.725L32.514 6l2.44 8.355h-4.91zm115.559 4.014v5.21h-6.124v-5.21h6.124zM74.578 6l2.44 8.355H72.11l.292-.988h3.363l-1.671-5.725L74.578 6zm73.408-.329c.9 0 1.64.28 2.187.844.537.554.812 1.222.812 1.977 0 .59-.122 1.116-.371 1.573a2.63 2.63 0 0 1-1.067 1.072 3.064 3.064 0 0 1-1.29.356l-.242.008h-2.912l.495-1.001h2.417c.41 0 .759-.081 1.053-.241a1.64 1.64 0 0 0 .666-.672c.165-.303.25-.666.25-1.095 0-.494-.173-.912-.53-1.281-.31-.319-.722-.498-1.26-.533l-.208-.007h-.495l.495-1zm-94.301.014c.638 0 1.169.085 1.594.263.453.19.797.475 1.014.855.204.359.304.78.304 1.257a2.55 2.55 0 0 1-.69 1.789c-.44.473-1.106.716-1.98.753l-.242.005H50.93l.56-1.002 2.194.002c.74 0 1.227-.157 1.488-.439a1.55 1.55 0 0 0 .422-1.108c0-.312-.06-.563-.173-.762-.1-.178-.272-.32-.53-.428-.247-.103-.578-.165-.993-.18l-.214-.005h-.56l.56-1z"/>
+          </svg>
+        </a>
+      </div>
+      <div class="o-header__nav">
+        
+          <div class="is-hidden-until--wide">
+            <span class="o-header__nav__link ">CASE STUDY: Solving admin hell in AI Trust &amp; Safety</span>
+          </div>
+
+          <div class="c-light">
+            <input id="lightSwitch" type="checkbox" onclick="javascript:switchTheme(this)"/>
+            <label for="lightSwitch">
+              <svg width="42px" height="42px" viewBox="0 0 42 42" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <path d="M20.9455398,11.3300805 C15.5877799,11.4867222 11.3258427,15.8591719 11.3261169,21.199383 C11.299708,24.7441723 13.1827155,28.0310089 16.2596809,29.8110424 C19.3366462,31.5910758 23.1352639,31.5910758 26.2122293,29.8110424 C29.2891946,28.0310089 31.1722021,24.7441723 31.1457932,21.199383 C31.1458295,18.530643 30.0615091,15.9755508 28.1398942,14.1162833 C26.2182792,12.2570159 23.6230541,11.2519467 20.9455398,11.3300805 L20.9455398,11.3300805 Z M21.2346573,12.272787 L21.2346573,30.1285379 C16.2884274,30.1245493 12.2808377,26.1285718 12.2808377,21.2006625 C12.2808377,16.2727531 16.2884274,12.2767756 21.2346573,12.272787 L21.2346573,12.272787 Z" id="moon"></path>
+                <path d="M21.4719101,34.4494382 C21.7078534,34.4494382 21.8991599,34.65126 21.8992911,34.9003104 L21.8992911,34.9003104 L21.8992911,41.5491278 C21.8991599,41.7981782 21.7078534,42 21.4719101,42 C21.2359668,42 21.0446603,41.7981782 21.0445291,41.5491278 L21.0445291,41.5491278 L21.0445291,34.9003104 C21.0446603,34.65126 21.2359668,34.4494382 21.4719101,34.4494382 Z M30.8085965,30.8076896 C30.9865507,30.6302531 31.2743438,30.6295606 31.4531502,30.8061386 L31.4531502,30.8061386 L36.2131168,35.5674715 C36.382095,35.7472225 36.3777969,36.0286417 36.2034081,36.2031505 C36.0290194,36.3776593 35.7475514,36.3822028 35.567619,36.2134135 L35.567619,36.2134135 L30.8052881,31.452116 C30.6291651,31.2728623 30.6306423,30.9851261 30.8085965,30.8076896 Z M10.5552134,30.7982809 C10.7353162,30.6289764 11.0173321,30.6334062 11.1920298,30.8082838 C11.3667275,30.9831614 11.3708954,31.26521 11.2014412,31.4451743 L11.2014412,31.4451743 L6.43326495,36.2132234 C6.25313153,36.3822661 5.97133465,36.3777228 5.79674311,36.202961 C5.62215156,36.0281992 5.61785457,35.7463697 5.78703707,35.5663654 L5.78703707,35.5663654 Z M41.5529137,21.0446356 C41.8005387,21.0469338 42,21.2375564 42,21.4719101 C42,21.7062639 41.8005387,21.8968864 41.5529137,21.8991846 L41.5529137,21.8991846 L34.8965245,21.8991846 C34.6488995,21.8968864 34.4494382,21.7062639 34.4494382,21.4719101 C34.4494382,21.2375564 34.6488995,21.0469338 34.8965245,21.0446356 L34.8965245,21.0446356 Z M7.10347542,21.0446356 C7.35110047,21.0469338 7.5505618,21.2375564 7.5505618,21.4719101 C7.5505618,21.7062639 7.35110047,21.8968864 7.10347542,21.8991846 L7.10347542,21.8991846 L0.447086378,21.8991846 C0.199461326,21.8968864 0,21.7062639 0,21.4719101 C0,21.2375564 0.199461326,21.0469338 0.447086378,21.0446356 L0.447086378,21.0446356 Z M35.5671753,5.78710867 C35.747014,5.61781837 36.0288759,5.62213105 36.2034492,5.79684409 C36.3780225,5.97155714 36.3820585,6.25337125 36.2125601,6.4330101 L36.2125601,6.4330101 L31.4534265,11.193488 C31.2747058,11.3704146 30.9866462,11.3698939 30.8085666,11.1923221 C30.6304871,11.0147504 30.6291966,10.7267464 30.8056778,10.5475865 L30.8056778,10.5475865 Z M5.79670474,5.79703633 C5.97148497,5.62206603 6.25368282,5.61775423 6.43372597,5.78730306 L6.43372597,5.78730306 L11.2011662,10.5546302 C11.3708738,10.7345258 11.3668395,11.0167574 11.1920593,11.1917277 C11.0172791,11.366698 10.7350812,11.3710098 10.5550381,11.201461 L10.5550381,11.201461 L5.78759785,6.43413381 C5.6178902,6.25423825 5.62192452,5.97200662 5.79670474,5.79703633 Z M21.4719101,0 C21.7078534,0 21.8991599,0.201820868 21.8992911,0.450870081 L21.8992911,0.450870081 L21.8992911,7.09969172 C21.8991599,7.34874093 21.7078534,7.5505618 21.4719101,7.5505618 C21.2359668,7.5505618 21.0446603,7.34874093 21.0445291,7.09969172 L21.0445291,7.09969172 L21.0445291,0.450870081 C21.0446603,0.201820868 21.2359668,0 21.4719101,0 Z" id="shine"></path>
+              </svg>
+            </label>
+          </div>
+        
+
+        <div class="u-right is-hidden-until--tablet ">
+          <a class="c-link o-header__nav__email" href="mailto:hello@caballe.ro">Say hello@caballe.ro</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+    <main>
+      
+<article class="o-article">
+  <div class="u-wrapper">
+    <header class="o-article__header">
+      <div class="u-grid-from--desktop">
+        <div class="c-tagline">Full time, London / Remote</div>
+        <div class="c-tagline">May 2022 - Present</div>
+      </div>
+      <h1 class="o-article__title u-thick u-grow--thick">Solving admin hell in AI Trust &amp; Safety</h1>
+    </header>
+
+    <div class="o-article__intro">
+      <div class="o-article__properties is-hidden-until--tablet"><div class="o-properties">
+            <h3 class="o-properties__title u-h4">Responsibilities</h3>
+            <div class="u-text">
+              <ul><li>User interviews</li><li>UX/UI design</li><li>Design system</li><li>Frontend lead</li></ul>
+            </div>
+          </div><div class="o-properties">
+            <h3 class="o-properties__title u-h4">Tools</h3>
+            <div class="u-text">
+              <ul><li>Figma</li><li>Looker</li></ul>
+            </div>
+          </div><div class="o-properties">
+            <h3 class="o-properties__title u-h4">Credits</h3>
+            <div class="u-text">
+              <ul><li>Jonathan Manfield as CTO</li><li>Guillaume Bouchard as CEO</li></ul>
+            </div>
+          </div></div>
+
+      <div class="o-article__content">
+        <div class="o-article__actions">
+          <div class="o-article__readtime c-tagline">Read time: 8 min</div>
+          <a href="#tldr" class="c-link o-article__skip">
+            <span class="is-hidden-from--tablet">Skip</span>
+            <span class="is-hidden-until--tablet">Pass, show me the UI</span>
+          &darr;</a>
+        </div>
+        <div class="u-text u-text--intro">
+          <p>
+            Unsafe user generated content is difficult to act on, but even harder to do so at scale. This is where AI comes in, but that creates a series of new problems.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <main class="u-text">
+    <div class="u-wrapper">
+      <div class="o-article__content">
+        <h2>Background</h2>
+<p>Checkstep was first successful for their avant-garde hate and spam detection models, which granted them their first clients. Competing against third-party models like Amazon SageMaker, it was clear we needed to redefine the focus of the company in order to be successful.</p>
+<p>On the first company meeting, we established a mission:</p>
+<blockquote>
+<p>Keep users safer online, empowering moderators and managers to make better decision quickly.</p>
+</blockquote>
+<p>As it evolved, the product had to cover multiple use cases: data governance, moderation and staff performance.</p>
+<h2>Understanding the problem</h2>
+<p>I joined Checkstep when data governance was done on a data type basis. Comments, Posts, etc were tied to AI analysis, graded and triaged. Thresholds determined automatic action, while the rest was passed for manual review by moderators.</p>
+<img class="lazyload" data-src="/images/case-studies/checkstep/event_based.png" alt="Checkstep initial workflow"/>
+<h2>Mission and solutions</h2>
+<p>Upon joining the company, my first move was to interview our clients' Trust and Safety teams. My biggest learning was that <strong>rules were reviewed and implemented every two weeks at a policy level</strong>, typed in a Policy document, and then translated into rules for AI and moderators.</p>
+<img class="lazyload" data-src="/images/case-studies/checkstep/interview_results.png" alt="Checkstep initial workflow"/>
+<p>Our current model's proximity to internal data management tools forced managers to manually adjust settings. Larger clients anticipated administrative challenges in keeping settings aligned with evolving policies, causing poor sales conversion rates.</p>
+<p>We set the goal to convert <strong>20 new customers in the next 12 months</strong> by integrating a Policy workflow together with an aggressive presence at Trust &amp; Safety conferences.</p>
+<h2>Final design</h2>
+<p>Testing each feature individually, the final result combined:</p>
+<ul>
+<li>Rules are now stricly managed by developers and data governors.</li>
+<li>Policies contain written description and rule thresholds, managed directly by Trust &amp; Safety experts.</li>
+<li>Policy text updates is notified to moderators, reducing training time.</li>
+<li>Policy insights, helping drive decisions live on policy meetings and drive their own results to success quicker.</li>
+<li>Policy versioning and history, allowing for improvements between releases and clarity for moderators.</li>
+</ul>
+<div id="tldr"></div>
+</div></div>
+<div class="u-photo u-photo--full" >
+<img class="lazyload" data-src="/images/case-studies/checkstep/final.png" alt="Upload your design wireframe"/>
+</div>
+<div class="u-wrapper"><div class="o-article__content">
+</div></div>
+<div class="u-photo u-photo--screens" >
+<img class="lazyload" data-src="/images/case-studies/checkstep/queues.png" alt="Upload your design wireframe"/>
+<img class="lazyload" data-src="/images/case-studies/checkstep/review.png" alt="Upload your design wireframe"/>
+</div>
+<div class="u-wrapper"><div class="o-article__content">
+<h2>Results and improvements</h2>
+<p>This allowed Trust &amp; Safety teams to act on high volume of events quickly, shifting prioties and tolerances for bad content depending on their workload and priorities, resulting in good sales conversion. We achieved 12 clients within the first 6 months, before the final design had even come together, proving the move to Policy-based strategy was valid.</p>
+<p>Things I would have done differently or want to do next:</p>
+<ul>
+<li>Our client base at the time kept us busy with tiny feature requests that were important to them, we should have been better at seeing the big picture and not bend over to particular requests, but it is a fine balance to sustain retention.</li>
+<li>The other big learning from interviews was spikes, meaning a particular type of case (say a terrorist event) going viral required a new policy to be tested and put in place in a matter of minutes. While creating a new policy is a quick process, undoing a Policy's effect is tricky at this stage due to development complexity backtracking actions. Definitely something we're looking into now!</li>
+</ul>
+
+      </div>
+    </div>
+  </main>
+
+  <br/>
+  <br/>
+  <br/>
+  <div class="u-wrapper u-center">
+    <a class="c-btn c-btn--primary" href="/">
+      <span class="c-btn__icon">←</span>
+      <span class="c-btn__text">Back to
+        <span class="is-hidden--light">front</span>
+        <span class="is-hidden--dark">black</span>
+      </span>
+    </a>
+  </div>
+</article>
+
+      
+    </main>
+
+    <footer class="o-footer">
+  <div class="u-wrapper u-center u-grid-from--mobile">
+    <div>
+      <a class="c-link is-hidden-from--tablet" href="mailto:hello@caballe.ro">Contact</a>
+      <a class="c-link is-hidden-until--tablet" href="mailto:hello@caballe.ro">Say hello@caballe.ro</a>
+    </div>
+
+    <div>
+      <a class="c-link" href="https://instagram.com/jai_cab" target="_blank" rel="external noopener">IG</a>
+    </div>
+
+    <div class="u-text">
+      &copy;2020 Jaime Caballero
+    </div>
+  </div>
+</footer>
+
+    <!-- Current page: /case-studies/checkstep/ -->
+  </body>
+</html>
