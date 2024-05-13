@@ -5,7 +5,7 @@
     font-weight: 900;
   }
 }
-
+/*
 .u-grow {
   &--thin {
     animation: textwidthThin 1s ease-in forwards;
@@ -14,7 +14,7 @@
   &--thick {
     animation: textwidthThick 1s ease-in forwards;
   }
-}
+}*/
 
 .u-h2 {
   @include font-size(24px, $important: true);
