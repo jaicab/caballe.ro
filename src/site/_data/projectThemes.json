@@ -1,0 +1,65 @@
+{
+  "glass": {
+    "light": "#e7d5ab",
+    "dark": "#30281b",
+    "ink": "#201c13",
+    "focusLight": "#30281b",
+    "focusDark": "#e7d5ab"
+  },
+  "wise": {
+    "light": "#aeec86",
+    "dark": "#162515",
+    "ink": "#13210e",
+    "focusLight": "#162515",
+    "focusDark": "#aeec86"
+  },
+  "checkstep": {
+    "light": "#abadf8",
+    "dark": "#20213a",
+    "ink": "#17182b",
+    "focusLight": "#20213a",
+    "focusDark": "#abadf8"
+  },
+  "moteefe": {
+    "light": "#BDA9FF",
+    "dark": "#261d3a",
+    "ink": "#241833",
+    "focusLight": "#261d3a",
+    "focusDark": "#BDA9FF"
+  },
+  "carlos-caballero": {
+    "light": "#9ABFFF",
+    "dark": "#162637",
+    "ink": "#122033",
+    "focusLight": "#162637",
+    "focusDark": "#9ABFFF"
+  },
+  "dotdot": {
+    "light": "#FEAA99",
+    "dark": "#382018",
+    "ink": "#311a13",
+    "focusLight": "#382018",
+    "focusDark": "#FEAA99"
+  },
+  "glassfiles": {
+    "light": "#bcebe3",
+    "dark": "#162c29",
+    "ink": "#112420",
+    "focusLight": "#162c29",
+    "focusDark": "#bcebe3"
+  },
+  "roast-cards": {
+    "light": "#bcebe3",
+    "dark": "#162c29",
+    "ink": "#112420",
+    "focusLight": "#162c29",
+    "focusDark": "#bcebe3"
+  },
+  "flavour-guide": {
+    "light": "#e7d5ab",
+    "dark": "#30281b",
+    "ink": "#201c13",
+    "focusLight": "#30281b",
+    "focusDark": "#e7d5ab"
+  }
+}

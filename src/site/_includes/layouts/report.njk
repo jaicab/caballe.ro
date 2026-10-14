@@ -10,60 +10,33 @@ templateClass: tmpl-report
         <div class="c-tagline">{{ [contract, location].join(', ') }}</div>
         <div class="c-tagline">{{ timeframe }}</div>
       </div>
-      <h1 class="o-article__title u-thick u-grow--thick">{{ title }}</h1>
+      {% if heroOutput %}
+      <div class="case-hero-grid">
+        <div class="case-hero-copy"><h1 class="o-article__title">{{ title }}</h1><p class="case-hero-thesis">{{ heroThesis or intro }}</p><p class="case-hero-role">{{ heroRole }}</p></div>
+        <figure class="case-hero-output" id="tldr"><div class="email-output-crop"><img src="{{ heroOutput }}" width="680" height="800" alt="{{ heroOutputAlt }}"></div><figcaption>Actual generated output · Synthetic sample data</figcaption></figure>
+      </div>
+      {% else %}<h1 class="o-article__title u-thick u-grow--thick">{{ title }}</h1>{% endif %}
     </header>
 
-    <div class="o-article__intro">
-      <div class="o-article__properties is-hidden-until--tablet">
-        {%- for key, list in properties -%}
-          <div class="o-properties">
-            <h3 class="o-properties__title u-h4">{{ key | capitalize }}</h3>
-            <div class="u-text">
-              <ul>
-                {%- for item in list -%}
-                  <li>{{item}}</li>
-                {%- endfor -%}
-              </ul>
-            </div>
-          </div>
-        {%- endfor -%}
-      </div>
+    {% if not heroOutput %}<a class="text-link case-proof-link" href="#tldr">Show me the work ↓</a>{% endif %}
 
-      <div class="o-article__content">
-        <div class="o-article__actions">
-          <div class="o-article__readtime c-tagline">Read time: {{ readtime }} min</div>
-          <a href="#tldr" class="c-link o-article__skip">
-            <span class="is-hidden-from--tablet">Skip</span>
-            <span class="is-hidden-until--tablet">Pass, show me the UI</span>
-          &darr;</a>
-        </div>
-        <div class="u-text u-text--intro">
-          <p>
-            {{ intro }}
-          </p>
-        </div>
-      </div>
-
-    </div>
   </div>
 
-  <main class="u-text">
+  <div class="u-text">
     <div class="u-wrapper">
       <div class="o-article__content">
         {{ content | safe }}
       </div>
     </div>
-  </main>
+  </div>
 
-  <br/>
-  <br/>
-  <br/>
+  <div class="u-wrapper"><details class="project-credits"><summary>Role, tools & collaborators</summary>
+    {% for key, list in properties %}<h3>{{ key | capitalize }}</h3><ul>{% for item in list %}<li>{{ item }}</li>{% endfor %}</ul>{% endfor %}
+  </details></div>
   <div class="u-wrapper u-center">
     <a class="c-btn c-btn--primary" href="{{ '/' | url }}">
       <span class="c-btn__icon">←</span>
-      <span class="c-btn__text">Back to
-        <span class="is-hidden--light">front</span>
-        <span class="is-hidden--dark">black</span>
+      <span class="c-btn__text">Back to work
       </span>
     </a>
   </div>

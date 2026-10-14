@@ -8,9 +8,8 @@ tagline: Management, Research, UX, Storybook
 title: Redesigning a garment builder experience
 description: A dynamic e-commerce platform for merchandise creators and influencer brands
 timeframe: Nov 2016 - Nov 2017
-readtime: 8
-intro: "Moteefe began a redesign of its B2B app with the vision of becoming the most striking in the industry, alongside Teespring or Bonfire.
-While I actually led the entire move to the new brand, on this case study we will mainly focus on the campaign builder."
+readtime: 3
+intro: "From a brand refresh to a reusable campaign builder: product design and frontend architecture for merchandise creators."
 contract: Freelance gig
 location: London / Remote
 date: 2018-05-01
@@ -42,142 +41,72 @@ properties:
     - BEAR agency for brand design and discovery
 ---
 
-## Background
+<div class="case-summary">
 
-Moteefe allows creators to upload an artwork and start selling branded garments with no up-front cost and before the product even exists physically. That means it's a double product, a a B2B app for admins or creators to manage their products, handle payouts, etc and a B2C when these products are presented to customers.
+## The short version
 
-The company was born in 2014 and had been building upon their original branding and UI ever since. In 2016, they decided it was time for a rebrand and cleanup.
+- **Role:** Frontend architecture, research, UX and redesign planning; UI design with Jason Cianfrone and React development with Henrique Alves and Wagner Santos.
+- **Problem:** A brand refresh exposed years of UX debt in a complex merchandise campaign builder.
+- **Decision:** Rebuild in stages around reusable React components, with a Storybook library to preview and document them.
+- **Result:** A redesigned campaign builder and shared component package. This case study does not include a measured business impact.
 
-## Understanding the problem
-
-BEAR agency was commissioned with the rebrand, and I was taken in as the frontend architect to lead and execute this new branding into their current UI. Shortly after joining, I discovered:
-
-- BEAR was commissioned with discovery and branding, but not UI design
-- BEAR's efforts for branding were great for marketing purposes, but didn't do enough for product design
-- BEAR's brand suggestion was strikingly different, which helped make the product stand out. But testing revealed creators wanted the b2c side of things to be as white label as possible, so it couldn't apply there, or as much.
-- With years of UX debt and no head of design in charge, Moteefe's platform was in need of a massive UX redesign, not just a brand refresh.
-- As a small startup quickly grown into a massive company, there was a massive lack of processes in place.
-
-## Mission and solutions
-
-After a few brainstorming sessions with the London and Lisbon offices, I quickly identified Moteefe's mission:
-
-> Empower creators to deliver branded garments and test niche audiences with no up-front cost
-
-Thankfully BEAR had already done the work on the company values:
-
-<img class="lazyload" data-src="{{ '/images/case-studies/moteefe/bear.png' | url }}" alt="BEAR company values"/>
-
-At a brainstorming session with the founders, this seemed to be the crazy user flow:
-
-<img class="lazyload" data-src="{{ '/images/case-studies/moteefe/user-flow.png' | url }}" alt="Moteefe user flow"/>
-
-After a few days of strategic discussions and product research, it was decided we should rebuild the app from scratch, in stages and in React.
-
-Solutions:
-
-- Workflow: there was no working methodology set in place, only the developers had their tasks broken into bits. I proposed educating the team in SCRUM.
-- Team up: as the task at hand was much greater than I originally anticipated, we specced out the need for a UI designer and a few React developers.
-- Project planning: this was a humongous task, so we broke it down by projects.
-  - Content analysis: Analyse the creator's needs and goals and rework the information architecture.
-  - Homepage: the landing page for creators.
-  - Campaign builder: the tool creators would use to upload artworks, customise their products and set their campaigns.
-  - CRUD app: The dashboard side of things, where creators manage their campaigns, payments, etc.
-  - Campaign page: The customer-facing side of a campaign.
-  - Checkout: Including upsell, CR analysis, etc.
-  - Stores: Campaigns may group into branded marketplaces that we called stores.
-
-## Implementing SCRUM
-
-<img class="lazyload" data-src="{{ '/images/case-studies/moteefe/agile.png' | url }}" alt="Implementing agile"/>
-
-Some of the team members had worked with agile methodology before, but the founders had been working on different ways as the company grew and hadn't considered ownership as part of project planning. Epics was a completely new concept for them. So I sat down with them and after a few sessions, we had set a few guidelines:
-
-- Milestones would be owned and set by the founders, reviewed on a monthly basis and represent company goals.
-- Epics would be owned by founders or managers, reviewed on bi-weekly sprints and represent projects that could be one to many sprints long.
-- Tasks would be owned by anyone, usually assigned to one single individual and reviewed daily (if in progress) or weekly (if in icebox).
-
-We tried many tools like Asana and Jira, but finally decided on [Zube](https://zube.io/) for its integration with GitHub Issues, which was powerful for us given the distributed teams across London, Lisbon and Moscow, plus remote workers like myself.
-
-## Redesigning the campaign builder
-
-The creators had a campaign builder tool at their disposal to create the garments and set up their campaigns. One of the biggest challenges of the experience was making it both easy to use and communicative of the marketing options available to creators.
-
-The company's directions on how to inform things like VAT, product availability and cost weren't clear, so there were some heavy brainstorming sessions until late.
-
-{% fullscreen %}
-<img class="lazyload" data-src="{{ '/images/case-studies/moteefe/wb-campaign.png' | url }}" alt="Brainstorming campaign builder"/>
-<img class="lazyload" data-src="{{ '/images/case-studies/moteefe/wb-builder.png' | url }}" alt="Brainstorming campaign editing"/>
-{% endfullscreen %}
-
-## Wireframing
-
-I worked on low-fi wireframes to have a discussion ground with sales and founders for business and customer feedback.
-
-{% screens %}
-<img class="lazyload" data-src="{{ '/images/case-studies/moteefe/ux-upload.png' | url }}" alt="Upload your design wireframe"/>
-<img class="lazyload" data-src="{{ '/images/case-studies/moteefe/ux-select.png' | url }}" alt="Select your garments wireframe"/>
-<img class="lazyload" data-src="{{ '/images/case-studies/moteefe/ux-edit.png' | url }}" alt="Edit your artwork wireframe"/>
-<img class="lazyload" data-src="{{ '/images/case-studies/moteefe/ux-selected.png' | url }}" alt="Selected products wireframe"/>
-{% endscreens %}
-
-## Artwork handling
-
-The customer could upload different artworks and the editor had to handle them within different canvas. I put together guidelines to asses the frames and actionable elements of the design tool, and how they should react in different situations.
-
-{% fullscreen %}
-<img class="lazyload" data-src="{{ '/images/case-studies/moteefe/ux-limits.png' | url }}" alt="Artwork limits for builder"/>
-{% endfullscreen %}
+</div>
 
 <div id="tldr"></div>
 
-## Final design
+## Watch the components in use
 
-Together with Jason, we put together the final designs.
+The original Storybook recording shows the actual component library we built.
 
-{% screens %}
-<img class="lazyload" data-src="{{ '/images/case-studies/moteefe/ui-upload.png' | url }}" alt="Upload your design screen"/>
-<img class="lazyload" data-src="{{ '/images/case-studies/moteefe/ui-select.png' | url }}" alt="Select a product screen"/>
-<img class="lazyload" data-src="{{ '/images/case-studies/moteefe/ui-edit.png' | url }}" alt="Edit your artwork screen"/>
-<img class="lazyload" data-src="{{ '/images/case-studies/moteefe/ui-selected.png' | url }}" alt="Selected products screen"/>
-{% endscreens %}
-
-## Development
-
-Together with Henrique and Wagner, we built all these components into a separate repository and private npm package, with a Storybook library to preview, test and document all the reusable components.
-
-{% fullscreen %}
-<video autoplay loop muted playsinline>
-
+<video controls playsinline preload="metadata" aria-label="Moteefe Storybook demonstration of the reusable campaign builder components">
 <source src="{{ '/images/case-studies/moteefe/storybook.mp4' | url }}" type="video/mp4"/>
+<p>Your browser cannot play this video. <a href="{{ '/images/case-studies/moteefe/storybook.mp4' | url }}">Download the demonstration</a>.</p>
 </video>
-{% endfullscreen %}
+
+{% statement "01 / Design and engineering" %}Design the interaction. Build the component.{% endstatement %}
+
+## From artwork to campaign
 
 {% screens %}
-
-<div class="c-video">
-  <video autoplay loop muted playsinline>
-    <source src="{{ '/images/case-studies/moteefe/color-selector.mp4' | url }}" type="video/mp4"/>
-  </video>
-</div><div class="c-video">
-  <video autoplay loop muted playsinline>
-    <source src="{{ '/images/case-studies/moteefe/profit-calculator.mp4' | url }}" type="video/mp4"/>
-  </video>
-</div><div class="c-video">
-  <video autoplay loop muted playsinline>
-    <source src="{{ '/images/case-studies/moteefe/campaign-options.mp4' | url }}" type="video/mp4"/>
-  </video>
-</div><div class="c-video">
-  <video autoplay loop muted playsinline>
-    <source src="{{ '/images/case-studies/moteefe/duration-selector.mp4' | url }}" type="video/mp4"/>
-  </video>
-</div>
+<img width="1440" height="1605" src="{{ '/images/case-studies/moteefe/ui-upload.png' | url }}" alt="Moteefe campaign builder artwork upload screen" loading="lazy"/>
+<img width="1440" height="1961" src="{{ '/images/case-studies/moteefe/ui-select.png' | url }}" alt="Moteefe campaign builder product selection screen" loading="lazy"/>
+<img width="1440" height="2062" src="{{ '/images/case-studies/moteefe/ui-edit.png' | url }}" alt="Moteefe campaign builder artwork placement editor" loading="lazy"/>
+<img width="1440" height="2539" src="{{ '/images/case-studies/moteefe/ui-selected.png' | url }}" alt="Moteefe campaign builder selected products screen" loading="lazy"/>
 {% endscreens %}
 
-## Results and improvements
 
-Moteefe has now moved on from this heavy blue and red UI to a more minimalist design. They hired a great agency, but hadn't planned for UI design. It took some decent time since I joined to get into a position where we could be producing something valuable. We learned:
+<details>
+<summary>Decisions, process and lessons</summary>
 
-- Cross-team collaboration saves time if done right: Components like the profit calculator took weeks to get done. There can be so many decisions to be made, from business and sales all the way to UX and frontend, that affect a single component. A frontend's idea can feed into a business view and vice versa. We learned the lesson with this calculator, and after that we started putting together different disciplines so they could brainstorm the component together.
-- Cheap is expensive: the massive delays from hiring a small team for a humongous task until we hired more people could have been saved. Be realistic about the consequences of what you're trying to achieve and overestimate, or you'll end up paying more (be it time or money) than if done right.
-- Project management is key: having owners helps delegating tasks and avoids communication issues and informs if delays happen. There's a difference between micro-management and informing your colleagues. Delays are bound to happen, but let people know.
+### Resolve product decisions before polishing the UI
+
+Creators needed to understand VAT, availability, pricing and campaign settings while placing artwork on different products. I used wireframes to bring sales, founders and developers into the same discussion.
+
+<img width="3071" height="1904" src="{{ '/images/case-studies/moteefe/ux-limits.png' | url }}" alt="Artwork placement guidelines defining canvas limits and editor controls" loading="lazy"/>
+
+### Build the behaviour, not just the screens
+
+We packaged the components in a private npm library. These recordings show the original interactions.
+
+<video controls playsinline preload="metadata" aria-label="Moteefe product colour selector demonstration">
+<source src="{{ '/images/case-studies/moteefe/color-selector.mp4' | url }}" type="video/mp4"/>
+<p>Your browser cannot play this video. <a href="{{ '/images/case-studies/moteefe/color-selector.mp4' | url }}">Download the demonstration</a>.</p>
+</video>
+<video controls playsinline preload="metadata" aria-label="Moteefe profit calculator demonstration">
+<source src="{{ '/images/case-studies/moteefe/profit-calculator.mp4' | url }}" type="video/mp4"/>
+<p>Your browser cannot play this video. <a href="{{ '/images/case-studies/moteefe/profit-calculator.mp4' | url }}">Download the demonstration</a>.</p>
+</video>
+<video controls playsinline preload="metadata" aria-label="Moteefe campaign options demonstration">
+<source src="{{ '/images/case-studies/moteefe/campaign-options.mp4' | url }}" type="video/mp4"/>
+<p>Your browser cannot play this video. <a href="{{ '/images/case-studies/moteefe/campaign-options.mp4' | url }}">Download the demonstration</a>.</p>
+</video>
+<video controls playsinline preload="metadata" aria-label="Moteefe campaign duration selector demonstration">
+<source src="{{ '/images/case-studies/moteefe/duration-selector.mp4' | url }}" type="video/mp4"/>
+<p>Your browser cannot play this video. <a href="{{ '/images/case-studies/moteefe/duration-selector.mp4' | url }}">Download the demonstration</a>.</p>
+</video>
+
+### What I learned
+
+A single profit calculator touched business, sales, design and frontend decisions. Bringing those disciplines together earlier improved how we worked. Clear ownership and realistic staffing mattered as much as the component architecture.
+
+</details>
