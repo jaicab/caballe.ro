@@ -7,9 +7,9 @@ short: checkstep
 tagline: UX / UI, Frontend lead
 title: Solving admin hell in AI Trust & Safety
 description: Solving admin hell in AI Trust & Safety
-timeframe: May 2022 - Present
-readtime: 8
-intro: "Unsafe user generated content is difficult to act on, but even harder to do so at scale. This is where AI comes in, but that creates a series of new problems."
+timeframe: Started May 2022
+readtime: 3
+intro: "Designing and building policy workflows for Trust & Safety teams, from client research to the frontend."
 contract: Full time
 location: London / Remote
 date: 2008-05-01
@@ -27,58 +27,49 @@ properties:
     - Guillaume Bouchard as CEO
 ---
 
-## Background
+<div class="case-summary">
 
-Checkstep was first successful for their avant-garde hate and spam detection models, which granted them their first clients. Competing against third-party models like Amazon SageMaker, it was clear we needed to redefine the focus of the company in order to be successful.
+## The short version
 
-On the first company meeting, we established a mission:
-> Keep users safer online, empowering moderators and managers to make better decision quickly.
+- **Role:** Product design and frontend lead. Client interviews, UX/UI and design system.
+- **Problem:** Trust & Safety teams wrote policies, then manually translated them into scattered rules and thresholds.
+- **Decision:** Put policies at the centre of the workflow, separating policy ownership from technical rule management.
+- **Result:** Checkstep gained **12 clients in the first six months**, as reported in the original case study. This was a company outcome, alongside sales and conference activity.
 
-As it evolved, the product had to cover multiple use cases: data governance, moderation and staff performance.
-
-## Understanding the problem
-
-I joined Checkstep when data governance was done on a data type basis. Comments, Posts, etc were tied to AI analysis, graded and triaged. Thresholds determined automatic action, while the rest was passed for manual review by moderators.
-
-<img class="lazyload" data-src="{{ '/images/case-studies/checkstep/event_based.png' | url }}" alt="Checkstep initial workflow"/>
-
-## Mission and solutions
-
-Upon joining the company, my first move was to interview our clients' Trust and Safety teams. My biggest learning was that **rules were reviewed and implemented every two weeks at a policy level**, typed in a Policy document, and then translated into rules for AI and moderators.
-
-<img class="lazyload" data-src="{{ '/images/case-studies/checkstep/interview_results.png' | url }}" alt="Checkstep initial workflow"/>
-
-Our current model's proximity to internal data management tools forced managers to manually adjust settings. Larger clients anticipated administrative challenges in keeping settings aligned with evolving policies, causing poor sales conversion rates.
-
-We set the goal to convert **20 new customers in the next 12 months** by integrating a Policy workflow together with an aggressive presence at Trust & Safety conferences.
-
-
-
-## Final design
-
-Testing each feature individually, the final result combined:
-- Rules are now stricly managed by developers and data governors.
-- Policies contain written description and rule thresholds, managed directly by Trust & Safety experts.
-- Policy text updates is notified to moderators, reducing training time.
-- Policy insights, helping drive decisions live on policy meetings and drive their own results to success quicker.
-- Policy versioning and history, allowing for improvements between releases and clarity for moderators.
+</div>
 
 <div id="tldr"></div>
 
-{% fullscreen %}
-<img class="lazyload" data-src="{{ '/images/case-studies/checkstep/final.png' | url }}" alt="Upload your design wireframe"/>
-{% endfullscreen %}
+## A workflow built around the policy
+
+Policies bring written guidance, thresholds, version history and insights together. Moderators get the context behind a decision; managers can change priorities without digging through every data type.
+
+<img width="1920" height="1080" src="{{ '/images/case-studies/checkstep/final.png' | url }}" alt="Checkstep policy management interface bringing policy guidance and rule thresholds together" loading="lazy"/>
+
+{% statement "01 / Policy workflow" %}Put the policy where decisions are made.{% endstatement %}
 
 {% screens %}
-<img class="lazyload" data-src="{{ '/images/case-studies/checkstep/queues.png' | url }}" alt="Upload your design wireframe"/>
-<img class="lazyload" data-src="{{ '/images/case-studies/checkstep/review.png' | url }}" alt="Upload your design wireframe"/>
+<img width="1920" height="1080" src="{{ '/images/case-studies/checkstep/queues.png' | url }}" alt="Checkstep moderation queues organising content for review" loading="lazy"/>
+<img width="1920" height="1080" src="{{ '/images/case-studies/checkstep/review.png' | url }}" alt="Checkstep moderator review interface showing content and decision controls" loading="lazy"/>
 {% endscreens %}
 
 
-## Results and improvements
+<details>
+<summary>Decisions, process and lessons</summary>
 
-This allowed Trust & Safety teams to act on high volume of events quickly, shifting prioties and tolerances for bad content depending on their workload and priorities, resulting in good sales conversion. We achieved 12 clients within the first 6 months, before the final design had even come together, proving the move to Policy-based strategy was valid.
+### Find the mismatch
 
-Things I would have done differently or want to do next:
-- Our client base at the time kept us busy with tiny feature requests that were important to them, we should have been better at seeing the big picture and not bend over to particular requests, but it is a fine balance to sustain retention.
-- The other big learning from interviews was spikes, meaning a particular type of case (say a terrorist event) going viral required a new policy to be tested and put in place in a matter of minutes. While creating a new policy is a quick process, undoing a Policy's effect is tricky at this stage due to development complexity backtracking actions. Definitely something we're looking into now!
+Client interviews showed that Trust & Safety teams reviewed policies roughly every two weeks. The product was organised around data types instead, which meant managers had to keep technical settings aligned manually.
+
+<img width="1920" height="1080" src="{{ '/images/case-studies/checkstep/event_based.png' | url }}" alt="Original Checkstep workflow organised around event and data types" loading="lazy"/>
+<img width="1920" height="1080" src="{{ '/images/case-studies/checkstep/interview_results.png' | url }}" alt="Trust and Safety client interview findings informing the policy workflow" loading="lazy"/>
+
+### Separate responsibilities
+
+Developers and data governors manage rules. Trust & Safety experts manage policy descriptions and thresholds. Policy updates notify moderators, while version history makes changes traceable.
+
+### What I would revisit
+
+Small client requests could distract from the larger workflow. Another unresolved challenge was responding to sudden spikes in harmful content: creating a policy was quick, but reversing its previous actions was technically harder.
+
+</details>

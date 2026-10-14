@@ -5,10 +5,12 @@
   "license": "UNLICENSED",
   "private": true,
   "scripts": {
-    "build": "gulp && eleventy",
+    "build": "gulp && node scripts/prepare-review.cjs && node scripts/clean-output.cjs && eleventy",
     "serve": "gulp && gulp watch & eleventy --serve",
     "debug": "DEBUG=* eleventy",
-    "deploy": "gh-pages -d _site"
+    "deploy": "gh-pages -d _site",
+    "preview": "python3 scripts/preview.py",
+    "build:review": "PORTFOLIO_PRIVATE_REVIEW=1 npm run build"
   },
   "repository": {
     "type": "git",

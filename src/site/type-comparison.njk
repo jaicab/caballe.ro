@@ -1,0 +1,42 @@
+---
+layout: layouts/base.njk
+noindex: true
+title: Heading type comparison
+description: Local review of two licensed heading fonts.
+templateClass: tmpl-home
+permalink: /type-comparison/
+---
+<style>
+@font-face{font-family:'Bricolage Review';src:url('/fonts/bricolage/BricolageGrotesque.ttf') format('truetype');font-weight:200 800;font-style:normal;font-display:swap}
+@font-face{font-family:'Instrument Review';src:url('/fonts/instrument/InstrumentSans.ttf') format('truetype');font-weight:400 700;font-style:normal;font-display:swap}
+.type-review{max-width:1256px;margin:auto;padding:20px 24px 70px;color:#e6e6e6}
+.type-review h1{font-family:Epilogue,sans-serif!important;font-size:26px!important;letter-spacing:0;word-spacing:normal;font-weight:600;line-height:1.3!important}
+.type-intro{max-width:62ch;line-height:1.6;font-size:17px}
+.type-choice{border-top:1px solid #555;padding:30px 0 42px;margin-top:30px}
+.type-label{font-family:'Space Mono',monospace;font-size:13px;margin:0 0 25px}
+.type-title,.type-case{font-weight:600;font-synthesis:none;font-optical-sizing:auto;font-variation-settings:normal;letter-spacing:normal;word-spacing:normal;line-height:1.05;animation:none!important}
+.type-title{font-size:72px;margin:0 0 35px;max-width:1100px}.type-title span{display:block;color:#d5bdf1}
+.type-case{font-size:48px;max-width:900px;margin:0 0 25px}
+.type-bricolage{font-family:'Bricolage Review',sans-serif}.type-instrument{font-family:'Instrument Review',sans-serif}
+.type-context{font-size:18px;max-width:52ch;line-height:1.6}.type-licenses{font-family:'Space Mono',monospace;font-size:12px;line-height:1.7}
+@media(max-width:739px){.type-review{padding:15px 20px 45px}.type-title{font-size:44px}.type-case{font-size:32px}.type-context{font-size:17px}.type-label{font-size:12px}}
+</style>
+<div class="type-review">
+<h1>Heading type comparison</h1>
+<p class="type-intro">Two local options for the display headings. Same words, size and weight; original wordmark, colours, body and labels. The portfolio itself keeps its current font until you choose.</p>
+<section class="type-choice" aria-labelledby="bricolage-label">
+<p id="bricolage-label" class="type-label">01 / Bricolage Grotesque · 600 · optical sizing auto</p>
+<h2 class="type-title type-bricolage">I design products.<span>Then I build them.</span></h2>
+<h3 class="type-case type-bricolage">Custom tools for the work behind the coffee.</h3>
+<p class="type-context">I’m Jaime, a London-based designer and developer. I make complicated workflows useful — from financial products to the tools behind a coffee business.</p>
+<p class="type-licenses"><a href="/fonts/bricolage/OFL.txt">SIL Open Font License</a> · <a href="https://github.com/google/fonts/tree/main/ofl/bricolagegrotesque">Official source</a></p>
+</section>
+<section class="type-choice" aria-labelledby="instrument-label">
+<p id="instrument-label" class="type-label">02 / Instrument Sans · 600</p>
+<h2 class="type-title type-instrument">I design products.<span>Then I build them.</span></h2>
+<h3 class="type-case type-instrument">Custom tools for the work behind the coffee.</h3>
+<p class="type-context">I’m Jaime, a London-based designer and developer. I make complicated workflows useful — from financial products to the tools behind a coffee business.</p>
+<p class="type-licenses"><a href="/fonts/instrument/OFL.txt">SIL Open Font License</a> · <a href="https://github.com/google/fonts/tree/main/ofl/instrumentsans">Official source</a></p>
+</section>
+<a href="/">Back to the portfolio →</a>
+</div>

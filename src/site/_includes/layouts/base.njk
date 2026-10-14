@@ -7,6 +7,8 @@
       {% if renderData.title or title %}{{ renderData.title or title }} |  {% endif %}{{ metadata.title }} - {{ metadata.description }}</title>
     <meta name="description" content="{{ renderData.description or description or metadata.description }}">
     <meta name="theme-color" content="#1f1f1f">
+    {% if noindex %}<meta name="robots" content="noindex, nofollow">{% endif %}
+    <link rel="preload" href="/fonts/bricolage/BricolageGrotesque.ttf" as="font" type="font/ttf" crossorigin>
     <link rel="stylesheet" href="{{ '/css/index.css' | url }}">
     <script src="{{ '/js/lazysizes.min.js' | url }}"></script>
     <link rel="icon" href="/images/favicon.png"/>
@@ -51,6 +53,7 @@
         }
 
         var toggle = document.getElementById('lightSwitch');
+        if (!toggle) return;
         toggle.checked = currentTheme == 'true';
 
         if (!toggle.checked) 
@@ -82,15 +85,23 @@
             .add('u-dark')
         }
 
-      document.addEventListener("DOMContentLoaded", loadTheme);
+      document.addEventListener("DOMContentLoaded", function () {
+        loadTheme();
+        if ('IntersectionObserver' in window) {
+          var observer = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) { if (!entry.isIntersecting) entry.target.pause(); });
+          }, { threshold: 0.1 });
+          document.querySelectorAll('video').forEach(function (video) { observer.observe(video); });
+        }
+      });
     </script>
 
     <link href="//fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,400;0,600;0,700;0,900;1,420&family=Space+Mono:wght@400&display=swap" rel="stylesheet">
   </head>
-  <body{% if templateClass %} class="{{ templateClass }}"{% endif %} {% if themeColor %} style="--color-bg: #{{ themeColor }};"{% endif %}>
+  <body{% if templateClass %} class="{{ templateClass }}"{% endif %} {% if themeColor %} style="--color-bg: #{{ themeColor }}; --case-light: {{ projectThemes[short].light or ('#'+themeColor) }}; --case-dark: {{ projectThemes[short].dark or '#20202b' }}; --case-ink: {{ projectThemes[short].ink or '#171722' }}; --case-focus-light: {{ projectThemes[short].focusLight or '#171722' }}; --case-focus-dark: {{ projectThemes[short].focusDark or ('#'+themeColor) }};"{% endif %}>
+    <a class="skip-link" href="#main-content">Skip to content</a>
     {% include "_header.njk" %}
-
-    <main>
+    <main id="main-content">
       {{ content | safe }}
 
       {% if map %}

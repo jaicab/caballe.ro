@@ -1,0 +1,53 @@
+---
+layout: layouts/base.njk
+title: Private work reveal prototype
+permalink: /private-preview/
+restricted: true
+noindex: true
+---
+<style>
+.reveal-demo{--paper:#d3d4a7;--ink:#23281e;max-width:1280px;margin:auto;padding:48px 24px 80px;color:var(--paper)}
+.reveal-demo .prototype-note{font:12px/1.6 'Space Mono',monospace;margin:0 0 32px;max-width:none}
+.case-file{position:relative;isolation:isolate;background:var(--paper);color:var(--ink);overflow:hidden;min-height:530px}
+.file-cover{position:relative;z-index:2;display:grid;grid-template-columns:1fr 1fr;min-height:530px;pointer-events:none}
+.file-leaf{padding:44px;display:flex;flex-direction:column;justify-content:space-between;background:var(--paper);transition:transform .5s cubic-bezier(.2,.8,.2,1)}
+.file-leaf:last-child{background:var(--ink);color:var(--paper)}
+.file-label{font:12px/1.5 'Space Mono',monospace;text-transform:uppercase;letter-spacing:.04em}
+.file-cover h1{font:600 clamp(48px,6.5vw,90px)/.94 'Bricolage Grotesque',sans-serif;letter-spacing:normal;margin:32px 0;max-width:6ch}
+.file-cover p{font-size:17px;line-height:1.5;max-width:26ch;margin:0}
+.file-controls{pointer-events:auto;margin-top:32px}
+.file-button{appearance:none;font:600 16px/1.3 'Epilogue',sans-serif;border:1px solid currentColor;border-radius:0;padding:16px 20px;color:inherit;background:transparent;cursor:pointer;text-transform:none;letter-spacing:normal}
+.file-button:hover{background:var(--paper);color:var(--ink)}
+.file-button:focus-visible{outline:3px solid currentColor;outline-offset:5px}
+.file-inside{position:absolute;inset:0;padding:44px;display:flex;flex-direction:column;align-items:flex-start;justify-content:space-between;background:var(--paper)}
+.file-inside[hidden]{display:none}
+.file-inside h2{font:600 clamp(42px,6vw,80px)/1 'Bricolage Grotesque',sans-serif;letter-spacing:normal;max-width:13ch;margin:24px 0}
+.file-inside p{font-size:18px;line-height:1.6;max-width:46ch;margin:0 0 24px}
+.case-file.is-open .file-leaf:first-child{transform:translateX(-101%)}
+.case-file.is-open .file-leaf:last-child{transform:translateX(101%)}
+.case-file.is-open .file-cover{pointer-events:none;visibility:hidden;transition:visibility 0s .5s}
+.reveal-explanation{display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-top:32px}
+.reveal-explanation p{font-size:15px;line-height:1.65;max-width:48ch;margin:0}
+@media(max-width:650px){.reveal-demo{padding:24px 20px 48px}.case-file,.file-cover{min-height:650px}.file-cover{grid-template-columns:1fr}.file-leaf{padding:28px}.file-cover h1{font-size:60px;max-width:9ch;margin:24px 0}.file-leaf:last-child{gap:24px}.file-controls{margin-top:0}.file-inside{padding:28px}.reveal-explanation{grid-template-columns:1fr;gap:16px}}
+@media(prefers-reduced-motion:reduce){.file-leaf,.case-file.is-open .file-cover{transition:none}}
+</style>
+<section class="reveal-demo" aria-labelledby="reveal-title">
+<p class="prototype-note">Local interaction prototype — authentication not configured</p>
+<div class="case-file" id="case-file">
+<div class="file-cover">
+<div class="file-leaf"><span class="file-label">Shared for hiring conversations</span><h1 id="reveal-title">A closer look.</h1><span class="file-label">Private work / interaction study</span></div>
+<div class="file-leaf"><span class="file-label">The details behind the decisions</span><p>Some work deserves a smaller audience. A simple opening, with room for the full story.</p><div class="file-controls"><button class="file-button" id="reveal-open" type="button" aria-expanded="false" aria-controls="reveal-content">Preview the reveal <span aria-hidden="true">↗</span></button></div></div>
+</div>
+<div class="file-inside" id="reveal-content" hidden tabindex="-1" aria-labelledby="inside-title"><span class="file-label">Sample content — no private project material</span><div><h2 id="inside-title">Less friction.<br>More context.</h2><p>This fictional case-file interior demonstrates the transition only. In a finished portfolio, verified access would come before opening the cover and requesting restricted content.</p></div><button class="file-button" id="reveal-close" type="button">Close the case file <span aria-hidden="true">↙</span></button></div>
+</div>
+<div class="reveal-explanation"><p><strong>One clear action.</strong> No puzzle or password hunt. The cover moves aside quickly, leaving the work as the focus. Keyboard users can open, close, or press Escape; reduced motion removes the animation.</p><p><strong>Interaction, not authentication.</strong> This local sample contains no restricted assets, credentials, or access checks. A production version needs server-side access verification and protected asset delivery before this interaction can reveal real work.</p></div>
+<noscript><p>This interaction preview needs JavaScript. No private content is included.</p></noscript>
+</section>
+<script>
+(function(){
+var file=document.getElementById('case-file'),open=document.getElementById('reveal-open'),close=document.getElementById('reveal-close'),content=document.getElementById('reveal-content');
+function show(){content.hidden=false;open.setAttribute('aria-expanded','true');file.classList.add('is-open');content.focus({preventScroll:true});}
+function hide(){file.classList.remove('is-open');content.hidden=true;open.setAttribute('aria-expanded','false');open.focus({preventScroll:true});}
+open.addEventListener('click',show);close.addEventListener('click',hide);file.addEventListener('keydown',function(event){if(event.key==='Escape'&&file.classList.contains('is-open')){event.preventDefault();hide();}});
+})();
+</script>
