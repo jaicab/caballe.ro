@@ -113,8 +113,9 @@ ${content}
   for (const entry of fs.readdirSync(path.join(__dirname, sourceDir + "/images"))) {
     if (entry !== "case-studies") eleventyConfig.addPassthroughCopy(sourceDir + "/images/" + entry);
   }
+  const publicCaseAssets = new Set(["glass", "wise", "checkstep", "moteefe", "dotdot", "carlos-caballero"]);
   for (const entry of fs.readdirSync(path.join(__dirname, sourceDir + "/images/case-studies"))) {
-    if (privateReview || !["glassfiles", "roast-cards"].includes(entry)) {
+    if (privateReview || publicCaseAssets.has(entry)) {
       eleventyConfig.addPassthroughCopy(sourceDir + "/images/case-studies/" + entry);
     }
   }
