@@ -18,7 +18,9 @@ properties:
     - Product and interaction design
     - Shopify theme development
     - Reusable product components
+    - Instagram content design
   tools:
+    - Figma
     - Shopify Liquid
     - HTML, CSS and JavaScript
 ---
@@ -55,6 +57,20 @@ Clear product cards support browsing. On a product page, brew-specific flavour p
 Brew method and size sit alongside origin, process and producer information. The same page lets someone choose a coffee and discover where it came from.
 
 <img src="{{ '/images/case-studies/glass/product-detail.png' | url }}" alt="Public Glass coffee product page showing filter and espresso options, size selection, origin, processing and producer information" loading="lazy" width="1440" height="1080" />
+
+{% statement "02 / Beyond the storefront" %}The coffee. The people. The story behind it.{% endstatement %}
+
+I also designed Glass’s Instagram content. These stories bring together the Roast Cards launch, the people making the coffee and its origin.
+
+{% evidence %}
+<div class="glass-social-grid">
+<figure><a class="image-inspect" href="/images/case-studies/glass/social/roast-cards.webp" data-image-viewer><img src="/images/case-studies/glass/social/roast-cards.webp" width="1080" height="1920" alt="Glass Instagram story design introducing Roast Cards with a labelled roasting graph" loading="lazy" /><span>Enlarge image +</span></a><figcaption>Introducing Roast Cards.</figcaption></figure>
+<figure><a class="image-inspect" href="/images/case-studies/glass/social/coffee-conversation.webp" data-image-viewer><img src="/images/case-studies/glass/social/coffee-conversation.webp" width="1080" height="1920" alt="Glass Instagram story design: Coffee first. Conversation later., over a pour-over photograph" loading="lazy" /><span>Enlarge image +</span></a><figcaption>The people behind the coffee.</figcaption></figure>
+<figure><a class="image-inspect" href="/images/case-studies/glass/social/from-panama.webp" data-image-viewer><img src="/images/case-studies/glass/social/from-panama.webp" width="1080" height="1920" alt="Glass Instagram story design: From Panama., over an aerial landscape photograph" loading="lazy" /><span>Enlarge image +</span></a><figcaption>Where the coffee comes from.</figcaption></figure>
+</div>
+{% endevidence %}
+
+Large type, full-bleed photography and small labels keep the stories connected, even when the subject changes.
 
 <details>
 <summary>From design to Shopify implementation</summary>
