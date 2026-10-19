@@ -6,6 +6,12 @@ const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
 
 module.exports = function (eleventyConfig) {
   eleventyConfig.addPlugin(eleventyNavigationPlugin);
+  // A new URL on every CSS change prevents stale browser/CDN styles after release.
+  eleventyConfig.addFilter("assetVersion", asset => {
+    const bytes = fs.readFileSync(path.join(__dirname, sourceDir, asset));
+    const hash = require("crypto").createHash("sha256").update(bytes).digest("hex").slice(0, 12);
+    return `${asset}?v=${hash}`;
+  });
   if (privateReview) eleventyConfig.setUseGitIgnore(false);
 
   eleventyConfig.addLayoutAlias("report", "layouts/report.njk");

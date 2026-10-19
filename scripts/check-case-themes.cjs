@@ -13,6 +13,7 @@ const contrast = (a,b) => (Math.max(luminance(a),luminance(b))+.05)/(Math.min(lu
 let count = 0;
 for (const slug of fs.readdirSync(path.join(root,'case-studies'))) {
   const html = fs.readFileSync(path.join(root,'case-studies',slug,'index.html'),'utf8');
+  assert(/href="\/css\/index\.css\?v=[a-f0-9]{12}"/.test(html), `${slug}: stylesheet must be content-versioned`);
   const t = themes[slug]; assert(t, `Missing theme: ${slug}`);
   const body = html.match(/<body[^>]+>/)[0];
   assert(body.includes('tmpl-report'));
