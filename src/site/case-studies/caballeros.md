@@ -38,8 +38,8 @@ properties:
 
 {% evidence %}
 <div class="caballeros-pair">
-<figure><div class="caballeros-invite-frame"><img src="/images/case-studies/caballeros/invitation-preview.jpg" width="1280" height="720" alt="Invitation design preview: a hand-drawn envelope, A note to the kitchen, and one Start button" loading="lazy" /></div><figcaption><strong>The guest side.</strong> An invitation to share a dish and its story, in writing or by voice. This capture is a design preview; nothing is sent.</figcaption></figure>
-<figure><img src="/images/case-studies/caballeros/recipe-library.jpg" width="788" height="1048" alt="Recipe library with illustrated recipe cards, search, filters and shopping actions" loading="lazy" /><figcaption><strong>The kitchen side.</strong> Find a recipe, prepare the ingredients, follow the method. Actual interface capture, September 2026.</figcaption></figure>
+<figure><div class="caballeros-invite-frame"><img src="/images/case-studies/caballeros/invitation-preview.jpg" width="1280" height="720" alt="Invitation design preview: a hand-drawn envelope, A note to the kitchen, and one Start button" loading="lazy" /></div><figcaption><strong>The guest side.</strong> An invitation to share a dish and its story, in writing or by voice. Invitation design preview.</figcaption></figure>
+<figure><img src="/images/case-studies/caballeros/recipe-library.jpg" width="788" height="1048" alt="Recipe library with illustrated recipe cards, search, filters and shopping actions" loading="lazy" /><figcaption><strong>The kitchen side.</strong> Find a recipe, prepare the ingredients, follow the method. Kitchen interface, September 2026.</figcaption></figure>
 </div>
 {% endevidence %}
 
@@ -57,24 +57,24 @@ The crayon identity makes a digital invitation feel personal. The kitchen needs 
 </div>
 {% endevidence %}
 
-The revision kept the full method instead of shortening away important quantities or temperatures. These September 2026 captures document an implementation review, not a usability study. A real cook with a phone on the worktop is the next validation step.
+I kept the quantities and temperatures in the instructions, and made the ingredient list easier to reach.
 
 {% statement "03 / Beyond the screen" %}Make the recipe useful. Then make it worth keeping.{% endstatement %}
 
 {% evidence %}
-<figure class="caballeros-studio"><a href="/images/case-studies/caballeros/design-studio.jpg" aria-label="Enlarge the Caballero’s Design Studio screenshot" data-image-viewer><img src="/images/case-studies/caballeros/design-studio.jpg" width="1280" height="720" alt="Caballero’s Design Studio editing a generic Burnt Basque Cheesecake keepsake, with artwork, text layers and print format controls" loading="lazy" /></a><figcaption>Actual Design Studio interface with a generic recipe keepsake. Open the image to inspect the editor.</figcaption></figure>
+<figure class="caballeros-studio"><a href="/images/case-studies/caballeros/design-studio.jpg" aria-label="Enlarge the Caballero’s Design Studio screenshot" data-image-viewer><img src="/images/case-studies/caballeros/design-studio.jpg" width="1280" height="720" alt="Caballero’s Design Studio editing a generic Burnt Basque Cheesecake keepsake, with artwork, text layers and print format controls" loading="lazy" /></a><figcaption>A recipe keepsake in the Studio. Open the image for a closer look.</figcaption></figure>
 {% endevidence %}
 
 The Studio connects recipe content to editable menus and keepsakes. Layers, artwork and print formats can change without rebuilding every design by hand. Export supports PNG, PDF and SVG containers; the illustrated artwork remains raster.
 
-<div class="caballeros-table-detail"><a class="image-inspect" href="/images/case-studies/caballeros/table-detail.jpg" data-image-viewer><img src="/images/case-studies/caballeros/table-detail.jpg" width="1066" height="1600" alt="A plated scallop at a Caballero’s dinner, with flowers and a printed menu behind it" loading="lazy" /><span>Enlarge image +</span></a><div><h2>The screen is only part of it.</h2><p>The invitation, kitchen workflow and printed pieces all serve the same evening. These photographs document the physical setting; the interface captures show the evolving tools behind it.</p></div></div>
+<div class="caballeros-table-detail"><a class="image-inspect" href="/images/case-studies/caballeros/table-detail.jpg" data-image-viewer><img src="/images/case-studies/caballeros/table-detail.jpg" width="1066" height="1600" alt="A plated scallop at a Caballero’s dinner, with flowers and a printed menu behind it" loading="lazy" /><span>Enlarge image +</span></a><div><h2>The screen is only part of it.</h2><p>The invitation, recipes and printed menus all come together at the table.</p></div></div>
 
 <details id="decisions">
 <summary>What I built with, and where AI fits</summary>
 
 The kitchen and Studio use HTML, CSS and vanilla JavaScript. The invitation uses React and Vite. Markdown/TOML recipes and JSON plans feed a Python static generator; local storage and IndexedDB preserve working state.
 
-Codex supports development and checks. ImageGen and Runway were used in the invitation’s visual and motion workflow. They support the craft; the product decisions still need clear constraints, implementation checks and real-world validation.
+I used Codex to build and check the tools, and ImageGen and Runway for the invitation’s artwork and motion.
 
 Cloudflare Pages, Workers and D1 support the deployed guest flow and private host tools. Voice transcription is implemented through Workers AI. Guest responses and host records are deliberately absent from this case study.
 
