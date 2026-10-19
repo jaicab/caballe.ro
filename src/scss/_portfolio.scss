@@ -452,3 +452,10 @@ body.tmpl-home.u-dark,body.tmpl-system.u-dark { background:#28212f; color:var(--
 .tmpl-home.u-dark :focus-visible,.tmpl-system.u-dark :focus-visible,.tmpl-home.u-dark .c-light input:focus-visible + label,.tmpl-system.u-dark .c-light input:focus-visible + label { outline-color:var(--studio-lilac); }
 .tmpl-home .project-stage :focus-visible,.tmpl-system .project-stage :focus-visible,.tmpl-home .workflow-lab__editor :focus-visible,.tmpl-home .workflow-lab__preview :focus-visible,.tmpl-system .workflow-lab__editor :focus-visible,.tmpl-system .workflow-lab__preview :focus-visible { outline-color:var(--studio-violet); }
 .workflow-lab .workflow-lab__footer :focus-visible { outline-color:var(--studio-lilac); }
+
+.work-chapter { padding-block:var(--space2) var(--space3); }
+.work-chapter > p { margin:0 0 12px; }
+.work-chapter--shift { padding-block:var(--space4); max-width:800px; }
+.work-chapter--shift h3 { font-family:var(--font-display); font-size:clamp(36px,5.5vw,70px); line-height:1.05; letter-spacing:-.035em; color:var(--studio-violet); margin:16px 0 24px; }
+.u-dark .work-chapter--shift h3 { color:var(--studio-lilac); }
+.system-example .project-copy h3 { font-size:clamp(32px,3.8vw,54px); }
