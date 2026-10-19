@@ -38,3 +38,9 @@ if (root === '_site') {
   for (const slug of fs.readdirSync(path.join(root,'images/case-studies'))) assert(allowed.has(slug), `Restricted public assets: ${slug}`);
   console.log('PASS public case routes and media allowlist');
 }
+
+const wordmark = fs.readFileSync(path.join(root,'images/case-studies/caballeros/wordmark.svg'),'utf8');
+assert(/<path\b/.test(wordmark),'Wordmark must contain vector paths');
+assert(!/<image\b|<script\b|data:image|https?:\/\/(?!www\.w3\.org)/i.test(wordmark),'Wordmark must not embed raster, script or remote content');
+assert(/\.u-text img\.caballeros-wordmark\s*\{[^}]*border:\s*0/.test(css),'Wordmark must not inherit screenshot border');
+console.log('PASS vector wordmark and border regression');
