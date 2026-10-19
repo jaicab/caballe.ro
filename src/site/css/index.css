@@ -3693,7 +3693,7 @@ body.tmpl-home, body.tmpl-home.u-dark, body.tmpl-system, body.tmpl-system.u-dark
 .portfolio-intro h1 {
   font-size: clamp(44px, 8.4vw, 116px);
   font-weight: 650;
-  letter-spacing: -0.055em;
+  letter-spacing: -0.025em;
   margin-block: var(--space3) var(--space4);
 }
 
@@ -3711,8 +3711,9 @@ body.tmpl-home, body.tmpl-home.u-dark, body.tmpl-system, body.tmpl-system.u-dark
   color: #385719;
   padding: 7px 10px;
   background: #e2edcf;
-  display: inline-block;
+  display: table;
   border-radius: 2px;
+  margin: 0 0 16px;
 }
 
 .intro-bottom > p {
