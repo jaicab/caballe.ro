@@ -4439,17 +4439,17 @@ body.tmpl-home.u-dark, body.tmpl-system.u-dark {
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  [data-project-arrival] .o-article__header {
-    animation: project-content-arrive 200ms ease-out backwards;
+  .tmpl-report .o-article__header {
+    animation: project-content-arrive 420ms ease-out backwards;
   }
-  [data-project-arrival] .case-proof-link, [data-project-arrival] .case-chapters {
-    animation: project-content-arrive 200ms 35ms ease-out backwards;
+  .tmpl-report .case-proof-link, .tmpl-report .case-chapters {
+    animation: project-content-arrive 400ms 60ms ease-out backwards;
   }
-  [data-project-arrival] .caballeros-intro {
-    animation: project-content-arrive 220ms 55ms ease-out backwards;
+  .tmpl-report .o-article__content > :first-child {
+    animation: project-content-arrive 420ms 90ms ease-out backwards;
   }
-  [data-project-arrival] .caballeros-dinner {
-    animation: project-image-arrive 240ms 75ms ease-out backwards;
+  .tmpl-report .case-evidence:first-of-type {
+    animation: project-image-arrive 440ms 120ms ease-out backwards;
   }
 }
 @keyframes project-content-arrive {
