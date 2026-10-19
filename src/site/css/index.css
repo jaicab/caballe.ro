@@ -4462,3 +4462,5 @@ body:has(.project-entry-page-surface) {
     animation: none !important;
   }
 }
+.caballeros-studio-full { display: block; }
+.caballeros-studio-full img { display: block; width: 100%; height: auto; }

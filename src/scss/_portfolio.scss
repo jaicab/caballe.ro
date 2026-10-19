@@ -505,3 +505,6 @@ body:has(.project-entry-page-surface) { isolation: isolate; }
 @media (prefers-reduced-motion: reduce) {
   ::view-transition-group(*), ::view-transition-old(*), ::view-transition-new(*), ::view-transition-image-pair(*) { animation: none !important; }
 }
+
+.caballeros-studio-full { display: block; }
+.caballeros-studio-full img { display: block; width: 100%; height: auto; }
