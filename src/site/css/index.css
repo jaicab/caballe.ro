@@ -4394,3 +4394,73 @@ body.tmpl-home.u-dark, body.tmpl-system.u-dark {
     margin-inline: auto;
   }
 }
+/* One native, cancellable transition into the independent project. */
+.project-stage--caballeros {
+  position: relative;
+  isolation: isolate;
+}
+
+.project-entry-card-surface {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: inherit;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.project-entry-page-surface {
+  position: fixed;
+  inset: 0;
+  background: var(--case-light);
+  z-index: -1;
+  pointer-events: none;
+}
+
+body:has(.project-entry-page-surface) {
+  isolation: isolate;
+}
+
+.u-dark .project-entry-page-surface {
+  background: var(--case-dark);
+}
+
+::view-transition {
+  pointer-events: none;
+}
+
+::view-transition-group(project-surface) {
+  z-index: 2;
+  animation-duration: 300ms;
+  animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+::view-transition-image-pair(project-surface) {
+  animation: project-surface-clear 300ms ease both;
+}
+
+::view-transition-old(project-surface), ::view-transition-new(project-surface) {
+  height: 100%;
+  object-fit: fill;
+  mix-blend-mode: normal;
+}
+
+::view-transition-group(root) {
+  animation-duration: 220ms;
+}
+
+@keyframes project-surface-clear {
+  0%, 55% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-group(*), ::view-transition-old(*), ::view-transition-new(*), ::view-transition-image-pair(*) {
+    animation: none !important;
+  }
+}
+.caballeros-studio-full { display: block; }
+.caballeros-studio-full img { display: block; width: 100%; height: auto; }
