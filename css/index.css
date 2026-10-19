@@ -2915,3 +2915,8 @@ body.tmpl-report.u-dark {
     font-size: 30px;
   }
 }
+.u-text img.caballeros-wordmark {
+  border: 0;
+  box-shadow: none;
+  background: transparent;
+}
