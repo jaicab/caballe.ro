@@ -57,7 +57,7 @@ The crayon identity makes a digital invitation feel personal. The kitchen needs 
 </div>
 {% endevidence %}
 
-I kept the quantities and temperatures in the instructions, and made the ingredient list easier to reach.
+I kept the quantities and temperatures in the instructions, and made the ingredient list easier to reach. I’ve tested it in the kitchen, too.
 
 {% statement "03 / Beyond the screen" %}Make the recipe useful. Then make it worth keeping.{% endstatement %}
 
