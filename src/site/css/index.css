@@ -4394,73 +4394,79 @@ body.tmpl-home.u-dark, body.tmpl-system.u-dark {
     margin-inline: auto;
   }
 }
-/* One native, cancellable transition into the independent project. */
-.project-stage--caballeros {
-  position: relative;
-  isolation: isolate;
-}
-
-.project-entry-card-surface {
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  background: inherit;
-  z-index: -1;
-  pointer-events: none;
-}
-
-.project-entry-page-surface {
-  position: fixed;
-  inset: 0;
-  background: var(--case-light);
-  z-index: -1;
-  pointer-events: none;
-}
-
-body:has(.project-entry-page-surface) {
-  isolation: isolate;
-}
-
-.u-dark .project-entry-page-surface {
-  background: var(--case-dark);
-}
-
-::view-transition {
-  pointer-events: none;
-}
-
-::view-transition-group(project-surface) {
-  z-index: 2;
-  animation-duration: 300ms;
-  animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
-}
-
-::view-transition-image-pair(project-surface) {
-  animation: project-surface-clear 300ms ease both;
-}
-
-::view-transition-old(project-surface), ::view-transition-new(project-surface) {
-  height: 100%;
-  object-fit: fill;
-  mix-blend-mode: normal;
-}
-
-::view-transition-group(root) {
-  animation-duration: 220ms;
-}
-
-@keyframes project-surface-clear {
-  0%, 55% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-@media (prefers-reduced-motion: reduce) {
-  ::view-transition-group(*), ::view-transition-old(*), ::view-transition-new(*), ::view-transition-image-pair(*) {
-    animation: none !important;
-  }
-}
 .caballeros-studio-full { display: block; }
 .caballeros-studio-full img { display: block; width: 100%; height: auto; }
+
+/* Faster access to work; keep the existing type, palette and project order. */
+.portfolio-intro {
+  padding-block: 24px 28px;
+}
+
+.portfolio-intro h1 {
+  font-size: clamp(42px, 7vw, 96px);
+  margin-block: 20px 24px;
+}
+
+.work-jump {
+  margin-bottom: 24px;
+}
+
+.section-label {
+  padding-block: 18px;
+}
+
+.tmpl-about .u-content {
+  padding-top: 24px;
+}
+
+.tmpl-about h1 {
+  font-family: var(--font-display);
+  font-size: clamp(40px, 5vw, 68px);
+  line-height: 1.05;
+  letter-spacing: -0.025em;
+}
+
+.tmpl-about .u-text p {
+  line-height: 1.7;
+}
+
+.case-build-note {
+  margin-block: 40px;
+  border-top: 1px solid currentColor;
+  padding-top: 24px;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  [data-project-arrival] .o-article__header {
+    animation: project-content-arrive 200ms ease-out backwards;
+  }
+  [data-project-arrival] .case-proof-link, [data-project-arrival] .case-chapters {
+    animation: project-content-arrive 200ms 35ms ease-out backwards;
+  }
+  [data-project-arrival] .caballeros-intro {
+    animation: project-content-arrive 220ms 55ms ease-out backwards;
+  }
+  [data-project-arrival] .caballeros-dinner {
+    animation: project-image-arrive 240ms 75ms ease-out backwards;
+  }
+}
+@keyframes project-content-arrive {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes project-image-arrive {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}

@@ -27,7 +27,7 @@ properties:
 
 <div class="caballeros-intro" id="tldr">
 <img class="caballeros-wordmark" src="/images/case-studies/caballeros/wordmark.svg" width="519" height="253" alt="Caballero’s hand-drawn terracotta wordmark" />
-<p>I designed the identity and built the invitation, kitchen and Studio tools for my supper-club project. One system connecting the stories people bring to dinner with the work of making it happen.</p>
+<p>I designed the identity, built a React invitation, and connected a recipe library to an editable print studio. The tools support my supper-club project, from inviting people to cooking and making keepsakes.</p>
 </div>
 
 {% evidence %}
@@ -64,21 +64,22 @@ I kept the quantities and temperatures in the instructions, and made the ingredi
 <figure class="caballeros-studio caballeros-studio--retina"><a class="image-inspect" href="/images/case-studies/caballeros/caballeros-studio-cabrales-selected-2x.png" aria-label="Enlarge the Caballero’s Design Studio screenshot" data-image-viewer><span class="caballeros-studio-full"><img src="/images/case-studies/caballeros/caballeros-studio-cabrales-selected-2x.png" width="2880" height="2000" alt="Caballero’s Design Studio with the Mild Whipped Cabrales Method layer selected and text, font, position and opacity controls visible" loading="lazy" /></span><span>Enlarge image +</span></a><figcaption>Select a layer, edit the text, and adjust the layout. The Studio keeps the recipe and print controls in the same view.</figcaption></figure>
 {% endevidence %}
 
-The Studio connects recipe content to editable menus and keepsakes. Layers, artwork and print formats can change without rebuilding every design by hand. Export supports PNG, PDF and SVG containers; the illustrated artwork remains raster.
+I connected recipes to editable menus and keepsakes, so a source change can refresh the content without rebuilding the layout. Export supports PNG, PDF and SVG containers; the illustrated artwork remains raster.
 
 <div class="caballeros-table-detail"><a class="image-inspect" href="/images/case-studies/caballeros/table-detail.jpg" data-image-viewer><img src="/images/case-studies/caballeros/table-detail.jpg" width="1066" height="1600" alt="A plated scallop at a Caballero’s dinner, with flowers and a printed menu behind it" loading="lazy" /><span>Enlarge image +</span></a><div><h2>The screen is only part of it.</h2><p>The invitation, recipes and printed menus all come together at the table.</p></div></div>
 
-<details id="decisions">
-<summary>What I built with, and where AI fits</summary>
+<section id="decisions" class="case-build-note">
 
-The kitchen and Studio use HTML, CSS and vanilla JavaScript. The invitation uses React and Vite. Markdown/TOML recipes and JSON plans feed a Python static generator; local storage and IndexedDB preserve working state.
+## Built to keep working.
+
+I built the kitchen and Studio in HTML, CSS and JavaScript, and the invitation in React. Recipe files feed the library and print tools. Local storage and IndexedDB keep edits available between sessions.
 
 I used Codex to build and check the tools, and ImageGen and Runway for the invitation’s artwork and motion.
 
-Cloudflare Pages, Workers and D1 support the deployed guest flow and private host tools. Voice transcription is implemented through Workers AI. Guest responses and host records are deliberately absent from this case study.
+Cloudflare Pages, Workers and D1 support the deployed guest flow and private host tools. Voice transcription uses Workers AI.
 
 The custom invitation type was developed with fontTools and Pillow, using a modified Caveat scaffold under its open font licence.
 
-</details>
+</section>
 
 <p class="caballeros-status">Working tools, an evolving independent project.</p>
