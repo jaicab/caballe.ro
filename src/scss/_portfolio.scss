@@ -483,3 +483,9 @@ body.tmpl-home.u-dark,body.tmpl-system.u-dark { background:#28212f; color:var(--
 .caballeros-studio-crop { display:block; aspect-ratio:2.2; overflow:hidden; border-radius:8px; }
 .caballeros-studio-crop img { width:100%; height:auto; display:block; }
 @media(max-width:739px){.caballeros-studio--retina{padding:14px}.caballeros-studio-crop{aspect-ratio:1.6}}
+
+.glass-social-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:24px; margin-block:36px; }
+.glass-social-grid figure { margin:0; min-width:0; max-width:540px; }
+.u-text .glass-social-grid img { display:block; width:100%; max-width:540px; height:auto; border:0; border-radius:8px; box-shadow:0 12px 30px rgba(20,15,10,.15); }
+.glass-social-grid figcaption { margin-top:12px; font-size:14px; line-height:1.6; }
+@media(max-width:739px){.glass-social-grid{grid-template-columns:1fr;gap:32px}.glass-social-grid figure{max-width:420px;margin-inline:auto}}
