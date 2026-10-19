@@ -30,6 +30,10 @@ properties:
 <p>A supper club, an invitation, a working kitchen toolkit. One project connecting the stories people bring to dinner with the work of making it happen.</p>
 </div>
 
+{% evidence %}
+<figure class="caballeros-dinner"><img src="/images/case-studies/caballeros/dinner-table.jpg" width="1600" height="1066" alt="A Caballero’s dinner table in sunlight, set with printed menus, flowers, citrus and candles" loading="eager" /><figcaption>The experience the tools serve: a real Caballero’s table, with its menus and small details in place.</figcaption></figure>
+{% endevidence %}
+
 {% statement "01 / One identity, different jobs" %}Warm enough to invite you in. Clear enough to cook with.{% endstatement %}
 
 {% evidence %}
@@ -62,6 +66,8 @@ The revision kept the full method instead of shortening away important quantitie
 {% endevidence %}
 
 The Studio connects recipe content to editable menus and keepsakes. Layers, artwork and print formats can change without rebuilding every design by hand. Export supports PNG, PDF and SVG containers; the illustrated artwork remains raster.
+
+<div class="caballeros-table-detail"><img src="/images/case-studies/caballeros/table-detail.jpg" width="1066" height="1600" alt="A plated scallop at a Caballero’s dinner, with flowers and a printed menu behind it" loading="lazy" /><div><h2>The screen is only part of it.</h2><p>The invitation, kitchen workflow and printed pieces all serve the same evening. These photographs document the physical setting; the interface captures show the evolving tools behind it.</p></div></div>
 
 <details>
 <summary>What I built with, and where AI fits</summary>

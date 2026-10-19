@@ -2868,3 +2868,52 @@ body.tmpl-report.u-dark {
     font-size: 21px;
   }
 }
+
+.caballeros-dinner {
+  margin: 0 0 50px;
+}
+
+.caballeros-dinner img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.caballeros-dinner figcaption {
+  font-size: 13px;
+  line-height: 1.6;
+  margin-top: 14px;
+}
+
+.caballeros-table-detail {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 48px;
+  align-items: center;
+  margin: 45px 0 60px;
+}
+
+.caballeros-table-detail img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.caballeros-table-detail h2 {
+  font-size: 38px;
+  line-height: 1.1;
+}
+
+@media (max-width: 739px) {
+  .caballeros-table-detail {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .caballeros-table-detail img {
+    max-width: 430px;
+    margin-inline: auto;
+  }
+  .caballeros-table-detail h2 {
+    font-size: 30px;
+  }
+}
