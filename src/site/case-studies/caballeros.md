@@ -37,9 +37,9 @@ properties:
 {% statement "01 / One identity, different jobs" %}Warm enough to invite you in. Clear enough to cook with.{% endstatement %}
 
 {% evidence %}
-<div class="caballeros-pair">
-<figure><div class="caballeros-invite-frame"><img src="/images/case-studies/caballeros/invitation-preview.jpg" width="1280" height="720" alt="Invitation design preview: a hand-drawn envelope, A note to the kitchen, and one Start button" loading="lazy" /></div><figcaption><strong>The guest side.</strong> An invitation to share a dish and its story, in writing or by voice. Invitation design preview.</figcaption></figure>
-<figure><img src="/images/case-studies/caballeros/recipe-library.jpg" width="788" height="1048" alt="Recipe library with illustrated recipe cards, search, filters and shopping actions" loading="lazy" /><figcaption><strong>The kitchen side.</strong> Find a recipe, prepare the ingredients, follow the method. Kitchen interface, September 2026.</figcaption></figure>
+<div class="caballeros-retina-pair">
+<figure class="caballeros-invitation-scene"><a class="image-inspect" href="/images/case-studies/caballeros/caballeros-invitation-demo-desktop-2x.png" data-image-viewer><span class="caballeros-invitation-crop"><img src="/images/case-studies/caballeros/caballeros-invitation-demo-desktop-2x.png" width="2560" height="1800" alt="Caballero’s invitation preview with a hand-drawn envelope and A note to the kitchen heading" loading="lazy" /></span><span>Enlarge image +</span></a><figcaption><p class="eyebrow">The invitation</p><h3>Start with a story.</h3><p>A dish you remember. A few words, or a voice note. The invitation gives guests a way into the evening before they arrive. Demo invitation shown.</p></figcaption></figure>
+<figure class="caballeros-desktop-scene"><a class="image-inspect" href="/images/case-studies/caballeros/caballeros-library-desktop-2x.png" data-image-viewer><img src="/images/case-studies/caballeros/caballeros-library-desktop-2x.png" width="2560" height="1800" alt="Caballero’s recipe library with search, recipe filters and illustrated cards" loading="lazy" /><span>Enlarge image +</span></a><figcaption><strong>The recipe library.</strong> Find the dish, check what it needs, add it to the shopping list.</figcaption></figure>
 </div>
 {% endevidence %}
 
@@ -47,13 +47,12 @@ properties:
 
 The crayon identity makes a digital invitation feel personal. The kitchen needs a different kind of care: readable instructions, quantities within reach and a clear next action. The visual language connects them without making them behave the same way.
 
-{% statement "02 / A concrete iteration" %}Less hunting for ingredients. Less losing your place.{% endstatement %}
+{% statement "02 / Cooking, without the clutter" %}Less hunting for ingredients. Less losing your place.{% endstatement %}
 
 {% evidence %}
-<div class="caballeros-cook-sequence" id="what-changed">
-<figure><p class="eyebrow">Before</p><a class="image-inspect" href="/images/case-studies/caballeros/cook-before.jpg" data-image-viewer><img src="/images/case-studies/caballeros/cook-before.jpg" width="390" height="844" alt="Earlier cooking screen with an oversized step number, dense paragraphs and timer action in the bottom bar" loading="lazy" /><span>Enlarge image +</span></a><figcaption>The step number competed with the method. Ingredient quantities sat below a long instruction.</figcaption></figure>
-<figure><p class="eyebrow">Revised</p><a class="image-inspect" href="/images/case-studies/caballeros/cook-after.jpg" data-image-viewer><img src="/images/case-studies/caballeros/cook-after.jpg" width="390" height="844" alt="Revised cooking screen with larger text option, clearer paragraph separation, All steps and a fixed Ingredients button" loading="lazy" /><span>Enlarge image +</span></a><figcaption>Clearer reading, an explicit step overview and an Ingredients button that stays within reach.</figcaption></figure>
-<figure><p class="eyebrow">Reference, then return</p><a class="image-inspect" href="/images/case-studies/caballeros/cook-ingredients.jpg" data-image-viewer><img src="/images/case-studies/caballeros/cook-ingredients.jpg" width="390" height="844" alt="Ingredient sheet showing staged quantities and a Back to cooking button" loading="lazy" /><span>Enlarge image +</span></a><figcaption>Open the quantities, check the relevant stage, then return to the same place in the recipe.</figcaption></figure>
+<div class="caballeros-phone-scene" id="what-changed">
+<figure><p class="eyebrow">01 / Cook</p><a class="image-inspect" href="/images/case-studies/caballeros/caballeros-cook-tahini-2x.png" data-image-viewer><img src="/images/case-studies/caballeros/caballeros-cook-tahini-2x.png" width="780" height="1688" alt="Tahini Yoghurt Sauce in Cook mode: a short instruction, progress and an Ingredients button" loading="lazy" /><span>Enlarge image +</span></a><figcaption>One step at a time. The method stays readable and the next action stays put.</figcaption></figure>
+<figure><p class="eyebrow">02 / Check, then return</p><a class="image-inspect" href="/images/case-studies/caballeros/caballeros-ingredients-tahini-2x.png" data-image-viewer><img src="/images/case-studies/caballeros/caballeros-ingredients-tahini-2x.png" width="780" height="1688" alt="Tahini Yoghurt Sauce ingredient sheet with six quantities and a Back to cooking button" loading="lazy" /><span>Enlarge image +</span></a><figcaption>Check the quantities, then get straight back to the recipe.</figcaption></figure>
 </div>
 {% endevidence %}
 
@@ -62,7 +61,7 @@ I kept the quantities and temperatures in the instructions, and made the ingredi
 {% statement "03 / Beyond the screen" %}Make the recipe useful. Then make it worth keeping.{% endstatement %}
 
 {% evidence %}
-<figure class="caballeros-studio"><a href="/images/case-studies/caballeros/design-studio.jpg" aria-label="Enlarge the Caballero’s Design Studio screenshot" data-image-viewer><img src="/images/case-studies/caballeros/design-studio.jpg" width="1280" height="720" alt="Caballero’s Design Studio editing a generic Burnt Basque Cheesecake keepsake, with artwork, text layers and print format controls" loading="lazy" /></a><figcaption>A recipe keepsake in the Studio. Open the image for a closer look.</figcaption></figure>
+<figure class="caballeros-studio caballeros-studio--retina"><a class="image-inspect" href="/images/case-studies/caballeros/caballeros-studio-tahini-desktop-2x.png" aria-label="Enlarge the Caballero’s Design Studio screenshot" data-image-viewer><span class="caballeros-studio-crop"><img src="/images/case-studies/caballeros/caballeros-studio-tahini-desktop-2x.png" width="2880" height="2000" alt="Detail of Caballero’s Design Studio showing artwork, editable layers and print format controls" loading="lazy" /></span><span>Enlarge image +</span></a><figcaption>The Studio: artwork, layers and print formats in one place. Editor detail; open the image for the full view.</figcaption></figure>
 {% endevidence %}
 
 The Studio connects recipe content to editable menus and keepsakes. Layers, artwork and print formats can change without rebuilding every design by hand. Export supports PNG, PDF and SVG containers; the illustrated artwork remains raster.
@@ -78,7 +77,7 @@ I used Codex to build and check the tools, and ImageGen and Runway for the invit
 
 Cloudflare Pages, Workers and D1 support the deployed guest flow and private host tools. Voice transcription is implemented through Workers AI. Guest responses and host records are deliberately absent from this case study.
 
-The custom invitation type was developed with fontTools and Pillow, using a modified Caveat scaffold under its open font licence. The project has continued evolving since the historical interface captures shown here.
+The custom invitation type was developed with fontTools and Pillow, using a modified Caveat scaffold under its open font licence.
 
 </details>
 
