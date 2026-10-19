@@ -54,6 +54,10 @@ Policies bring written guidance, thresholds, version history and insights togeth
 {% endscreens %}
 
 
+## How the product was explained publicly
+
+<figure class="case-website-video"><video controls playsinline preload="metadata" width="762" height="1678" poster="/images/case-studies/checkstep/public-website-2023-poster.jpg" aria-label="Checkstep public website walkthrough recorded in April 2023"><source src="/images/case-studies/checkstep/public-website-2023.mp4" type="video/mp4"><a href="/images/case-studies/checkstep/public-website-2023.mp4">Watch the website recording</a></video><figcaption>15-second recording from my archive, April 2023. This is the public marketing website, showing how analytics, moderator actions and policy conditions were presented. It is not a recording of the logged-in product.</figcaption></figure>
+
 <details>
 <summary>Decisions, process and lessons</summary>
 

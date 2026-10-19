@@ -33,7 +33,7 @@ assert(/background:\s*var\(--case-dark/.test(video),'Exported video surround mus
 console.log(`PASS ${root}: ${count} case themes, accessible contrast, dark page/header/break and video surfaces`);
 
 if (root === '_site') {
-  const allowed = new Set(['glass','wise','checkstep','moteefe','carlos-caballero','dotdot']);
+  const allowed = new Set(['glass','wise','checkstep','moteefe','carlos-caballero','dotdot','caballeros']);
   for (const slug of fs.readdirSync(path.join(root,'case-studies'))) assert(allowed.has(slug), `Restricted public route: ${slug}`);
   for (const slug of fs.readdirSync(path.join(root,'images/case-studies'))) assert(allowed.has(slug), `Restricted public assets: ${slug}`);
   console.log('PASS public case routes and media allowlist');

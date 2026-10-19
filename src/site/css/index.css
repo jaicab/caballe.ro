@@ -2673,3 +2673,247 @@ body.tmpl-report.u-dark {
     font-size: 13px;
   }
 }
+
+.project-stage--caballeros {
+  background: #f0e3cf;
+}
+
+.caballeros-intro {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 42px;
+  align-items: center;
+  margin: 30px 0 54px;
+}
+
+.caballeros-wordmark {
+  width: 260px;
+  height: auto;
+}
+
+.caballeros-intro p {
+  max-width: 650px;
+  font-size: 22px;
+  line-height: 1.5;
+}
+
+.caballeros-pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  margin: 40px 0;
+}
+
+.caballeros-pair figure, .caballeros-cook-sequence figure, .caballeros-studio {
+  margin: 0;
+  min-width: 0;
+}
+
+.caballeros-pair img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.caballeros-invite-frame {
+  aspect-ratio: 788/1048;
+  overflow: hidden;
+  background: #f5edde;
+}
+
+.caballeros-invite-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.caballeros-pair figcaption, .caballeros-cook-sequence figcaption, .caballeros-studio figcaption {
+  font-size: 14px;
+  line-height: 1.6;
+  margin-top: 16px;
+}
+
+.caballeros-cook-sequence {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+  margin: 40px 0 30px;
+}
+
+.caballeros-cook-sequence img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.caballeros-studio img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.caballeros-status {
+  font-size: 13px;
+  line-height: 1.6;
+  border-top: 1px solid currentColor;
+  padding-top: 20px;
+}
+
+@media (max-width: 739px) {
+  .caballeros-intro {
+    display: block;
+  }
+  .caballeros-intro p {
+    font-size: 19px;
+  }
+  .caballeros-pair, .caballeros-cook-sequence {
+    grid-template-columns: 1fr;
+    gap: 34px;
+  }
+  .caballeros-pair figure, .caballeros-cook-sequence figure {
+    max-width: 430px;
+    width: 100%;
+    margin-inline: auto;
+  }
+}
+.case-website-video {
+  margin: 32px 0;
+  display: grid;
+  grid-template-columns: minmax(220px, 380px) 1fr;
+  gap: 32px;
+  align-items: center;
+}
+
+.case-website-video video {
+  width: 100%;
+  max-height: 720px;
+  background: var(--case-dark);
+}
+
+.case-website-video figcaption {
+  font-size: 15px;
+  line-height: 1.65;
+  max-width: 380px;
+}
+
+@media (max-width: 739px) {
+  .case-website-video {
+    grid-template-columns: 1fr;
+  }
+}
+.workflow-proof {
+  display: block;
+  padding: 36px;
+  background: #e7e3ff;
+  color: #29243f;
+}
+
+.workflow-kicker {
+  font-family: "Space Mono", "Lucida Console", Monaco, monospace, monospace;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin: 0 0 22px;
+}
+
+.workflow-proof ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.workflow-proof li {
+  border-top: 1px solid #aaa1ca;
+  padding-top: 14px;
+}
+
+.workflow-proof li span {
+  display: block;
+  font-size: 11px;
+  margin-bottom: 9px;
+}
+
+.workflow-proof strong {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 25px;
+  font-weight: 600;
+  line-height: 1.1;
+}
+
+.workflow-proof li p {
+  font-size: 13px;
+  line-height: 1.5;
+  margin: 10px 0 0;
+}
+
+.workflow-proof figcaption {
+  font-size: 11px;
+  line-height: 1.5;
+  margin-top: 24px;
+}
+
+@media (max-width: 739px) {
+  .workflow-proof {
+    padding: 24px;
+  }
+  .workflow-proof ol {
+    gap: 20px;
+  }
+  .workflow-proof strong {
+    font-size: 21px;
+  }
+}
+
+.caballeros-dinner {
+  margin: 0 0 50px;
+}
+
+.caballeros-dinner img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.caballeros-dinner figcaption {
+  font-size: 13px;
+  line-height: 1.6;
+  margin-top: 14px;
+}
+
+.caballeros-table-detail {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 48px;
+  align-items: center;
+  margin: 45px 0 60px;
+}
+
+.caballeros-table-detail img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.caballeros-table-detail h2 {
+  font-size: 38px;
+  line-height: 1.1;
+}
+
+@media (max-width: 739px) {
+  .caballeros-table-detail {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .caballeros-table-detail img {
+    max-width: 430px;
+    margin-inline: auto;
+  }
+  .caballeros-table-detail h2 {
+    font-size: 30px;
+  }
+}
