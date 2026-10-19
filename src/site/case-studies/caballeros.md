@@ -26,8 +26,8 @@ properties:
 ---
 
 <div class="caballeros-intro" id="tldr">
-<img class="caballeros-wordmark" src="/images/case-studies/caballeros/wordmark.png" width="519" height="253" alt="Caballero’s hand-drawn terracotta wordmark" />
-<p>A supper club, an invitation, a working kitchen toolkit. One project connecting the stories people bring to dinner with the work of making it happen.</p>
+<img class="caballeros-wordmark" src="/images/case-studies/caballeros/wordmark.svg" width="519" height="253" alt="Caballero’s hand-drawn terracotta wordmark" />
+<p>I designed the identity and built the invitation, kitchen and Studio tools for my supper-club project. One system connecting the stories people bring to dinner with the work of making it happen.</p>
 </div>
 
 {% evidence %}
