@@ -1,0 +1,69 @@
+<section class="workflow-lab" id="workflow-lab" data-workflow-demo data-state="draft" aria-labelledby="workflow-title">
+  <div class="workflow-lab__intro">
+    <p class="workflow-lab__eyebrow">Interactive example · invented sample content</p>
+    <h2 id="workflow-title">Generated is a starting point.</h2>
+    <p class="workflow-lab__lede">Good draft. Now make it work.</p>
+    <p>A made-up coffee shop. A caption with a little too much confidence. Edit it, read it back, then take your version with you.</p>
+    <p class="workflow-lab__disclosure">Both starting versions are prewritten. This is a portfolio interaction, with no AI call. Your edits stay in this page until you choose to download them.</p>
+  </div>
+
+  <ol class="workflow-lab__steps" aria-label="Caption workflow">
+    <li data-workflow-step="draft" aria-current="step"><span aria-hidden="true">01</span> Make it yours</li>
+    <li data-workflow-step="compare"><span aria-hidden="true">02</span> Read it back</li>
+    <li data-workflow-step="reviewed"><span aria-hidden="true">03</span> Take it with you</li>
+  </ol>
+
+  <div class="workflow-lab__workspace">
+    <div class="workflow-lab__editor">
+      <div class="workflow-lab__card-heading">
+        <p class="workflow-lab__label">The workbench</p>
+        <span class="workflow-lab__badge">Fictional coffee caption</span>
+      </div>
+      <label class="workflow-lab__field-label" for="workflow-draft">Your version</label>
+      <textarea id="workflow-draft" class="workflow-lab__input" data-workflow-input rows="6" maxlength="300" disabled aria-describedby="workflow-edit-help workflow-count">Our new oat latte is literally the best coffee in the city!!! Come get yours today and transform your morning. ☕ #Coffee #BestCoffee #MustTry</textarea>
+      <div class="workflow-lab__meta">
+        <p id="workflow-edit-help">Try a warmer tone. Lose a claim you can’t prove.</p>
+        <span id="workflow-count" data-workflow-count>300 characters maximum</span>
+      </div>
+      <div class="workflow-lab__actions">
+        <button type="button" class="workflow-lab__button workflow-lab__button--primary" data-workflow-compare aria-controls="workflow-comparison" aria-expanded="false" disabled>Compare my version <span aria-hidden="true">↗</span></button>
+        <button type="button" class="workflow-lab__button workflow-lab__button--quiet" data-workflow-sample aria-describedby="workflow-sample-help" disabled>Try a prewritten edit</button>
+      </div>
+      <p class="workflow-lab__microcopy" id="workflow-sample-help">Need a nudge? Load another invented caption, then make it yours.</p>
+    </div>
+
+    <div class="workflow-lab__preview" aria-labelledby="workflow-preview-title">
+      <p class="workflow-lab__label">A second look</p>
+      <h3 id="workflow-preview-title" tabindex="-1">Does it say what you mean?</h3>
+      <div class="workflow-lab__placeholder" data-workflow-placeholder>
+        <span class="workflow-lab__placeholder-mark" aria-hidden="true">Aa</span>
+        <p>Your comparison will appear here.</p>
+        <p class="workflow-lab__microcopy">Check the words before they leave the page.</p>
+      </div>
+      <div id="workflow-comparison" class="workflow-lab__comparison" data-workflow-comparison hidden>
+        <div class="workflow-lab__comparison-card workflow-lab__comparison-card--before">
+          <h4>Starting draft</h4>
+          <p data-workflow-original>Our new oat latte is literally the best coffee in the city!!! Come get yours today and transform your morning. ☕ #Coffee #BestCoffee #MustTry</p>
+        </div>
+        <div class="workflow-lab__comparison-card workflow-lab__comparison-card--after">
+          <h4>Your version</h4>
+          <p data-workflow-revised></p>
+        </div>
+      </div>
+      <label class="workflow-lab__review" for="workflow-reviewed">
+        <input type="checkbox" id="workflow-reviewed" data-workflow-reviewed disabled aria-describedby="workflow-download-help">
+        <span>I’ve read my version and checked the claim.</span>
+      </label>
+      <div class="workflow-lab__actions">
+        <button type="button" class="workflow-lab__button workflow-lab__button--primary" data-workflow-download disabled aria-describedby="workflow-download-help">Download reviewed .txt <span aria-hidden="true">↓</span></button>
+      </div>
+      <p class="workflow-lab__microcopy" id="workflow-download-help" data-workflow-download-help>Compare your version, then check the review box to enable download. Any edit will ask you to review again.</p>
+    </div>
+  </div>
+
+  <div class="workflow-lab__footer">
+    <p class="workflow-lab__status" data-workflow-status role="status" aria-live="polite" aria-atomic="true">Enable JavaScript to edit, compare and download this example.</p>
+    <button type="button" class="workflow-lab__button workflow-lab__button--quiet" data-workflow-reset disabled>Start over <span aria-hidden="true">↺</span></button>
+  </div>
+  <noscript><p class="workflow-lab__microcopy">You can still read the starting draft above. The editing and review controls need JavaScript.</p></noscript>
+</section>

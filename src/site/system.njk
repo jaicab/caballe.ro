@@ -1,0 +1,144 @@
+---
+layout: layouts/base.njk
+title: The portfolio system
+description: The shared typography, colour, components and interaction rules behind Jaime Caballero’s portfolio.
+templateClass: tmpl-system
+permalink: /system/
+noindex: true
+---
+<div class="u-wrapper system-page">
+  <header class="system-intro">
+    <p class="eyebrow">Caballero / behind the portfolio</p>
+    <h1>A small system.<br>A distinct voice.</h1>
+    <p>This is a component reference for this portfolio, not a client case study. Shared type, colour and interaction rules keep the work feeling like one place, even when each project has its own character.</p>
+    <a class="text-link" href="/">Back to the work <span aria-hidden="true">↗</span></a>
+  </header>
+
+  <nav class="system-index" aria-label="Component reference sections">
+    <a href="#system-colour">Colour</a>
+    <a href="#system-type">Type</a>
+    <a href="#system-spacing">Spacing</a>
+    <a href="#system-controls">Controls</a>
+    <a href="#system-project">Project card</a>
+    <a href="#system-disclosure">Disclosure</a>
+    <a href="#system-motion">Motion</a>
+    <a href="#system-workflow">Workflow</a>
+  </nav>
+
+  <section class="system-section" id="system-colour" aria-labelledby="system-colour-title">
+    <div class="section-label"><h2 id="system-colour-title">01 / Colour</h2><span>Quiet base. Clear accents.</span></div>
+    <p>Paper and ink carry the reading. Violet gives actions a point of emphasis; lilac and lime give larger surfaces a little energy. Project palettes stay with their projects.</p>
+    <ul class="system-swatches">
+      <li style="--swatch:var(--studio-paper)"><span class="system-swatch__chip" aria-hidden="true"></span><strong>Paper</strong><code>--studio-paper</code><span>#f1ede5</span></li>
+      <li style="--swatch:var(--studio-ink)"><span class="system-swatch__chip" aria-hidden="true"></span><strong>Ink</strong><code>--studio-ink</code><span>#211f25</span></li>
+      <li style="--swatch:var(--studio-violet)"><span class="system-swatch__chip" aria-hidden="true"></span><strong>Violet</strong><code>--studio-violet</code><span>#64428b</span></li>
+      <li style="--swatch:var(--studio-lilac)"><span class="system-swatch__chip" aria-hidden="true"></span><strong>Lilac</strong><code>--studio-lilac</code><span>#d7c0ef</span></li>
+      <li style="--swatch:var(--studio-lime)"><span class="system-swatch__chip" aria-hidden="true"></span><strong>Lime</strong><code>--studio-lime</code><span>#d2eea2</span></li>
+      <li style="--swatch:var(--studio-line)"><span class="system-swatch__chip" aria-hidden="true"></span><strong>Line</strong><code>--studio-line</code><span>#c8c0cf</span></li>
+    </ul>
+    <p class="system-note">Use ink on paper, lilac and lime; paper on violet. The line colour is for decorative separators, never essential text. Colour always comes with a label or another visible cue.</p>
+  </section>
+
+  <section class="system-section" id="system-type" aria-labelledby="system-type-title">
+    <div class="section-label"><h2 id="system-type-title">02 / Typography</h2><span>Three voices. Different jobs.</span></div>
+    <div class="system-type">
+      <div class="system-example">
+        <p class="eyebrow">Display / Bricolage Grotesque / 600</p>
+        <h3 class="system-type__display">Useful can<br>have character.</h3>
+        <p class="system-note">Shared display face, tuned spacing, optical sizing and native variable weight. Big enough to set the tone; short enough to read.</p>
+      </div>
+      <div class="system-example">
+        <p class="eyebrow">Body / Epilogue / 400 & 600</p>
+        <p class="system-type__body">A clear explanation makes room for the work. Start with the problem, show the decision, then let people explore the detail.</p>
+        <p class="system-type__body"><strong>Use emphasis to help someone scan.</strong> Keep the rest comfortable to read.</p>
+      </div>
+      <div class="system-example">
+        <p class="eyebrow">Labels / Space Mono / 400</p>
+        <p class="eyebrow system-type__label">01 / Context<br>02 / Decision<br>03 / What changed</p>
+        <p class="system-note">A small, steady voice for navigation, captions, section numbers and useful context.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="system-section" id="system-spacing" aria-labelledby="system-spacing-title">
+    <div class="section-label"><h2 id="system-spacing-title">03 / Spacing</h2><span>Close relationships. Clear pauses.</span></div>
+    <p>Small gaps hold related things together. Larger gaps separate ideas. These shared values provide the rhythm; layouts can still respond to the space available.</p>
+    <ul class="system-spacing">
+      <li><code>--space1</code><span class="system-space-marker" style="--sample-space:var(--space1)" aria-hidden="true"></span><span>8px / tight pairs</span></li>
+      <li><code>--space2</code><span class="system-space-marker" style="--sample-space:var(--space2)" aria-hidden="true"></span><span>16px / controls</span></li>
+      <li><code>--space3</code><span class="system-space-marker" style="--sample-space:var(--space3)" aria-hidden="true"></span><span>24px / groups</span></li>
+      <li><code>--space4</code><span class="system-space-marker" style="--sample-space:var(--space4)" aria-hidden="true"></span><span>40px / blocks</span></li>
+      <li><code>--space5</code><span class="system-space-marker" style="--sample-space:var(--space5)" aria-hidden="true"></span><span>64px / sections</span></li>
+    </ul>
+  </section>
+
+  <section class="system-section" id="system-controls" aria-labelledby="system-controls-title">
+    <div class="section-label"><h2 id="system-controls-title">04 / Links & controls</h2><span>Make the next step obvious.</span></div>
+    <p>Links go somewhere. Buttons do something. Action labels describe the result, and disabled controls explain what needs to happen first.</p>
+    <div class="system-example system-controls">
+      <a class="text-link" href="#system-project">Inspect a project card <span aria-hidden="true">↓</span></a>
+      <a class="workflow-lab__button workflow-lab__button--primary" href="#system-workflow">Try the workflow <span aria-hidden="true">↗</span></a>
+      <button type="button" class="workflow-lab__button" disabled aria-describedby="system-disabled-help">Review needed</button>
+    </div>
+    <p class="system-note" id="system-disabled-help">The disabled button is a state sample. In the live workflow below, comparison and an explicit review unlock the download.</p>
+    <p class="system-note">Tab through the links and controls to inspect the visible focus ring. Hover is extra feedback; it never carries the only copy or action.</p>
+  </section>
+
+  <section class="system-section" id="system-project" aria-labelledby="system-project-title">
+    <div class="section-label"><h2 id="system-project-title">05 / Project card</h2><span>Context → idea → evidence.</span></div>
+    <p>The shared card gives each project a clear introduction, one relevant visual and a specific next step. This example uses the public Wise case study.</p>
+    <article class="project-stage project-stage--wise system-example" aria-labelledby="system-card-title">
+      <div class="project-copy">
+        <p class="eyebrow">01 / Wise</p>
+        <h3 id="system-card-title">Making refunds<br>easier to understand.</h3>
+        <p>Research and product design to make card transaction states easier to understand.</p>
+        <a class="text-link" href="/case-studies/wise/">See the decisions</a>
+      </div>
+      <div class="project-visual"><img width="1920" height="1080" src="/images/case-studies/wise/refund.png" alt="Wise refund and cancellation states before and after redesign" loading="lazy"></div>
+    </article>
+    <ol class="system-anatomy">
+      <li><strong>Context</strong><span>A small label identifies the project.</span></li>
+      <li><strong>Idea</strong><span>The heading says what the work is about.</span></li>
+      <li><strong>Contribution</strong><span>A short description sets the scope.</span></li>
+      <li><strong>Evidence</strong><span>A useful visual supports the explanation.</span></li>
+      <li><strong>Next step</strong><span>A descriptive link opens the full story.</span></li>
+    </ol>
+  </section>
+
+  <section class="system-section" id="system-disclosure" aria-labelledby="system-disclosure-title">
+    <div class="section-label"><h2 id="system-disclosure-title">06 / Disclosure</h2><span>Depth, when it helps.</span></div>
+    <div class="o-article__content system-example">
+      <details>
+        <summary>What belongs behind a disclosure?</summary>
+        <p>Supporting reasoning, implementation notes and the longer path to a decision. Keep the main point and essential evidence visible before someone opens it.</p>
+        <p>This is a native details element. It opens with a pointer or the keyboard, and stays usable without JavaScript.</p>
+      </details>
+    </div>
+  </section>
+
+  <section class="system-section" id="system-motion" aria-labelledby="system-motion-title">
+    <div class="section-label"><h2 id="system-motion-title">07 / Motion</h2><span>Feedback with a light touch.</span></div>
+    <ul class="system-behaviors">
+      <li><strong>160ms / immediate feedback</strong><p><code>--motion-fast</code> keeps small hover and pressed responses brief. Try the live controls to see the same shared styles in use.</p></li>
+      <li><strong>220ms / component transitions</strong><p><code>--motion-medium</code> is reserved for larger state changes. Content never depends on an animated entrance.</p></li>
+      <li><strong>Reduced motion / no waiting</strong><p>With <code>prefers-reduced-motion: reduce</code>, animations and transitions are removed. Every label, control and result remains available.</p></li>
+    </ul>
+    <p class="system-note">Motion responds to a deliberate interaction. Nothing on this reference needs autoplay, a looping animation or a scroll reveal.</p>
+  </section>
+
+  <section class="system-section" id="system-workflow" aria-labelledby="system-workflow-title">
+    <div class="section-label"><h2 id="system-workflow-title">08 / Workflow states</h2><span>One shared, working example.</span></div>
+    <p>The same component used on the homepage, with the same controls and state rules. The text is invented for the example. It makes no live AI request and sends nothing to a server.</p>
+    <ol class="system-states">
+      <li data-system-state="draft"><strong>Draft</strong><span>Edit a starting caption. Comparison and review are still needed.</span></li>
+      <li data-system-state="compare"><strong>Compare</strong><span>Read the starting draft alongside your version. Download stays disabled.</span></li>
+      <li data-system-state="reviewed"><strong>Reviewed</strong><span>Check the review box to enable a download of that exact version.</span></li>
+    </ol>
+    <p class="system-note">Any edit clears the comparison and asks you to review again. Start over returns to the original draft. Empty or overlong text cannot pass review. Without JavaScript, the starting draft and explanation remain readable.</p>
+    {% include "_workflow-demo.njk" %}
+  </section>
+
+  <p class="system-note">Built with the portfolio’s existing Eleventy, Nunjucks and Sass. A compact reference for checking consistency as the site evolves.</p>
+  <a class="text-link" href="/">Back to the portfolio <span aria-hidden="true">↗</span></a>
+</div>
+<script defer src="{{ '/js/workflow-demo.js' | assetVersion }}"></script>

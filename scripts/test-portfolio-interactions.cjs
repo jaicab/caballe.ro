@@ -1,0 +1,23 @@
+const assert = require('assert');
+const fs = require('fs');
+const vm = require('vm');
+function node(extra={}) { return Object.assign({events:{},attrs:{},dataset:{},hidden:false,addEventListener(k,v){this.events[k]=v},setAttribute(k,v){this.attrs[k]=v}},extra); }
+const buttons=['before','after','both'].map(v=>node({dataset:{decisionView:v}}));
+const panels=['before','after'].map(v=>node({dataset:{decisionPanel:v}}));
+const controls=node({hidden:true,querySelectorAll(){return buttons}});
+const viewer=node({querySelector(){return controls},querySelectorAll(){return panels}});
+const image={},caption={};let opened=0,closed=0,focused=0,prevented=0;
+const dialog=node({showModal(){opened++},close(){closed++},querySelector(s){return s==='img'?image:caption}});
+const link=node({href:'https://caballe.ro/images/example.jpg',dataset:{caption:'Actual project comparison'},querySelector(){return {alt:'Fallback'}},focus(){focused++}});
+const chapter=node(),details={open:false};
+const document={querySelector(){return dialog},querySelectorAll(s){return s==='[data-image-viewer]'?[link]:s==='.decision-viewer'?[viewer]:[chapter]},getElementById(){return details}};
+vm.runInNewContext(fs.readFileSync('src/site/js/portfolio-interactions.js','utf8'),{document});
+assert.equal(controls.hidden,false);
+buttons[1].events.click();assert.equal(viewer.dataset.view,'after');assert.equal(panels[0].hidden,true);assert.equal(panels[1].hidden,false);assert.equal(buttons[1].attrs['aria-pressed'],'true');
+buttons[0].events.click();assert.equal(panels[0].hidden,false);assert.equal(panels[1].hidden,true);
+buttons[2].events.click();assert(panels.every(p=>!p.hidden));
+link.events.click({preventDefault(){prevented++}});assert.equal(opened,1);assert.equal(prevented,1);assert.equal(image.src,link.href);assert.equal(caption.textContent,'Actual project comparison');
+link.events.click({ctrlKey:true,preventDefault(){prevented++}});assert.equal(opened,1);
+dialog.events.click({target:dialog});assert.equal(closed,1);dialog.events.close();assert.equal(focused,1);
+chapter.events.click();assert.equal(details.open,true);
+console.log('PASS portfolio interactions: compare modes, native viewer, modifier links, focus restore, chapter disclosure');

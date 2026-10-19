@@ -48,13 +48,20 @@ The redesign separates refunds, cancellations and card checks, so customers can 
 
 {% statement "01 / Transaction states" %}Make the state clear. Explain what comes next.{% endstatement %}
 
-{% screens %}
-<img width="1920" height="1080" src="{{ '/images/case-studies/wise/refund.png' | url }}" alt="Wise refund detail screen with a plus sign identifying money returned" loading="lazy"/>
-<img width="1920" height="1080" src="{{ '/images/case-studies/wise/checked.png' | url }}" alt="Wise card check detail screen explaining the temporary authorisation" loading="lazy"/>
-{% endscreens %}
+{% evidence %}
+<section class="decision-viewer" aria-labelledby="wise-decision-title" id="what-changed">
+<div class="decision-viewer__copy"><p class="eyebrow">One decision, up close</p><h2 id="wise-decision-title">“Declined” wasn’t the whole story.</h2><p>The old screen repeated a status. The revision explains who cancelled the payment, and when the money came back.</p><p class="decision-note">Actual design comparison from the original project. Select a view or open the source image.</p><div class="decision-controls" hidden><button type="button" data-decision-view="before" aria-pressed="false">Before</button><button type="button" data-decision-view="after" aria-pressed="false">After</button><button type="button" data-decision-view="both" aria-pressed="true">Compare</button></div></div>
+<div class="decision-viewer__screens">
+<figure data-decision-panel="before"><figcaption>Before / a status to decipher</figcaption><div class="wise-screen-crop wise-screen-crop--before"><img src="/images/case-studies/wise/refund.png" width="1920" height="1080" alt="Original Wise cancellation screen: Declined, followed by repeated transaction details" loading="lazy" /></div></figure>
+<figure data-decision-panel="after"><figcaption>After / an explanation to act on</figcaption><div class="wise-screen-crop wise-screen-crop--after"><img src="/images/case-studies/wise/refund.png" width="1920" height="1080" alt="Revised Wise cancellation screen: Cancelled, with the merchant and date the money returned" loading="lazy" /></div></figure>
+</div>
+<a class="text-link decision-source" href="/images/case-studies/wise/refund.png" data-image-viewer data-caption="Original Wise refund and cancellation design comparison">Open the full comparison</a>
+</section>
+{% endevidence %}
 
 
-<details>
+
+<details id="decisions">
 <summary>Decisions, process and lessons</summary>
 
 ### Start with support, not a new interface
