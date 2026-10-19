@@ -1,9 +1,23 @@
+const fs = require("fs");
+const path = require("path");
+const privateReview = process.env.PORTFOLIO_PRIVATE_REVIEW === "1";
+const sourceDir = privateReview ? "review-src" : "src/site";
 const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
 
 module.exports = function (eleventyConfig) {
   eleventyConfig.addPlugin(eleventyNavigationPlugin);
+  if (privateReview) eleventyConfig.setUseGitIgnore(false);
 
   eleventyConfig.addLayoutAlias("report", "layouts/report.njk");
+
+  eleventyConfig.addPairedShortcode("evidence", function (content) {
+    return `</div></div><section class="case-evidence"><div class="u-wrapper">${content}</div></section><div class="u-wrapper"><div class="o-article__content">`;
+  });
+
+  eleventyConfig.addPairedShortcode("statement", function (content, label = "Decision") {
+    const escape = value => String(value).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+    return `</div></div><section class="case-statement"><div class="u-wrapper"><p class="case-statement__label">${escape(label)}</p><p class="case-statement__text">${escape(content.trim())}</p></div></section><div class="u-wrapper"><div class="o-article__content">`;
+  });
 
   eleventyConfig.addPairedShortcode("photo", function (
     content,
@@ -91,14 +105,25 @@ ${content}
     `;
   });
 
-  eleventyConfig.addPassthroughCopy("src/site/css");
-  eleventyConfig.addPassthroughCopy("src/site/js");
-  eleventyConfig.addPassthroughCopy("src/site/images");
-  eleventyConfig.addPassthroughCopy("src/site/favicon.ico");
+  eleventyConfig.addPassthroughCopy(sourceDir + "/css");
+  eleventyConfig.addPassthroughCopy(sourceDir + "/downloads");
+  eleventyConfig.addPassthroughCopy(sourceDir + "/fonts");
+  eleventyConfig.addPassthroughCopy(sourceDir + "/js");
+  // Public builds never contain the internal Glass UI or sample exports.
+  for (const entry of fs.readdirSync(path.join(__dirname, sourceDir + "/images"))) {
+    if (entry !== "case-studies") eleventyConfig.addPassthroughCopy(sourceDir + "/images/" + entry);
+  }
+  const publicCaseAssets = new Set(["glass", "wise", "checkstep", "moteefe", "dotdot", "carlos-caballero"]);
+  for (const entry of fs.readdirSync(path.join(__dirname, sourceDir + "/images/case-studies"))) {
+    if (privateReview || publicCaseAssets.has(entry)) {
+      eleventyConfig.addPassthroughCopy(sourceDir + "/images/case-studies/" + entry);
+    }
+  }
+  eleventyConfig.addPassthroughCopy(sourceDir + "/favicon.ico");
 
-  eleventyConfig.addPassthroughCopy("src/site/sitemap.xml");
-  eleventyConfig.addPassthroughCopy("src/site/manifest.json");
-  eleventyConfig.addPassthroughCopy("src/site/browserconfig.xml");
+  eleventyConfig.addPassthroughCopy(sourceDir + "/sitemap.xml");
+  eleventyConfig.addPassthroughCopy(sourceDir + "/manifest.json");
+  eleventyConfig.addPassthroughCopy(sourceDir + "/browserconfig.xml");
 
   // Get the first `n` elements of a collection.
   eleventyConfig.addFilter("head", (array, n) => {
@@ -111,8 +136,8 @@ ${content}
 
   return {
     dir: {
-      input: "src/site",
-      output: "_site",
+      input: sourceDir,
+      output: privateReview ? "_review" : "_site",
     },
   };
 };

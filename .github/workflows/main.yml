@@ -1,4 +1,4 @@
-name: Deploy
+name: Pull request build
 on:
   pull_request:
     branches: ['main']
@@ -17,11 +17,4 @@ jobs:
       - name: Install Packages
         run: yarn install
       - name: Build
-        run: yarn build
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./_site
-          enable_jekyll: false
-          cname: caballe.ro
+        run: yarn build && node scripts/check-case-themes.cjs
