@@ -1,0 +1,11 @@
+const fs=require('node:fs'),assert=require('node:assert/strict');
+const home=fs.readFileSync('_site/index.html','utf8'),about=fs.readFileSync('_site/about/index.html','utf8'),glass=fs.readFileSync('_site/case-studies/glass/index.html','utf8'),cab=fs.readFileSync('_site/case-studies/caballeros/index.html','utf8');
+assert.match(home,/Design engineer · London \/ remote/);assert.match(home,/Available 1–3 days a week/);
+assert.doesNotMatch(home,/data-workflow-demo|workflow-demo.js|work-chapter/);
+assert(home.indexOf('id="glassfiles-work"')<home.indexOf('id="caballeros-work"'));
+assert(home.indexOf('id="caballeros-work"')<home.indexOf('id="wise-work"'));
+assert.match(home,/See my public Glass work/);assert.match(home,/Private|private walkthrough/);
+assert.match(about,/tmpl-system tmpl-about/);assert.match(about,/design engineer/);assert.doesNotMatch(about,/Monday–Wednesday/);
+assert.match(glass,/share one component/);assert.match(glass,/with the Glass team/);
+assert.match(cab,/source change can refresh the content/);assert.match(cab,/class="case-build-note"/);assert.match(cab,/tested it in the kitchen/);
+console.log('PASS hiring focus: clear offer, same project order, no homepage exercise, public proof link, consistent About and evidenced systems decisions');

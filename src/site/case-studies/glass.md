@@ -29,9 +29,9 @@ properties:
 
 ## The short version
 
-- **Role:** Freelance design and development, from the customer experience to Shopify implementation.
+- **Role:** Design and Shopify implementation with the Glass team, including reusable sections and flavour components.
 - **Problem:** Choosing a specialty coffee means understanding flavour and brew options without losing its producer, origin and processing story.
-- **Decision:** Give people enough detail to choose, with more to discover when they want it.
+- **Decision:** Use one flavour component for filter and espresso, with separate product data for each brew method.
 - **Result:** A working storefront with repeatable product structures, provenance and flavour components.
 
 </div>
@@ -48,7 +48,7 @@ Producer, variety, processing, origin and flavour become useful buying informati
 
 ## A repeatable structure across coffees
 
-Clear product cards support browsing. On a product page, brew-specific flavour profiles use the same structure across the range, while the content stays specific to each coffee.
+I built reusable Shopify sections around product metafields. Filter and espresso have different flavour data, but share one component. That keeps the interface consistent without flattening the differences between coffees.
 
 <img width="1440" height="1080" src="{{ '/images/case-studies/glass/coffee-selection.png' | url }}" alt="Public Glass Coffee collection page showing the coffee range and product selection" loading="lazy" />
 
@@ -72,14 +72,7 @@ I also designed Glass’s Instagram content. These stories bring together the Ro
 
 Large type, full-bleed photography and small labels keep the stories connected, even when the subject changes.
 
-<details>
-<summary>From design to Shopify implementation</summary>
-
-The work continues in Liquid, CSS and JavaScript: reusable sections, product metafields and brew-specific flavour profiles. Filter and espresso profiles can draw on different data while sharing a consistent component.
-
-This is ongoing work with the Glass team. The screenshots show the public storefront; they are evidence of the implemented experience, not a claim that I independently designed every element.
-
-</details>
+I worked with the Glass team on the experience and Shopify implementation, using Liquid, CSS and JavaScript.
 
 {% if build.privateReview %}<a href="{{ '/case-studies/glassfiles/' | url }}">See the custom tools behind the storefront →</a>{% endif %}
 

@@ -19,7 +19,7 @@ jobs:
       - name: Install Packages
         run: yarn install
       - name: Build
-        run: yarn build && node scripts/check-case-themes.cjs && node scripts/test-portfolio-interactions.cjs && node scripts/test-workflow-demo.cjs && node scripts/test-design-system.cjs && node scripts/test-retina-assets.cjs && node scripts/test-project-entry.cjs
+        run: yarn build && node scripts/check-case-themes.cjs && node scripts/test-portfolio-interactions.cjs && node scripts/test-workflow-demo.cjs && node scripts/test-design-system.cjs && node scripts/test-retina-assets.cjs && node scripts/test-project-entry.cjs && node scripts/test-hiring-focus.cjs
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:

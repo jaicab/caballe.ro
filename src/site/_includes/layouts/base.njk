@@ -11,8 +11,7 @@
     <link rel="preload" href="/fonts/bricolage/BricolageGrotesque.ttf" as="font" type="font/ttf" crossorigin>
     <link rel="stylesheet" href="{{ '/css/index.css' | assetVersion | url }}">
     <script src="{{ '/js/lazysizes.min.js' | url }}"></script>
-    {% if templateClass == "tmpl-home" or short == "caballeros" %}
-    <style>@view-transition { navigation: auto; } @media (prefers-reduced-motion: reduce) { @view-transition { navigation: none; } }</style>
+    {% if short == "caballeros" %}
     <script src="{{ '/js/project-entry.js' | assetVersion }}"></script>
     {% endif %}
     <link rel="icon" href="/images/favicon.png"/>
@@ -103,7 +102,6 @@
     <link href="//fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,400;0,600;0,700;0,900;1,420&family=Space+Mono:wght@400&display=swap" rel="stylesheet">
   </head>
   <body{% if templateClass %} class="{{ templateClass }}"{% endif %} {% if themeColor %} style="--color-bg: #{{ themeColor }}; --case-light: {{ projectThemes[short].light or ('#'+themeColor) }}; --case-dark: {{ projectThemes[short].dark or '#20202b' }}; --case-ink: {{ projectThemes[short].ink or '#171722' }}; --case-focus-light: {{ projectThemes[short].focusLight or '#171722' }}; --case-focus-dark: {{ projectThemes[short].focusDark or ('#'+themeColor) }};"{% endif %}>
-    {% if short == "caballeros" %}<div class="project-entry-page-surface" data-project-entry-surface aria-hidden="true"></div>{% endif %}
     <a class="skip-link" href="#main-content">Skip to content</a>
     {% include "_header.njk" %}
     <main id="main-content">
@@ -118,7 +116,6 @@
 
     <dialog class="image-dialog" aria-labelledby="image-dialog-caption"><form method="dialog"><button class="image-dialog-close" aria-label="Close full-size image">Close ×</button></form><figure><img alt="" /><figcaption id="image-dialog-caption"></figcaption></figure></dialog>
     <script defer src="{{ '/js/portfolio-interactions.js' | assetVersion }}"></script>
-    {% if templateClass == "tmpl-home" %}<script defer src="{{ '/js/workflow-demo.js' | assetVersion }}"></script>{% endif %}
     <!-- Current page: {{ page.url | url }} -->
   </body>
 </html>
