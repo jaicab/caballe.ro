@@ -51,6 +51,8 @@ properties:
 
 <img width="2880" height="7728" src="{{ '/images/case-studies/carlos-caballero/landing-desktop.png' | url }}" alt="Therapist website homepage introducing Carlos Caballero and his services" loading="lazy"/>
 
+{% journey "carlos-caballero" %}
+
 {% screens %}
 <img width="750" height="8344" src="{{ '/images/case-studies/carlos-caballero/landing-mobile.png' | url }}" alt="Mobile homepage with an approachable introduction to therapy" loading="lazy"/>
 <img width="375" height="2150" src="{{ '/images/case-studies/carlos-caballero/contact-mobile.png' | url }}" alt="Mobile contact page offering WhatsApp and downloadable contact details" loading="lazy"/>

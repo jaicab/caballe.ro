@@ -1,0 +1,240 @@
+{
+  "caballeros": {
+    "goal": "Cook without losing your place.",
+    "label": "The cook’s route",
+    "status": "Working kitchen tools, tested in my kitchen.",
+    "steps": [
+      {
+        "action": "Find a recipe",
+        "question": "What am I cooking?",
+        "decision": "Search and filter the illustrated recipe library.",
+        "image": "caballeros/caballeros-library-desserts-2x.png",
+        "role": ""
+      },
+      {
+        "action": "Follow the method",
+        "question": "What do I do next?",
+        "decision": "Keep the current step readable, with progress and actions nearby.",
+        "image": "caballeros/caballeros-cook-tahini-2x.png",
+        "role": ""
+      },
+      {
+        "action": "Check quantities",
+        "question": "How much do I need?",
+        "decision": "Open the full recipe quantities without leaving the current step.",
+        "image": "caballeros/caballeros-ingredients-tahini-2x.png",
+        "role": ""
+      },
+      {
+        "action": "Get back to cooking",
+        "question": "Where was I?",
+        "decision": "Close the ingredient sheet and return to the same place.",
+        "image": "caballeros/caballeros-cook-tahini-2x.png",
+        "role": ""
+      }
+    ],
+    "note": "Another route: turn the recipe into an editable menu or keepsake in Studio."
+  },
+  "glass": {
+    "goal": "Choose a coffee with enough of the story.",
+    "label": "The shopper’s route",
+    "status": "The public storefront.",
+    "steps": [
+      {
+        "action": "Browse",
+        "question": "What should I explore?",
+        "decision": "Repeatable product cards make the range easier to scan.",
+        "image": "glass/coffee-selection.png",
+        "role": ""
+      },
+      {
+        "action": "Explore flavour",
+        "question": "What might this cup be like?",
+        "decision": "One component presents each coffee’s brew-specific profile.",
+        "image": "glass/product-detail.png",
+        "role": ""
+      },
+      {
+        "action": "Know the origin",
+        "question": "Where does it come from?",
+        "decision": "Keep producer, origin and processing beside the buying information.",
+        "image": "glass/storefront.png",
+        "role": ""
+      },
+      {
+        "action": "Choose a format",
+        "question": "Which brew and bag size?",
+        "decision": "Bring the options together on the product page.",
+        "image": "glass/product-detail.png",
+        "role": ""
+      }
+    ],
+    "note": ""
+  },
+  "wise": {
+    "goal": "Make sense of a card payment.",
+    "label": "The customer’s questions",
+    "status": "Questions the experience needs to answer, rather than four successive screens.",
+    "steps": [
+      {
+        "action": "Find the payment",
+        "question": "Which payment is this?",
+        "decision": "Give merchant details and transaction information a clearer hierarchy.",
+        "image": "wise/redesign.png",
+        "role": ""
+      },
+      {
+        "action": "Recognise the state",
+        "question": "Refunded, cancelled or checked?",
+        "decision": "Use explicit states for different transaction types.",
+        "image": "wise/refund.png",
+        "role": ""
+      },
+      {
+        "action": "Understand the refund",
+        "question": "Why hasn’t the payment changed?",
+        "decision": "Explain the pending refund instead of leaving it to interpretation.",
+        "image": "wise/redesign.png",
+        "role": ""
+      },
+      {
+        "action": "Account for the money",
+        "question": "When did it come back?",
+        "decision": "Explain who cancelled the payment and when funds returned.",
+        "image": "wise/refund.png",
+        "role": ""
+      }
+    ],
+    "note": ""
+  },
+  "checkstep": {
+    "goal": "Keep decisions aligned with policy.",
+    "label": "A team handoff",
+    "status": "Different roles share the workflow.",
+    "steps": [
+      {
+        "action": "Set the policy",
+        "question": "What should we enforce?",
+        "decision": "Put written guidance at the centre.",
+        "image": "checkstep/final.png",
+        "role": "Trust & Safety"
+      },
+      {
+        "action": "Align the rules",
+        "question": "How does guidance become a rule?",
+        "decision": "Separate policy thresholds from technical rule ownership.",
+        "image": "checkstep/event_based.png",
+        "role": "Policy + technical owners"
+      },
+      {
+        "action": "Review content",
+        "question": "What should I act on, and why?",
+        "decision": "Keep policy context close to the review queue.",
+        "image": "checkstep/review.png",
+        "role": "Moderator"
+      },
+      {
+        "action": "Track changes",
+        "question": "What changed in the policy?",
+        "decision": "Make updates traceable with version history.",
+        "image": "",
+        "role": "Manager + moderator"
+      }
+    ],
+    "note": ""
+  },
+  "moteefe": {
+    "goal": "Turn artwork into a campaign.",
+    "label": "The creator’s route",
+    "status": "The builder and its shared components.",
+    "steps": [
+      {
+        "action": "Add artwork",
+        "question": "Which design am I using?",
+        "decision": "Start with a dedicated upload step.",
+        "image": "moteefe/ui-upload.png",
+        "role": ""
+      },
+      {
+        "action": "Choose products",
+        "question": "What will carry the design?",
+        "decision": "Make product and colour selection reusable interactions.",
+        "image": "moteefe/ui-select.png",
+        "role": ""
+      },
+      {
+        "action": "Place the design",
+        "question": "Will it fit this product?",
+        "decision": "Show canvas limits and artwork-placement controls.",
+        "image": "moteefe/ui-edit.png",
+        "role": ""
+      },
+      {
+        "action": "Review the campaign",
+        "question": "What am I offering?",
+        "decision": "Bring products, pricing and campaign options together.",
+        "image": "moteefe/ui-selected.png",
+        "role": ""
+      }
+    ],
+    "note": ""
+  },
+  "carlos-caballero": {
+    "goal": "Find a therapist and a way to get in touch.",
+    "label": "The visitor’s route",
+    "status": "A mobile-first website.",
+    "steps": [
+      {
+        "action": "Meet Carlos",
+        "question": "Who would I be speaking to?",
+        "decision": "Introduce the person in a warm, readable page.",
+        "image": "carlos-caballero/landing-mobile.png",
+        "role": ""
+      },
+      {
+        "action": "Explore services",
+        "question": "Is there support for what I need?",
+        "decision": "Use clear writing and inclusive abstract illustrations.",
+        "image": "carlos-caballero/blob-final.png",
+        "role": ""
+      },
+      {
+        "action": "Make contact",
+        "question": "How do I take the first step?",
+        "decision": "Keep WhatsApp and downloadable contact details within reach.",
+        "image": "carlos-caballero/contact-mobile.png",
+        "role": ""
+      }
+    ],
+    "note": ""
+  },
+  "dotdot": {
+    "goal": "Join a small conversation and see it take shape.",
+    "label": "The participant’s route",
+    "status": "A live-typing prototype; the complete UI design was not implemented.",
+    "steps": [
+      {
+        "action": "Enter a name",
+        "question": "How much setup is there?",
+        "decision": "Require only a name to join.",
+        "image": "",
+        "role": ""
+      },
+      {
+        "action": "Join a room",
+        "question": "Who am I talking with?",
+        "decision": "Keep rooms text-only, with a limit of ten people.",
+        "image": "dotdot/ui-dark-desktop.png",
+        "role": ""
+      },
+      {
+        "action": "Type together",
+        "question": "What is the other person saying?",
+        "decision": "Stream the message as it is written, without waiting for Send.",
+        "image": "",
+        "role": ""
+      }
+    ],
+    "note": "Conversation rule: messages disappear once everyone who saw them has left. The video above shows the working prototype; the linked room image is a design screen."
+  }
+}

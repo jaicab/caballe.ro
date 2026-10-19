@@ -63,6 +63,8 @@ The original Storybook recording shows the actual component library we built.
 <p>Your browser cannot play this video. <a href="{{ '/images/case-studies/moteefe/storybook.mp4' | url }}">Download the demonstration</a>.</p>
 </video>
 
+{% journey "moteefe" %}
+
 {% statement "01 / Design and engineering" %}Design the interaction. Build the component.{% endstatement %}
 
 ## From artwork to campaign
