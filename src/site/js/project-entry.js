@@ -13,6 +13,8 @@
   function prepare(event, from, to, outgoing) {
     var transition = event.viewTransition;
     if (!transition) return;
+    /* Skipping or replacing a transition rejects ready, including on arrival. */
+    transition.ready.catch(function () {});
     var surface = document.querySelector('[data-project-entry-surface]');
     if (!surface || !isEntry(from, to) || matchMedia('(prefers-reduced-motion: reduce)').matches) {
       transition.skipTransition();

@@ -23,7 +23,7 @@ function transition() {
     f=fixture();a=transition();f.handlers.pageswap({viewTransition:a.t,activation:{entry:{url}}});assert.equal(a.t.skipped,true);
   }
   f=fixture({reduced:true});a=transition();f.handlers.pageswap({viewTransition:a.t,activation:{entry:{url:'https://caballe.ro/case-studies/caballeros/'}}});assert.equal(a.t.skipped,true);
-  f=fixture({href:'https://caballe.ro/case-studies/caballeros/'});f.context.window.navigation={activation:{from:{url:'https://caballe.ro/#caballeros-work'}}};a=transition();f.handlers.pagereveal({viewTransition:a.t});assert.equal(f.node.style.viewTransitionName,'project-surface');a.rejectFinished(new Error('interrupted'));await Promise.resolve();assert.equal(f.node.style.viewTransitionName,undefined);
+  f=fixture({href:'https://caballe.ro/case-studies/caballeros/'});f.context.window.navigation={activation:{from:{url:'https://caballe.ro/#caballeros-work'}}};a=transition();f.handlers.pagereveal({viewTransition:a.t});assert.equal(f.node.style.viewTransitionName,'project-surface');a.rejectReady(new Error('interrupted'));a.resolveFinished();await Promise.resolve();assert.equal(f.node.style.viewTransitionName,undefined);
   f=fixture();a=transition();let b=transition();const ev=t=>({viewTransition:t,activation:{entry:{url:'https://caballe.ro/case-studies/caballeros/'}}});
   f.handlers.pageswap(ev(a.t));f.handlers.pageswap(ev(b.t));a.rejectReady(new Error('replaced'));await Promise.resolve();assert.equal(f.node.style.viewTransitionName,'project-surface');b.resolveReady();await Promise.resolve();assert.equal(f.node.style.viewTransitionName,undefined);
   f.handlers.pageswap({});f.handlers.pagereveal({});
