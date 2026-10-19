@@ -111,6 +111,9 @@
 
     {% include "_footer.njk" %}
 
+    <dialog class="image-dialog" aria-labelledby="image-dialog-caption"><form method="dialog"><button class="image-dialog-close" aria-label="Close full-size image">Close ×</button></form><figure><img alt="" /><figcaption id="image-dialog-caption"></figcaption></figure></dialog>
+    <script defer src="{{ '/js/portfolio-interactions.js' | assetVersion }}"></script>
+    {% if templateClass == "tmpl-home" %}<script defer src="{{ '/js/workflow-demo.js' | assetVersion }}"></script>{% endif %}
     <!-- Current page: {{ page.url | url }} -->
   </body>
 </html>

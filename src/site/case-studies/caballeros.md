@@ -31,7 +31,7 @@ properties:
 </div>
 
 {% evidence %}
-<figure class="caballeros-dinner"><img src="/images/case-studies/caballeros/dinner-table.jpg" width="1600" height="1066" alt="A Caballero’s dinner table in sunlight, set with printed menus, flowers, citrus and candles" loading="eager" /><figcaption>The experience the tools serve: a real Caballero’s table, with its menus and small details in place.</figcaption></figure>
+<figure class="caballeros-dinner"><a class="image-inspect" href="/images/case-studies/caballeros/dinner-table.jpg" data-image-viewer><img src="/images/case-studies/caballeros/dinner-table.jpg" width="1600" height="1066" alt="A Caballero’s dinner table in sunlight, set with printed menus, flowers, citrus and candles" loading="eager" /><span>Enlarge image +</span></a><figcaption>The experience the tools serve: a real Caballero’s table, with its menus and small details in place.</figcaption></figure>
 {% endevidence %}
 
 {% statement "01 / One identity, different jobs" %}Warm enough to invite you in. Clear enough to cook with.{% endstatement %}
@@ -50,10 +50,10 @@ The crayon identity makes a digital invitation feel personal. The kitchen needs 
 {% statement "02 / A concrete iteration" %}Less hunting for ingredients. Less losing your place.{% endstatement %}
 
 {% evidence %}
-<div class="caballeros-cook-sequence">
-<figure><p class="eyebrow">Before</p><img src="/images/case-studies/caballeros/cook-before.jpg" width="390" height="844" alt="Earlier cooking screen with an oversized step number, dense paragraphs and timer action in the bottom bar" loading="lazy" /><figcaption>The step number competed with the method. Ingredient quantities sat below a long instruction.</figcaption></figure>
-<figure><p class="eyebrow">Revised</p><img src="/images/case-studies/caballeros/cook-after.jpg" width="390" height="844" alt="Revised cooking screen with larger text option, clearer paragraph separation, All steps and a fixed Ingredients button" loading="lazy" /><figcaption>Clearer reading, an explicit step overview and an Ingredients button that stays within reach.</figcaption></figure>
-<figure><p class="eyebrow">Reference, then return</p><img src="/images/case-studies/caballeros/cook-ingredients.jpg" width="390" height="844" alt="Ingredient sheet showing staged quantities and a Back to cooking button" loading="lazy" /><figcaption>Open the quantities, check the relevant stage, then return to the same place in the recipe.</figcaption></figure>
+<div class="caballeros-cook-sequence" id="what-changed">
+<figure><p class="eyebrow">Before</p><a class="image-inspect" href="/images/case-studies/caballeros/cook-before.jpg" data-image-viewer><img src="/images/case-studies/caballeros/cook-before.jpg" width="390" height="844" alt="Earlier cooking screen with an oversized step number, dense paragraphs and timer action in the bottom bar" loading="lazy" /><span>Enlarge image +</span></a><figcaption>The step number competed with the method. Ingredient quantities sat below a long instruction.</figcaption></figure>
+<figure><p class="eyebrow">Revised</p><a class="image-inspect" href="/images/case-studies/caballeros/cook-after.jpg" data-image-viewer><img src="/images/case-studies/caballeros/cook-after.jpg" width="390" height="844" alt="Revised cooking screen with larger text option, clearer paragraph separation, All steps and a fixed Ingredients button" loading="lazy" /><span>Enlarge image +</span></a><figcaption>Clearer reading, an explicit step overview and an Ingredients button that stays within reach.</figcaption></figure>
+<figure><p class="eyebrow">Reference, then return</p><a class="image-inspect" href="/images/case-studies/caballeros/cook-ingredients.jpg" data-image-viewer><img src="/images/case-studies/caballeros/cook-ingredients.jpg" width="390" height="844" alt="Ingredient sheet showing staged quantities and a Back to cooking button" loading="lazy" /><span>Enlarge image +</span></a><figcaption>Open the quantities, check the relevant stage, then return to the same place in the recipe.</figcaption></figure>
 </div>
 {% endevidence %}
 
@@ -62,14 +62,14 @@ The revision kept the full method instead of shortening away important quantitie
 {% statement "03 / Beyond the screen" %}Make the recipe useful. Then make it worth keeping.{% endstatement %}
 
 {% evidence %}
-<figure class="caballeros-studio"><a href="/images/case-studies/caballeros/design-studio.jpg" aria-label="Open the full-size Caballero’s Design Studio screenshot"><img src="/images/case-studies/caballeros/design-studio.jpg" width="1280" height="720" alt="Caballero’s Design Studio editing a generic Burnt Basque Cheesecake keepsake, with artwork, text layers and print format controls" loading="lazy" /></a><figcaption>Actual Design Studio interface with a generic recipe keepsake. Open the image to inspect the editor.</figcaption></figure>
+<figure class="caballeros-studio"><a href="/images/case-studies/caballeros/design-studio.jpg" aria-label="Enlarge the Caballero’s Design Studio screenshot" data-image-viewer><img src="/images/case-studies/caballeros/design-studio.jpg" width="1280" height="720" alt="Caballero’s Design Studio editing a generic Burnt Basque Cheesecake keepsake, with artwork, text layers and print format controls" loading="lazy" /></a><figcaption>Actual Design Studio interface with a generic recipe keepsake. Open the image to inspect the editor.</figcaption></figure>
 {% endevidence %}
 
 The Studio connects recipe content to editable menus and keepsakes. Layers, artwork and print formats can change without rebuilding every design by hand. Export supports PNG, PDF and SVG containers; the illustrated artwork remains raster.
 
-<div class="caballeros-table-detail"><img src="/images/case-studies/caballeros/table-detail.jpg" width="1066" height="1600" alt="A plated scallop at a Caballero’s dinner, with flowers and a printed menu behind it" loading="lazy" /><div><h2>The screen is only part of it.</h2><p>The invitation, kitchen workflow and printed pieces all serve the same evening. These photographs document the physical setting; the interface captures show the evolving tools behind it.</p></div></div>
+<div class="caballeros-table-detail"><a class="image-inspect" href="/images/case-studies/caballeros/table-detail.jpg" data-image-viewer><img src="/images/case-studies/caballeros/table-detail.jpg" width="1066" height="1600" alt="A plated scallop at a Caballero’s dinner, with flowers and a printed menu behind it" loading="lazy" /><span>Enlarge image +</span></a><div><h2>The screen is only part of it.</h2><p>The invitation, kitchen workflow and printed pieces all serve the same evening. These photographs document the physical setting; the interface captures show the evolving tools behind it.</p></div></div>
 
-<details>
+<details id="decisions">
 <summary>What I built with, and where AI fits</summary>
 
 The kitchen and Studio use HTML, CSS and vanilla JavaScript. The invitation uses React and Vite. Markdown/TOML recipes and JSON plans feed a Python static generator; local storage and IndexedDB preserve working state.
