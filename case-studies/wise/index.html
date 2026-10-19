@@ -9,7 +9,7 @@
     <meta name="theme-color" content="#1f1f1f">
     
     <link rel="preload" href="/fonts/bricolage/BricolageGrotesque.ttf" as="font" type="font/ttf" crossorigin>
-    <link rel="stylesheet" href="/css/index.css?v=e398a1a55f33">
+    <link rel="stylesheet" href="/css/index.css?v=b6d84a5604c4">
     <script src="/js/lazysizes.min.js"></script>
     <link rel="icon" href="/images/favicon.png"/>
     <link rel="apple-touch-icon-precomposed" href="/images/apple-touch-icon-precomposed.png">
@@ -148,6 +148,8 @@
 
   </div>
 
+  <nav class="case-chapters u-wrapper" aria-label="Case study chapters"><a href="#tldr">The work</a><a href="#what-changed">What changed</a><a href="#decisions">The thinking</a></nav>
+
   <div class="u-text">
     <div class="u-wrapper">
       <div class="o-article__content">
@@ -165,13 +167,17 @@
 <p>The redesign separates refunds, cancellations and card checks, so customers can understand what happened and what comes next.</p>
 <img width="1920" height="1080" src="/images/case-studies/wise/redesign.png" alt="Wise redesigned card transaction screens showing distinct payment and refund states" loading="lazy"/>
 </div></div><section class="case-statement"><div class="u-wrapper"><p class="case-statement__label">01 / Transaction states</p><p class="case-statement__text">Make the state clear. Explain what comes next.</p></div></section><div class="u-wrapper"><div class="o-article__content">
-</div></div>
-<div class="u-photo u-photo--screens" >
-<img width="1920" height="1080" src="/images/case-studies/wise/refund.png" alt="Wise refund detail screen with a plus sign identifying money returned" loading="lazy"/>
-<img width="1920" height="1080" src="/images/case-studies/wise/checked.png" alt="Wise card check detail screen explaining the temporary authorisation" loading="lazy"/>
+</div></div><section class="case-evidence"><div class="u-wrapper">
+<section class="decision-viewer" aria-labelledby="wise-decision-title" id="what-changed">
+<div class="decision-viewer__copy"><p class="eyebrow">One decision, up close</p><h2 id="wise-decision-title">“Declined” wasn’t the whole story.</h2><p>The old screen repeated a status. The revision explains who cancelled the payment, and when the money came back.</p><p class="decision-note">Actual design comparison from the original project. Select a view or open the source image.</p><div class="decision-controls" hidden><button type="button" data-decision-view="before" aria-pressed="false">Before</button><button type="button" data-decision-view="after" aria-pressed="false">After</button><button type="button" data-decision-view="both" aria-pressed="true">Compare</button></div></div>
+<div class="decision-viewer__screens">
+<figure data-decision-panel="before"><figcaption>Before / a status to decipher</figcaption><div class="wise-screen-crop wise-screen-crop--before"><img src="/images/case-studies/wise/refund.png" width="1920" height="1080" alt="Original Wise cancellation screen: Declined, followed by repeated transaction details" loading="lazy" /></div></figure>
+<figure data-decision-panel="after"><figcaption>After / an explanation to act on</figcaption><div class="wise-screen-crop wise-screen-crop--after"><img src="/images/case-studies/wise/refund.png" width="1920" height="1080" alt="Revised Wise cancellation screen: Cancelled, with the merchant and date the money returned" loading="lazy" /></div></figure>
 </div>
-<div class="u-wrapper"><div class="o-article__content">
-<details>
+<a class="text-link decision-source" href="/images/case-studies/wise/refund.png" data-image-viewer data-caption="Original Wise refund and cancellation design comparison">Open the full comparison</a>
+</section>
+</div></section><div class="u-wrapper"><div class="o-article__content">
+<details id="decisions">
 <summary>Decisions, process and lessons</summary>
 <h3>Start with support, not a new interface</h3>
 <p>With the PM and support team, I ran a two-week discovery exercise: 28,000 transactions analysed and 20 customer interviews. We found 16 refund cases, with pending refunds causing the most confusion.</p>
@@ -220,6 +226,9 @@
   </div>
 </footer>
 
+    <dialog class="image-dialog" aria-labelledby="image-dialog-caption"><form method="dialog"><button class="image-dialog-close" aria-label="Close full-size image">Close ×</button></form><figure><img alt="" /><figcaption id="image-dialog-caption"></figcaption></figure></dialog>
+    <script defer src="/js/portfolio-interactions.js?v=ea371fbd7ab5"></script>
+    
     <!-- Current page: /case-studies/wise/ -->
   </body>
 </html>
