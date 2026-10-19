@@ -4,16 +4,15 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>
-      A dinner starts long before anyone sits down. |  Jaime Caballero - Senior product designer and design engineer. I design products and build the tools behind them.</title>
+      A dinner starts long before anyone sits down. |  Jaime Caballero - Design engineer. Design systems, frontend implementation and AI-assisted product building.</title>
     <meta name="description" content="Caballero’s, a supper-club identity and connected tools for inviting, cooking and making keepsakes.">
     <meta name="theme-color" content="#1f1f1f">
     
     <link rel="preload" href="/fonts/bricolage/BricolageGrotesque.ttf" as="font" type="font/ttf" crossorigin>
-    <link rel="stylesheet" href="/css/index.css?v=4e753c2827b9">
+    <link rel="stylesheet" href="/css/index.css?v=ea4c295b2620">
     <script src="/js/lazysizes.min.js"></script>
     
-    <style>@view-transition { navigation: auto; } @media (prefers-reduced-motion: reduce) { @view-transition { navigation: none; } }</style>
-    <script src="/js/project-entry.js?v=82685931f68b"></script>
+    <script src="/js/project-entry.js?v=0239d21978c8"></script>
     
     <link rel="icon" href="/images/favicon.png"/>
     <link rel="apple-touch-icon-precomposed" href="/images/apple-touch-icon-precomposed.png">
@@ -101,7 +100,6 @@
     <link href="//fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,400;0,600;0,700;0,900;1,420&family=Space+Mono:wght@400&display=swap" rel="stylesheet">
   </head>
   <body class="tmpl-report"  style="--color-bg: #f0e3cf; --case-light: #f0e3cf; --case-dark: #3b211a; --case-ink: #45281e; --case-focus-light: #3b211a; --case-focus-dark: #f0e3cf;">
-    <div class="project-entry-page-surface" data-project-entry-surface aria-hidden="true"></div>
     <a class="skip-link" href="#main-content">Skip to content</a>
     <header class="o-header  u-dark">
   <div class="u-wrapper">
@@ -160,7 +158,7 @@
       <div class="o-article__content">
         <div class="caballeros-intro" id="tldr">
 <img class="caballeros-wordmark" src="/images/case-studies/caballeros/wordmark.svg" width="519" height="253" alt="Caballero’s hand-drawn terracotta wordmark" />
-<p>I designed the identity and built the invitation, kitchen and Studio tools for my supper-club project. One system connecting the stories people bring to dinner with the work of making it happen.</p>
+<p>I designed the identity, built a React invitation, and connected a recipe library to an editable print studio. The tools support my supper-club project, from inviting people to cooking and making keepsakes.</p>
 </div>
 </div></div><section class="case-evidence"><div class="u-wrapper">
 <figure class="caballeros-dinner"><a class="image-inspect" href="/images/case-studies/caballeros/dinner-table.jpg" data-image-viewer><img src="/images/case-studies/caballeros/dinner-table.jpg" width="1600" height="1066" alt="A Caballero’s dinner table in sunlight, set with printed menus, flowers, citrus and candles" loading="eager" /><span>Enlarge image +</span></a><figcaption>The experience the tools serve: a real Caballero’s table, with its menus and small details in place.</figcaption></figure>
@@ -186,15 +184,15 @@
 </div></div><section class="case-evidence"><div class="u-wrapper">
 <figure class="caballeros-studio caballeros-studio--retina"><a class="image-inspect" href="/images/case-studies/caballeros/caballeros-studio-cabrales-selected-2x.png" aria-label="Enlarge the Caballero’s Design Studio screenshot" data-image-viewer><span class="caballeros-studio-full"><img src="/images/case-studies/caballeros/caballeros-studio-cabrales-selected-2x.png" width="2880" height="2000" alt="Caballero’s Design Studio with the Mild Whipped Cabrales Method layer selected and text, font, position and opacity controls visible" loading="lazy" /></span><span>Enlarge image +</span></a><figcaption>Select a layer, edit the text, and adjust the layout. The Studio keeps the recipe and print controls in the same view.</figcaption></figure>
 </div></section><div class="u-wrapper"><div class="o-article__content">
-<p>The Studio connects recipe content to editable menus and keepsakes. Layers, artwork and print formats can change without rebuilding every design by hand. Export supports PNG, PDF and SVG containers; the illustrated artwork remains raster.</p>
+<p>I connected recipes to editable menus and keepsakes, so a source change can refresh the content without rebuilding the layout. Export supports PNG, PDF and SVG containers; the illustrated artwork remains raster.</p>
 <div class="caballeros-table-detail"><a class="image-inspect" href="/images/case-studies/caballeros/table-detail.jpg" data-image-viewer><img src="/images/case-studies/caballeros/table-detail.jpg" width="1066" height="1600" alt="A plated scallop at a Caballero’s dinner, with flowers and a printed menu behind it" loading="lazy" /><span>Enlarge image +</span></a><div><h2>The screen is only part of it.</h2><p>The invitation, recipes and printed menus all come together at the table.</p></div></div>
-<details id="decisions">
-<summary>What I built with, and where AI fits</summary>
-<p>The kitchen and Studio use HTML, CSS and vanilla JavaScript. The invitation uses React and Vite. Markdown/TOML recipes and JSON plans feed a Python static generator; local storage and IndexedDB preserve working state.</p>
+<section id="decisions" class="case-build-note">
+<h2>Built to keep working.</h2>
+<p>I built the kitchen and Studio in HTML, CSS and JavaScript, and the invitation in React. Recipe files feed the library and print tools. Local storage and IndexedDB keep edits available between sessions.</p>
 <p>I used Codex to build and check the tools, and ImageGen and Runway for the invitation’s artwork and motion.</p>
-<p>Cloudflare Pages, Workers and D1 support the deployed guest flow and private host tools. Voice transcription is implemented through Workers AI. Guest responses and host records are deliberately absent from this case study.</p>
+<p>Cloudflare Pages, Workers and D1 support the deployed guest flow and private host tools. Voice transcription uses Workers AI.</p>
 <p>The custom invitation type was developed with fontTools and Pillow, using a modified Caveat scaffold under its open font licence.</p>
-</details>
+</section>
 <p class="caballeros-status">Working tools, an evolving independent project.</p>
 
       </div>
@@ -235,7 +233,6 @@
 
     <dialog class="image-dialog" aria-labelledby="image-dialog-caption"><form method="dialog"><button class="image-dialog-close" aria-label="Close full-size image">Close ×</button></form><figure><img alt="" /><figcaption id="image-dialog-caption"></figcaption></figure></dialog>
     <script defer src="/js/portfolio-interactions.js?v=ea371fbd7ab5"></script>
-    
     <!-- Current page: /case-studies/caballeros/ -->
   </body>
 </html>
