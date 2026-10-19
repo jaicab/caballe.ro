@@ -2254,7 +2254,7 @@ h1, h2, h3, .portfolio-intro h1, .contact-close h2, .project-copy h2, .o-article
   width: min(100%, 360px);
   max-height: 500px;
   margin: 25px 0;
-  background: #191919;
+  background: var(--case-dark, #162c29);
 }
 
 body.tmpl-report {

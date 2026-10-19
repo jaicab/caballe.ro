@@ -12,4 +12,4 @@ jobs:
       - name: Install Packages
         run: yarn install
       - name: Build
-        run: yarn build
+        run: yarn build && node scripts/check-case-themes.cjs

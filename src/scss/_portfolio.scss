@@ -142,7 +142,7 @@ h1, h2, h3, .portfolio-intro h1, .contact-close h2, .project-copy h2, .o-article
   .case-statement__text, .case-statement .case-statement__text { font-size: 36px; line-height: 1.1; }
   .case-statement__label { font-size: 11px; margin-bottom: 18px; }
 }
-.exported-demo { display: block; width: min(100%,360px); max-height: 500px; margin: 25px 0; background: #191919; }
+.exported-demo { display: block; width: min(100%,360px); max-height: 500px; margin: 25px 0; background: var(--case-dark, #162c29); }
 
 // Each case keeps its project hue in both accessible colour themes.
 body.tmpl-report { background: var(--case-light, var(--color-bg)); color: var(--case-ink, #1a1a1a); }
