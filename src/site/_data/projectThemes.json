@@ -61,5 +61,12 @@
     "ink": "#201c13",
     "focusLight": "#30281b",
     "focusDark": "#e7d5ab"
+  },
+  "caballeros": {
+    "light": "#f0e3cf",
+    "dark": "#3b211a",
+    "ink": "#45281e",
+    "focusLight": "#3b211a",
+    "focusDark": "#f0e3cf"
   }
 }
