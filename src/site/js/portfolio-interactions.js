@@ -18,6 +18,11 @@
           var source = link.querySelector('img');
           var caption = link.dataset.caption || (source && source.alt) || 'Project image';
           dialog.querySelector('img').src = imageOnlySource || link.href;
+          var originalLink = dialog.querySelector('.image-dialog-source a');
+          if (originalLink) {
+            originalLink.href = imageOnlySource ? '#' : link.href;
+            originalLink.parentElement.hidden = Boolean(imageOnlySource);
+          }
           dialog.querySelector('img').alt = caption;
           dialog.querySelector('figcaption').textContent = caption;
           returnTo = link;
@@ -57,6 +62,8 @@
     window.clearPortfolioMedia = function (root) {
       if (observer) root.querySelectorAll('video').forEach(function (video) {observer.unobserve(video);});
       returnTo = null;
+      var originalLink = dialog && dialog.querySelector('.image-dialog-source a');
+      if (originalLink) {originalLink.href = '#';originalLink.parentElement.hidden = true;}
     };
   }
   enhancePortfolio(document);

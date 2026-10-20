@@ -49,16 +49,18 @@ properties:
 
 ## Make the first step feel human
 
-<img width="2880" height="7728" src="{{ '/images/case-studies/carlos-caballero/landing-desktop.png' | url }}" alt="Therapist website homepage introducing Carlos Caballero and his services" loading="lazy"/>
+<figure class="case-screen-preview"><a href="/images/case-studies/carlos-caballero/landing-desktop.png" data-image-viewer aria-label="View full desktop homepage"><span class="case-screen-window case-screen-window--desktop"><img width="2880" height="7728" src="{{ '/images/case-studies/carlos-caballero/landing-desktop.png' | url }}" alt="Therapist website homepage introducing Carlos Caballero and his services" loading="lazy"/></span><span class="case-screen-source">View full desktop homepage +</span></a><figcaption>The opening screen, with the complete page available to inspect.</figcaption></figure>
 
 {% journey "carlos-caballero" %}
 
 {% tinyDetail "carlos-caballero" %}
 
-{% screens %}
-<img width="750" height="8344" src="{{ '/images/case-studies/carlos-caballero/landing-mobile.png' | url }}" alt="Mobile homepage with an approachable introduction to therapy" loading="lazy"/>
-<img width="375" height="2150" src="{{ '/images/case-studies/carlos-caballero/contact-mobile.png' | url }}" alt="Mobile contact page offering WhatsApp and downloadable contact details" loading="lazy"/>
-{% endscreens %}
+{% evidence %}
+<div class="case-phone-pair">
+<figure class="case-screen-preview"><a href="/images/case-studies/carlos-caballero/landing-mobile.png" data-image-viewer aria-label="View full mobile homepage"><span class="case-screen-window case-screen-window--phone"><img width="750" height="8344" src="/images/case-studies/carlos-caballero/landing-mobile.png" alt="The opening of Carlos’s mobile homepage, framed as a phone-sized preview" loading="lazy" /></span><span class="case-screen-source">View full mobile homepage +</span></a></figure>
+<figure class="case-screen-preview"><a href="/images/case-studies/carlos-caballero/contact-mobile.png" data-image-viewer aria-label="View full mobile contact page"><span class="case-screen-window case-screen-window--phone"><img width="375" height="2150" src="/images/case-studies/carlos-caballero/contact-mobile.png" alt="The opening of Carlos’s mobile contact page, framed as a phone-sized preview" loading="lazy" /></span><span class="case-screen-source">View full mobile contact page +</span></a></figure>
+</div>
+{% endevidence %}
 
 
 {% statement "01 / Publishing" %}Give the writing room to be read.{% endstatement %}

@@ -62,8 +62,12 @@ This recording shows the real prototype: people see a message taking shape inste
 
 ## One identity, two themes
 
-<img width="3360" height="2100" src="{{ '/images/case-studies/dotdot/ui-dark-desktop.png' | url }}" alt="Dotdot desktop chat design in dark mode" loading="lazy"/>
-<img width="750" height="1624" src="{{ '/images/case-studies/dotdot/ui-light-mobile.png' | url }}" alt="Dotdot mobile chat design in light mode" loading="lazy"/>
+{% evidence %}
+<div class="case-theme-pair">
+<figure class="case-screen-preview"><a href="/images/case-studies/dotdot/ui-dark-desktop.png" data-image-viewer><img width="3360" height="2100" src="/images/case-studies/dotdot/ui-dark-desktop.png" alt="Dotdot desktop chat design in dark mode" loading="lazy" /><span class="case-screen-source">View desktop design +</span></a></figure>
+<figure class="case-screen-preview"><a href="/images/case-studies/dotdot/ui-light-mobile.png" data-image-viewer><img width="750" height="1624" src="/images/case-studies/dotdot/ui-light-mobile.png" alt="Dotdot mobile chat design in light mode" loading="lazy" /><span class="case-screen-source">View mobile design +</span></a></figure>
+</div>
+{% endevidence %}
 
 <details>
 <summary>Decisions, process and lessons</summary>

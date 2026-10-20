@@ -10,7 +10,7 @@ for(const [key,j] of Object.entries(journeys)){
  assert(html.indexOf('class="case-journey"')>html.indexOf('id="tldr"'));
 }
 const all=JSON.stringify(journeys);assert.doesNotMatch(all,/glassfiles\/|roast-cards\/|flavour-guide\/|next test is a real cook/);
-assert.match(journeys.wise.status,/rather than four successive screens/);assert(journeys.checkstep.steps.every(s=>s.role));assert.equal(journeys.wise.steps[2].image,'','Pending-refund explanation has no directly matching screen');assert.match(journeys.dotdot.status,/not implemented/);assert.match(journeys.caballeros.steps[2].decision,/full recipe quantities/);
+assert.match(journeys.wise.status,/rather than four successive screens/);assert(journeys.checkstep.steps.every(s=>s.role));assert.equal(journeys.wise.steps[2].image,'','Pending-refund explanation has no directly matching screen');assert.match(journeys.dotdot.status,/not implemented/);assert.match(journeys.caballeros.steps[2].decision,/full recipe quantities/);assert.match(journeys.caballeros.steps[1].role,/manual/);assert.match(journeys.caballeros.note,/not generated/);
 const config=fs.readFileSync('.eleventy.js','utf8');assert.match(config,/aria-label="View the evidence:/,'Link accessible name includes its visible label');
 const css=fs.readFileSync('src/site/css/index.css','utf8');assert.match(css,/grid-template-columns: 1fr/);assert.match(css,/\.journey-evidence/);
 // Component rules must beat the article's inherited ol/li/h2/link defaults.
