@@ -1,15 +1,77 @@
+
+
+
+  
+  
+
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="light" data-page-light="#aeec86" data-page-dark="#162515">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>
       Reducing confusion on card refunds |  Jaime Caballero - Design engineer. Design systems, frontend implementation and AI-assisted product building.</title>
     <meta name="description" content="Removing confusion around card transactions">
-    <meta name="theme-color" content="#1f1f1f">
+    <meta name="theme-color" content="#aeec86">
+    <style id="page-theme-canvas">html { background: #aeec86; color-scheme: light; } html[data-theme="dark"] { background: #162515; color-scheme: dark; }</style>
+    <script id="page-theme-bootstrap">/* Resolve this document's palette before styles/content can paint. No navigation interception. */
+(function () {
+  'use strict';
+  var root = document.documentElement;
+  var system = window.matchMedia ? window.matchMedia('(prefers-color-scheme: dark)') : null;
+  var preference = null;
+
+  function readPreference() {
+    try {
+      var stored = window.sessionStorage.getItem('theme');
+      return stored === 'true' ? 'light' : stored === 'false' ? 'dark' : null;
+    } catch (_) { return preference; }
+  }
+
+  function applyTheme() {
+    var theme = preference || (system && system.matches ? 'dark' : 'light');
+    var color = theme === 'dark' ? root.dataset.pageDark : root.dataset.pageLight;
+    root.dataset.theme = theme;
+    root.style.backgroundColor = color;
+    root.style.colorScheme = theme;
+    var meta = document.querySelector('meta[name="theme-color"]');
+    if (meta) meta.setAttribute('content', color);
+    if (document.body) document.body.classList.toggle('u-dark', theme === 'dark');
+    var toggle = document.getElementById('lightSwitch');
+    if (toggle) toggle.checked = theme === 'light';
+  }
+
+  window.loadTheme = function () {
+    preference = readPreference();
+    applyTheme();
+  };
+  window.switchTheme = function (toggle) {
+    preference = toggle.checked ? 'light' : 'dark';
+    try { window.sessionStorage.setItem('theme', String(toggle.checked)); } catch (_) { /* The current page still responds when storage is unavailable. */ }
+    if (document.body) document.body.classList.add('is-transitioning');
+    applyTheme();
+  };
+
+  window.loadTheme();
+  var navigationEntry = window.performance && window.performance.getEntriesByType && window.performance.getEntriesByType('navigation')[0];
+  if ((window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) ||
+      (navigationEntry && navigationEntry.type === 'back_forward') || window.location.hash) {
+    root.dataset.pageEntry = 'skip';
+  }
+  // Store settled content in the back/forward cache, without changing scroll or history.
+  window.addEventListener('pagehide', function () { root.dataset.pageEntry = 'skip'; });
+  window.addEventListener('pageshow', function (event) {
+    if (event.persisted) root.dataset.pageEntry = 'skip';
+    if (document.body) document.body.classList.remove('is-transitioning');
+    window.loadTheme();
+  });
+  document.addEventListener('DOMContentLoaded', window.loadTheme);
+  if (system && system.addEventListener) system.addEventListener('change', window.loadTheme);
+}());
+</script>
     
     <link rel="preload" href="/fonts/bricolage/BricolageGrotesque.ttf" as="font" type="font/ttf" crossorigin>
-    <link rel="stylesheet" href="/css/index.css?v=fd683c8ec2b8">
+    <link rel="stylesheet" href="/css/index.css?v=a6b15cf68ac1">
     <script src="/js/lazysizes.min.js"></script>
     <link rel="icon" href="/images/favicon.png"/>
     <link rel="apple-touch-icon-precomposed" href="/images/apple-touch-icon-precomposed.png">
@@ -32,59 +94,7 @@
     <link rel="dns-prefetch" href="https://res.cloudinary.com">
 
     <script>
-      /* Dark mode JS */
-
-      function getTheme() {
-        if (!window.matchMedia) 
-          return true;
-        else 
-          return window
-            .matchMedia('(prefers-color-scheme: light)')
-            .matches
-        }
-
-      function loadTheme() {
-        var currentTheme = sessionStorage.getItem('theme');
-        if (currentTheme === null) {
-          currentTheme = getTheme()
-          sessionStorage.setItem('theme', currentTheme)
-        }
-
-        var toggle = document.getElementById('lightSwitch');
-        if (!toggle) return;
-        toggle.checked = currentTheme == 'true';
-
-        if (!toggle.checked) 
-          document
-            .body
-            .classList
-            .add('u-dark')
-
-        setTimeout(function () {
-          document
-            .body
-            .classList
-            .add('is-transitioning')
-        }, 500)
-      }
-
-      function switchTheme(el) {
-        sessionStorage.setItem('theme', el.checked)
-
-        if (el.checked) 
-          document
-            .body
-            .classList
-            .remove('u-dark')
-        else 
-          document
-            .body
-            .classList
-            .add('u-dark')
-        }
-
       document.addEventListener("DOMContentLoaded", function () {
-        loadTheme();
         if ('IntersectionObserver' in window) {
           var observer = new IntersectionObserver(function (entries) {
             entries.forEach(function (entry) { if (!entry.isIntersecting) entry.target.pause(); });
@@ -97,6 +107,7 @@
     <link href="//fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,400;0,600;0,700;0,900;1,420&family=Space+Mono:wght@400&display=swap" rel="stylesheet">
   </head>
   <body class="tmpl-report"  style="--color-bg: #aeec86; --case-light: #aeec86; --case-dark: #162515; --case-ink: #13210e; --case-focus-light: #162515; --case-focus-dark: #aeec86;">
+    <script>window.loadTheme();</script>
     <a class="skip-link" href="#main-content">Skip to content</a>
     <header class="o-header  u-dark">
   <div class="u-wrapper">
@@ -165,8 +176,9 @@
 <div id="tldr"></div>
 <h2>From confusing status to a clear explanation</h2>
 <p>The redesign separates refunds, cancellations and card checks, so customers can understand what happened and what comes next.</p>
-<img width="1920" height="1080" src="/images/case-studies/wise/redesign.png" alt="Wise redesigned card transaction screens showing distinct payment and refund states" loading="lazy"/>
+<img width="1920" height="1080" src="/images/case-studies/wise/redesign.png" alt="Wise redesigned payment details showing clearer merchant hierarchy and an insufficient-funds message" loading="lazy"/>
 </div></div><section class="case-journey" aria-labelledby="journey-wise"><div class="u-wrapper"><p class="eyebrow">The customer’s questions</p><h2 id="journey-wise">Make sense of a card payment.</h2><p class="journey-status">Questions the experience needs to answer, rather than four successive screens.</p><ol class="journey-route" role="list" style="--journey-stops:4"><li><span class="journey-stop" aria-hidden="true">1</span><h3>Find the payment</h3><p class="journey-question">Which payment is this?</p><p class="journey-decision">Give merchant details and transaction information a clearer hierarchy.</p><a class="text-link journey-evidence" href="/images/case-studies/wise/redesign.png" data-image-viewer aria-label="View the evidence: Find the payment" data-caption="Find the payment — Give merchant details and transaction information a clearer hierarchy.">View the evidence</a></li><li><span class="journey-stop" aria-hidden="true">2</span><h3>Recognise the state</h3><p class="journey-question">Refunded, cancelled or checked?</p><p class="journey-decision">Use explicit states for different transaction types.</p><a class="text-link journey-evidence" href="/images/case-studies/wise/refund.png" data-image-viewer aria-label="View the evidence: Recognise the state" data-caption="Recognise the state — Use explicit states for different transaction types.">View the evidence</a></li><li><span class="journey-stop" aria-hidden="true">3</span><h3>Understand the refund</h3><p class="journey-question">Why hasn’t the payment changed?</p><p class="journey-decision">Explain the pending refund instead of leaving it to interpretation.</p></li><li><span class="journey-stop" aria-hidden="true">4</span><h3>Account for the money</h3><p class="journey-question">When did it come back?</p><p class="journey-decision">Explain who cancelled the payment and when funds returned.</p><a class="text-link journey-evidence" href="/images/case-studies/wise/refund.png" data-image-viewer aria-label="View the evidence: Account for the money" data-caption="Account for the money — Explain who cancelled the payment and when funds returned.">View the evidence</a></li></ol></div></section><div class="u-wrapper"><div class="o-article__content">
+</div></div><section class="case-tiny-detail" aria-labelledby="tiny-detail-wise"><div class="u-wrapper"><div class="tiny-detail-layout"><div class="tiny-detail-copy"><p class="eyebrow">Tiny big detail</p><h2 id="tiny-detail-wise">One small plus sign.</h2><p>A plus sign makes the refund read as money coming back, not another payment.</p></div><figure class="tiny-detail-media"><a class="tiny-detail-visual" href="/images/case-studies/wise/refund.png" data-image-viewer data-caption="The refund amount in the original design comparison." aria-label="View full screen: One small plus sign."><span class="tiny-detail-crop" style="aspect-ratio:375/160;max-width:375px"><img src="/images/case-studies/wise/refund.png" width="1920" height="1080" alt="The refund amount in the original design comparison." loading="lazy" style="width:512%;left:-137.33333333333334%;top:-168.75%"></span><span class="tiny-detail-source">View full screen</span></a><figcaption>The refund amount in the original design comparison.</figcaption></figure></div></div></section><div class="u-wrapper"><div class="o-article__content">
 </div></div><section class="case-statement"><div class="u-wrapper"><p class="case-statement__label">01 / Transaction states</p><p class="case-statement__text">Make the state clear. Explain what comes next.</p></div></section><div class="u-wrapper"><div class="o-article__content">
 </div></div><section class="case-evidence"><div class="u-wrapper">
 <section class="decision-viewer" aria-labelledby="wise-decision-title" id="what-changed">

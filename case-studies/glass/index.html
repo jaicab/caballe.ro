@@ -1,15 +1,77 @@
+
+
+
+  
+  
+
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="light" data-page-light="#e7d5ab" data-page-dark="#30281b">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>
       Helping people choose coffee with more of the story |  Jaime Caballero - Design engineer. Design systems, frontend implementation and AI-assisted product building.</title>
     <meta name="description" content="Connecting coffee selection, provenance and product detail for Glass Coffee.">
-    <meta name="theme-color" content="#1f1f1f">
+    <meta name="theme-color" content="#e7d5ab">
+    <style id="page-theme-canvas">html { background: #e7d5ab; color-scheme: light; } html[data-theme="dark"] { background: #30281b; color-scheme: dark; }</style>
+    <script id="page-theme-bootstrap">/* Resolve this document's palette before styles/content can paint. No navigation interception. */
+(function () {
+  'use strict';
+  var root = document.documentElement;
+  var system = window.matchMedia ? window.matchMedia('(prefers-color-scheme: dark)') : null;
+  var preference = null;
+
+  function readPreference() {
+    try {
+      var stored = window.sessionStorage.getItem('theme');
+      return stored === 'true' ? 'light' : stored === 'false' ? 'dark' : null;
+    } catch (_) { return preference; }
+  }
+
+  function applyTheme() {
+    var theme = preference || (system && system.matches ? 'dark' : 'light');
+    var color = theme === 'dark' ? root.dataset.pageDark : root.dataset.pageLight;
+    root.dataset.theme = theme;
+    root.style.backgroundColor = color;
+    root.style.colorScheme = theme;
+    var meta = document.querySelector('meta[name="theme-color"]');
+    if (meta) meta.setAttribute('content', color);
+    if (document.body) document.body.classList.toggle('u-dark', theme === 'dark');
+    var toggle = document.getElementById('lightSwitch');
+    if (toggle) toggle.checked = theme === 'light';
+  }
+
+  window.loadTheme = function () {
+    preference = readPreference();
+    applyTheme();
+  };
+  window.switchTheme = function (toggle) {
+    preference = toggle.checked ? 'light' : 'dark';
+    try { window.sessionStorage.setItem('theme', String(toggle.checked)); } catch (_) { /* The current page still responds when storage is unavailable. */ }
+    if (document.body) document.body.classList.add('is-transitioning');
+    applyTheme();
+  };
+
+  window.loadTheme();
+  var navigationEntry = window.performance && window.performance.getEntriesByType && window.performance.getEntriesByType('navigation')[0];
+  if ((window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) ||
+      (navigationEntry && navigationEntry.type === 'back_forward') || window.location.hash) {
+    root.dataset.pageEntry = 'skip';
+  }
+  // Store settled content in the back/forward cache, without changing scroll or history.
+  window.addEventListener('pagehide', function () { root.dataset.pageEntry = 'skip'; });
+  window.addEventListener('pageshow', function (event) {
+    if (event.persisted) root.dataset.pageEntry = 'skip';
+    if (document.body) document.body.classList.remove('is-transitioning');
+    window.loadTheme();
+  });
+  document.addEventListener('DOMContentLoaded', window.loadTheme);
+  if (system && system.addEventListener) system.addEventListener('change', window.loadTheme);
+}());
+</script>
     
     <link rel="preload" href="/fonts/bricolage/BricolageGrotesque.ttf" as="font" type="font/ttf" crossorigin>
-    <link rel="stylesheet" href="/css/index.css?v=fd683c8ec2b8">
+    <link rel="stylesheet" href="/css/index.css?v=a6b15cf68ac1">
     <script src="/js/lazysizes.min.js"></script>
     <link rel="icon" href="/images/favicon.png"/>
     <link rel="apple-touch-icon-precomposed" href="/images/apple-touch-icon-precomposed.png">
@@ -32,59 +94,7 @@
     <link rel="dns-prefetch" href="https://res.cloudinary.com">
 
     <script>
-      /* Dark mode JS */
-
-      function getTheme() {
-        if (!window.matchMedia) 
-          return true;
-        else 
-          return window
-            .matchMedia('(prefers-color-scheme: light)')
-            .matches
-        }
-
-      function loadTheme() {
-        var currentTheme = sessionStorage.getItem('theme');
-        if (currentTheme === null) {
-          currentTheme = getTheme()
-          sessionStorage.setItem('theme', currentTheme)
-        }
-
-        var toggle = document.getElementById('lightSwitch');
-        if (!toggle) return;
-        toggle.checked = currentTheme == 'true';
-
-        if (!toggle.checked) 
-          document
-            .body
-            .classList
-            .add('u-dark')
-
-        setTimeout(function () {
-          document
-            .body
-            .classList
-            .add('is-transitioning')
-        }, 500)
-      }
-
-      function switchTheme(el) {
-        sessionStorage.setItem('theme', el.checked)
-
-        if (el.checked) 
-          document
-            .body
-            .classList
-            .remove('u-dark')
-        else 
-          document
-            .body
-            .classList
-            .add('u-dark')
-        }
-
       document.addEventListener("DOMContentLoaded", function () {
-        loadTheme();
         if ('IntersectionObserver' in window) {
           var observer = new IntersectionObserver(function (entries) {
             entries.forEach(function (entry) { if (!entry.isIntersecting) entry.target.pause(); });
@@ -97,6 +107,7 @@
     <link href="//fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,400;0,600;0,700;0,900;1,420&family=Space+Mono:wght@400&display=swap" rel="stylesheet">
   </head>
   <body class="tmpl-report"  style="--color-bg: #e7d5ab; --case-light: #e7d5ab; --case-dark: #30281b; --case-ink: #201c13; --case-focus-light: #30281b; --case-focus-dark: #e7d5ab;">
+    <script>window.loadTheme();</script>
     <a class="skip-link" href="#main-content">Skip to content</a>
     <header class="o-header  u-dark">
   <div class="u-wrapper">
@@ -167,6 +178,7 @@
 <p>Producer, variety, processing, origin and flavour become useful buying information, rather than a separate story people have to hunt for.</p>
 <img width="1440" height="1080" src="/images/case-studies/glass/storefront.png" alt="Public Glass Coffee storefront showing coffee provenance, an origin map and key product characteristics" loading="lazy" />
 </div></div><section class="case-journey" aria-labelledby="journey-glass"><div class="u-wrapper"><p class="eyebrow">The shopper’s route</p><h2 id="journey-glass">Choose a coffee with enough of the story.</h2><p class="journey-status">The public storefront.</p><ol class="journey-route" role="list" style="--journey-stops:4"><li><span class="journey-stop" aria-hidden="true">1</span><h3>Browse</h3><p class="journey-question">What should I explore?</p><p class="journey-decision">Repeatable product cards make the range easier to scan.</p><a class="text-link journey-evidence" href="/images/case-studies/glass/coffee-selection.png" data-image-viewer aria-label="View the evidence: Browse" data-caption="Browse — Repeatable product cards make the range easier to scan.">View the evidence</a></li><li><span class="journey-stop" aria-hidden="true">2</span><h3>Explore flavour</h3><p class="journey-question">What might this cup be like?</p><p class="journey-decision">One component presents each coffee’s brew-specific profile.</p><a class="text-link journey-evidence" href="/images/case-studies/glass/product-detail.png" data-image-viewer aria-label="View the evidence: Explore flavour" data-caption="Explore flavour — One component presents each coffee’s brew-specific profile.">View the evidence</a></li><li><span class="journey-stop" aria-hidden="true">3</span><h3>Know the origin</h3><p class="journey-question">Where does it come from?</p><p class="journey-decision">Keep producer, origin and processing beside the buying information.</p><a class="text-link journey-evidence" href="/images/case-studies/glass/storefront.png" data-image-viewer aria-label="View the evidence: Know the origin" data-caption="Know the origin — Keep producer, origin and processing beside the buying information.">View the evidence</a></li><li><span class="journey-stop" aria-hidden="true">4</span><h3>Choose a format</h3><p class="journey-question">Which brew and bag size?</p><p class="journey-decision">Bring the options together on the product page.</p><a class="text-link journey-evidence" href="/images/case-studies/glass/product-detail.png" data-image-viewer aria-label="View the evidence: Choose a format" data-caption="Choose a format — Bring the options together on the product page.">View the evidence</a></li></ol></div></section><div class="u-wrapper"><div class="o-article__content">
+</div></div><section class="case-tiny-detail" aria-labelledby="tiny-detail-glass"><div class="u-wrapper"><div class="tiny-detail-layout"><div class="tiny-detail-copy"><p class="eyebrow">Tiny big detail</p><h2 id="tiny-detail-glass">An icon and a word.</h2><p>Each brew icon has a label, so choosing filter or espresso doesn’t depend on recognising the symbol.</p></div><figure class="tiny-detail-media"><a class="tiny-detail-visual" href="/images/case-studies/glass/product-detail.png" data-image-viewer data-caption="Brew choices on the public product page." aria-label="View full screen: An icon and a word."><span class="tiny-detail-crop" style="aspect-ratio:255/67;max-width:255px"><img src="/images/case-studies/glass/product-detail.png" width="1440" height="1080" alt="Brew choices on the public product page." loading="lazy" style="width:564.7058823529412%;left:-311.7647058823529%;top:-837.3134328358209%"></span><span class="tiny-detail-source">View full screen</span></a><figcaption>Brew choices on the public product page.</figcaption></figure></div></div></section><div class="u-wrapper"><div class="o-article__content">
 </div></div><section class="case-statement"><div class="u-wrapper"><p class="case-statement__label">01 / Product experience</p><p class="case-statement__text">Enough to choose. More to discover.</p></div></section><div class="u-wrapper"><div class="o-article__content">
 <h2>A repeatable structure across coffees</h2>
 <p>I built reusable Shopify sections around product metafields. Filter and espresso have different flavour data, but share one component. That keeps the interface consistent without flattening the differences between coffees.</p>

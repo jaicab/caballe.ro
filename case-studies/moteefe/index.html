@@ -1,15 +1,77 @@
+
+
+
+  
+  
+
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="light" data-page-light="#BDA9FF" data-page-dark="#261d3a">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>
       Redesigning a garment builder experience |  Jaime Caballero - Design engineer. Design systems, frontend implementation and AI-assisted product building.</title>
     <meta name="description" content="A dynamic e-commerce platform for merchandise creators and influencer brands">
-    <meta name="theme-color" content="#1f1f1f">
+    <meta name="theme-color" content="#BDA9FF">
+    <style id="page-theme-canvas">html { background: #BDA9FF; color-scheme: light; } html[data-theme="dark"] { background: #261d3a; color-scheme: dark; }</style>
+    <script id="page-theme-bootstrap">/* Resolve this document's palette before styles/content can paint. No navigation interception. */
+(function () {
+  'use strict';
+  var root = document.documentElement;
+  var system = window.matchMedia ? window.matchMedia('(prefers-color-scheme: dark)') : null;
+  var preference = null;
+
+  function readPreference() {
+    try {
+      var stored = window.sessionStorage.getItem('theme');
+      return stored === 'true' ? 'light' : stored === 'false' ? 'dark' : null;
+    } catch (_) { return preference; }
+  }
+
+  function applyTheme() {
+    var theme = preference || (system && system.matches ? 'dark' : 'light');
+    var color = theme === 'dark' ? root.dataset.pageDark : root.dataset.pageLight;
+    root.dataset.theme = theme;
+    root.style.backgroundColor = color;
+    root.style.colorScheme = theme;
+    var meta = document.querySelector('meta[name="theme-color"]');
+    if (meta) meta.setAttribute('content', color);
+    if (document.body) document.body.classList.toggle('u-dark', theme === 'dark');
+    var toggle = document.getElementById('lightSwitch');
+    if (toggle) toggle.checked = theme === 'light';
+  }
+
+  window.loadTheme = function () {
+    preference = readPreference();
+    applyTheme();
+  };
+  window.switchTheme = function (toggle) {
+    preference = toggle.checked ? 'light' : 'dark';
+    try { window.sessionStorage.setItem('theme', String(toggle.checked)); } catch (_) { /* The current page still responds when storage is unavailable. */ }
+    if (document.body) document.body.classList.add('is-transitioning');
+    applyTheme();
+  };
+
+  window.loadTheme();
+  var navigationEntry = window.performance && window.performance.getEntriesByType && window.performance.getEntriesByType('navigation')[0];
+  if ((window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) ||
+      (navigationEntry && navigationEntry.type === 'back_forward') || window.location.hash) {
+    root.dataset.pageEntry = 'skip';
+  }
+  // Store settled content in the back/forward cache, without changing scroll or history.
+  window.addEventListener('pagehide', function () { root.dataset.pageEntry = 'skip'; });
+  window.addEventListener('pageshow', function (event) {
+    if (event.persisted) root.dataset.pageEntry = 'skip';
+    if (document.body) document.body.classList.remove('is-transitioning');
+    window.loadTheme();
+  });
+  document.addEventListener('DOMContentLoaded', window.loadTheme);
+  if (system && system.addEventListener) system.addEventListener('change', window.loadTheme);
+}());
+</script>
     
     <link rel="preload" href="/fonts/bricolage/BricolageGrotesque.ttf" as="font" type="font/ttf" crossorigin>
-    <link rel="stylesheet" href="/css/index.css?v=fd683c8ec2b8">
+    <link rel="stylesheet" href="/css/index.css?v=a6b15cf68ac1">
     <script src="/js/lazysizes.min.js"></script>
     <link rel="icon" href="/images/favicon.png"/>
     <link rel="apple-touch-icon-precomposed" href="/images/apple-touch-icon-precomposed.png">
@@ -32,59 +94,7 @@
     <link rel="dns-prefetch" href="https://res.cloudinary.com">
 
     <script>
-      /* Dark mode JS */
-
-      function getTheme() {
-        if (!window.matchMedia) 
-          return true;
-        else 
-          return window
-            .matchMedia('(prefers-color-scheme: light)')
-            .matches
-        }
-
-      function loadTheme() {
-        var currentTheme = sessionStorage.getItem('theme');
-        if (currentTheme === null) {
-          currentTheme = getTheme()
-          sessionStorage.setItem('theme', currentTheme)
-        }
-
-        var toggle = document.getElementById('lightSwitch');
-        if (!toggle) return;
-        toggle.checked = currentTheme == 'true';
-
-        if (!toggle.checked) 
-          document
-            .body
-            .classList
-            .add('u-dark')
-
-        setTimeout(function () {
-          document
-            .body
-            .classList
-            .add('is-transitioning')
-        }, 500)
-      }
-
-      function switchTheme(el) {
-        sessionStorage.setItem('theme', el.checked)
-
-        if (el.checked) 
-          document
-            .body
-            .classList
-            .remove('u-dark')
-        else 
-          document
-            .body
-            .classList
-            .add('u-dark')
-        }
-
       document.addEventListener("DOMContentLoaded", function () {
-        loadTheme();
         if ('IntersectionObserver' in window) {
           var observer = new IntersectionObserver(function (entries) {
             entries.forEach(function (entry) { if (!entry.isIntersecting) entry.target.pause(); });
@@ -97,6 +107,7 @@
     <link href="//fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,400;0,600;0,700;0,900;1,420&family=Space+Mono:wght@400&display=swap" rel="stylesheet">
   </head>
   <body class="tmpl-report"  style="--color-bg: #D4C7FF; --case-light: #BDA9FF; --case-dark: #261d3a; --case-ink: #241833; --case-focus-light: #261d3a; --case-focus-dark: #BDA9FF;">
+    <script>window.loadTheme();</script>
     <a class="skip-link" href="#main-content">Skip to content</a>
     <header class="o-header  u-dark">
   <div class="u-wrapper">
@@ -170,6 +181,7 @@
 <p>Your browser cannot play this video. <a href="/images/case-studies/moteefe/storybook.mp4">Download the demonstration</a>.</p>
 </video>
 </div></div><section class="case-journey" aria-labelledby="journey-moteefe"><div class="u-wrapper"><p class="eyebrow">The creator’s route</p><h2 id="journey-moteefe">Turn artwork into a campaign.</h2><p class="journey-status">The builder and its shared components.</p><ol class="journey-route" role="list" style="--journey-stops:4"><li><span class="journey-stop" aria-hidden="true">1</span><h3>Add artwork</h3><p class="journey-question">Which design am I using?</p><p class="journey-decision">Start with a dedicated upload step.</p><a class="text-link journey-evidence" href="/images/case-studies/moteefe/ui-upload.png" data-image-viewer aria-label="View the evidence: Add artwork" data-caption="Add artwork — Start with a dedicated upload step.">View the evidence</a></li><li><span class="journey-stop" aria-hidden="true">2</span><h3>Choose products</h3><p class="journey-question">What will carry the design?</p><p class="journey-decision">Make product and colour selection reusable interactions.</p><a class="text-link journey-evidence" href="/images/case-studies/moteefe/ui-select.png" data-image-viewer aria-label="View the evidence: Choose products" data-caption="Choose products — Make product and colour selection reusable interactions.">View the evidence</a></li><li><span class="journey-stop" aria-hidden="true">3</span><h3>Place the design</h3><p class="journey-question">Will it fit this product?</p><p class="journey-decision">Show canvas limits and artwork-placement controls.</p><a class="text-link journey-evidence" href="/images/case-studies/moteefe/ui-edit.png" data-image-viewer aria-label="View the evidence: Place the design" data-caption="Place the design — Show canvas limits and artwork-placement controls.">View the evidence</a></li><li><span class="journey-stop" aria-hidden="true">4</span><h3>Review the campaign</h3><p class="journey-question">What am I offering?</p><p class="journey-decision">Bring products, pricing and campaign options together.</p><a class="text-link journey-evidence" href="/images/case-studies/moteefe/ui-selected.png" data-image-viewer aria-label="View the evidence: Review the campaign" data-caption="Review the campaign — Bring products, pricing and campaign options together.">View the evidence</a></li></ol></div></section><div class="u-wrapper"><div class="o-article__content">
+</div></div><section class="case-tiny-detail" aria-labelledby="tiny-detail-moteefe"><div class="u-wrapper"><div class="tiny-detail-layout"><div class="tiny-detail-copy"><p class="eyebrow">Tiny big detail</p><h2 id="tiny-detail-moteefe">Keep the trade-off visible.</h2><p>As the quantity changes, cost per item and total profit stay together, making the trade-off visible.</p></div><figure class="tiny-detail-media"><video controls playsinline preload="metadata" width="340" height="460" aria-label="The original profit-calculator component in use."><source src="/images/case-studies/moteefe/profit-calculator.mp4" type="video/mp4"><a href="/images/case-studies/moteefe/profit-calculator.mp4">View full recording</a></video><figcaption>The original profit-calculator component in use.</figcaption></figure></div></div></section><div class="u-wrapper"><div class="o-article__content">
 </div></div><section class="case-statement"><div class="u-wrapper"><p class="case-statement__label">01 / Design and engineering</p><p class="case-statement__text">Design the interaction. Build the component.</p></div></section><div class="u-wrapper"><div class="o-article__content">
 <h2>From artwork to campaign</h2>
 </div></div>

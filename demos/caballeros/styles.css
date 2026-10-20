@@ -1,0 +1,437 @@
+@font-face{font-family:Caballeros;src:url('./assets/crayon-invitation.woff') format('woff');font-weight:400;font-display:swap}
+:root{font-family:'Avenir Next',Avenir,'Segoe UI',Arial,sans-serif;color:#171716;background:#f4ecde;font-synthesis:none;font-weight:400;--paper:#f4ecde;--ink:#171716;--muted:#68665f;--carmine:#bd3c20;--line:#9b978e}
+*{box-sizing:border-box}body{margin:0;min-width:320px;min-height:100vh;-webkit-font-smoothing:antialiased}button,input,textarea{font:inherit}button,a,input,textarea{-webkit-tap-highlight-color:transparent}button{cursor:pointer}button:focus-visible,a:focus-visible{outline:2px solid #2877b8;outline-offset:5px}button{color:inherit}h1,h2,h3,p{margin:0}h2:focus{outline:none}.invitation{max-width:580px;min-height:100svh;margin:auto;padding:18px 28px 28px;text-align:center;display:flex;flex-direction:column}.prototype-label{font-size:10px;letter-spacing:.06em;color:var(--muted);margin-bottom:25px}.edition{text-transform:uppercase;letter-spacing:.31em;font-size:11px;line-height:1.5;margin-bottom:20px}.invitation-header h1{font-family:Caballeros,cursive;color:var(--carmine);font-weight:400;font-size:57px;line-height:1.02;letter-spacing:-.025em}.envelope{object-fit:contain;width:94px;height:94px;display:block;margin:12px auto 8px}.intro{font-size:16px;line-height:1.45;margin:3px 0 26px}.deadline{font-size:13px;color:var(--carmine);margin:12px 0}.sections{display:flex;gap:8px;justify-content:space-between;align-items:stretch;margin:3px 0 34px}.sections button{border:0;background:transparent;padding:10px 0 9px;position:relative;min-height:44px;font-size:12px;color:var(--muted);white-space:nowrap}.sections button[aria-current]{color:var(--ink)}.sections button[aria-current]:after{content:'';position:absolute;left:4px;right:4px;bottom:0;border-bottom:2px solid var(--carmine)}.question{width:100%;margin:auto 0}.eyebrow{font-size:9px;letter-spacing:.13em;line-height:1.5;color:var(--muted);margin:0 0 13px}.question h2,.review h2,.finished h2{font-size:25px;line-height:1.25;font-weight:400;letter-spacing:-.025em;text-wrap:balance}.hint{font-size:14px;line-height:1.55;margin:12px auto 22px;max-width:420px;text-wrap:pretty}.answer-area input[type=text],textarea{width:100%;display:block;text-align:left;color:var(--ink);background:#fcfaf64d;border:1px solid var(--line);border-radius:4px;font-size:16px;line-height:1.5;padding:13px 14px;min-height:49px}.answer-area input::placeholder{color:#76736d}.answer-area input:focus,textarea:focus{outline:2px solid #2877b8;outline-offset:3px;background:#fcfaf6}textarea{min-height:130px;resize:vertical}input[aria-invalid=true],textarea[aria-invalid=true]{border-color:var(--carmine)}.actions{display:flex;flex-direction:column;align-items:center;gap:8px;margin-top:26px}.primary{display:inline-flex;justify-content:center;align-items:center;min-width:155px;min-height:47px;border:1px solid var(--carmine);border-radius:4px;background:var(--carmine);color:#fffaf4;padding:11px 23px;font-size:16px;line-height:1.4}.primary:hover{background:#a6311a}.skip,.back,.text-action,.reset,.edit{background:transparent;border:0;padding:10px;min-height:44px;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:4px;font-size:13px}.skip{color:#514f49}.back{color:var(--muted);font-size:12px}.another{margin-top:6px;color:var(--muted);font-size:12px}.error{text-align:left;font-size:14px;color:#9e2b16;margin-top:12px}.choices{border:0;margin:0;padding:0;text-align:left;display:grid;gap:10px}.choice{display:flex;align-items:center;gap:13px;min-height:56px;padding:13px 15px;border:1px solid var(--line);border-radius:4px;background:#fcfaf633;cursor:pointer;font-size:15px;line-height:1.4}.choice.selected{border-color:var(--carmine);background:#bd3c2008}.choice:has(input:focus-visible){outline:2px solid #2877b8;outline-offset:3px}.choice input{accent-color:var(--carmine);width:19px;height:19px;margin:0;flex-shrink:0}.privacy-note,.preview-hint{font-size:11px;color:var(--muted);line-height:1.5;margin-top:14px}footer{margin-top:auto;padding-top:40px}footer img{width:90px;height:auto;display:block;margin:0 auto 8px}footer p{font-size:11px;color:var(--muted);line-height:1.5}.draft-status{font-size:10px;margin-top:13px}.reset{font-size:10px;color:var(--muted);padding:7px;min-height:32px}.compact .prototype-label{margin-bottom:17px}.compact .edition{margin-bottom:13px}.compact .invitation-header h1{font-size:36px;line-height:1.05}.compact .title-break{display:none}.compact .envelope{width:58px;height:58px;margin:8px auto 9px}.compact .sections{margin-bottom:35px}.compact .question{margin-top:0;margin-bottom:auto}.compact footer{padding-top:38px}.resume{font-size:12px;line-height:1.5;border-bottom:1px solid #d4cbbb;padding:0 0 18px;margin:-10px 0 24px}.resume button{border:0;background:none;text-decoration:underline;color:var(--carmine);padding:8px;min-height:36px}.resume small{display:block;color:var(--muted);font-size:10px}.review-group{text-align:left;margin-top:25px}.review-group h3{font-family:Caballeros,cursive;font-size:28px;color:var(--carmine);font-weight:400;margin-bottom:10px}.review-row{display:flex;align-items:flex-start;justify-content:space-between;gap:10px;border-top:1px solid #d8d0c2;padding:14px 0}.review-label{font-size:12px;color:var(--muted);line-height:1.4}.review-answer{font-size:15px;line-height:1.5;white-space:pre-wrap;overflow-wrap:anywhere;margin-top:4px}.edit{padding:0 0 0 8px;font-size:11px;color:var(--carmine);flex-shrink:0}.review>.primary{margin-top:25px}.review>.back,.review>.text-action{display:block;margin:auto}.private-note{font-size:13px;text-align:left;color:var(--carmine);line-height:1.6;margin-top:16px}.finished{margin:auto 0;padding:26px 0}.finished>p:not(.eyebrow){font-size:15px;line-height:1.6;margin:20px 0 26px}.finished .text-action{display:block;margin:12px auto}.confirm{background:var(--paper);color:var(--ink);max-width:390px;width:calc(100% - 40px);padding:30px 24px;border:0;border-radius:4px;text-align:center}.confirm::backdrop{background:#17171666}.confirm h2{font-size:25px;font-weight:400}.confirm p{font-size:14px;line-height:1.6;margin:15px 0 25px}.confirm .text-action{display:block;margin:12px auto 0}.not-found{justify-content:center;gap:25px}.not-found h1{font-size:28px;font-weight:400}.not-found a{color:var(--carmine)}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+@media(min-width:700px){.invitation{max-width:560px;padding:24px 38px 30px}.prototype-label{margin-bottom:28px}.edition{margin-bottom:22px}.invitation-header h1{font-size:64px}.envelope{width:110px;height:110px;margin:15px auto}.intro{font-size:18px;margin-bottom:25px}.sections{margin-bottom:35px;gap:30px}.sections button{font-size:14px}.question h2,.review h2,.finished h2{font-size:30px}.hint{font-size:15px}.compact .invitation-header h1{font-size:42px}.compact .envelope{width:65px;height:65px}.question{margin-top:0}footer{padding-top:45px}}
+@media(max-height:740px){.invitation{padding-top:12px}.prototype-label{margin-bottom:15px}.edition{margin-bottom:12px}.invitation-header h1{font-size:46px}.envelope{width:70px;height:70px;margin:7px auto}.intro{margin-bottom:16px}.sections{margin-bottom:24px}.question h2{font-size:23px}.hint{margin-bottom:18px}.actions{margin-top:20px}footer{padding-top:30px}}
+@media(prefers-reduced-motion:no-preference){.primary,.choice,input,textarea{transition:background-color .12s,border-color .12s}}
+@media(max-width:699px){.prototype-label{margin-bottom:12px}.edition{margin-bottom:12px}.invitation-header h1{font-size:50px}.envelope{width:84px;height:84px}.intro{margin-bottom:18px}.sections{margin-bottom:24px}footer{padding-top:28px}.draft-status{margin-top:6px}}
+/* Stable question slots: the field and navigation do not move with copy length. */
+.steady-form .prototype-label{margin-bottom:12px}
+.steady-form .edition{margin-bottom:12px}
+.steady-form .invitation-header h1{font-size:38px;line-height:1.05}
+.steady-form .envelope{width:62px;height:62px;margin:8px auto}
+.steady-form .intro{font-size:14px;line-height:1.4;margin:0 0 12px}
+.steady-form .sections{margin:0 0 24px}
+.question-stage{width:100%;margin:0;flex:1}
+.steady-form .question{margin:0}
+.steady-form .question .eyebrow{height:14px;margin-bottom:12px}
+.question-prompt{height:150px;display:flex;flex-direction:column;justify-content:flex-start}
+.question-prompt .hint{margin-bottom:0}
+.steady-form .answer-area{min-height:190px}
+.steady-form .answer-area textarea{height:150px;min-height:150px}
+.steady-form .actions{margin-top:18px;position:relative;gap:3px}
+.steady-form .error{margin:0;font-size:12px;position:relative;top:-14px;height:0;line-height:1.2}
+.steady-form footer{padding-top:26px}
+@media(min-width:700px){.steady-form .invitation-header h1{font-size:42px}.steady-form .envelope{width:66px;height:66px}.question-prompt{height:144px}.steady-form .intro{font-size:16px}}
+@media(max-width:359px){.question-prompt{height:195px}.steady-form .invitation-header h1{font-size:34px}.steady-form .question h2{font-size:23px}}
+@media(prefers-reduced-motion:reduce){.question-stage{scroll-behavior:auto}}
+.steady-form footer .resume{margin:14px 0 0;border:0;padding:0;font-size:11px}
+/* The invitation gets a landing; question screens keep one quiet, stable header. */
+.landing .prototype-label{margin-bottom:32px}
+.landing .invitation-header{margin-top:auto}
+.landing .invitation-header h1{font-size:62px;line-height:1.05}
+.landing .edition{margin-bottom:24px}
+.landing .envelope{width:132px;height:132px;margin:18px auto 6px}
+.landing .intro{font-size:18px;line-height:1.5;margin:0 0 28px}
+.landing .question-stage{flex:0;margin:0}
+.welcome>p:first-child{font-size:14px;line-height:1.65;margin-bottom:26px}
+.welcome .primary{min-width:154px}
+.welcome-sections{font-size:11px;color:var(--muted);margin:22px 0 12px}
+.welcome-note{font-size:11px;line-height:1.5;color:var(--muted)}
+.landing footer{margin-top:auto;padding-top:40px}
+.landing h1:focus{outline:none}
+.quiet-header .invitation-header h1{font-size:28px;line-height:1.1}
+.quiet-header .title-break{display:none}
+.quiet-header .edition{font-size:10px;letter-spacing:.24em;margin-bottom:10px}
+.quiet-header .invitation-header{margin-bottom:20px}
+@media(max-width:699px){.landing .invitation-header h1{font-size:54px}.landing .envelope{width:125px;height:125px}.landing .prototype-label{margin-bottom:26px}}
+@media(max-height:740px){.landing .invitation-header h1{font-size:46px}.landing .prototype-label{margin-bottom:16px}.landing .edition{margin-bottom:15px}.landing .envelope{width:96px;height:96px;margin:10px auto 5px}.landing .intro{font-size:16px;margin-bottom:18px}.welcome>p:first-child{font-size:13px;margin-bottom:20px}.landing footer{padding-top:26px}}
+/* Keep the answer anchor steady, but attach its actions to the actual control. */
+.steady-form .answer-area{min-height:0}
+.steady-form .actions{display:flex;flex-direction:row;justify-content:flex-start;align-items:center;flex-wrap:wrap;gap:8px 12px;margin-top:12px}
+.steady-form .actions .primary{min-width:112px;padding:10px 18px;font-size:15px}
+.steady-form .actions .back{margin-left:auto;padding-inline:4px}
+.steady-form .actions .skip{text-align:left;max-width:180px;padding-inline:4px;font-size:12px;line-height:1.4}
+.steady-form .another{display:block;text-align:left;padding-left:0}
+.steady-form .error{position:static;height:auto;margin:8px 0 0;font-size:13px;line-height:1.4}
+@media(max-width:359px){.steady-form .actions{gap:6px 10px}.steady-form .actions .skip{order:3;flex-basis:100%;max-width:none}.steady-form .actions .back{order:2}}
+.key-hint,.keyboard-help{display:none}
+@media(hover:hover) and (pointer:fine){
+  .steady-form .actions .primary{gap:15px}
+  .key-hint{display:inline-flex;align-items:center;justify-content:center;min-width:25px;min-height:25px;padding:2px 5px;border:1px solid #fffaf466;border-radius:3px;font-family:inherit;font-size:13px;font-weight:400;line-height:1;white-space:nowrap;background:#fffaf40a}
+  .keyboard-help{display:block;text-align:left;font-size:11px;line-height:1.5;color:var(--muted);margin-top:8px}
+}
+/* Allow unusually long questions or dish names to grow rather than overlap. */
+.question-prompt{height:auto;min-height:150px;padding-bottom:16px}
+.dish-context{font-size:16px;line-height:1.45;margin:0 0 10px;color:var(--carmine);overflow-wrap:anywhere}
+.steady-form .actions .back{min-width:44px}
+@media(min-width:700px){.question-prompt{height:auto;min-height:144px}}
+@media(max-width:699px){
+  .key-hint,.keyboard-help{display:none!important}
+  .question-prompt{height:auto;min-height:165px}
+  .hint{font-size:15px;line-height:1.5}
+  .steady-form .actions .primary{min-height:48px}
+  .steady-form .actions .skip,.steady-form .actions .back{min-height:44px}
+  .welcome>p:first-child{font-size:16px}
+  .invitation{padding-bottom:max(28px,env(safe-area-inset-bottom))}
+}
+@media(max-width:359px){.invitation{padding-inline:22px}.question-prompt{height:auto;min-height:195px}}
+/* Personalised questions remain one sentence, with room to wrap on phones. */
+.question-prompt{min-height:190px}
+@media(max-width:699px){.question-prompt{min-height:195px}}
+@media(max-width:359px){.question-prompt{min-height:235px}}
+@media(max-width:699px){
+  .steady-form .actions{display:grid;grid-template-columns:auto 1fr auto;column-gap:12px;row-gap:4px}
+  .steady-form .actions .primary{grid-column:1;grid-row:1}
+  .steady-form .actions .back{grid-column:3;grid-row:1;margin-left:0}
+  .steady-form .actions .skip{grid-column:1/-1;grid-row:2;max-width:none;justify-self:start;padding-left:0}
+}
+
+/* The invitation uses rendered paper motion rather than geometric SVG folds. */
+.invitation-film{width:190px;aspect-ratio:1;margin:14px auto 8px;display:grid;place-items:center;}
+.invitation-film video,.invitation-film img{display:block;width:100%;height:100%;object-fit:contain}
+.typed-line{display:block}.typed-letter{opacity:0}.typing .typed-letter{animation:type-letter 1ms linear forwards}
+.landing:not(.copy-ready) .intro,.landing:not(.copy-ready) .welcome>p,.landing:not(.copy-ready) footer{opacity:0;visibility:hidden}
+.landing.copy-ready .welcome>p{animation:invitation-copy 700ms 100ms ease both}
+.landing:not(.start-ready) .welcome .primary{opacity:0;visibility:hidden}
+.landing.start-ready .welcome .primary{animation:invitation-copy 500ms ease both}
+.landing.copy-ready footer{animation:invitation-copy 700ms 600ms ease both}
+.landing.copy-ready .welcome .primary:focus-visible{animation:none}
+@keyframes type-letter{to{opacity:1}}
+@keyframes invitation-copy{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:none}}
+@media(max-height:740px){.invitation-film{width:160px;margin:8px auto 5px}}
+@media(prefers-reduced-motion:reduce){.landing *{animation:none!important}.typed-letter{opacity:1}}
+
+/* The note arrives in the kitchen; confirmation never waits for the film. */
+.finish-page{max-width:560px;padding-top:24px}
+.finish-page .question-stage{flex:0;margin:auto 0}
+.finish-page .finished{padding:16px 0 0;margin:0}
+.finish-page .finished .edition{font-size:11px;margin:0 0 28px}
+.finish-page .finished h2{font-family:Caballeros,cursive;font-weight:400;color:var(--carmine);font-size:58px;line-height:1.06;letter-spacing:-.025em}
+.completion-film{width:340px;max-width:100%;aspect-ratio:1;margin:8px auto 0}
+.completion-film video,.completion-film img{display:block;width:100%;height:100%;object-fit:contain}
+.finish-page .finished .finish-thanks{font-size:15px;line-height:1.7;margin:0 auto 18px;max-width:340px;text-wrap:balance}
+.finish-page .finished .finish-preview{font-size:11px;color:var(--muted);line-height:1.5;margin:0}
+.finish-actions{display:flex;justify-content:center;gap:12px;margin-top:7px}
+.finish-actions .text-action{font-size:11px;color:var(--muted)}
+.finish-page footer{margin-top:auto;padding-top:30px}
+@media(max-width:699px){.finish-page .finished h2{font-size:52px}.completion-film{width:320px}}
+@media(max-height:740px){.finish-page{padding-top:12px}.finish-page .finished .edition{margin-bottom:15px}.finish-page .finished h2{font-size:44px}.completion-film{width:260px}.finish-page footer{padding-top:20px}}
+.replay-finish{font-size:11px;color:var(--muted);display:block;margin:-18px auto 4px;min-height:32px}
+.dietary-choices{grid-template-columns:1fr 1fr;gap:8px}
+.dietary-choices .choice{min-height:49px;padding:10px;font-size:14px;gap:9px}
+.dietary-choices .wide-choice{grid-column:1/-1}
+.dietary-other{margin-top:18px;text-align:left}
+.dietary-other label{display:block;font-size:14px;line-height:1.5;margin-bottom:8px}
+.steady-form .dietary-question .error{position:static;height:auto;margin:12px 0 0}
+.finish-page .finish-actions .text-action{margin:0}
+.response-privacy{font-size:13px;line-height:1.6;text-align:left;margin:24px 0 12px;color:var(--muted)}
+.submission-trap{position:absolute;left:-10000px;width:1px;height:1px;overflow:hidden}
+.submission-error{color:var(--carmine);font-size:14px;line-height:1.5;text-align:left;margin:16px 0}
+button:disabled{cursor:wait;opacity:.6}
+
+/* A larger opening composition, with Start available throughout. */
+.landing{max-width:100%;padding-top:24px;overflow-x:clip}
+.landing .invitation-header{width:100%;margin-top:auto;display:flex;flex-direction:column;align-items:center}
+.landing .invitation-film{order:2;width:clamp(240px,36svh,380px);max-width:85vw;margin:0 auto;transform-origin:center;animation:paper-stage-settle 10.6s cubic-bezier(.2,.65,.3,1) both}
+.landing .invitation-header h1{order:1;font-size:clamp(46px,7svh,64px);margin:8px 0 22px}
+.landing .edition{order:0;margin-bottom:0}
+.landing .deadline{order:3}
+.landing .welcome{max-width:440px;margin:auto}
+.landing .welcome>p:first-child{font-size:15px;margin-bottom:20px;min-height:50px}
+.landing footer{padding-top:26px}
+.dispatch-note{font-family:Caballeros,cursive;font-size:27px!important;line-height:1.15!important;color:var(--carmine);margin:15px 0 0!important;overflow-wrap:anywhere;animation:invitation-copy 500ms ease both}
+.dispatch-note small{display:block;font:11px Avenir,sans-serif;color:var(--muted);margin-top:7px}
+@keyframes paper-stage-settle{0%,38%{transform:scale(1.25) translateY(12px)}80%,100%{transform:scale(1) translateY(0)}}
+@media(max-width:699px){.landing{padding-top:20px}.landing .invitation-film{width:min(34svh,300px)}.landing .invitation-header h1{margin-bottom:18px}}
+@media(max-height:700px){.landing .invitation-film{width:clamp(180px,30svh,250px)}.landing .invitation-header h1{font-size:42px;margin:4px 0 14px}.landing footer{padding-top:20px}.landing .welcome>p:first-child{margin-bottom:14px}}
+@media(prefers-reduced-motion:reduce){.dispatch-note,.landing .invitation-film{animation:none!important}}
+.finish-page .completion-film{width:300px}
+@media(max-width:699px){.finish-page .completion-film{width:280px}}
+
+/* Keep the opening illustration intimate. */
+.landing .invitation-film{width:210px;max-width:70vw;animation:none}
+@media(max-width:699px){.landing .invitation-film{width:190px}}
+@media(max-height:700px){.landing .invitation-film{width:170px}}
+
+.landing .welcome .welcome-timing{font-size:12px;line-height:1.6;color:var(--muted);margin:12px 0 0;min-height:0}
+.landing:not(.start-ready) .welcome .welcome-timing{opacity:0;visibility:hidden;animation:none}
+.landing.start-ready .welcome .welcome-timing{animation:invitation-copy 600ms 150ms ease both}
+
+
+.question-prompt{position:relative}
+
+.voice-story {text-align:left;margin:0 0 1.5rem;}
+.voice-story p {font-size:1rem;line-height:1.5;}
+.voice-player{display:grid;grid-template-columns:50px minmax(0,1fr);column-gap:14px;align-items:center;text-align:left;margin:0 0 18px;padding:4px 0}
+.voice-player audio{display:none}
+.voice-play{display:grid;place-items:center;width:50px;height:50px;padding:0;border:0;border-radius:47% 52% 46% 51%;background:var(--carmine);color:#fffaf4;box-shadow:inset 0 0 0 2px #f4ecde22}
+.voice-play:hover{background:#a6311a}.voice-play svg{fill:currentColor}
+.voice-player-detail{min-width:0}
+.voice-player-caption{display:flex;align-items:baseline;justify-content:space-between;gap:8px;font-size:12px;line-height:1.4}
+.voice-player-time{font-size:10px;color:var(--muted);font-variant-numeric:tabular-nums;white-space:nowrap}
+.voice-seek{position:relative;height:44px;margin-top:0}
+.voice-rail{position:absolute;inset:13px 0;pointer-events:none;color:#2877b8}
+.voice-rail svg{display:block;width:100%;height:18px;fill:none;stroke:currentColor;stroke-width:2.4;stroke-linecap:round;opacity:.6}
+.voice-rail svg path+path{stroke-width:1;stroke-dasharray:3 1 7 2;opacity:.65}
+.voice-rail-played{color:var(--carmine)}.voice-rail-played svg{opacity:.95}
+.voice-player input[type=range]{appearance:none;-webkit-appearance:none;position:absolute;inset:0;display:block;width:100%;height:44px;min-height:44px;margin:0;padding:0;border:0;border-radius:0;background:transparent;cursor:pointer;touch-action:pan-y}
+.voice-player input[type=range]:focus-visible{outline:2px solid #2877b8;outline-offset:2px;background:transparent}
+.voice-player input[type=range]::-webkit-slider-runnable-track{height:4px;background:transparent}
+.voice-player input[type=range]::-webkit-slider-thumb{appearance:none;-webkit-appearance:none;width:11px;height:13px;margin-top:-4.5px;border:1px solid var(--paper);border-radius:45% 52% 48% 57%;background:var(--carmine)}
+.voice-player input[type=range]::-moz-range-track{height:4px;background:transparent}
+.voice-player input[type=range]::-moz-range-thumb{width:10px;height:12px;border:1px solid var(--paper);border-radius:45% 52% 48% 57%;background:var(--carmine)}
+.voice-player input[type=range]:disabled{cursor:default;opacity:.5}
+.voice-story .voice-player-error{grid-column:1/-1;font-size:12px;line-height:1.5;color:var(--carmine);margin-top:10px}
+@media(max-width:359px){.voice-player{grid-template-columns:46px minmax(0,1fr);gap:10px}.voice-play{width:46px;height:46px}.voice-player-caption{flex-wrap:wrap;gap:2px 8px}}
+.voice-story > label {display:block;margin-top:1rem;font-size:.95rem;}
+.voice-permission {border:0;padding:0;margin:1.3rem 0;}
+.voice-permission legend {margin-bottom:.8rem;}
+.voice-permission label {display:flex;align-items:center;gap:.65rem;min-height:48px;}
+.voice-permission input {width:20px;height:20px;accent-color:#2877B8;flex:none;}
+.voice-capture{border:1px solid var(--line);border-radius:4px;padding:24px 20px;text-align:center;background:#fcfaf633}
+.voice-capture .record-action{gap:10px;min-height:48px;font-size:15px}
+.voice-capture .record-limit{font-size:12px;color:var(--muted);margin-top:12px}
+.voice-capture .voice-privacy,.voice-capture .voice-status{font-size:12px;line-height:1.5;color:var(--muted);margin:14px auto 0;max-width:330px}
+.voice-story .write-instead{display:block;margin:8px auto 0}
+.voice-story .voice-retention{font-size:11px;line-height:1.5;color:var(--muted);margin-top:12px}
+.record-stop{width:12px;height:12px;background:currentColor;border-radius:2px}
+.voice-capture.is-recording{border-color:var(--carmine)}
+
+.recording-focus{position:fixed;inset:0;width:100%;max-width:none;height:100%;max-height:none;margin:0;padding:max(24px,env(safe-area-inset-top)) max(28px,env(safe-area-inset-right)) max(24px,env(safe-area-inset-bottom)) max(28px,env(safe-area-inset-left));border:0;background:var(--paper);color:var(--ink);overflow:auto}
+.recording-focus::backdrop{background:var(--paper)}
+.recording-focus-content{min-height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:48px;max-width:560px;margin:auto}
+.recording-waveform{display:block;width:100%;height:160px}
+.recording-focus-stop{gap:12px;min-height:52px}
+.recording-focus-invitation{margin:0;font-size:24px;font-weight:400;text-align:center}
+.recording-focus-signal{position:relative;width:100%}
+.recording-focus-time{position:absolute;bottom:100%;left:0;right:0;margin:0 0 12px;text-align:center;font-size:14px;font-variant-numeric:tabular-nums;color:var(--ink);opacity:0;transition:opacity .6s ease}
+.recording-focus-time span{opacity:.6}
+.recording-focus-time.is-visible{opacity:1}
+@media(prefers-reduced-motion:reduce){.recording-focus-time{transition:none}}
+@media(max-width:699px){.recording-waveform{height:140px}.recording-focus-content{gap:36px}}
+
+/* On phones, keep the question, answer and actions together without a fixed spacer. */
+@media(max-width:699px){
+  .steady-form{padding-top:14px}
+  .steady-form .invitation-header{margin-bottom:10px}
+  .steady-form .edition{margin-bottom:7px}
+  .steady-form .sections{margin-bottom:18px}
+  .steady-form .question-prompt{min-height:0;padding-bottom:18px}
+  .steady-form .question-prompt .hint{margin-top:10px}
+  .steady-form .answer-area textarea{height:112px;min-height:112px}
+  .steady-form footer{padding-top:18px}
+  .steady-form footer img{width:72px;margin-bottom:5px}
+  .steady-form .draft-status{margin-top:7px}
+  .steady-form .voice-capture{padding:18px 16px}
+}
+@media(max-width:699px){
+  .steady-form h2{scroll-margin-block-start:max(20px,env(safe-area-inset-top))}
+}
+
+.question-inspiration{text-align:left;margin:0 0 14px;font-size:13px;line-height:1.6;color:var(--muted)}
+.question-inspiration summary{display:list-item;width:fit-content;cursor:pointer;color:var(--blue,#2b637d);padding:10px 0;min-height:44px;text-decoration:underline;text-underline-offset:4px}
+.question-inspiration summary:focus-visible{outline:2px solid #2877b8;outline-offset:4px;border-radius:2px}
+.question-inspiration p{padding:8px 14px 12px;border-left:2px solid #2b637d;margin:0 0 10px;max-width:100%;text-wrap:pretty}
+
+.name-sharing{display:flex;align-items:flex-start;gap:12px;text-align:left;font-size:14px;line-height:1.5;margin-top:20px;padding:8px 0;cursor:pointer}
+.name-sharing input{width:20px;height:20px;flex:none;margin:2px 0 0;accent-color:var(--carmine)}
+.name-sharing input:focus-visible{outline:2px solid #2877b8;outline-offset:4px}
+.name-sharing small{display:block;font-size:12px;color:var(--muted);line-height:1.5;margin-top:7px}
+.name-sharing-review{margin-top:8px}
+.measurement-note{max-width:40ch;margin:16px auto;font-size:12px;line-height:1.6;color:var(--muted)}.measurement-note .text-action{display:inline;padding:0;margin:0;min-height:32px;font-size:inherit;text-decoration:underline}.review-contribution{font-size:22px;margin:24px 0}.voice-capture .text-action.record-action svg{display:none}
+.voice-secondary-actions{display:flex;justify-content:center;gap:24px;flex-wrap:wrap;margin-top:12px}.voice-secondary-actions .text-action{font-size:13px;min-height:44px;margin:0;padding:8px 0}.voice-take-choice{text-align:left}.voice-take-choice h3{font-size:20px;font-weight:400;margin:0 0 8px;text-align:center}.voice-take-choice>p{font-size:13px;color:var(--muted);text-align:center}.voice-take-choice section{padding:16px 0;border-top:1px solid var(--line)}.voice-take-choice section:last-child{padding-bottom:0}.voice-take-choice .secondary{display:block;background:none;border:1px solid var(--line);padding:10px 16px;min-height:44px;margin:12px auto 0;color:var(--ink);border-radius:4px;font:inherit;font-size:14px}
+
+/* Quiet questions: one task, with help close to the prompt. */
+.steady-form .question-prompt{min-height:132px;padding-bottom:24px}
+.steady-form .story-question .question-prompt{min-height:0;padding-bottom:20px}
+.steady-form .question-inspiration{margin:8px 0 0;text-align:center}
+.steady-form .question-inspiration summary{margin-inline:auto;font-size:12px}
+.steady-form .question-inspiration p{text-align:left;margin-top:4px}
+.steady-form .voice-capture{border:0;padding:12px 0 4px;background:transparent}
+.steady-form .voice-story{margin-bottom:16px}
+.steady-form .voice-capture .voice-privacy{margin-top:12px}
+.voice-ready{color:var(--blue,#2b637d);margin-bottom:12px;text-align:left}
+.steady-form .sections button{font-size:12px;color:var(--muted)}
+.steady-form .sections button[aria-current]{color:var(--ink)}
+.steady-form footer img{width:64px}
+.privacy-draft{margin:10px auto 0;font-size:11px;color:var(--muted);max-width:40ch}
+.privacy-draft summary{cursor:pointer;min-height:44px;display:list-item;list-style-position:inside;padding:14px 0}
+.privacy-draft .measurement-note{margin:0 auto 8px}
+.privacy-draft summary:focus-visible{outline:2px solid #2877b8;outline-offset:3px}
+.recording-focus-limit{font-size:13px;color:var(--muted);text-align:center;margin-top:12px}
+@media(max-width:699px){.steady-form .question-prompt{min-height:0;padding-bottom:20px}.steady-form .sections button{font-size:11px}.steady-form footer{padding-top:24px}}
+@media(prefers-reduced-motion:no-preference){
+  .primary,.secondary,.voice-play{transition:background-color 180ms ease,transform 180ms ease}
+  .primary:active,.secondary:active,.voice-play:active{transform:translateY(1px)}
+  .choice{transition:background-color 220ms ease,border-color 220ms ease,box-shadow 220ms ease}
+  .choice.selected{box-shadow:inset 3px 0 var(--carmine)}
+  .choice input:checked{animation:quiet-check 220ms ease-out}
+  .question-inspiration[open] p,.privacy-draft[open] .measurement-note,.voice-ready,.voice-player,.dietary-other{animation:quiet-arrive 220ms ease-out both}
+  .recording-focus-content{animation:quiet-arrive 260ms ease-out both}
+  .sections button::after{transition:width 220ms ease,background-color 220ms ease}
+  .draft-status{transition:color 200ms ease}
+}
+@keyframes quiet-arrive{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:translateY(0)}}
+@keyframes quiet-check{from{transform:scale(.9)}to{transform:scale(1)}}
+.steady-form .actions.without-continue{display:flex;flex-direction:row;justify-content:space-between;margin-top:14px}
+.steady-form .actions.without-continue .skip{order:0;flex-basis:auto}
+.steady-form .actions.without-continue .back{order:1}
+.steady-form .voice-story.is-writing .voice-capture:not(:has(.voice-player)) .record-action{background:transparent;color:var(--carmine);border-color:transparent;text-decoration:underline;text-underline-offset:4px;font-size:13px;padding:8px;min-height:44px}
+.steady-form .voice-story.is-writing .voice-capture:not(:has(.voice-player)) .voice-privacy{display:none}
+@media(prefers-reduced-motion:no-preference){.draft-status{animation:quiet-arrive 220ms ease-out both}.sections button[aria-current]::after{animation:quiet-arrive 220ms ease-out both}}
+
+/* An invitation becomes a picture book, paced entirely by the guest. */
+.landing.with-storybook{max-width:600px;padding-top:22px}
+.with-storybook .invitation-film{width:180px;margin:12px auto 20px}
+.welcome-story-intro{font-size:16px;line-height:1.6;margin:0 auto 24px;max-width:32ch}
+.landing.with-storybook:not(.copy-ready) .welcome-story-intro{visibility:hidden}
+.landing.with-storybook.copy-ready .welcome-story-intro{animation:quiet-arrive 600ms ease both}
+.landing.reading-story{max-width:1180px;padding-top:20px}
+.reading-story .invitation-header h1{font-size:40px}
+.reading-story .edition{margin-bottom:12px}
+.reading-story .question-stage{flex:0}
+.reading-story .welcome{width:100%;max-width:none}
+.host-storybook{width:100%;text-align:center}
+.storybook-top{display:flex;justify-content:space-between;align-items:center;max-width:1000px;margin:12px auto 0}
+.storybook-position{font-size:11px;color:var(--muted);letter-spacing:.12em}
+.storybook-top .text-action{font-size:12px;color:var(--muted)}
+.storybook-page{display:grid;grid-template-columns:1fr;align-items:center;touch-action:pan-y}
+.storybook-page picture{display:block;width:100%;min-width:0}
+.storybook-page img{display:block;width:100%;height:auto;aspect-ratio:1;object-fit:contain}
+.storybook-copy{max-width:440px;margin:0 auto;text-align:center;padding:8px 0 0}
+.storybook-copy h2{font-family:Caballeros,cursive;color:var(--carmine);font-size:30px;line-height:1.2;font-weight:400;margin:0 0 14px}
+.storybook-copy p{font-size:16px;line-height:1.6;text-wrap:pretty}
+.storybook-copy h2:focus{outline:none}
+.storybook-actions{display:flex;align-items:center;justify-content:space-between;gap:14px;max-width:540px;margin:24px auto 0}
+.storybook-actions .text-action{min-width:48px;padding-inline:0}
+.storybook-actions .text-action:disabled{visibility:hidden}
+.storybook-actions .primary{min-width:90px;font-size:15px;padding:11px 18px}
+.storybook-dots{display:flex;gap:8px;align-items:center}
+.storybook-dots span{display:block;width:6px;height:6px;border-radius:50%;background:#2877b855}
+.storybook-dots .current{background:var(--carmine)}
+.reading-story footer{padding-top:28px}
+.reading-story footer img{width:64px}
+@media(min-width:800px){
+ .storybook-page{grid-template-columns:minmax(0,1.6fr) minmax(260px,1fr);gap:36px;min-height:410px}
+ .storybook-page img{aspect-ratio:3/2}
+ .storybook-copy{text-align:left;padding:20px 20px 20px 0}
+ .storybook-copy h2{font-size:36px}
+ .storybook-actions{margin-top:12px}
+}
+@media(max-width:799px){
+ .landing.reading-story{padding:14px 22px 26px}
+ .reading-story .invitation-header h1{font-size:32px}
+ .reading-story .edition{font-size:10px;margin-bottom:8px}
+ .storybook-top{margin-top:6px}
+ .storybook-page img{max-height:340px}
+ .storybook-copy{padding-top:8px}
+ .storybook-actions{margin-top:20px}
+}
+@media(prefers-reduced-motion:reduce){.landing.with-storybook.copy-ready .welcome-story-intro{animation:none}}
+.reading-story .title-break{display:none}
+.storybook-page img{mask-image:linear-gradient(to right,transparent,#000 4%,#000 96%,transparent),linear-gradient(to bottom,transparent,#000 4%,#000 96%,transparent);mask-composite:intersect}
+.reading-story .welcome .primary{animation:none}
+.landing.reading-story.start-ready .welcome .primary{animation:none}
+
+/* The guest's finished contribution reads as one note, with explicit care and permissions. */
+.review-note{max-width:560px;margin:0 auto}
+.review-note #review-title{font-family:Caballeros,cursive;font-size:40px;color:var(--carmine);font-weight:400;overflow-wrap:anywhere}
+.review-note>.hint{font-size:14px;margin-bottom:28px}
+.review-note-identity{display:flex;justify-content:space-between;align-items:baseline;gap:16px;text-align:left;font-size:14px;line-height:1.5}
+.review-note .name-sharing-review{text-align:left;font-size:12px;margin:8px 0 24px}
+.review-note-dish{display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:20px 0;border-block:1px solid #d8d0c2;text-align:left}
+.review-note-dish h3{font-size:27px;font-weight:400;line-height:1.3;overflow-wrap:anywhere}
+.review-note .review-group{margin-top:28px}
+.review-note .review-group>h3{font:inherit;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:4px}
+.review-note .review-row{border-top:0;border-bottom:1px solid #d8d0c266;padding:14px 0}
+.review-note .review-row>div{min-width:0}
+.review-note .review-answer{font-size:16px;line-height:1.65}
+.review-note .review-permissions{border-block:1px solid #d8d0c2;padding:18px 0;margin-top:24px;text-align:left}
+.review-permissions>p{font-size:13px;line-height:1.6;color:var(--muted);margin-top:8px}
+.care-question .choices{gap:8px}
+.care-question .choice{background:transparent}
+.care-question .choice.selected{background:#bd3c2008}
+.finish-page .completion-sequence{width:300px;max-width:100%;height:300px;margin:8px auto 0}
+.finish-page .completion-sequence .completion-film{width:100%;height:100%;margin:0}
+@media(max-width:699px){.finish-page .completion-sequence{width:280px;height:280px}}
+.review-title-row{display:flex;justify-content:space-between;align-items:baseline;gap:16px;text-align:left}
+.review-note>.hint{text-align:left;margin:12px 0 16px;max-width:none}
+.review-send{position:sticky;bottom:0;z-index:5;margin-top:24px;padding:14px 0 max(14px,env(safe-area-inset-bottom));background:var(--paper);border-top:1px solid #d8d0c2;box-shadow:0 -12px 18px var(--paper)}
+.review-send-status{font-size:12px;line-height:1.5;color:var(--muted);margin-bottom:10px}
+.review-send-actions{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.review-send-actions .primary{flex:1;min-width:0}
+.review-send .submission-error{margin:0 0 10px;font-size:14px;line-height:1.5}
+.review-send button:disabled{cursor:wait;opacity:.65}
+.review-row,.review-permissions,.review-note-dish{scroll-margin-bottom:180px}
+.finish-page .finished .finish-preview{font-size:15px;line-height:1.65;margin:0 auto 18px;max-width:340px;text-wrap:pretty}
+
+/* The offered storybook pencil quietly carries into the first question. */
+.dish-title-line{display:flex;align-items:center;justify-content:center;gap:10px;margin:0 auto}
+.dish-title-line h2{min-width:0;margin:0}
+.dish-pencil{width:40px;height:40px;flex:0 0 40px;object-fit:contain;pointer-events:none}
+@media(max-width:699px){.dish-title-line{gap:8px}.dish-pencil{width:32px;height:32px;flex-basis:32px}}
+
+.landing .welcome .invitation-dates{font-size:12px;line-height:1.8;color:var(--muted);margin:-8px auto 22px}
+.invitation-dates span{display:block}
+.landing.copy-ready .welcome>.invitation-dates{animation:invitation-copy 600ms 100ms ease both}
+@media(prefers-reduced-motion:reduce){.landing.copy-ready .welcome>.invitation-dates{animation:none}}
+.storybook-actions .primary{gap:10px}
+
+/* Approved storybook pigment reveal and sentence-paced narration. */
+@property --pigment{syntax:'<percentage>';inherits:false;initial-value:220%}
+/* One uninterrupted curve avoids velocity changes at intermediate keyframes. */
+.host-storybook .illustration-ready picture{--pigment:220%;mask-image:radial-gradient(ellipse at 28% 42%,#000 max(0%,calc(var(--pigment) - 45%)),#0000 var(--pigment)),radial-gradient(ellipse at 69% 61%,#000 max(0%,calc(var(--pigment) - 55%)),#0000 var(--pigment)),radial-gradient(ellipse at 57% 27%,#000 max(0%,calc(var(--pigment) - 65%)),#0000 var(--pigment));mask-size:100% 100%;mask-repeat:no-repeat;animation:pigment-bloom 1600ms cubic-bezier(.25,.45,.35,1) backwards,pigment-arrive 400ms ease-out backwards}
+@keyframes pigment-bloom{from{--pigment:0%}to{--pigment:220%}}
+@keyframes pigment-arrive{from{opacity:0}to{opacity:1}}
+@media(prefers-reduced-motion:reduce){.host-storybook .illustration-ready picture{animation:none;mask-image:none;opacity:1}}
+/* Quiet five-word reading beats, without changing line wrapping or delaying navigation. */
+.host-storybook .narration-word{display:inline-block;animation:narration-appear 650ms cubic-bezier(.2,.6,.3,1) backwards}
+@keyframes narration-appear{from{opacity:0;transform:translateY(3px)}to{opacity:1;transform:none}}
+@media(prefers-reduced-motion:reduce){.host-storybook .narration-word{animation:none;transform:none;opacity:1}}
+@media(min-width:800px){
+ .host-storybook .narration-sentence{display:block}
+ .host-storybook .narration-sentence+.narration-sentence{margin-top:12px}
+}
+.host-storybook .storybook-page:not(.illustration-ready) picture,.host-storybook .storybook-page:not(.illustration-ready) .narration-word{opacity:0;animation:none}
+@media(prefers-reduced-motion:reduce){.host-storybook .storybook-page picture,.host-storybook .storybook-page .narration-word{opacity:1;animation:none;mask-image:none;transform:none}}
+
+/* Optional starting points, with no suggested foods or selectable answers. */
+.inspiration-collection{max-width:460px;margin:8px auto 14px;text-align:left}
+.question-inspiration .inspiration-collection p{border:0;padding:0;margin:0;text-align:left}
+.inspiration-collection ul{list-style:none;padding:0;margin:16px 0;display:grid;gap:15px}
+.inspiration-collection li{display:flex;align-items:center;gap:12px}
+.inspiration-collection img{width:40px;height:40px;flex:0 0 40px;object-fit:contain}
+.inspiration-collection strong{display:block;font-weight:500;color:var(--ink)}
+.inspiration-collection li span{display:block}
+.question-inspiration .inspiration-collection .inspiration-open-ended{font-size:12px}
+@media(prefers-reduced-motion:no-preference){.question-inspiration[open] .inspiration-collection{animation:quiet-arrive 220ms ease-out both}.question-inspiration[open] .inspiration-collection p{animation:none}}
+.voice-story .voice-invitation{font-size:14px;line-height:1.5;color:var(--ink);margin:0 0 14px;text-align:center}
+
+/* The revised narrow crayon face uses its own optical spacing. */
+.invitation-header h1,.finish-page .finished h2,.review-note #review-title,.dispatch-note,.storybook-copy h2{letter-spacing:0}
+.recording-signal-caption{min-height:42px;margin:8px auto 0;max-width:300px;font-size:13px;line-height:1.5;color:var(--muted);text-align:center}
+.recording-on-dot{display:inline-block;width:6px;height:6px;margin:0 7px 2px 0;border-radius:50%;background:var(--carmine)}
+.review-care{border-block:1px solid #d8d0c2;padding:15px 0}
+.review-care summary{cursor:pointer;min-height:44px;font-size:15px;line-height:1.5}
+.review-care summary span{display:block;font-size:12px;color:var(--muted);margin:4px 0 0 18px}
+.review-care .review-row:last-child{border-bottom:0}
+.finish-page .finished .finish-date{font-size:14px;line-height:1.6;color:var(--muted);margin:12px 0 20px}
+.finish-page .finished h2{overflow-wrap:anywhere}
+
+/* Isolated fictional portfolio flow. */
+.invitation{max-width:620px}.demo-stage{margin:auto 0;padding:36px 0}.demo-stage h2{font-size:27px;font-weight:400;line-height:1.3}.demo-stage .hint{margin:16px auto 24px}.demo-label{font-size:11px;line-height:1.6;color:#68665f;margin-bottom:24px}.demo-envelope{display:block;width:210px;height:210px;object-fit:contain;margin:12px auto}.demo-home h1{font-family:Caballeros,cursive;color:#bd3c20;font-size:68px;font-weight:400;line-height:1.08}.demo-actions{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:24px}.demo-field{display:block;text-align:left;margin-top:18px}.demo-field>span{display:block;font-size:13px;margin-bottom:8px}.demo-field input{width:100%;padding:13px;background:#fcfaf64d;border:1px solid #9b978e;border-radius:4px;font-size:16px}.demo-progress{font-size:11px;letter-spacing:.12em;color:#68665f;margin-bottom:22px}.demo-footer{padding-top:36px;margin-top:auto}.demo-footer img{width:90px}.demo-review{text-align:left}.demo-review dt{font-size:12px;color:#68665f;margin-top:20px}.demo-review dd{margin:6px 0 0;white-space:pre-wrap;overflow-wrap:anywhere;border-bottom:1px solid #d8d0c2;padding-bottom:16px}.demo-error{color:#9e2b16;margin-top:12px}.demo-reset{margin-top:12px}.demo-choice{display:flex;align-items:center;gap:12px;text-align:left;margin:12px 0;padding:16px;border:1px solid #9b978e;border-radius:4px}.demo-choice input{accent-color:#bd3c20}.demo-stage button{min-height:44px}@media(max-width:600px){.demo-home h1{font-size:57px}.demo-stage{padding:22px 0}.demo-envelope{width:180px;height:180px}}
+
+/* Portfolio navigation only; the supplied invitation styles stay unchanged. */
+.demo-navigation {
+  margin-bottom: 12px;
+}
+.demo-case-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 10px;
+  color: var(--muted);
+  font-size: 13px;
+  text-underline-offset: 4px;
+}

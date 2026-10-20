@@ -1,15 +1,74 @@
+
+
+
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="light" data-page-light="#1a1a1a" data-page-dark="#1a1a1a">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>
       404 not found |  Jaime Caballero - Design engineer. Design systems, frontend implementation and AI-assisted product building.</title>
     <meta name="description" content="Design engineer. Design systems, frontend implementation and AI-assisted product building.">
-    <meta name="theme-color" content="#1f1f1f">
+    <meta name="theme-color" content="#1a1a1a">
+    <style id="page-theme-canvas">html { background: #1a1a1a; color-scheme: light; } html[data-theme="dark"] { background: #1a1a1a; color-scheme: dark; }</style>
+    <script id="page-theme-bootstrap">/* Resolve this document's palette before styles/content can paint. No navigation interception. */
+(function () {
+  'use strict';
+  var root = document.documentElement;
+  var system = window.matchMedia ? window.matchMedia('(prefers-color-scheme: dark)') : null;
+  var preference = null;
+
+  function readPreference() {
+    try {
+      var stored = window.sessionStorage.getItem('theme');
+      return stored === 'true' ? 'light' : stored === 'false' ? 'dark' : null;
+    } catch (_) { return preference; }
+  }
+
+  function applyTheme() {
+    var theme = preference || (system && system.matches ? 'dark' : 'light');
+    var color = theme === 'dark' ? root.dataset.pageDark : root.dataset.pageLight;
+    root.dataset.theme = theme;
+    root.style.backgroundColor = color;
+    root.style.colorScheme = theme;
+    var meta = document.querySelector('meta[name="theme-color"]');
+    if (meta) meta.setAttribute('content', color);
+    if (document.body) document.body.classList.toggle('u-dark', theme === 'dark');
+    var toggle = document.getElementById('lightSwitch');
+    if (toggle) toggle.checked = theme === 'light';
+  }
+
+  window.loadTheme = function () {
+    preference = readPreference();
+    applyTheme();
+  };
+  window.switchTheme = function (toggle) {
+    preference = toggle.checked ? 'light' : 'dark';
+    try { window.sessionStorage.setItem('theme', String(toggle.checked)); } catch (_) { /* The current page still responds when storage is unavailable. */ }
+    if (document.body) document.body.classList.add('is-transitioning');
+    applyTheme();
+  };
+
+  window.loadTheme();
+  var navigationEntry = window.performance && window.performance.getEntriesByType && window.performance.getEntriesByType('navigation')[0];
+  if ((window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) ||
+      (navigationEntry && navigationEntry.type === 'back_forward') || window.location.hash) {
+    root.dataset.pageEntry = 'skip';
+  }
+  // Store settled content in the back/forward cache, without changing scroll or history.
+  window.addEventListener('pagehide', function () { root.dataset.pageEntry = 'skip'; });
+  window.addEventListener('pageshow', function (event) {
+    if (event.persisted) root.dataset.pageEntry = 'skip';
+    if (document.body) document.body.classList.remove('is-transitioning');
+    window.loadTheme();
+  });
+  document.addEventListener('DOMContentLoaded', window.loadTheme);
+  if (system && system.addEventListener) system.addEventListener('change', window.loadTheme);
+}());
+</script>
     
     <link rel="preload" href="/fonts/bricolage/BricolageGrotesque.ttf" as="font" type="font/ttf" crossorigin>
-    <link rel="stylesheet" href="/css/index.css?v=fd683c8ec2b8">
+    <link rel="stylesheet" href="/css/index.css?v=a6b15cf68ac1">
     <script src="/js/lazysizes.min.js"></script>
     <link rel="icon" href="/images/favicon.png"/>
     <link rel="apple-touch-icon-precomposed" href="/images/apple-touch-icon-precomposed.png">
@@ -32,59 +91,7 @@
     <link rel="dns-prefetch" href="https://res.cloudinary.com">
 
     <script>
-      /* Dark mode JS */
-
-      function getTheme() {
-        if (!window.matchMedia) 
-          return true;
-        else 
-          return window
-            .matchMedia('(prefers-color-scheme: light)')
-            .matches
-        }
-
-      function loadTheme() {
-        var currentTheme = sessionStorage.getItem('theme');
-        if (currentTheme === null) {
-          currentTheme = getTheme()
-          sessionStorage.setItem('theme', currentTheme)
-        }
-
-        var toggle = document.getElementById('lightSwitch');
-        if (!toggle) return;
-        toggle.checked = currentTheme == 'true';
-
-        if (!toggle.checked) 
-          document
-            .body
-            .classList
-            .add('u-dark')
-
-        setTimeout(function () {
-          document
-            .body
-            .classList
-            .add('is-transitioning')
-        }, 500)
-      }
-
-      function switchTheme(el) {
-        sessionStorage.setItem('theme', el.checked)
-
-        if (el.checked) 
-          document
-            .body
-            .classList
-            .remove('u-dark')
-        else 
-          document
-            .body
-            .classList
-            .add('u-dark')
-        }
-
       document.addEventListener("DOMContentLoaded", function () {
-        loadTheme();
         if ('IntersectionObserver' in window) {
           var observer = new IntersectionObserver(function (entries) {
             entries.forEach(function (entry) { if (!entry.isIntersecting) entry.target.pause(); });
@@ -97,6 +104,7 @@
     <link href="//fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,400;0,600;0,700;0,900;1,420&family=Space+Mono:wght@400&display=swap" rel="stylesheet">
   </head>
   <body >
+    <script>window.loadTheme();</script>
     <a class="skip-link" href="#main-content">Skip to content</a>
     <header class="o-header  u-dark">
   <div class="u-wrapper">

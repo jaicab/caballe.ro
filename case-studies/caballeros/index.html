@@ -1,15 +1,77 @@
+
+
+
+  
+  
+
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="light" data-page-light="#f0e3cf" data-page-dark="#3b211a">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>
       A dinner starts long before anyone sits down. |  Jaime Caballero - Design engineer. Design systems, frontend implementation and AI-assisted product building.</title>
     <meta name="description" content="Caballero’s, a supper-club identity and connected tools for inviting, cooking and making keepsakes.">
-    <meta name="theme-color" content="#1f1f1f">
+    <meta name="theme-color" content="#f0e3cf">
+    <style id="page-theme-canvas">html { background: #f0e3cf; color-scheme: light; } html[data-theme="dark"] { background: #3b211a; color-scheme: dark; }</style>
+    <script id="page-theme-bootstrap">/* Resolve this document's palette before styles/content can paint. No navigation interception. */
+(function () {
+  'use strict';
+  var root = document.documentElement;
+  var system = window.matchMedia ? window.matchMedia('(prefers-color-scheme: dark)') : null;
+  var preference = null;
+
+  function readPreference() {
+    try {
+      var stored = window.sessionStorage.getItem('theme');
+      return stored === 'true' ? 'light' : stored === 'false' ? 'dark' : null;
+    } catch (_) { return preference; }
+  }
+
+  function applyTheme() {
+    var theme = preference || (system && system.matches ? 'dark' : 'light');
+    var color = theme === 'dark' ? root.dataset.pageDark : root.dataset.pageLight;
+    root.dataset.theme = theme;
+    root.style.backgroundColor = color;
+    root.style.colorScheme = theme;
+    var meta = document.querySelector('meta[name="theme-color"]');
+    if (meta) meta.setAttribute('content', color);
+    if (document.body) document.body.classList.toggle('u-dark', theme === 'dark');
+    var toggle = document.getElementById('lightSwitch');
+    if (toggle) toggle.checked = theme === 'light';
+  }
+
+  window.loadTheme = function () {
+    preference = readPreference();
+    applyTheme();
+  };
+  window.switchTheme = function (toggle) {
+    preference = toggle.checked ? 'light' : 'dark';
+    try { window.sessionStorage.setItem('theme', String(toggle.checked)); } catch (_) { /* The current page still responds when storage is unavailable. */ }
+    if (document.body) document.body.classList.add('is-transitioning');
+    applyTheme();
+  };
+
+  window.loadTheme();
+  var navigationEntry = window.performance && window.performance.getEntriesByType && window.performance.getEntriesByType('navigation')[0];
+  if ((window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) ||
+      (navigationEntry && navigationEntry.type === 'back_forward') || window.location.hash) {
+    root.dataset.pageEntry = 'skip';
+  }
+  // Store settled content in the back/forward cache, without changing scroll or history.
+  window.addEventListener('pagehide', function () { root.dataset.pageEntry = 'skip'; });
+  window.addEventListener('pageshow', function (event) {
+    if (event.persisted) root.dataset.pageEntry = 'skip';
+    if (document.body) document.body.classList.remove('is-transitioning');
+    window.loadTheme();
+  });
+  document.addEventListener('DOMContentLoaded', window.loadTheme);
+  if (system && system.addEventListener) system.addEventListener('change', window.loadTheme);
+}());
+</script>
     
     <link rel="preload" href="/fonts/bricolage/BricolageGrotesque.ttf" as="font" type="font/ttf" crossorigin>
-    <link rel="stylesheet" href="/css/index.css?v=fd683c8ec2b8">
+    <link rel="stylesheet" href="/css/index.css?v=a6b15cf68ac1">
     <script src="/js/lazysizes.min.js"></script>
     <link rel="icon" href="/images/favicon.png"/>
     <link rel="apple-touch-icon-precomposed" href="/images/apple-touch-icon-precomposed.png">
@@ -32,59 +94,7 @@
     <link rel="dns-prefetch" href="https://res.cloudinary.com">
 
     <script>
-      /* Dark mode JS */
-
-      function getTheme() {
-        if (!window.matchMedia) 
-          return true;
-        else 
-          return window
-            .matchMedia('(prefers-color-scheme: light)')
-            .matches
-        }
-
-      function loadTheme() {
-        var currentTheme = sessionStorage.getItem('theme');
-        if (currentTheme === null) {
-          currentTheme = getTheme()
-          sessionStorage.setItem('theme', currentTheme)
-        }
-
-        var toggle = document.getElementById('lightSwitch');
-        if (!toggle) return;
-        toggle.checked = currentTheme == 'true';
-
-        if (!toggle.checked) 
-          document
-            .body
-            .classList
-            .add('u-dark')
-
-        setTimeout(function () {
-          document
-            .body
-            .classList
-            .add('is-transitioning')
-        }, 500)
-      }
-
-      function switchTheme(el) {
-        sessionStorage.setItem('theme', el.checked)
-
-        if (el.checked) 
-          document
-            .body
-            .classList
-            .remove('u-dark')
-        else 
-          document
-            .body
-            .classList
-            .add('u-dark')
-        }
-
       document.addEventListener("DOMContentLoaded", function () {
-        loadTheme();
         if ('IntersectionObserver' in window) {
           var observer = new IntersectionObserver(function (entries) {
             entries.forEach(function (entry) { if (!entry.isIntersecting) entry.target.pause(); });
@@ -97,6 +107,7 @@
     <link href="//fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,400;0,600;0,700;0,900;1,420&family=Space+Mono:wght@400&display=swap" rel="stylesheet">
   </head>
   <body class="tmpl-report"  style="--color-bg: #f0e3cf; --case-light: #f0e3cf; --case-dark: #3b211a; --case-ink: #45281e; --case-focus-light: #3b211a; --case-focus-dark: #f0e3cf;">
+    <script>window.loadTheme();</script>
     <a class="skip-link" href="#main-content">Skip to content</a>
     <header class="o-header  u-dark">
   <div class="u-wrapper">
@@ -157,6 +168,11 @@
 <img class="caballeros-wordmark" src="/images/case-studies/caballeros/wordmark.svg" width="519" height="253" alt="Caballero’s hand-drawn terracotta wordmark" />
 <p>I designed the identity, built a React invitation, and connected a recipe library to an editable print studio. The tools support my supper-club project, from inviting people to cooking and making keepsakes.</p>
 </div>
+<section id="invitation-demo" aria-labelledby="invitation-demo-title">
+<h2 id="invitation-demo-title">Take a seat at the imaginary table.</h2>
+<p>Try the invitation with a fictional dinner and sample guest. Accept or decline, add a food memory, and review your note. Nothing is sent or saved; reset or reload to start again.</p>
+<p><a class="text-link" href="/demos/caballeros/">Try the fictional invitation →</a></p>
+</section>
 </div></div><section class="case-evidence"><div class="u-wrapper">
 <figure class="caballeros-dinner"><a class="image-inspect" href="/images/case-studies/caballeros/dinner-table.jpg" data-image-viewer><img src="/images/case-studies/caballeros/dinner-table.jpg" width="1600" height="1066" alt="A Caballero’s dinner table in sunlight, set with printed menus, flowers, citrus and candles" loading="eager" /><span>Enlarge image +</span></a><figcaption>The experience the tools serve: a real Caballero’s table, with its menus and small details in place.</figcaption></figure>
 </div></section><div class="u-wrapper"><div class="o-article__content">
@@ -168,6 +184,7 @@
 </div>
 </div></section><div class="u-wrapper"><div class="o-article__content">
 </div></div><section class="case-journey" aria-labelledby="journey-caballeros"><div class="u-wrapper"><p class="eyebrow">The cook’s route</p><h2 id="journey-caballeros">Cook without losing your place.</h2><p class="journey-status">Working kitchen tools, tested in my kitchen.</p><ol class="journey-route" role="list" style="--journey-stops:4"><li><span class="journey-stop" aria-hidden="true">1</span><h3>Find a recipe</h3><p class="journey-question">What am I cooking?</p><p class="journey-decision">Search and filter the illustrated recipe library.</p><a class="text-link journey-evidence" href="/images/case-studies/caballeros/caballeros-library-desserts-2x.png" data-image-viewer aria-label="View the evidence: Find a recipe" data-caption="Find a recipe — Search and filter the illustrated recipe library.">View the evidence</a></li><li><span class="journey-stop" aria-hidden="true">2</span><h3>Follow the method</h3><p class="journey-question">What do I do next?</p><p class="journey-decision">Keep the current step readable, with progress and actions nearby.</p><a class="text-link journey-evidence" href="/images/case-studies/caballeros/caballeros-cook-tahini-2x.png" data-image-viewer aria-label="View the evidence: Follow the method" data-caption="Follow the method — Keep the current step readable, with progress and actions nearby.">View the evidence</a></li><li><span class="journey-stop" aria-hidden="true">3</span><h3>Check quantities</h3><p class="journey-question">How much do I need?</p><p class="journey-decision">Open the full recipe quantities without leaving the current step.</p><a class="text-link journey-evidence" href="/images/case-studies/caballeros/caballeros-ingredients-tahini-2x.png" data-image-viewer aria-label="View the evidence: Check quantities" data-caption="Check quantities — Open the full recipe quantities without leaving the current step.">View the evidence</a></li><li><span class="journey-stop" aria-hidden="true">4</span><h3>Get back to cooking</h3><p class="journey-question">Where was I?</p><p class="journey-decision">Close the ingredient sheet and return to the same place.</p><a class="text-link journey-evidence" href="/images/case-studies/caballeros/caballeros-cook-tahini-2x.png" data-image-viewer aria-label="View the evidence: Get back to cooking" data-caption="Get back to cooking — Close the ingredient sheet and return to the same place.">View the evidence</a></li></ol><p class="journey-note">Another route: turn the recipe into an editable menu or keepsake in Studio.</p></div></section><div class="u-wrapper"><div class="o-article__content">
+</div></div><section class="case-tiny-detail" aria-labelledby="tiny-detail-caballeros"><div class="u-wrapper"><div class="tiny-detail-layout"><div class="tiny-detail-copy"><p class="eyebrow">Tiny big detail</p><h2 id="tiny-detail-caballeros">One less measuring tool.</h2><p>Lemon juice shows millilitres and approximate grams, so you can measure it on the kitchen scales.</p></div><figure class="tiny-detail-media"><a class="tiny-detail-visual" href="/images/case-studies/caballeros/caballeros-ingredients-tahini-2x.png" data-image-viewer data-caption="Volume and weight together in the ingredient sheet." aria-label="View full screen: One less measuring tool."><span class="tiny-detail-crop" style="aspect-ratio:724/203;max-width:560px"><img src="/images/case-studies/caballeros/caballeros-ingredients-tahini-2x.png" width="780" height="1688" alt="Volume and weight together in the ingredient sheet." loading="lazy" style="width:107.73480662983425%;left:-3.867403314917127%;top:-639.4088669950739%"></span><span class="tiny-detail-source">View full screen</span></a><figcaption>Volume and weight together in the ingredient sheet.</figcaption></figure></div></div></section><div class="u-wrapper"><div class="o-article__content">
 <h2>Personality has a job to do.</h2>
 <p>The crayon identity makes a digital invitation feel personal. The kitchen needs a different kind of care: readable instructions, quantities within reach and a clear next action. The visual language connects them without making them behave the same way.</p>
 </div></div><section class="case-statement"><div class="u-wrapper"><p class="case-statement__label">02 / Cooking, without the clutter</p><p class="case-statement__text">Less hunting for ingredients. Less losing your place.</p></div></section><div class="u-wrapper"><div class="o-article__content">
