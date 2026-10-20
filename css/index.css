@@ -4472,3 +4472,126 @@ body.tmpl-home.u-dark, body.tmpl-system.u-dark {
     transform: none;
   }
 }
+/* A route through the product, linked to the original evidence. */
+.case-journey {
+  padding-block: 32px 40px;
+  margin-block: 24px 40px;
+  border-block: 1px solid currentColor;
+}
+
+.case-journey h2 {
+  font-family: var(--font-display);
+  font-size: clamp(28px, 3.2vw, 44px);
+  line-height: 1.1;
+  letter-spacing: -0.025em;
+  margin: 12px 0;
+}
+
+.journey-status, .journey-note {
+  font-size: 13px;
+  line-height: 1.6;
+  max-width: 75ch;
+}
+
+.journey-route {
+  list-style: none;
+  padding: 0;
+  margin: 28px 0 0;
+  display: grid;
+  grid-template-columns: repeat(var(--journey-stops), minmax(0, 1fr));
+  gap: 24px;
+}
+
+.journey-route li {
+  position: relative;
+  min-width: 0;
+}
+
+.journey-route li:not(:last-child)::before {
+  content: "";
+  position: absolute;
+  top: 17px;
+  left: 42px;
+  width: calc(100% - 22px);
+  border-top: 1px solid currentColor;
+  opacity: 0.4;
+}
+
+.journey-stop {
+  display: inline-grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border: 1px solid currentColor;
+  border-radius: 50%;
+  font-family: "Space Mono", monospace;
+  font-size: 13px;
+}
+
+.journey-route h3 {
+  font-family: var(--font-display);
+  font-size: 22px;
+  line-height: 1.2;
+  margin: 16px 0 10px;
+}
+
+.journey-question {
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.4;
+  margin: 0 0 10px;
+}
+
+.journey-decision {
+  font-size: 14px;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.journey-role {
+  font-family: "Space Mono", monospace;
+  font-size: 10px;
+  line-height: 1.5;
+  margin: 14px 0 -6px;
+}
+
+.journey-evidence {
+  font-size: 12px;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.journey-note {
+  margin-top: 24px;
+}
+
+@media (max-width: 739px) {
+  .journey-route {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .journey-route li {
+    padding-left: 52px;
+  }
+  .journey-stop {
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+  .journey-route li:not(:last-child)::before {
+    left: 17px;
+    top: 44px;
+    width: 0;
+    height: calc(100% - 28px);
+    border-top: 0;
+    border-left: 1px solid currentColor;
+  }
+  .journey-route h3 {
+    margin-top: 0;
+  }
+  .journey-role {
+    margin-top: 0;
+  }
+}
