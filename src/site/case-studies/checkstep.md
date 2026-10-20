@@ -48,6 +48,8 @@ Policies bring written guidance, thresholds, version history and insights togeth
 
 {% journey "checkstep" %}
 
+{% tinyDetail "checkstep" %}
+
 {% statement "01 / Policy workflow" %}Put the policy where decisions are made.{% endstatement %}
 
 {% screens %}

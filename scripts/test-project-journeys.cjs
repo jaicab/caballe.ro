@@ -13,4 +13,16 @@ const all=JSON.stringify(journeys);assert.doesNotMatch(all,/glassfiles\/|roast-c
 assert.match(journeys.wise.status,/rather than four successive screens/);assert(journeys.checkstep.steps.every(s=>s.role));assert.equal(journeys.wise.steps[2].image,'','Pending-refund explanation has no directly matching screen');assert.match(journeys.dotdot.status,/not implemented/);assert.match(journeys.caballeros.steps[2].decision,/full recipe quantities/);
 const config=fs.readFileSync('.eleventy.js','utf8');assert.match(config,/aria-label="View the evidence:/,'Link accessible name includes its visible label');
 const css=fs.readFileSync('src/site/css/index.css','utf8');assert.match(css,/grid-template-columns: 1fr/);assert.match(css,/\.journey-evidence/);
+// Component rules must beat the article's inherited ol/li/h2/link defaults.
+const route=css.match(/\.u-text \.journey-route\s*\{([^}]+)\}/);
+assert(route,'Journey route needs a scoped reset stronger than .u-text ol');
+assert.match(route[1],/padding: 0;/);assert.match(route[1],/margin: 28px 0 0;/);
+assert.match(css,/\.journey-route li\s*\{[^}]*margin: 0;/,'Step boxes must not inherit article list-item gutters');
+assert.match(css,/\.u-text \.case-journey h2\s*\{[^}]*margin: 12px 0;/,'Heading gap must beat .u-text .u-wrapper > h2');
+const evidence=css.match(/\.u-text \.journey-evidence\s*\{([^}]+)\}/);
+assert(evidence,'Evidence link styling must beat .u-text a');
+assert.match(evidence[1],/border-bottom: 0;/);assert.match(evidence[1],/text-decoration: underline;/);
+assert.match(evidence[1],/min-height: 44px;/,'Keep the evidence hit target after removing the detached border');
+assert.match(css,/a:focus-visible[\s\S]*?outline: 3px solid/,'Keep a visible keyboard focus ring');
+console.log('PASS journey alignment, compact heading gap, one text underline and accessible evidence hit target');
 console.log('PASS seven public journeys: evidence files, labels, ordered steps, role boundaries, current captures and no restricted media');

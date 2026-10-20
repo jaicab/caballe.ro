@@ -46,6 +46,8 @@ Producer, variety, processing, origin and flavour become useful buying informati
 
 {% journey "glass" %}
 
+{% tinyDetail "glass" %}
+
 {% statement "01 / Product experience" %}Enough to choose. More to discover.{% endstatement %}
 
 ## A repeatable structure across coffees

@@ -1,0 +1,114 @@
+{
+  "wise": {
+    "title": "One small plus sign.",
+    "text": "A plus sign makes the refund read as money coming back, not another payment.",
+    "image": "wise/refund.png",
+    "width": 1920,
+    "height": 1080,
+    "crop": [
+      515,
+      270,
+      375,
+      160
+    ],
+    "alt": "The refund amount in the original design comparison.",
+    "caption": "The refund amount in the original design comparison.",
+    "type": "image"
+  },
+  "checkstep": {
+    "title": "Shortcuts in plain sight.",
+    "text": "The shortcut sits beside each policy, so moderators can learn the keys while they work.",
+    "image": "checkstep/review.png",
+    "width": 1920,
+    "height": 1080,
+    "crop": [
+      1500,
+      265,
+      390,
+      625
+    ],
+    "alt": "Policy choices and their keyboard hints in the review screen.",
+    "caption": "Policy choices and their keyboard hints in the review screen.",
+    "type": "image"
+  },
+  "moteefe": {
+    "title": "Keep the trade-off visible.",
+    "text": "As the quantity changes, cost per item and total profit stay together, making the trade-off visible.",
+    "image": "moteefe/profit-calculator.mp4",
+    "width": 340,
+    "height": 460,
+    "crop": [
+      0,
+      0,
+      340,
+      460
+    ],
+    "alt": "The original profit-calculator component in use.",
+    "caption": "The original profit-calculator component in use.",
+    "type": "video"
+  },
+  "dotdot": {
+    "title": "Your colour, in either theme.",
+    "text": "The colour you choose adjusts to the theme, keeping your name readable on light and dark backgrounds.",
+    "image": "dotdot/make-color-readable.png",
+    "width": 434,
+    "height": 344,
+    "crop": [
+      0,
+      0,
+      434,
+      344
+    ],
+    "alt": "The colour-readability helper on dark and light backgrounds.",
+    "caption": "The colour-readability helper on dark and light backgrounds.",
+    "type": "image"
+  },
+  "carlos-caballero": {
+    "title": "Save the contact for later.",
+    "text": "A downloadable contact card lets you save Carlos’s details and get in touch when you’re ready.",
+    "image": "carlos-caballero/contact-mobile.png",
+    "width": 375,
+    "height": 2150,
+    "crop": [
+      35,
+      1055,
+      305,
+      160
+    ],
+    "alt": "WhatsApp and a downloadable contact card on mobile.",
+    "caption": "WhatsApp and a downloadable contact card on mobile.",
+    "type": "image"
+  },
+  "glass": {
+    "title": "An icon and a word.",
+    "text": "Each brew icon has a label, so choosing filter or espresso doesn’t depend on recognising the symbol.",
+    "image": "glass/product-detail.png",
+    "width": 1440,
+    "height": 1080,
+    "crop": [
+      795,
+      561,
+      255,
+      67
+    ],
+    "alt": "Brew choices on the public product page.",
+    "caption": "Brew choices on the public product page.",
+    "type": "image"
+  },
+  "caballeros": {
+    "title": "One less measuring tool.",
+    "text": "Lemon juice shows millilitres and approximate grams, so you can measure it on the kitchen scales.",
+    "image": "caballeros/caballeros-ingredients-tahini-2x.png",
+    "width": 780,
+    "height": 1688,
+    "crop": [
+      28,
+      1298,
+      724,
+      203
+    ],
+    "alt": "Volume and weight together in the ingredient sheet.",
+    "caption": "Volume and weight together in the ingredient sheet.",
+    "type": "image"
+  }
+}

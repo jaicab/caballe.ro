@@ -17,7 +17,7 @@
 }*/
 
 .u-h2 {
-  @include font-size(24px, $important: true);
+  @include font-size(24px, $important: false);
   font-weight: 700;
   margin: $global-spacing-unit * 2 0 $global-spacing-unit/2;
 
@@ -26,32 +26,32 @@
   }
 
   @include mq($from: tablet) {
-    @include font-size(33px, $important: true);
+    @include font-size(33px, $important: false);
     margin: $global-spacing-unit * 4 0 $global-spacing-unit/2;
 
     .u-wrapper > & {
       margin-top: $global-spacing-unit * 3;
     }
-    // @include font-size(42px, $important: true);
+    // @include font-size(42px, $important: false);
   }
 
   @include mq($from: desktop) {
-    // @include font-size(60px, $important: true);
+    // @include font-size(60px, $important: false);
     margin: $global-spacing-unit * 3 0 $global-spacing-unit/2;
   }
 
   @include mq($from: wide) {
-    // @include font-size(73px, $important: true);
+    // @include font-size(73px, $important: false);
   }
 }
 
 .u-h3 {
-  @include font-size(20px, $important: true);
+  @include font-size(20px, $important: false);
   font-weight: 600;
   margin: $global-spacing-unit * 2 0 $global-spacing-unit/2;
 
   @include mq($from: tablet) {
-    @include font-size(22px, $important: true);
+    @include font-size(22px, $important: false);
   }
 }
 

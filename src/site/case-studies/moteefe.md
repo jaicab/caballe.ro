@@ -65,6 +65,8 @@ The original Storybook recording shows the actual component library we built.
 
 {% journey "moteefe" %}
 
+{% tinyDetail "moteefe" %}
+
 {% statement "01 / Design and engineering" %}Design the interaction. Build the component.{% endstatement %}
 
 ## From artwork to campaign

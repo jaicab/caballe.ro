@@ -1,0 +1,18 @@
+/* A close look at one authentic design decision, framed from its source. */
+.case-tiny-detail { margin-block: 44px 64px; }
+.tiny-detail-layout { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1fr); gap: 36px; align-items: center; padding: 30px; border: 1px solid currentColor; border-radius: 16px; }
+.tiny-detail-copy { min-width: 0; }
+.tiny-detail-copy .eyebrow { margin: 0 0 12px; }
+.u-text .tiny-detail-copy h2 { margin: 0 0 16px; font-family: var(--font-display); font-size: clamp(26px,3vw,36px); line-height: 1.12; letter-spacing: -.025em; }
+.tiny-detail-copy > p:last-child { margin: 0; font-size: 16px; line-height: 1.65; max-width: 38ch; }
+.tiny-detail-media { margin: 0; min-width: 0; }
+.u-text a.tiny-detail-visual { display: block; border: 0; text-decoration: none; }
+.tiny-detail-crop { display: block; position: relative; overflow: hidden; width: 100%; margin-inline: auto; background: var(--case-light); border: 1px solid currentColor; border-radius: 8px; }
+.u-text .tiny-detail-crop img { display: block; position: absolute; height: auto; max-width: none; margin: 0; border: 0; border-radius: 0; }
+.tiny-detail-source { display: inline-flex; min-height: 44px; align-items: center; font-size: 12px; text-decoration: underline; text-underline-offset: .22em; }
+.tiny-detail-media figcaption { font-size: 11px; line-height: 1.55; margin: 4px 0 0; opacity: .78; }
+.tiny-detail-media video { display: block; width: 100%; max-width: 340px; height: auto; margin-inline: auto; }
+@media(max-width:739px) {
+  .tiny-detail-layout { grid-template-columns: 1fr; gap: 24px; padding: 22px; }
+  .case-tiny-detail { margin-block: 32px 44px; }
+}
