@@ -8,4 +8,7 @@ if (process.env.PORTFOLIO_PRIVATE_REVIEW === '1') {
   fs.rmSync(stage, {recursive:true, force:true});
   fs.cpSync(path.join(root, 'src', 'site'), stage, {recursive:true});
   fs.cpSync(privatePack, stage, {recursive:true});
+  for (const key of ['glassfiles','roast-cards','flavour-guide']) {
+    if (fs.existsSync(path.join(stage, 'case-studies', key + '.md'))) fs.rmSync(path.join(stage, 'case-studies', key + '.njk'), {force:true});
+  }
 }

@@ -4815,3 +4815,162 @@ body .c-btn--primary .c-btn__icon path {
     margin-block: 32px 44px;
   }
 }
+.private-session-area {
+  margin-block: 24px;
+}
+
+.private-session-area:has(> [hidden]:first-child + [hidden]) {
+  display: none;
+}
+
+.private-session-area [hidden] {
+  display: none !important;
+}
+
+.private-session-notice {
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.private-session-controls {
+  border-top: 1px solid currentColor;
+  padding-top: 14px;
+  max-width: 700px;
+  font-size: 13px;
+}
+
+.private-session-controls summary {
+  cursor: pointer;
+  width: fit-content;
+  min-height: 44px;
+  padding: 10px 0;
+  font-family: var(--font-mono, monospace);
+}
+
+.private-session-controls summary span {
+  margin-left: 8px;
+}
+
+.private-session-controls p {
+  line-height: 1.6;
+  margin: 12px 0;
+}
+
+.private-session-projects, .private-session-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 24px;
+}
+
+.private-session-projects a {
+  min-height: 44px;
+  padding-block: 12px;
+  text-decoration: underline;
+  text-underline-offset: 5px;
+}
+
+.private-session-actions button {
+  border: 1px solid currentColor;
+  padding: 10px 14px;
+  min-height: 44px;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  font: inherit;
+}
+
+.private-welcome {
+  border: 1px solid var(--studio-ink);
+  background: var(--studio-paper);
+  color: var(--studio-ink);
+  padding: clamp(26px, 5vw, 54px);
+  width: min(550px, 100vw - 32px);
+  max-height: calc(100dvh - 32px);
+  box-shadow: 7px 7px 0 var(--studio-ink);
+  box-sizing: border-box;
+}
+
+.private-welcome::backdrop {
+  background: rgba(25, 19, 31, 0.72);
+}
+
+.private-welcome .eyebrow {
+  color: var(--studio-violet);
+}
+
+.private-welcome h2 {
+  font-family: var(--font-display);
+  font-size: clamp(38px, 7vw, 60px);
+  letter-spacing: -0.035em;
+  line-height: 1.05;
+  margin: 20px 0;
+}
+
+.private-welcome p {
+  font-size: 16px;
+  line-height: 1.65;
+}
+
+.private-welcome p.private-welcome-note {
+  font-size: 12px;
+  margin: 24px 0;
+}
+
+.private-welcome .c-btn {
+  font: inherit;
+  gap: 20px;
+  cursor: pointer;
+}
+
+.u-dark .private-welcome {
+  background: #28212f;
+  color: #f1ede5;
+  border-color: #f1ede5;
+  box-shadow: 7px 7px 0 #f1ede5;
+}
+
+.u-dark .private-welcome .eyebrow {
+  color: var(--studio-lilac);
+}
+
+.private-case-shell {
+  min-height: 50vh;
+  padding-block: clamp(40px, 8vw, 100px);
+}
+
+.private-case-shell h1 {
+  font-family: var(--font-display);
+  max-width: 15ch;
+  font-size: clamp(38px, 6vw, 76px);
+  line-height: 1.05;
+  letter-spacing: -0.035em;
+}
+
+.private-case-shell > p {
+  max-width: 52ch;
+  line-height: 1.7;
+}
+
+.private-case-shell .text-link {
+  margin-right: 24px;
+}
+
+.employer-case-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 24px;
+  padding-block: 20px;
+}
+
+.employer-case-nav a {
+  min-height: 44px;
+  padding-block: 10px;
+  text-decoration: underline;
+  text-underline-offset: 5px;
+}
+
+.private-review-note {
+  font-size: 13px;
+  line-height: 1.65;
+  padding: 16px 0;
+}
