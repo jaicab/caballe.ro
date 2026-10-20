@@ -11,7 +11,10 @@ const dialog=node({showModal(){opened++},close(){closed++},querySelector(s){retu
 const link=node({href:'https://caballe.ro/images/example.jpg',dataset:{caption:'Actual project comparison'},querySelector(){return {alt:'Fallback'}},focus(){focused++}});
 const chapter=node(),details={open:false};
 const document={querySelector(){return dialog},querySelectorAll(s){return s==='[data-image-viewer]'?[link]:s==='.decision-viewer'?[viewer]:[chapter]},getElementById(){return details}};
-vm.runInNewContext(fs.readFileSync('src/site/js/portfolio-interactions.js','utf8'),{document});
+const window = {};
+vm.runInNewContext(fs.readFileSync('src/site/js/portfolio-interactions.js','utf8'),{document,window});
+assert.equal(typeof window.enhancePortfolio,'function','Authenticated case fragments must reuse normal portfolio interactions');
+window.enhancePortfolio(document);
 assert.equal(controls.hidden,false);
 buttons[1].events.click();assert.equal(viewer.dataset.view,'after');assert.equal(panels[0].hidden,true);assert.equal(panels[1].hidden,false);assert.equal(buttons[1].attrs['aria-pressed'],'true');
 buttons[0].events.click();assert.equal(panels[0].hidden,false);assert.equal(panels[1].hidden,true);

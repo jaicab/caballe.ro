@@ -34,7 +34,16 @@ console.log(`PASS ${root}: ${count} case themes, accessible contrast, dark page/
 
 if (root === '_site') {
   const allowed = new Set(['glass','wise','checkstep','moteefe','carlos-caballero','dotdot','caballeros']);
-  for (const slug of fs.readdirSync(path.join(root,'case-studies'))) assert(allowed.has(slug), `Restricted public route: ${slug}`);
+  const shells = new Set(['glassfiles','roast-cards','flavour-guide']);
+  for (const slug of fs.readdirSync(path.join(root,'case-studies'))) {
+    if (allowed.has(slug)) continue;
+    assert(shells.has(slug), `Unexpected public route: ${slug}`);
+    const html = fs.readFileSync(path.join(root,'case-studies',slug,'index.html'),'utf8');
+    assert(html.includes(`data-private-case-shell="${slug}"`), `${slug}: only a verified empty shell may be published`);
+    const main = html.match(/<main id="main-content">([\s\S]*?)<\/main>/)[1];
+    assert(main.includes('Request an invitation'));
+    assert(!/<(?:img|video|source)\b|case-journey|case-tiny-detail|data-private-src/.test(main), `${slug}: protected content must not be in the shell`);
+  }
   for (const slug of fs.readdirSync(path.join(root,'images/case-studies'))) assert(allowed.has(slug), `Restricted public assets: ${slug}`);
   console.log('PASS public case routes and media allowlist');
 }

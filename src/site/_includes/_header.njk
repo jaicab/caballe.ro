@@ -11,7 +11,7 @@
       <div class="o-header__nav">
         {% if templateClass == 'tmpl-report' %}
           <div class="is-hidden-until--wide">
-            <span class="o-header__nav__link ">CASE STUDY: {{title }}</span>
+            <span class="o-header__nav__link "{% if privateCase %} data-private-case-label{% endif %}>CASE STUDY: {{title }}</span>
           </div>
 
           <div class="c-light">
