@@ -123,7 +123,7 @@
         "action": "Align the rules",
         "question": "How does guidance become a rule?",
         "decision": "Separate policy thresholds from technical rule ownership.",
-        "image": "checkstep/event_based.png",
+        "image": "checkstep/final.png",
         "role": "Policy + technical owners"
       },
       {
