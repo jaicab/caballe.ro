@@ -11,6 +11,7 @@
         var source = link.querySelector('img');
         var caption = link.dataset.caption || (source && source.alt) || 'Project image';
         dialog.querySelector('img').src = link.href;
+        dialog.querySelector('.image-dialog-source a').href = link.href;
         dialog.querySelector('img').alt = caption;
         dialog.querySelector('figcaption').textContent = caption;
         returnTo = link;

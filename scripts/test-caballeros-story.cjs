@@ -1,0 +1,15 @@
+const assert=require('node:assert/strict'),fs=require('node:fs');
+const html=fs.readFileSync('_site/case-studies/caballeros/index.html','utf8');
+assert(html.indexOf('Identity and custom type design')>0);
+assert(html.indexOf('id="journey-caballeros"')<html.indexOf('id="invitation-demo"'));
+assert(html.indexOf('custom derivative of Caveat')<html.indexOf('caballeros-library-desserts-2x.png'));
+assert.match(html,/Guest answers do not automatically generate a menu or guest count/);
+assert.match(html,/AI-generated kitchen mockup, not a documentary dinner photograph/);
+for(const name of ['no1-prep-tuesday-portfolio-2x.png','no1-prep-wednesday-portfolio-2x.png','caballeros-custom-font-specimen-2x.png','caballeros-no1-prep-kitchen-mockup.png']) assert(fs.existsSync('_site/images/case-studies/caballeros/'+name));
+assert.match(html,/not current cooking guidance/);
+const carlos=fs.readFileSync('_site/case-studies/carlos-caballero/index.html','utf8');
+assert.equal((carlos.match(/case-screen-window--phone/g)||[]).length,2);
+assert.match(carlos,/View full mobile contact page/);
+const dot=fs.readFileSync('_site/case-studies/dotdot/index.html','utf8');assert.match(dot,/case-theme-pair/);
+const css=fs.readFileSync('src/site/css/index.css','utf8');assert.match(css,/\.case-screen-window--phone\s*\{\s*aspect-ratio: 9\/17;/);assert.match(css,/\.project-credits-grid/);
+console.log('PASS end-to-end dinner story, accurate type attribution, source-labelled prep evidence and bounded screenshot framing');

@@ -33,7 +33,7 @@ templateClass: tmpl-report
   </div>
 
   <div class="u-wrapper"><details class="project-credits"><summary>Role, tools & collaborators</summary>
-    {% for key, list in properties %}<h3>{{ key | capitalize }}</h3><ul>{% for item in list %}<li>{{ item }}</li>{% endfor %}</ul>{% endfor %}
+    <div class="project-credits-grid">{% for key, list in properties %}<div><h3>{{ key | capitalize }}</h3><ul>{% for item in list %}<li>{{ item }}</li>{% endfor %}</ul></div>{% endfor %}</div>
   </details></div>
   <div class="u-wrapper u-center">
     <a class="c-btn c-btn--primary" href="{{ '/' | url }}">

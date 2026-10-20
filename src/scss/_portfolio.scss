@@ -568,3 +568,32 @@ html[data-page-entry="skip"] .tmpl-home .project-stage,
 .u-dark .c-btn.c-btn--primary { color:#211f25; background:#f1ede5; border-color:#f1ede5; }
 body .c-btn--primary .c-btn__text,body .c-btn--primary .c-btn__icon { color:inherit; }
 body .c-btn--primary .c-btn__icon path { fill:currentColor; }
+
+// Editorial evidence: readable previews, with the unaltered source one click away.
+.case-screen-preview { margin:0; min-width:0; }
+.case-screen-preview > a { display:block; border:0; text-decoration:none; }
+.case-screen-window { display:block; overflow:hidden; border-radius:8px; background:rgba(0,0,0,.04); }
+.case-screen-window img { width:100%; height:auto; display:block; }
+.case-screen-window--desktop { aspect-ratio:16/10; }
+.case-screen-window--phone { aspect-ratio:9/17; }
+.case-screen-source { display:block; padding-block:14px; font-size:14px; text-decoration:underline; text-underline-offset:.2em; }
+.case-phone-pair { display:grid; grid-template-columns:repeat(2,minmax(0,320px)); gap:clamp(24px,5vw,72px); justify-content:center; padding:32px; border:1px solid currentColor; border-radius:14px; }
+.case-theme-pair { display:grid; grid-template-columns:minmax(0,1fr) minmax(180px,260px); gap:clamp(24px,4vw,48px); align-items:start; }
+.case-theme-pair img { display:block; width:100%; height:auto; border-radius:8px; }
+.project-credits-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:24px 40px; padding-block:12px; line-height:1.5; }
+.project-credits-grid h3 { font-size:14px; line-height:1.5; margin:0 0 10px; }
+.project-credits-grid ul { margin:0; padding-left:18px; }
+.project-credits-grid li { margin:0 0 6px; }
+.caballeros-type-specimen { max-width:1040px; margin-inline:auto; }
+.caballeros-type-specimen img,.caballeros-prep-scene img { display:block; width:100%; height:auto; border-radius:12px; }
+.caballeros-prep-scene { margin:0; }
+.prep-source-links { display:flex; gap:12px 28px; flex-wrap:wrap; }
+.prep-source-links .text-link { margin:0; }
+@media(max-width:739px) {
+ .case-phone-pair { grid-template-columns:minmax(0,320px); padding:22px; }
+ .case-theme-pair { grid-template-columns:1fr; gap:24px; }
+ .case-theme-pair > :last-child { width:min(100%,280px); justify-self:center; }
+ .project-credits-grid { grid-template-columns:1fr; gap:20px; }
+}
+.image-dialog-source { margin:18px 0 0; font-size:14px; }
+.image-dialog-source a { display:inline-flex; align-items:center; min-height:44px; text-decoration:underline; text-underline-offset:.2em; }
