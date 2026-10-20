@@ -94,7 +94,7 @@
         "action": "Understand the refund",
         "question": "Why hasn’t the payment changed?",
         "decision": "Explain the pending refund instead of leaving it to interpretation.",
-        "image": "wise/redesign.png",
+        "image": "",
         "role": ""
       },
       {
