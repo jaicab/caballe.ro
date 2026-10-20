@@ -46,6 +46,8 @@ The redesign separates refunds, cancellations and card checks, so customers can 
 
 <img width="1920" height="1080" src="{{ '/images/case-studies/wise/redesign.png' | url }}" alt="Wise redesigned card transaction screens showing distinct payment and refund states" loading="lazy"/>
 
+{% journey "wise" %}
+
 {% statement "01 / Transaction states" %}Make the state clear. Explain what comes next.{% endstatement %}
 
 {% evidence %}

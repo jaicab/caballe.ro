@@ -44,6 +44,8 @@ Producer, variety, processing, origin and flavour become useful buying informati
 
 <img width="1440" height="1080" src="{{ '/images/case-studies/glass/storefront.png' | url }}" alt="Public Glass Coffee storefront showing coffee provenance, an origin map and key product characteristics" loading="lazy" />
 
+{% journey "glass" %}
+
 {% statement "01 / Product experience" %}Enough to choose. More to discover.{% endstatement %}
 
 ## A repeatable structure across coffees

@@ -46,6 +46,8 @@ Policies bring written guidance, thresholds, version history and insights togeth
 
 <img width="1920" height="1080" src="{{ '/images/case-studies/checkstep/final.png' | url }}" alt="Checkstep policy management interface bringing policy guidance and rule thresholds together" loading="lazy"/>
 
+{% journey "checkstep" %}
+
 {% statement "01 / Policy workflow" %}Put the policy where decisions are made.{% endstatement %}
 
 {% screens %}

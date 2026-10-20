@@ -42,6 +42,8 @@ properties:
 <figure class="caballeros-desktop-scene"><a class="image-inspect" href="/images/case-studies/caballeros/caballeros-library-desserts-2x.png" data-image-viewer><img src="/images/case-studies/caballeros/caballeros-library-desserts-2x.png" width="2560" height="1800" alt="Caballero’s dessert recipe library with Moscovitas, apple and lime granita, and Basque cheesecake" loading="lazy" /><span>Enlarge image +</span></a><figcaption><strong>The recipe library.</strong> Find the dish, check what it needs, add it to the shopping list.</figcaption></figure>
 </div>
 {% endevidence %}
+{% journey "caballeros" %}
+
 
 ## Personality has a job to do.
 

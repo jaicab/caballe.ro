@@ -16,6 +16,14 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.addLayoutAlias("report", "layouts/report.njk");
 
+  eleventyConfig.addShortcode("journey", function (key) {
+    const journey = require("./src/site/_data/projectJourneys.json")[key];
+    if (!journey) throw new Error(`Unknown public journey: ${key}`);
+    const escape = value => String(value).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+    const items = journey.steps.map((step, index) => `<li><span class="journey-stop" aria-hidden="true">${index + 1}</span>${step.role ? `<p class="journey-role">${escape(step.role)}</p>` : ""}<h3>${escape(step.action)}</h3><p class="journey-question">${escape(step.question)}</p><p class="journey-decision">${escape(step.decision)}</p>${step.image ? `<a class="text-link journey-evidence" href="/images/case-studies/${escape(step.image)}" data-image-viewer aria-label="View the evidence: ${escape(step.action)}" data-caption="${escape(step.action)} — ${escape(step.decision)}">View the evidence</a>` : ""}</li>`).join("");
+    return `</div></div><section class="case-journey" aria-labelledby="journey-${escape(key)}"><div class="u-wrapper"><p class="eyebrow">${escape(journey.label)}</p><h2 id="journey-${escape(key)}">${escape(journey.goal)}</h2><p class="journey-status">${escape(journey.status)}</p><ol class="journey-route" role="list" style="--journey-stops:${journey.steps.length}">${items}</ol>${journey.note ? `<p class="journey-note">${escape(journey.note)}</p>` : ""}</div></section><div class="u-wrapper"><div class="o-article__content">`;
+  });
+
   eleventyConfig.addPairedShortcode("evidence", function (content) {
     return `</div></div><section class="case-evidence"><div class="u-wrapper">${content}</div></section><div class="u-wrapper"><div class="o-article__content">`;
   });
