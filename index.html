@@ -11,6 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>
       Jaime Caballero - Design engineer. Design systems, frontend implementation and AI-assisted product building.</title>
+    <meta name="referrer" content="no-referrer">
     <meta name="description" content="Design engineer. Design systems, frontend implementation and AI-assisted product building.">
     <meta name="theme-color" content="#f1ede5">
     <style id="page-theme-canvas">html { background: #f1ede5; color-scheme: light; } html[data-theme="dark"] { background: #28212f; color-scheme: dark; }</style>
@@ -71,7 +72,7 @@
 </script>
     
     <link rel="preload" href="/fonts/bricolage/BricolageGrotesque.ttf" as="font" type="font/ttf" crossorigin>
-    <link rel="stylesheet" href="/css/index.css?v=a6b15cf68ac1">
+    <link rel="stylesheet" href="/css/index.css?v=8bd299713dab">
     <script src="/js/lazysizes.min.js"></script>
     <link rel="icon" href="/images/favicon.png"/>
     <link rel="apple-touch-icon-precomposed" href="/images/apple-touch-icon-precomposed.png">
@@ -145,7 +146,7 @@
     <div class="section-label"><h2 id="work-title">Selected work</h2><span>Design systems · Frontend · AI-assisted tools</span></div>
 
     <article class="project-stage project-stage--tools" id="glassfiles-work">
-      <div class="project-copy"><p class="eyebrow">01 / Glassfiles</p><p class="project-role">Freelance · Design + development</p><h2>Custom tools for the work behind the coffee.</h2><p>I build tools for a coffee team to turn source material into usable content. AI helps with the first pass; people can edit, check and finish the work.</p><a class="text-link" href="mailto:hello@caballe.ro?subject=Private%20portfolio%20walkthrough">Request a private walkthrough</a><a class="text-link" href="/case-studies/glass/">See my public Glass work</a></div>
+      <div class="project-copy"><p class="eyebrow">01 / Glassfiles</p><p class="project-role">Freelance · Design + development</p><h2>Custom tools for the work behind the coffee.</h2><p>I build tools for a coffee team to turn source material into usable content. AI helps with the first pass; people can edit, check and finish the work.</p><a class="text-link" data-private-request="glassfiles" href="mailto:hello@caballe.ro?subject=Private%20portfolio%20walkthrough">Request a private walkthrough</a><a class="text-link" href="/case-studies/glass/">See my public Glass work</a></div>
       <figure class="project-visual workflow-proof"><p class="workflow-kicker">Glassfiles / workflow schematic</p><ol><li><span>01 / Source</span><strong>Bring in the footage.</strong><p>Keep source material available for checking.</p></li><li><span>02 / Assistance</span><strong>Make it reviewable.</strong><p>Transcription and timestamped passages support the first pass.</p></li><li><span>03 / Judgment</span><strong>Keep the editor in control.</strong><p>Review the material, edit captions, adjust framing and branding.</p></li><li><span>04 / Output</span><strong>Finish the job.</strong><p>Save the project and export the edited clip.</p></li></ol><figcaption>Simplified workflow, not a screenshot. Internal interfaces and demonstrations are available for private hiring reviews.</figcaption></figure>
     </article>
     <article class="project-stage project-stage--caballeros" id="caballeros-work">
@@ -162,7 +163,7 @@
       <div class="project-copy"><p class="eyebrow">04 / Glass Coffee</p><p class="project-role">Freelance · Storefront + frontend</p><h2>Helping people choose coffee.</h2><p>Reusable Shopify sections, product data and flavour components, plus the visual content around them.</p><a class="text-link" href="/case-studies/glass/">Explore Glass</a></div>
       <div class="project-visual"><img width="1440" height="1080" src="/images/case-studies/glass/storefront.png" alt="Glass Coffee storefront showing coffee discovery and product storytelling" loading="eager"></div>
     </article>
-    <div class="more-work"><a href="/case-studies/moteefe/">Moteefe <span>Commerce tools & UI engineering</span></a><a href="/case-studies/checkstep/">Checkstep <span>Content moderation product design</span></a><a href="/case-studies/dotdot/">DotDot <span>Messaging, designed and built</span></a></div>
+    <div class="more-work" data-private-more-work><a href="/case-studies/moteefe/">Moteefe <span>Commerce tools & UI engineering</span></a><a href="/case-studies/checkstep/">Checkstep <span>Content moderation product design</span></a><a href="/case-studies/dotdot/">DotDot <span>Messaging, designed and built</span></a></div>
   </section>
   <section class="contact-close"><p class="eyebrow">Need design and implementation?</p><h2>Let’s make it work.</h2><a class="text-link" href="mailto:hello@caballe.ro">hello@caballe.ro</a><p>I’m available 1–3 days a week for design systems, frontend implementation and AI-assisted product work.</p></section>
 </div>
@@ -170,6 +171,24 @@
 
       
     </main>
+
+    <div class="u-wrapper private-session-area">
+  <p class="private-session-notice" data-private-session-notice role="status" hidden></p>
+  <details class="private-session-controls" data-private-session-controls hidden>
+    <summary>Private access <span aria-hidden="true">✓</span></summary>
+    <nav class="private-session-projects" data-private-projects aria-label="Private case studies"></nav>
+    <p data-private-expiry></p>
+    <p>Your invitation unlocks this tab. Keep browsing the portfolio as normal.</p>
+    <div class="private-session-actions"><button type="button" data-private-replay>About this access</button><button type="button" data-private-lock>Lock private work</button></div>
+  </details>
+</div>
+<dialog class="private-welcome" data-private-welcome aria-labelledby="private-welcome-title" aria-describedby="private-welcome-description">
+  <p class="eyebrow">A closer look</p>
+  <h2 id="private-welcome-title">Access granted.</h2>
+  <p id="private-welcome-description">You can now explore the private projects alongside the rest of my work. No extra steps between case studies.</p>
+  <p class="private-welcome-note">Access stays in this tab until the session expires. You can lock it at any time using Private access.</p>
+  <button type="button" class="c-btn c-btn--primary" data-private-continue>Continue exploring <span aria-hidden="true">→</span></button>
+</dialog>
 
     <footer class="o-footer">
   <div class="u-wrapper u-center u-grid-from--mobile">
@@ -189,7 +208,9 @@
 </footer>
 
     <dialog class="image-dialog" aria-labelledby="image-dialog-caption"><form method="dialog"><button class="image-dialog-close" aria-label="Close full-size image">Close ×</button></form><figure><img alt="" /><figcaption id="image-dialog-caption"></figcaption></figure></dialog>
-    <script defer src="/js/portfolio-interactions.js?v=ea371fbd7ab5"></script>
+    <script defer src="/js/portfolio-interactions.js?v=e828cabf3aa4"></script>
+    <script defer src="/js/portfolio-session-core.js?v=b5d71140d785"></script>
+    <script defer src="/js/portfolio-session.js?v=a05273c44c12"></script>
     <!-- Current page: / -->
   </body>
 </html>

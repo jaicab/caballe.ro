@@ -11,6 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>
       Solving admin hell in AI Trust &amp; Safety |  Jaime Caballero - Design engineer. Design systems, frontend implementation and AI-assisted product building.</title>
+    <meta name="referrer" content="no-referrer">
     <meta name="description" content="Solving admin hell in AI Trust &amp; Safety">
     <meta name="theme-color" content="#abadf8">
     <style id="page-theme-canvas">html { background: #abadf8; color-scheme: light; } html[data-theme="dark"] { background: #20213a; color-scheme: dark; }</style>
@@ -71,7 +72,7 @@
 </script>
     
     <link rel="preload" href="/fonts/bricolage/BricolageGrotesque.ttf" as="font" type="font/ttf" crossorigin>
-    <link rel="stylesheet" href="/css/index.css?v=a6b15cf68ac1">
+    <link rel="stylesheet" href="/css/index.css?v=8bd299713dab">
     <script src="/js/lazysizes.min.js"></script>
     <link rel="icon" href="/images/favicon.png"/>
     <link rel="apple-touch-icon-precomposed" href="/images/apple-touch-icon-precomposed.png">
@@ -219,6 +220,24 @@
       
     </main>
 
+    <div class="u-wrapper private-session-area">
+  <p class="private-session-notice" data-private-session-notice role="status" hidden></p>
+  <details class="private-session-controls" data-private-session-controls hidden>
+    <summary>Private access <span aria-hidden="true">✓</span></summary>
+    <nav class="private-session-projects" data-private-projects aria-label="Private case studies"></nav>
+    <p data-private-expiry></p>
+    <p>Your invitation unlocks this tab. Keep browsing the portfolio as normal.</p>
+    <div class="private-session-actions"><button type="button" data-private-replay>About this access</button><button type="button" data-private-lock>Lock private work</button></div>
+  </details>
+</div>
+<dialog class="private-welcome" data-private-welcome aria-labelledby="private-welcome-title" aria-describedby="private-welcome-description">
+  <p class="eyebrow">A closer look</p>
+  <h2 id="private-welcome-title">Access granted.</h2>
+  <p id="private-welcome-description">You can now explore the private projects alongside the rest of my work. No extra steps between case studies.</p>
+  <p class="private-welcome-note">Access stays in this tab until the session expires. You can lock it at any time using Private access.</p>
+  <button type="button" class="c-btn c-btn--primary" data-private-continue>Continue exploring <span aria-hidden="true">→</span></button>
+</dialog>
+
     <footer class="o-footer">
   <div class="u-wrapper u-center u-grid-from--mobile">
     <div>
@@ -237,7 +256,9 @@
 </footer>
 
     <dialog class="image-dialog" aria-labelledby="image-dialog-caption"><form method="dialog"><button class="image-dialog-close" aria-label="Close full-size image">Close ×</button></form><figure><img alt="" /><figcaption id="image-dialog-caption"></figcaption></figure></dialog>
-    <script defer src="/js/portfolio-interactions.js?v=ea371fbd7ab5"></script>
+    <script defer src="/js/portfolio-interactions.js?v=e828cabf3aa4"></script>
+    <script defer src="/js/portfolio-session-core.js?v=b5d71140d785"></script>
+    <script defer src="/js/portfolio-session.js?v=a05273c44c12"></script>
     <!-- Current page: /case-studies/checkstep/ -->
   </body>
 </html>
