@@ -6,12 +6,15 @@ const buttons=['before','after','both'].map(v=>node({dataset:{decisionView:v}}))
 const panels=['before','after'].map(v=>node({dataset:{decisionPanel:v}}));
 const controls=node({hidden:true,querySelectorAll(){return buttons}});
 const viewer=node({querySelector(){return controls},querySelectorAll(){return panels}});
-const image={},caption={},original={};let opened=0,closed=0,focused=0,prevented=0;
+const image={},caption={},original={parentElement:{hidden:false}};let opened=0,closed=0,focused=0,prevented=0;
 const dialog=node({showModal(){opened++},close(){closed++},querySelector(s){return s==='img'?image:s==='.image-dialog-source a'?original:caption}});
 const link=node({href:'https://caballe.ro/images/example.jpg',dataset:{caption:'Actual project comparison'},querySelector(){return {alt:'Fallback'}},focus(){focused++}});
 const chapter=node(),details={open:false};
 const document={querySelector(){return dialog},querySelectorAll(s){return s==='[data-image-viewer]'?[link]:s==='.decision-viewer'?[viewer]:[chapter]},getElementById(){return details}};
-vm.runInNewContext(fs.readFileSync('src/site/js/portfolio-interactions.js','utf8'),{document});
+const window = {};
+vm.runInNewContext(fs.readFileSync('src/site/js/portfolio-interactions.js','utf8'),{document,window});
+assert.equal(typeof window.enhancePortfolio,'function','Authenticated case fragments must reuse normal portfolio interactions');
+window.enhancePortfolio(document);
 assert.equal(controls.hidden,false);
 buttons[1].events.click();assert.equal(viewer.dataset.view,'after');assert.equal(panels[0].hidden,true);assert.equal(panels[1].hidden,false);assert.equal(buttons[1].attrs['aria-pressed'],'true');
 buttons[0].events.click();assert.equal(panels[0].hidden,false);assert.equal(panels[1].hidden,true);
@@ -21,3 +24,17 @@ link.events.click({ctrlKey:true,preventDefault(){prevented++}});assert.equal(ope
 dialog.events.click({target:dialog});assert.equal(closed,1);dialog.events.close();assert.equal(focused,1);
 chapter.events.click();assert.equal(details.open,true);
 console.log('PASS portfolio interactions: compare modes, native viewer, modifier links, focus restore, chapter disclosure');
+
+link.dataset.privateViewerSrc='blob:audited-svg-image';link.href='#';
+link.events.click({preventDefault(){prevented++}});assert.equal(image.src,'blob:audited-svg-image');
+const beforeModifiers=opened;
+for(const modifier of ['ctrlKey','metaKey','shiftKey','altKey']){let stopped=false;link.events.click({[modifier]:true,preventDefault(){stopped=true}});assert(stopped);}
+assert.equal(opened,beforeModifiers,'Modifier clicks must not open SVG documents or new viewers');
+let middleStopped=false;link.events.auxclick({preventDefault(){middleStopped=true}});assert(middleStopped);
+assert.equal(link.href,'#','An image-only SVG never becomes a navigable blob URL');
+console.log('PASS SVG lightbox stays image-only, including Ctrl/Meta/Shift/Alt and middle clicks');
+
+assert.equal(original.href,'#','SVG must not be exposed through the original-image action');assert.equal(original.parentElement.hidden,true);
+delete link.dataset.privateViewerSrc;link.href='https://caballe.ro/images/example.jpg';link.events.click({preventDefault(){}});assert.equal(original.href,link.href);assert.equal(original.parentElement.hidden,false);
+window.clearPortfolioMedia(document);assert.equal(original.href,'#');assert.equal(original.parentElement.hidden,true);
+console.log('PASS original-image action works for raster evidence but never exposes private SVG documents or stale protected sources');

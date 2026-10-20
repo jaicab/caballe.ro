@@ -14,6 +14,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>
       {% if renderData.title or title %}{{ renderData.title or title }} |  {% endif %}{{ metadata.title }} - {{ metadata.description }}</title>
+    <meta name="referrer" content="no-referrer">
     <meta name="description" content="{{ renderData.description or description or metadata.description }}">
     <meta name="theme-color" content="{{ pageLight }}">
     <style id="page-theme-canvas">html { background: {{ pageLight }}; color-scheme: light; } html[data-theme="dark"] { background: {{ pageDark }}; color-scheme: dark; }</style>
@@ -57,7 +58,7 @@
 
     <link href="//fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,400;0,600;0,700;0,900;1,420&family=Space+Mono:wght@400&display=swap" rel="stylesheet">
   </head>
-  <body{% if templateClass %} class="{{ templateClass }}"{% endif %} {% if themeColor %} style="--color-bg: #{{ themeColor }}; --case-light: {{ projectThemes[short].light or ('#'+themeColor) }}; --case-dark: {{ projectThemes[short].dark or '#20202b' }}; --case-ink: {{ projectThemes[short].ink or '#171722' }}; --case-focus-light: {{ projectThemes[short].focusLight or '#171722' }}; --case-focus-dark: {{ projectThemes[short].focusDark or ('#'+themeColor) }};"{% endif %}>
+  <body{% if privateCase %} data-private-case-shell="{{ privateCase }}"{% endif %}{% if templateClass %} class="{{ templateClass }}"{% endif %} {% if themeColor %} style="--color-bg: #{{ themeColor }}; --case-light: {{ projectThemes[short].light or ('#'+themeColor) }}; --case-dark: {{ projectThemes[short].dark or '#20202b' }}; --case-ink: {{ projectThemes[short].ink or '#171722' }}; --case-focus-light: {{ projectThemes[short].focusLight or '#171722' }}; --case-focus-dark: {{ projectThemes[short].focusDark or ('#'+themeColor) }};"{% endif %}>
     <script>window.loadTheme();</script>
     <a class="skip-link" href="#main-content">Skip to content</a>
     {% include "_header.njk" %}
@@ -69,10 +70,13 @@
       {% endif %}
     </main>
 
+    {% include "_private-session.njk" %}
     {% include "_footer.njk" %}
 
     <dialog class="image-dialog" aria-labelledby="image-dialog-caption"><form method="dialog"><button class="image-dialog-close" aria-label="Close full-size image">Close ×</button></form><figure><img alt="" /><figcaption id="image-dialog-caption"></figcaption></figure><p class="image-dialog-source"><a target="_blank" rel="noopener">Open original image in a new tab ↗</a></p></dialog>
     <script defer src="{{ '/js/portfolio-interactions.js' | assetVersion }}"></script>
+    <script defer src="{{ '/js/portfolio-session-core.js' | assetVersion }}"></script>
+    <script defer src="{{ '/js/portfolio-session.js' | assetVersion }}"></script>
     <!-- Current page: {{ page.url | url }} -->
   </body>
 </html>

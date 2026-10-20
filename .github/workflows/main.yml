@@ -18,3 +18,5 @@ jobs:
         run: yarn install
       - name: Build
         run: yarn build && node scripts/check-case-themes.cjs && node scripts/test-portfolio-interactions.cjs && node scripts/test-workflow-demo.cjs && node scripts/test-design-system.cjs && node scripts/test-retina-assets.cjs && node scripts/test-project-entry.cjs && node scripts/test-hiring-focus.cjs && node scripts/test-project-journeys.cjs && node scripts/test-caballeros-demo.cjs && node scripts/test-page-theme.cjs && node scripts/test-tiny-details.cjs && node scripts/test-home-layout.cjs && node scripts/test-caballeros-story.cjs
+      - name: Private session boundary and lifecycle tests
+        run: node scripts/test-portfolio-session.cjs

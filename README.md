@@ -19,4 +19,13 @@ Bricolage Grotesque is locally embedded for headings, with Epilogue for body tex
 
 ## Publishing
 
-Review and approve content before publishing. Restricted work requires a separately approved authenticated delivery arrangement; obscuring links, `noindex` or a client-side password is not an access boundary. The public build deliberately omits restricted routes and assets.
+Review and approve content before publishing. Restricted work requires a separately approved authenticated delivery arrangement; obscuring links, `noindex` or a client-side password is not an access boundary. The public build includes only empty invitation shells at the three restricted case routes and never includes their content or media. Those normal portfolio routes are hydrated only after the private gateway verifies an expiring credential. The existing public media allowlist remains unchanged.
+
+
+## Invitation sessions
+
+Opening an invitation fragment on the normal homepage exchanges the capability for an eight-hour-or-shorter app credential. The fragment is immediately removed from the address bar; only the returned credential, expiry, and welcome acknowledgement are stored in sessionStorage. Access is tab-scoped, not promised to unrelated tabs. Public links, theme preferences, chapter anchors, and native navigation remain unchanged.
+
+Every normal page revalidates the session before revealing private links. Case content and approved assets are fetched with Authorization, without cookies or caches. Media uses in-memory Blob URLs; HTML evidence is download-only application/octet-stream. Expiry, denial, explicit locking, and page departure clear rendered protected content and revoke its Blob URLs. A back/forward restoration validates again. Storage-blocked browsers fail closed.
+
+Run npm run build, then node scripts/test-portfolio-session.cjs for the session lifecycle, request policy, media boundaries, and empty-shell checks. Run all scripts/test-*.cjs and scripts/check-case-themes.cjs for the full existing regression suite. Live visual, navigation, and media playback checks are separate from the Node suite.
