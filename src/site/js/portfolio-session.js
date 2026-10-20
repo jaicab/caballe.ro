@@ -84,7 +84,7 @@
       if (!permitted.has(node.tagName)) throw new Error('Unsupported private element.');
       Array.from(node.attributes).forEach(function (attribute) {
         var name = attribute.name, value = attribute.value;
-        if (/^on/i.test(name) || /^(src|srcset|poster|data-src|data-srcset|srcdoc|action|formaction|ping|background|autofocus)$/i.test(name)) throw new Error('Active private resource rejected.');
+        if (/^on/i.test(name) || /^(src|srcset|poster|data-src|data-srcset|data-private-viewer-src|srcdoc|action|formaction|ping|background|autofocus)$/i.test(name)) throw new Error('Active private resource rejected.');
         if (name === 'style' && !api.isSafeInlineStyle(value)) throw new Error('Active private style rejected.');
         if (name === 'href') {
           var href = api.normalizePublicHref(value);
@@ -112,14 +112,32 @@
         if (download && (target !== 'href' || !node.hasAttribute('download') || !/^[\w.-]+$/.test(node.getAttribute('download')))) throw new Error('Invalid private download.');
         var entries = target === 'srcset' ? value.split(',').map(function (entry) {var bits=entry.trim().split(/\s+/);if(bits.length > 2 || (bits[1] && !/^\d+(?:\.\d+)?[wx]$/.test(bits[1]))) throw new Error('Invalid private image set.');return {path:bits[0],descriptor:bits[1] || ''};}) : [{path:value,descriptor:''}];
         jobs.push(async function () {
+          try {
+          var imageOnly = (node.tagName === 'IMG' && ['src','srcset'].includes(target)) || (node.tagName === 'SOURCE' && node.parentElement && node.parentElement.tagName === 'PICTURE' && ['src','srcset'].includes(target));
+          var svgViewer = target === 'href' && node.hasAttribute('data-image-viewer') && entries.length === 1 && manifest.get(entries[0].path) && manifest.get(entries[0].path).contentType === 'image/svg+xml';
           var urls = await Promise.all(entries.map(async function (entry) {
             var asset = manifest.get(entry.path);
             if (!asset) throw new Error('Private resource is not approved.');
             if (target !== 'href' && !/^(image\/|video\/)/.test(asset.contentType)) throw new Error('Unsafe private media.');
-            return (await client.getAsset(asset,download)) + (entry.descriptor ? ' '+entry.descriptor : '');
+            return (await client.getAsset(asset,download,imageOnly || svgViewer)) + (entry.descriptor ? ' '+entry.descriptor : '');
           }));
-          node.setAttribute(target,urls.join(', '));node.removeAttribute(name);
+          if (svgViewer) {
+            // A lightbox image source is not a navigable SVG document, even with modifier clicks.
+            node.setAttribute('href','#');node.setAttribute('data-private-viewer-src',urls[0]);node.removeAttribute('target');
+          } else node.setAttribute(target,urls.join(', '));
+          node.removeAttribute(name);
           if (download) {node.removeAttribute('target');node.setAttribute('rel','noopener');}
+          } catch (error) {
+            if (error.name === 'PortfolioAuthError' || error.name === 'AbortError' || !client.active()) throw error;
+            node.removeAttribute(name);
+            if (node.tagName === 'A') {node.removeAttribute('href');node.removeAttribute('data-image-viewer');node.setAttribute('aria-disabled','true');}
+            var video = node.closest('video');
+            var container = node.closest('figure') || (video ? video.parentElement : node.parentElement) || template.content;
+            if (!container.querySelector('[data-private-media-error]')) {
+              var fallback = document.createElement('p');fallback.className = 'private-session-notice';fallback.setAttribute('data-private-media-error','');fallback.setAttribute('role','status');
+              fallback.textContent = 'This media could not load. You can keep reading and explore the other projects, or reload to try again.';container.appendChild(fallback);
+            }
+          }
         });
       });
     });
@@ -164,8 +182,11 @@
     } catch (error) {
       if (invitation) invitation.token = null;
       if (error.name === 'AbortError') return;
-      client.lock();
-      if (invitation || shellKey || session) message(error.message.indexOf('storage') >= 0 ? 'This browser is blocking session storage. Enable it and reopen your invitation.' : 'Private access could not be verified. Reopen your invitation or request a new one.');
+      if (error.name === 'PortfolioAuthError') client.lock();
+      if (invitation || shellKey || session) {
+        if (session && client.active()) message('This case could not load. Your private access is still available: try another project or reload this page.');
+        else message(error.message.indexOf('storage') >= 0 ? 'This browser is blocking session storage. Enable it and reopen your invitation.' : error.name === 'PortfolioAuthError' ? 'Private access has ended. Reopen your invitation or request a new one.' : 'Private access could not be checked just now. Reload to try again.');
+      }
     }
   }
   var invitation;

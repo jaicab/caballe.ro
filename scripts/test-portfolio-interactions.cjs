@@ -24,3 +24,11 @@ link.events.click({ctrlKey:true,preventDefault(){prevented++}});assert.equal(ope
 dialog.events.click({target:dialog});assert.equal(closed,1);dialog.events.close();assert.equal(focused,1);
 chapter.events.click();assert.equal(details.open,true);
 console.log('PASS portfolio interactions: compare modes, native viewer, modifier links, focus restore, chapter disclosure');
+link.dataset.privateViewerSrc='blob:audited-svg-image';link.href='#';
+link.events.click({preventDefault(){prevented++}});assert.equal(image.src,'blob:audited-svg-image');
+const beforeModifiers=opened;
+for(const modifier of ['ctrlKey','metaKey','shiftKey','altKey']){let stopped=false;link.events.click({[modifier]:true,preventDefault(){stopped=true}});assert(stopped);}
+assert.equal(opened,beforeModifiers,'Modifier clicks must not open SVG documents or new viewers');
+let middleStopped=false;link.events.auxclick({preventDefault(){middleStopped=true}});assert(middleStopped);
+assert.equal(link.href,'#','An image-only SVG never becomes a navigable blob URL');
+console.log('PASS SVG lightbox stays image-only, including Ctrl/Meta/Shift/Alt and middle clicks');
