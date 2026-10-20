@@ -556,9 +556,9 @@ html[data-page-entry="skip"] .tmpl-home .project-stage,
 
 /* Keep repeated editorial surfaces on one typographic and alignment system. */
 .project-copy h2 { text-wrap: balance; }
-.intro-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 20px; min-width: 300px; }
-.intro-actions .availability { flex-basis: 100%; margin-bottom: 0; }
-.intro-actions .text-link { margin: 0; white-space: nowrap; }
+.intro-actions { display:grid; grid-template-columns:repeat(3,max-content); flex:0 0 auto; align-items:center; gap:8px 20px; min-width:0; }
+.intro-actions .availability { grid-column:1 / -1; margin-bottom:0; }
+.intro-actions .text-link { margin:0; white-space:nowrap; font-size:16px; }
 .u-text a.text-link { border-bottom: 0; text-decoration: underline; text-underline-offset: .2em; }
 .project-credits { max-width: 900px; }
 @media(max-width:1000px) { .intro-bottom { display: block; } .intro-actions { margin-top: 20px; min-width: 0; } }
@@ -597,3 +597,5 @@ body .c-btn--primary .c-btn__icon path { fill:currentColor; }
 }
 .image-dialog-source { margin:18px 0 0; font-size:14px; }
 .image-dialog-source a { display:inline-flex; align-items:center; min-height:44px; text-decoration:underline; text-underline-offset:.2em; }
+
+@media(max-width:379px) { .intro-actions { grid-template-columns:1fr; gap:8px; } .intro-actions .text-link { justify-self:start; } }

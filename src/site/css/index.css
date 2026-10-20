@@ -4655,21 +4655,23 @@ html[data-page-entry=skip] .tmpl-home .project-stage,
 }
 
 .intro-actions {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(3, max-content);
+  flex: 0 0 auto;
   align-items: center;
   gap: 8px 20px;
-  min-width: 300px;
+  min-width: 0;
 }
 
 .intro-actions .availability {
-  flex-basis: 100%;
+  grid-column: 1/-1;
   margin-bottom: 0;
 }
 
 .intro-actions .text-link {
   margin: 0;
   white-space: nowrap;
+  font-size: 16px;
 }
 
 .u-text a.text-link {
@@ -4855,6 +4857,15 @@ body .c-btn--primary .c-btn__icon path {
   text-underline-offset: 0.2em;
 }
 
+@media (max-width: 379px) {
+  .intro-actions {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+  .intro-actions .text-link {
+    justify-self: start;
+  }
+}
 /* A close look at one authentic design decision, framed from its source. */
 .case-tiny-detail {
   margin-block: 44px 64px;
