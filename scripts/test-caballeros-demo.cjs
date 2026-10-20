@@ -19,6 +19,7 @@ const disclosure = 'Portfolio demo · fictional dinner · nothing is sent';
 const backToCase = '/case-studies/caballeros/#invitation-demo';
 const files = [
   'app.js',
+  'assets/OFL.txt',
   'assets/crayon-invitation.woff',
   'assets/envelope-opening-transparent.webp',
   'assets/wordmark.png',
@@ -42,7 +43,7 @@ function listFiles(directory, prefix = '') {
   }).sort();
 }
 
-check('the standalone output is exactly the six public source files', () => {
+check('the standalone output is exactly the seven public source files', () => {
   assert.deepEqual(listFiles(source), files);
   assert.deepEqual(listFiles(output), files);
   for (const file of files) {
@@ -316,3 +317,5 @@ check('returning to welcome restores keyboard focus to the heading', () => {
   assert.match(demo.html, /<h1 tabindex="-1">/);
   assert.equal(demo.activity.focused, before + 1);
 });
+
+assert.match(read(source, 'assets/OFL.txt'), /SIL OPEN FONT LICENSE/);

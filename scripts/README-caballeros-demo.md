@@ -8,6 +8,8 @@ This is a fictional dinner with sample answers, not the real guest flow.
 Do not add analytics, storage, submissions, production event details or external
 assets. Keep the visible disclosure and restrictive CSP. The font, wordmark
 and animated envelope are the approved handoff files; tests lock their hashes.
+The custom invitation font is a derivative of Caveat; its SIL Open Font License
+is distributed at assets/OFL.txt.
 The supplied invitation stylesheet is unchanged except for the back-link styles.
 
 Verify with `npm run build && node scripts/test-caballeros-demo.cjs`.
