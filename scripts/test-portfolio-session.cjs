@@ -47,7 +47,7 @@ function harness(options = {}) {
   h=harness({respond:async()=>new Response('',{status:401})});await assert.rejects(()=>h.client.exchange(token));assert.equal(h.stored,null);
   h=harness({stored:JSON.stringify({credential,expiresAt:1009999}),respond:async()=>new Response('',{status:401})});await assert.rejects(()=>h.client.restore());assert.equal(h.stored,null);
   h=harness({respond:async()=>new Response(JSON.stringify({ok:true,credential,expiresAt:1000000+86400000}),{headers:{'Content-Type':'application/json'}})});await assert.rejects(()=>h.client.exchange(token));assert.equal(h.stored,null,'Reject unexpectedly persistent credentials');
-  h=harness({stored:JSON.stringify({credential,expiresAt:1009999}),respond:async()=>new Response(JSON.stringify({ok:true,expiresAt:1009999,cases:[{key:'glassfiles',path:'https://evil.test/case',title:'Bad'}]}),{headers:{'Content-Type':'application/json'}})});await assert.rejects(()=>h.client.restore());assert.equal(h.stored,null,'Reject unrecognized destinations');
+  h=harness({stored:JSON.stringify({credential,expiresAt:1009999}),respond:async()=>new Response(JSON.stringify({ok:true,expiresAt:1009999,cases:[{key:'glassfiles',path:'https://evil.test/case',title:'Bad'}]}),{headers:{'Content-Type':'application/json'}})});await assert.rejects(()=>h.client.restore());assert(h.stored,'Protocol failure retains the credential for a later retry');assert.equal(h.client.active(),false,'Reject unrecognized destinations and hide all protected content');
   console.log('PASS session exchange, per-tab storage, request options, one-time welcome, expiry, denial, malformed state and fail-closed storage');
   const home=fs.readFileSync('_site/index.html','utf8');
   assert.match(home,/portfolio-session(?:-core)?\.js/); assert.doesNotMatch(home,/build\.privateReview/);
@@ -62,6 +62,7 @@ function harness(options = {}) {
   }
   const layout=fs.readFileSync('src/site/_includes/layouts/base.njk','utf8');assert.match(layout,/portfolio-session\.js/);
   const js=fs.readFileSync(source,'utf8')+fs.readFileSync('src/site/js/portfolio-session.js','utf8');
+  assert.match(js,/data-srcset\|data-private-viewer-src\|srcdoc/,'Untrusted fragments cannot supply the hydrated-only SVG viewer source');
   assert.doesNotMatch(js,/localStorage|document\.cookie|iframe|location\.(?:assign|replace)/);
   assert.doesNotMatch(js,new RegExp(token+'|'+credential));
   console.log('PASS normal portfolio routes contain empty locked shells only; exact private-media exclusion retained');
@@ -102,3 +103,46 @@ function harness(options = {}) {
   await assert.rejects(()=>restoring);assert(saved,'Abandoned validation must not lock the next normal page');
   console.log('PASS asset authentication, deduplication, path/type/size guards, safe downloads, abort and blob revocation');
 })().catch(error=>{console.error(error);process.exitCode=1});
+
+(async()=>{
+  let stored=null, mode='ok';
+  const fixture='<svg xmlns="http://www.w3.org/2000/svg"><rect width="1" height="1"/></svg>';
+  const client=createClient({storage:{getItem:()=>stored,setItem:(k,v)=>{stored=v},removeItem:()=>{stored=null}},now:()=>3000000,setTimeout:()=>1,clearTimeout:()=>{},createObjectURL:()=> 'blob:fixture',revokeObjectURL:()=>{},fetch:async(url,init)=>{
+    if(url.endsWith('/portfolio-session'))return new Response(JSON.stringify(init.method==='POST'?{ok:true,credential,expiresAt:3010000}:{ok:true,expiresAt:3010000,cases:[{key:'glassfiles',path:CASES.glassfiles,title:'Test case'}]}),{headers:{'Content-Type':'application/json'}});
+    if(mode==='offline')throw new Error('Network failed');
+    if(mode==='denied' || mode==='unauthorized')return new Response('',{status:mode==='denied'?403:401});
+    if(mode==='server' || mode==='missing')return new Response('',{status:mode==='server'?500:404});
+    if(mode==='wrongtype')return new Response('abc',{headers:{'Content-Type':'text/html'}});
+    return new Response(mode==='svg'?fixture:'abc',{headers:{'Content-Type':mode==='svg'?'image/svg+xml':'image/png'}});
+  }});
+  await client.exchange(token);
+  const asset={path:'/images/test.png',contentType:'image/png',size:5};
+  await assert.rejects(()=>client.getAsset(asset));
+  assert(client.active()&&stored,'An ordinary media size failure must retain the validated private session');
+  mode='offline';await assert.rejects(()=>client.getAsset({...asset,path:'/images/offline.png'}));
+  assert(client.active()&&stored,'A media transport failure must not log the visitor out');
+  for(const failure of ['server','missing','wrongtype']) {mode=failure;await assert.rejects(()=>client.getAsset({...asset,path:'/images/'+failure+'.png'}));assert(client.active()&&stored,failure+' must preserve session');}
+  mode='svg';const svg={path:'/images/case-studies/flavour-guide/flavour-profile-hero-ui.svg',contentType:'image/svg+xml',size:Buffer.byteLength(fixture)};
+  await assert.rejects(()=>client.getAsset(svg,false),/image|type/i,'SVG must not be an active link or download');
+  await assert.rejects(()=>client.getAsset(svg,false,true),/SVG|digest/i,'Even image-only SVG must match one of the audited immutable asset digests');
+  assert(client.active()&&stored,'Rejected unsafe media must leave valid navigation usable');
+  mode='denied';await assert.rejects(()=>client.getAsset({...asset,path:'/images/denied.png'}),error=>error.name==='PortfolioAuthError');
+  assert.equal(client.active(),false);assert.equal(stored,null,'Actual authorization failure clears private session');
+  mode='ok';await client.exchange(token);mode='unauthorized';await assert.rejects(()=>client.getAsset({...asset,path:'/images/401.png'}),error=>error.name==='PortfolioAuthError');assert.equal(stored,null);
+  console.log('PASS media failures retain access; only401/403 revoke it; SVG requires audited digest and image-only context');
+})().catch(error=>{console.error(error);process.exitCode=1});
+
+// Real browser XML parsing is verified separately in live QA. These synthetic parsed
+// trees exercise the exact post-parse namespace/element/attribute/reference policy.
+{
+  const {isSafeSvg}=require('../src/site/js/portfolio-session-core');
+  const ns='http://www.w3.org/2000/svg';
+  const element=(localName,attrs={},namespaceURI=ns)=>({localName,namespaceURI,attributes:Object.entries(attrs).map(([name,value])=>({name,value,namespaceURI:null}))});
+  const tree=(children=[],rootAttrs={})=>{const root=element('svg',rootAttrs);return {documentElement:root,doctype:null,getElementsByTagName:()=>[root,...children]}};
+  assert(isSafeSvg('<svg/>',()=>tree([element('defs'),element('linearGradient',{id:'gradient'}),element('rect',{width:'10',height:'10',fill:'url(#gradient)'})])));
+  for(const bad of [element('script'),element('foreignObject'),element('style'),element('rect',{onload:'alert(1)'}),element('rect',{href:'https://example.test/'}),element('rect',{fill:'url(https://example.test/x)'}),element('rect',{fill:'url(#missing)'}),element('rect',{style:'fill:red'}),element('rect',{},'http://www.w3.org/1999/xhtml')])assert(!isSafeSvg('<svg/>',()=>tree([bad])));
+  for(const text of ['<!DOCTYPE svg><svg/>','<!ENTITY x "bad"><svg/>','<?xml-stylesheet href="x"?><svg/>'])assert(!isSafeSvg(text,()=>tree()));
+  assert(!isSafeSvg('<broken',()=>{throw Error('Malformed XML')}));
+  assert(!isSafeSvg('<svg/>',()=>({documentElement:element('parsererror'),getElementsByTagName:()=>[]})));
+  console.log('PASS SVG parsed-tree allowlist: namespaces, inert elements/attrs, declared local refs, and declaration rejection');
+}

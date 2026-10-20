@@ -12,16 +12,18 @@
         if (enhanced.has(link)) return;
         enhanced.add(link);
         link.addEventListener('click', function (event) {
-          if (event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
+          var imageOnlySource = link.dataset.privateViewerSrc;
+          if (event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) {if (imageOnlySource) event.preventDefault();return;}
           event.preventDefault();
           var source = link.querySelector('img');
           var caption = link.dataset.caption || (source && source.alt) || 'Project image';
-          dialog.querySelector('img').src = link.href;
+          dialog.querySelector('img').src = imageOnlySource || link.href;
           dialog.querySelector('img').alt = caption;
           dialog.querySelector('figcaption').textContent = caption;
           returnTo = link;
           if (!dialog.open) dialog.showModal();
         });
+        link.addEventListener('auxclick', function (event) {if (link.dataset.privateViewerSrc) event.preventDefault();});
       });
     }
     root.querySelectorAll('.decision-viewer').forEach(function (viewer) {
