@@ -30,6 +30,12 @@ properties:
 <p>I designed the identity, built a React invitation, and connected a recipe library to an editable print studio. The tools support my supper-club project, from inviting people to cooking and making keepsakes.</p>
 </div>
 
+<section id="invitation-demo" aria-labelledby="invitation-demo-title">
+<h2 id="invitation-demo-title">Take a seat at the imaginary table.</h2>
+<p>Try the invitation with a fictional dinner and sample guest. Accept or decline, add a food memory, and review your note. Nothing is sent or saved; reset or reload to start again.</p>
+<p><a class="text-link" href="/demos/caballeros/">Try the fictional invitation →</a></p>
+</section>
+
 {% evidence %}
 <figure class="caballeros-dinner"><a class="image-inspect" href="/images/case-studies/caballeros/dinner-table.jpg" data-image-viewer><img src="/images/case-studies/caballeros/dinner-table.jpg" width="1600" height="1066" alt="A Caballero’s dinner table in sunlight, set with printed menus, flowers, citrus and candles" loading="eager" /><span>Enlarge image +</span></a><figcaption>The experience the tools serve: a real Caballero’s table, with its menus and small details in place.</figcaption></figure>
 {% endevidence %}
@@ -43,6 +49,8 @@ properties:
 </div>
 {% endevidence %}
 {% journey "caballeros" %}
+
+{% tinyDetail "caballeros" %}
 
 
 ## Personality has a job to do.

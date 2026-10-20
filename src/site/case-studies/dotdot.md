@@ -56,6 +56,8 @@ This recording shows the real prototype: people see a message taking shape inste
 
 {% journey "dotdot" %}
 
+{% tinyDetail "dotdot" %}
+
 {% statement "01 / Live typing" %}Let people see the conversation take shape.{% endstatement %}
 
 ## One identity, two themes

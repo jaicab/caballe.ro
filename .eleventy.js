@@ -24,6 +24,22 @@ module.exports = function (eleventyConfig) {
     return `</div></div><section class="case-journey" aria-labelledby="journey-${escape(key)}"><div class="u-wrapper"><p class="eyebrow">${escape(journey.label)}</p><h2 id="journey-${escape(key)}">${escape(journey.goal)}</h2><p class="journey-status">${escape(journey.status)}</p><ol class="journey-route" role="list" style="--journey-stops:${journey.steps.length}">${items}</ol>${journey.note ? `<p class="journey-note">${escape(journey.note)}</p>` : ""}</div></section><div class="u-wrapper"><div class="o-article__content">`;
   });
 
+  eleventyConfig.addShortcode("tinyDetail", function (key) {
+    const publicDetails = require("./src/site/_data/projectDetails.json");
+    const privatePath = path.join(__dirname, sourceDir, "_data/privateDetails.json");
+    const detail = publicDetails[key] || (privateReview && fs.existsSync(privatePath) ? JSON.parse(fs.readFileSync(privatePath, "utf8"))[key] : null);
+    if (!detail) throw new Error(`Unknown project detail: ${key}`);
+    const escape = value => String(value).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+    const image = `/images/case-studies/${detail.image}`;
+    const [x, y, width, height] = detail.crop;
+    if (![x, y, width, height, detail.width, detail.height].every(Number.isFinite) || x < 0 || y < 0 || width <= 0 || height <= 0 || x + width > detail.width || y + height > detail.height) throw new Error(`Invalid detail crop: ${key}`);
+    const sourceLabel = detail.type === "video" ? "View full recording" : "View full screen";
+    const media = detail.type === "video"
+      ? `<video controls playsinline preload="metadata" width="${detail.width}" height="${detail.height}" aria-label="${escape(detail.alt)}"><source src="${escape(image)}" type="video/mp4"><a href="${escape(image)}">${sourceLabel}</a></video>`
+      : `<a class="tiny-detail-visual" href="${escape(image)}" data-image-viewer data-caption="${escape(detail.caption)}" aria-label="${sourceLabel}: ${escape(detail.title)}"><span class="tiny-detail-crop" style="aspect-ratio:${width}/${height};max-width:${Math.min(width, 560)}px"><img src="${escape(image)}" width="${detail.width}" height="${detail.height}" alt="${escape(detail.alt)}" loading="lazy" style="width:${detail.width / width * 100}%;left:${-x / width * 100}%;top:${-y / height * 100}%"></span><span class="tiny-detail-source">${sourceLabel}</span></a>`;
+    return `</div></div><section class="case-tiny-detail" aria-labelledby="tiny-detail-${escape(key)}"><div class="u-wrapper"><div class="tiny-detail-layout"><div class="tiny-detail-copy"><p class="eyebrow">Tiny big detail</p><h2 id="tiny-detail-${escape(key)}">${escape(detail.title)}</h2><p>${escape(detail.text)}</p></div><figure class="tiny-detail-media">${media}<figcaption>${escape(detail.caption)}</figcaption></figure></div></div></section><div class="u-wrapper"><div class="o-article__content">`;
+  });
+
   eleventyConfig.addPairedShortcode("evidence", function (content) {
     return `</div></div><section class="case-evidence"><div class="u-wrapper">${content}</div></section><div class="u-wrapper"><div class="o-article__content">`;
   });
@@ -123,6 +139,9 @@ ${content}
   eleventyConfig.addPassthroughCopy(sourceDir + "/downloads");
   eleventyConfig.addPassthroughCopy(sourceDir + "/fonts");
   eleventyConfig.addPassthroughCopy(sourceDir + "/js");
+  // Keep the fictional demo isolated from portfolio layouts, scripts and data.
+  // Its HTML is excluded from template processing in .eleventyignore.
+  eleventyConfig.addPassthroughCopy(sourceDir + "/demos/caballeros");
   // Public builds never contain the internal Glass UI or sample exports.
   for (const entry of fs.readdirSync(path.join(__dirname, sourceDir + "/images"))) {
     if (entry !== "case-studies") eleventyConfig.addPassthroughCopy(sourceDir + "/images/" + entry);

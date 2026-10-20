@@ -1,12 +1,23 @@
+{% set pageLight = '#1a1a1a' %}
+{% set pageDark = '#1a1a1a' %}
+{% if themeColor %}
+  {% set pageLight = projectThemes[short].light or ('#'+themeColor) %}
+  {% set pageDark = projectThemes[short].dark or '#20202b' %}
+{% elif templateClass and ('tmpl-home' in templateClass or 'tmpl-system' in templateClass) %}
+  {% set pageLight = '#f1ede5' %}
+  {% set pageDark = '#28212f' %}
+{% endif %}
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="light" data-page-light="{{ pageLight }}" data-page-dark="{{ pageDark }}">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>
       {% if renderData.title or title %}{{ renderData.title or title }} |  {% endif %}{{ metadata.title }} - {{ metadata.description }}</title>
     <meta name="description" content="{{ renderData.description or description or metadata.description }}">
-    <meta name="theme-color" content="#1f1f1f">
+    <meta name="theme-color" content="{{ pageLight }}">
+    <style id="page-theme-canvas">html { background: {{ pageLight }}; color-scheme: light; } html[data-theme="dark"] { background: {{ pageDark }}; color-scheme: dark; }</style>
+    <script id="page-theme-bootstrap">{% include "theme-bootstrap.js" %}</script>
     {% if noindex %}<meta name="robots" content="noindex, nofollow">{% endif %}
     <link rel="preload" href="/fonts/bricolage/BricolageGrotesque.ttf" as="font" type="font/ttf" crossorigin>
     <link rel="stylesheet" href="{{ '/css/index.css' | assetVersion | url }}">
@@ -34,59 +45,7 @@
     <link rel="dns-prefetch" href="https://res.cloudinary.com">
 
     <script>
-      /* Dark mode JS */
-
-      function getTheme() {
-        if (!window.matchMedia) 
-          return true;
-        else 
-          return window
-            .matchMedia('(prefers-color-scheme: light)')
-            .matches
-        }
-
-      function loadTheme() {
-        var currentTheme = sessionStorage.getItem('theme');
-        if (currentTheme === null) {
-          currentTheme = getTheme()
-          sessionStorage.setItem('theme', currentTheme)
-        }
-
-        var toggle = document.getElementById('lightSwitch');
-        if (!toggle) return;
-        toggle.checked = currentTheme == 'true';
-
-        if (!toggle.checked) 
-          document
-            .body
-            .classList
-            .add('u-dark')
-
-        setTimeout(function () {
-          document
-            .body
-            .classList
-            .add('is-transitioning')
-        }, 500)
-      }
-
-      function switchTheme(el) {
-        sessionStorage.setItem('theme', el.checked)
-
-        if (el.checked) 
-          document
-            .body
-            .classList
-            .remove('u-dark')
-        else 
-          document
-            .body
-            .classList
-            .add('u-dark')
-        }
-
       document.addEventListener("DOMContentLoaded", function () {
-        loadTheme();
         if ('IntersectionObserver' in window) {
           var observer = new IntersectionObserver(function (entries) {
             entries.forEach(function (entry) { if (!entry.isIntersecting) entry.target.pause(); });
@@ -99,6 +58,7 @@
     <link href="//fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,400;0,600;0,700;0,900;1,420&family=Space+Mono:wght@400&display=swap" rel="stylesheet">
   </head>
   <body{% if templateClass %} class="{{ templateClass }}"{% endif %} {% if themeColor %} style="--color-bg: #{{ themeColor }}; --case-light: {{ projectThemes[short].light or ('#'+themeColor) }}; --case-dark: {{ projectThemes[short].dark or '#20202b' }}; --case-ink: {{ projectThemes[short].ink or '#171722' }}; --case-focus-light: {{ projectThemes[short].focusLight or '#171722' }}; --case-focus-dark: {{ projectThemes[short].focusDark or ('#'+themeColor) }};"{% endif %}>
+    <script>window.loadTheme();</script>
     <a class="skip-link" href="#main-content">Skip to content</a>
     {% include "_header.njk" %}
     <main id="main-content">

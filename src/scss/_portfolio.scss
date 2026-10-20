@@ -95,7 +95,7 @@ video { max-width: 100%; height: auto; }
 .case-summary ul { display: grid; grid-template-columns: 1fr 1fr; gap: 15px 30px; list-style: none; padding: 0; margin: 0; font-size: 15px; line-height: 1.55; }
 .case-summary li { margin: 0; }
 .case-summary li strong:first-child { display: block; font-family: $font-family-heading; font-size: 11px; margin-bottom: 5px; text-transform: uppercase; }
-.project-stage--glass { grid-template-columns: .7fr 1.6fr; min-height: 540px; }
+.project-stage--glass { min-height: 540px; }
 .project-stage--wise { min-height: 370px; }
 .project-stage--wise .project-visual img { max-height: 330px; }
 .project-stage--tools { min-height: 420px; }
@@ -507,29 +507,64 @@ body.tmpl-home.u-dark,body.tmpl-system.u-dark { background:#28212f; color:var(--
   .tmpl-report .case-proof-link, .tmpl-report .case-chapters { animation: project-content-arrive 400ms 60ms ease-out backwards; }
   .tmpl-report .o-article__content > :first-child { animation: project-content-arrive 420ms 90ms ease-out backwards; }
   .tmpl-report .case-evidence:first-of-type { animation: project-image-arrive 440ms 120ms ease-out backwards; }
+  .tmpl-home .portfolio-intro { animation: home-content-arrive 360ms ease-out backwards; }
+  .tmpl-home .work-jump, .tmpl-home .section-label { animation: home-content-arrive 360ms 60ms ease-out backwards; }
+  .tmpl-home .project-stage { animation: home-content-arrive 420ms 100ms ease-out backwards; }
+  .tmpl-home .project-stage:nth-of-type(2) { animation-delay: 140ms; }
+  .tmpl-home .project-stage:nth-of-type(3) { animation-delay: 180ms; }
+  .tmpl-home .project-stage:nth-of-type(n + 4) { animation-delay: 220ms; }
 }
 @keyframes project-content-arrive { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
 @keyframes project-image-arrive { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: none; } }
+@keyframes home-content-arrive { from { opacity: .35; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+/* Restored/fragment pages and focused controls are immediately settled. */
+html[data-page-entry="skip"] .tmpl-report .o-article__header,
+html[data-page-entry="skip"] .tmpl-report .case-proof-link,
+html[data-page-entry="skip"] .tmpl-report .case-chapters,
+html[data-page-entry="skip"] .tmpl-report .o-article__content > :first-child,
+html[data-page-entry="skip"] .tmpl-report .case-evidence:first-of-type,
+html[data-page-entry="skip"] .tmpl-home .portfolio-intro,
+html[data-page-entry="skip"] .tmpl-home .work-jump,
+html[data-page-entry="skip"] .tmpl-home .section-label,
+html[data-page-entry="skip"] .tmpl-home .project-stage,
+.tmpl-home .portfolio-intro:focus-within,
+.tmpl-home .work-jump:focus-within,
+.tmpl-home .project-stage:focus-within { animation: none; }
 
 /* A route through the product, linked to the original evidence. */
 .case-journey { padding-block: 32px 40px; margin-block: 24px 40px; border-block: 1px solid currentColor; }
-.case-journey h2 { font-family: var(--font-display); font-size: clamp(28px,3.2vw,44px); line-height: 1.1; letter-spacing: -.025em; margin: 12px 0; }
+.case-journey h2, .u-text .case-journey h2 { font-family: var(--font-display); font-size: clamp(28px,3.2vw,44px); line-height: 1.1; letter-spacing: -.025em; margin: 12px 0; }
 .journey-status,.journey-note { font-size: 13px; line-height: 1.6; max-width: 75ch; }
-.journey-route { list-style: none; padding: 0; margin: 28px 0 0; display: grid; grid-template-columns: repeat(var(--journey-stops),minmax(0,1fr)); gap: 24px; }
-.journey-route li { position: relative; min-width: 0; }
+.journey-route, .u-text .journey-route { list-style: none; padding: 0; margin: 28px 0 0; display: grid; grid-template-columns: repeat(var(--journey-stops),minmax(0,1fr)); gap: 24px; }
+.journey-route li { position: relative; min-width: 0; margin: 0; }
 .journey-route li:not(:last-child)::before { content: ''; position: absolute; top: 17px; left: 42px; width: calc(100% - 22px); border-top: 1px solid currentColor; opacity: .4; }
 .journey-stop { display: inline-grid; place-items: center; width: 36px; height: 36px; border: 1px solid currentColor; border-radius: 50%; font-family: 'Space Mono',monospace; font-size: 13px; }
 .journey-route h3 { font-family: var(--font-display); font-size: 22px; line-height: 1.2; margin: 16px 0 10px; }
 .journey-question { font-size: 15px; font-weight: 600; line-height: 1.4; margin: 0 0 10px; }
 .journey-decision { font-size: 14px; line-height: 1.6; margin: 0; }
 .journey-role { font-family: 'Space Mono',monospace; font-size: 10px; line-height: 1.5; margin: 14px 0 -6px; }
-.journey-evidence { font-size: 12px; min-height: 44px; display: inline-flex; align-items: center; margin-top: 10px; }
+.journey-evidence, .u-text .journey-evidence { font-size: 12px; min-height: 44px; display: inline-flex; align-items: center; margin-top: 10px; border-bottom: 0; text-decoration: underline; text-underline-offset: .2em; }
 .journey-note { margin-top: 24px; }
 @media(max-width:739px) {
-  .journey-route { grid-template-columns: 1fr; gap: 24px; }
+  .journey-route, .u-text .journey-route { grid-template-columns: 1fr; gap: 24px; }
   .journey-route li { padding-left: 52px; }
   .journey-stop { position: absolute; left: 0; top: 0; }
   .journey-route li:not(:last-child)::before { left: 17px; top: 44px; width: 0; height: calc(100% - 28px); border-top: 0; border-left: 1px solid currentColor; }
   .journey-route h3 { margin-top: 0; }
   .journey-role { margin-top: 0; }
 }
+
+/* Keep repeated editorial surfaces on one typographic and alignment system. */
+.project-copy h2 { text-wrap: balance; }
+.intro-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 20px; min-width: 300px; }
+.intro-actions .availability { flex-basis: 100%; margin-bottom: 0; }
+.intro-actions .text-link { margin: 0; white-space: nowrap; }
+.u-text a.text-link { border-bottom: 0; text-decoration: underline; text-underline-offset: .2em; }
+.project-credits { max-width: 900px; }
+@media(max-width:1000px) { .intro-bottom { display: block; } .intro-actions { margin-top: 20px; min-width: 0; } }
+
+// Explicit button pairs: currentColor must not paint both label and surface.
+.c-btn.c-btn--primary { color:#f1ede5; background:#211f25; border-color:#211f25; }
+.u-dark .c-btn.c-btn--primary { color:#211f25; background:#f1ede5; border-color:#f1ede5; }
+body .c-btn--primary .c-btn__text,body .c-btn--primary .c-btn__icon { color:inherit; }
+body .c-btn--primary .c-btn__icon path { fill:currentColor; }
